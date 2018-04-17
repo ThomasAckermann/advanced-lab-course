@@ -1,0 +1,22 @@
+% !TeX root = ..//elektrodynamik_seminar_weigand_18.tex
+\begin{tikzpicture}[scale=1]
+	\coordinate (A) at (0,0);
+	\coordinate (B) at (2,0);
+	\coordinate (C) at (2,2);
+	\coordinate (D) at (0,2);
+	\fill (A) circle (2pt);
+	\fill (B) circle (2pt);
+	\fill (C) circle (2pt);
+	\fill (D) circle (2pt);
+	\draw (A)--(B);
+	\draw (B)--(C);
+	\draw (C)--(D);
+	\draw (D)--(A);
+	\draw[arrows=-{Stealth[scale=1.5]}] (A)--+(1.1,0);
+	\draw[arrows=-{Stealth[scale=1.5]}] (B)--+(0,1.1);
+	\draw[arrows=-{Stealth[scale=1.5]}] (C)--+(-1.1,0);
+	\draw[arrows=-{Stealth[scale=1.5]}] (D)--+(0,-1.1);
+	\node at (A)[below left]{$x$};
+	\node at (B)[below right]{$x+\varepsilon\hat{e}_1$};
+	\node at (D)[above left]{$x+\varepsilon\hat{e}_2$};
+\end{tikzpicture}

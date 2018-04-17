@@ -1,0 +1,56 @@
+% !TeX root = ..//main.tex
+\usepackage{polyglossia}					%Sprache
+\usepackage{amsmath}					%Matheumgebung
+\usepackage{amsopn}					%Matheoperatoren
+\usepackage{amssymb}					%Mathesymbole
+\usepackage{amsthm}					%Mathetheorem
+\usepackage{blindtext}
+\usepackage{bbm}						%Mengensymbol
+\usepackage[style=numeric,
+			natbib=true,
+			backend=biber]{biblatex}		%Bibliographie
+\usepackage[autostyle=true,
+			 german=quotes]
+			 {csquotes}					%Anführungszeichen
+\usepackage[Bjornstrup]
+			{fncychap}					%Kapitellayout
+%\usepackage{graphix}					%Graphik
+\usepackage{mathdots}					%Punkte
+\usepackage{mathtools}					%Bugfix ams
+\usepackage{microtype}					%Makrotypographie
+\usepackage{physics}					%Physiksymbole
+\usepackage{relsize}						%Größenangaben
+\usepackage{scrhack}					%Verbesserung Pakete
+\usepackage[headsepline,
+			 footsepline,
+			 automark]
+			{scrlayer-scrpage}			%Kopfzeile
+\usepackage[separate-uncertainty,
+			per-mode=symbol]
+			{siunitx}					%Einheiten
+\usepackage{slashed}					%Dirac-Operator
+%\usepackage{tikz}						%Zeichnen
+\usepackage{upgreek}					%Griechische Buchstaben
+\usepackage{xltxtra}						%fontec
+\setmainlanguage{german}
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+
+\ihead{Große Auswertung}
+\ohead{\headmark}
+\chead{}
+\ifoot*{A. Mielke und T. Ackermann}
+\automark{chapter}
+\pagestyle{scrheadings}
+\setcounter{tocdepth}{1}
+\setcounter{secnumdepth}{1}
+%\usetikzlibrary{calc}
+%\usetikzlibrary{arrows.meta}
+%\usetikzlibrary{patterns}
+
+\usepackage[bookmarksopenlevel=section,
+			linkcolor=blue,
+			colorlinks=true,
+			urlcolor=blue,
+			citecolor=blue]
+			{hyperref}		%Verweise, muss am Ende stehen

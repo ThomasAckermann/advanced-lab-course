@@ -1,0 +1,20 @@
+% !TeX root = ..//elektrodynamik_seminar_weigand_18.tex
+\begin{tikzpicture}[scale=1]
+	\coordinate (A) at (0,0);
+	\coordinate (B) at (-.55,-.55);
+	\coordinate (C) at (.55,.55);
+	\fill (B) circle (2.5pt);
+	\draw[rotate=-25] (A) ellipse (1.5cm and 0.75cm);
+	\draw[arrows=-{Stealth[scale=1.5]}, rotate=60] (C)--+(0,0.1);
+	\node at (B)[below left]{$y$};
+	\node at (C)[above right]{$P$};
+\end{tikzpicture}
+\begin{tikzpicture}[scale=1]
+	\coordinate (A) at (0,0);
+	\coordinate (B) at (-.55,-.55);
+	\coordinate (C) at (.55,.55);
+	\fill (B) circle (2.5pt);
+	\draw[schraffiert, rotate=-25] (A) ellipse (1.5cm and 0.75cm) node{$\Sigma$};
+	\draw[arrows=-{Stealth[scale=1.5]}, rotate=60] (C)--+(0,0.1);
+	\node at (B)[below left]{$y$};
+\end{tikzpicture}
