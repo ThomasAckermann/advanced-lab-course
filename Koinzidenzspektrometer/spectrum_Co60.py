@@ -11,7 +11,7 @@ amplitude, counts = np.loadtxt('Data/Co60.txt', skiprows=1, unpack=True)
 counts_err = np.sqrt(counts)
 
 popt, pcov = curve_fit(gaussian, amplitude[517:548], counts[517:548], p0=[1000, 5, 550], sigma=counts_err[517:548])
-popt2, pcov2 = curve_fit(gaussian, amplitude[580:610], counts[580:610], p0=[1000, 5, 600], sigma=counts_err[580:610])
+popt2, pcov2 = curve_fit(gaussian, amplitude[580:610], counts[580:620], p0=[1000, 5, 600], sigma=counts_err[580:610])
 
 
 ax1 = plt.subplot(211)
