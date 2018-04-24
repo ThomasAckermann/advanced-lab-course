@@ -14,12 +14,12 @@ popt, pcov = curve_fit(linear, amplitude[517:548], counts[517:548], sigma=counts
 
 
 plt.plot(amplitude, counts, ',', label='Messdaten')
-plt.plot(amplitude[517:548], linear(amplitude[517:548], *popt), label='Gauss 1')
+plt.plot(amplitude[517:548], linear(amplitude[517:548], *popt), label='Linear')
 
 plt.legend(loc='lower right')
-plt.ylabel('Counts')
+plt.ylabel('Energie')
 plt.xlabel('Amplitude')
-plt.title('Pulshöhenspektrum $Co^{60}$')
+plt.title('Eichkurve')
 
 
 plt.tight_layout()
