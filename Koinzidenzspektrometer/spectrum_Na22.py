@@ -10,19 +10,21 @@ def gaussian(x, A, mu, sig):
 untergr_x, untergr_y = np.loadtxt('Data/Nachtmessung.txt', skiprows=1, unpack=True)
 amplitude, counts = np.loadtxt('Data/Na22.txt', skiprows=1, unpack=True)
 untergr_y = untergr_y * 420 / 72202
-print(len(counts), len(untergr_y))
 
 counts = counts - untergr_y
 
 counts_err = np.sqrt(counts)
-x = np.linspace(200, 280, 1000)
+x1 = np.linspace(200, 280, 1000)
+x2 = np.linspace(520, 620, 1000)
 
 popt, pcov = curve_fit(gaussian, amplitude[220:260], counts[220:260], p0=[1500, 240, 5], sigma=counts_err[220:260])
+popt2, pcov2 = curve_fit(gaussian, amplitude[520:620], counts[520:620], p0=[400, 580, 3], sigma=counts_err[520:620])
 
 
 ax1 = plt.subplot(211)
 plt.plot(amplitude, counts, ',', label='Messdaten')
-plt.plot(x, gaussian(x, *popt), label='Gaussfit')
+plt.plot(x1, gaussian(x1, *popt), label='Gaussfit 1')
+plt.plot(x2, gaussian(x2, *popt2), label='Gaussfit 2')
 plt.legend(loc='upper right')
 plt.ylabel('Counts')
 plt.xlabel('Amplitude')
@@ -46,6 +48,8 @@ print('A 1: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
 print('Mittelwert 1: ', popt[1], '+/-', np.sqrt(pcov[1][1]))
 print('Standardabweichung 1: ', popt[2], '+/-', np.sqrt(pcov[2][2]))
 
-
+print('A 2: ', popt2[0], '+/-', np.sqrt(pcov2[0][0]))
+print('Mittelwert 2: ', popt2[1], '+/-', np.sqrt(pcov2[1][1]))
+print('Standardabweichung 2: ', popt2[2], '+/-', np.sqrt(pcov2[2][2]))
 
 

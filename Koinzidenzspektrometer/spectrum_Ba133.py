@@ -16,17 +16,19 @@ counts = counts - untergr_y
 counts_err = np.sqrt(counts)
 
 x1 = np.linspace(15, 60, 1000)
-x2 = np.linspace(140, 240, 1000)
+x2 = np.linspace(110, 170, 1000)
+x3 = np.linspace(140, 240, 1000)
 
 popt, pcov = curve_fit(gaussian, amplitude[20:55], counts[20:55], p0=[17500, 30, 5], sigma=counts_err[20:55])
-popt2, pcov2 = curve_fit(gaussian, amplitude[162:250], counts[162:250], p0=[7000, 180, 10], sigma=counts_err[162:250])
-
+popt2, pcov2 = curve_fit(gaussian, amplitude[120:155], counts[120:155], p0=[7000, 180, 10], sigma=counts_err[120:155])
+popt3, pcov3 = curve_fit(gaussian, amplitude[164:240], counts[164:240], p0=[6800, 180, 20], sigma=counts_err[164:240])
 
 ax1 = plt.subplot(211)
 plt.plot(amplitude, counts, ',', label='Messdaten')
 plt.plot(x1, gaussian(x1, *popt), label='Gauss 1')
 plt.plot(x2, gaussian(x2, *popt2), label='Gauss 2')
-plt.legend(loc='lower right')
+plt.plot(x3, gaussian(x3, *popt3), label='Gauss 3')
+plt.legend(loc='upper right')
 plt.ylabel('Counts')
 plt.xlabel('Amplitude')
 plt.title('Pulshöhenspektrum $Ba^{133}$')
@@ -49,9 +51,11 @@ print('A 1: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
 print('Mittelwert 1: ', popt[1], '+/-', np.sqrt(pcov[1][1]))
 print('Standardabweichung 1: ', popt[2], '+/-', np.sqrt(pcov[2][2]))
 
-print('A 1: ', popt2[0], '+/-', np.sqrt(pcov2[0][0]))
+print('A 2: ', popt2[0], '+/-', np.sqrt(pcov2[0][0]))
 print('Mittelwert 2: ', popt2[1], '+/-', np.sqrt(pcov2[1][1]))
 print('Standardabweichung 2: ', popt2[2], '+/-', np.sqrt(pcov2[2][2]))
 
-
+print('A 3: ', popt3[0], '+/-', np.sqrt(pcov3[0][0]))
+print('Mittelwert 3: ', popt3[1], '+/-', np.sqrt(pcov3[1][1]))
+print('Standardabweichung 3: ', popt3[2], '+/-', np.sqrt(pcov3[2][2]))
 
