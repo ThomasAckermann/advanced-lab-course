@@ -20,8 +20,8 @@ popt, pcov = curve_fit(gaussian, amplitude[360:400], counts[360:400], p0=[1000, 
 
 
 ax1 = plt.subplot(211)
-plt.plot(amplitude, counts, ',', label='Messdaten')
-plt.plot(x, gaussian(x, *popt), label='Gaussfit')
+plt.plot(amplitude, counts, 'o', label='Messdaten', markersize=3)
+plt.plot(x, gaussian(x, *popt), 'o', label='Gaussfit', markersize=3)
 plt.legend(loc='upper right')
 plt.ylabel('Counts')
 plt.xlabel('Amplitude')
@@ -29,7 +29,7 @@ plt.title('Pulshöhenspektrum $Mn^{54}$')
 
 
 ax2 = plt.subplot(212)
-plt.plot(amplitude, counts, ',')
+plt.plot(amplitude, counts, 'o', markersize=3)
 plt.yscale('log')
 # plt.legend(loc='lower right')
 plt.ylabel('Counts')
@@ -39,7 +39,8 @@ plt.title('Pulshöhenspektrum $Mn^{54}$ ($\log$)')
 plt.tight_layout()
 f_gcf = plt.gcf()
 f_gcf.set_size_inches(8.27, 11.69)
-plt.savefig('Plots/spectrum_Mn54.pdf')
+# plt.savefig('Plots/spectrum_Mn54.pdf')
+plt.show()
 
 print('A 1: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
 print('Mittelwert 1: ', popt[1], '+/-', np.sqrt(pcov[1][1]))
