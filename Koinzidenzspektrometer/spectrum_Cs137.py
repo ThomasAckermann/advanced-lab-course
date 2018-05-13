@@ -20,12 +20,14 @@ counts = counts - untergr_y
 counts_err = np.sqrt(counts)
 x = np.linspace(280, 350, 1000)
 
+amplitude = amplitude * 0.002259
+
 popt, pcov = curve_fit(gaussian, amplitude[290:340], counts[290:340], p0=[1000, 300, 5], sigma=counts_err[290:340])
 
 
 ax1 = plt.subplot(211)
 plt.plot(amplitude, counts, 'o', label='Messdaten')
-plt.plot(x, gaussian(x, *popt), 'o', label='Gaussfit')
+# plt.plot(x, gaussian(x, *popt), 'o', label='Gaussfit')
 plt.legend(loc='upper right')
 plt.ylabel('Counts')
 plt.xlabel('Amplitude')
@@ -43,8 +45,8 @@ plt.title('Pulshöhenspektrum $Cs^{137}$ ($\log$)')
 plt.tight_layout()
 f_gcf = plt.gcf()
 f_gcf.set_size_inches(8.27, 11.69)
-# plt.savefig('Plots/spectrum_Cs137.pdf')
-plt.show()
+plt.savefig('Plots/spectrum_Cs137.pdf')
+# plt.show()
 print('A 1: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
 print('Mittelwert 1: ', popt[1], '+/-', np.sqrt(pcov[1][1]))
 print('Standardabweichung 1: ', popt[2], '+/-', np.sqrt(pcov[2][2]))

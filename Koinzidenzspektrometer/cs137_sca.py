@@ -3,7 +3,7 @@ import numpy as np
 untergr_x, untergr_y = np.loadtxt('Data/Nachtmessung.txt', skiprows=1, unpack=True)
 amplitude, counts = np.loadtxt('Data/CS137_SCA.txt', skiprows=1, unpack=True)
 
-
+amplitude = amplitude * 0.002259
 plt.plot(amplitude, counts, '.', label='Messdaten')
 
 plt.legend(loc='upper right')
