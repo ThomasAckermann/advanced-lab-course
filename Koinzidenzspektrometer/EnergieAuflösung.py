@@ -28,7 +28,7 @@ plt.errorbar(energy, relative_energy, yerr=relative_energy_err, marker='.', lw=0
 plt.plot(x, func(x, *popt), label='Fit')
 plt.legend(loc='upper right')
 # plt.xscale('log')
-plt.yscale('log')
+# plt.yscale('log')
 plt.ylabel('Relative Energie $\\frac{\Delta E}{E}$')
 plt.xlabel('Energie $E$')
 plt.title('Energie Auflösung')
@@ -37,4 +37,11 @@ plt.tight_layout()
 f_gcf = plt.gcf()
 f_gcf.set_size_inches(11.69, 8.27)
 plt.savefig('Plots/Energie_Aufloesung.pdf')
+print('C * exp(k * x) + d')
+print('C: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
+print('k: ', popt[1], '+/-', np.sqrt(pcov[1][1]))
+print('d: ', popt[2], '+/-', np.sqrt(pcov[2][2]))
+
+
+
 

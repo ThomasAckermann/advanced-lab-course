@@ -19,7 +19,7 @@ plt.errorbar(channel, time, xerr=channel_err, fmt='.', label='Messdaten')
 plt.plot(channel_lin, linear(channel_lin, *popt), label='Linear')
 
 plt.legend(loc='lower right')
-plt.ylabel('Delayzeit')
+plt.ylabel('Delayzeit [ns]')
 plt.xlabel('Channel')
 plt.title('Bestimmung der Zeitauflösung')
 
@@ -32,7 +32,4 @@ plt.savefig('Plots/Zeitauflösung.pdf')
 
 print('Steigung: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
 print('y-Achsenabschnitt: ', popt[1], '+/-', np.sqrt(pcov[1][1]))
-
-
-
 

@@ -28,7 +28,7 @@ plt.tight_layout()
 f_gcf = plt.gcf()
 f_gcf.set_size_inches(11.69, 8.27)
 plt.savefig('Plots/EichkurveEnergie.pdf')
-
+# plt.show()
 
 print('Steigung: ', popt[0], '+/-', np.sqrt(pcov[0][0]))
 print('y-Achsenabschnitt: ', popt[1], '+/-', np.sqrt(pcov[1][1]))

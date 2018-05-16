@@ -5,6 +5,8 @@ import matplotlib.pyplot as plt
 amplitude, counts = np.loadtxt('Data/Nachtmessung.txt', skiprows=1, unpack=True)
 counts_err = np.sqrt(counts)
 
+
+
 ax1 = plt.subplot(211)
 plt.plot(amplitude, counts, '.')
 plt.ylabel('Counts')
