@@ -16,6 +16,9 @@ plt.ylabel('Counts')
 plt.xlabel('Zeit [ns]')
 plt.title('Zeitspektrum $Co^{60}$')
 
+summe = sum(counts1[500:])
+print('Summe:', summe)
+
 ax2 = plt.subplot(312)
 plt.plot(amplitude2, counts2, '.')
 plt.ylabel('Counts')
