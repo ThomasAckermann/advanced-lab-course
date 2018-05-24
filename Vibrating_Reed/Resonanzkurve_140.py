@@ -29,7 +29,7 @@ while (omega[-1] <= 160.0):
 
 # Fit Parameter
 popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega, amplitude, p0=[144, 20, 20], sigma=amplitude_err)
-popt_phase, pcov_phase = [0,0]# curve_fit(phase_tan, omega[20:], phase[20:], p0=[50, 50], sigma=phase_err[20:])
+popt_phase, pcov_phase = curve_fit(phase_tan, omega[100:], phase[100:], sigma=phase_err[100:])
 
 # x-Bereich
 omega_space = np.linspace(120, 170, 4000)

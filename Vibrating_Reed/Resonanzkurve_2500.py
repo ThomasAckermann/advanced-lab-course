@@ -43,7 +43,7 @@ plt.xlim((2490.1, 2540))
 # plt.ylim((50,270))
 plt.ylabel('Amplitude [$\mu V$]')
 plt.xlabel('Frequenz $\omega$ [Hz]')
-plt.title('Schwingungsamplitude [2]')
+plt.title('Schwingungsamplitude [3]')
 # plt.plot(omega_space, lorentz(omega_space, *popt_lorentz), label='Lorentz-Fit')
 
 # Plot für Phasendifferenz
@@ -55,7 +55,7 @@ plt.xlim((2490, 2540))
 plt.ylim((-0.5, 3.5))
 plt.ylabel('Phasendifferenz $\Delta \phi$')
 plt.xlabel('Frequenz $\omega$ [Hz]')
-plt.title('Phasenverschiebung [2]')
+plt.title('Phasenverschiebung [3]')
 
 plt.tight_layout()
 f_gcf = plt.gcf()
