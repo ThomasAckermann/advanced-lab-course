@@ -14,36 +14,36 @@ def phase_tan(omega_, omega_0, gamma):
 # Daten laden
 # Gemittelte Werte laden
 # omega = np.loadtxt('data/spektrum140.txt', skiprows=1, unpack=True)[0]
-amplitude = np.loadtxt('data/spektrum140.txt', skiprows=1, unpack=True)[1]
-phase = np.loadtxt('data/spektrum140.txt', skiprows=1, unpack=True)[4]
+amplitude = np.loadtxt('data/spektrum2500.txt', skiprows=1, unpack=True)[1]
+phase = np.loadtxt('data/spektrum2500.txt', skiprows=1, unpack=True)[4]
 # Fehler Daten laden
-phase_err = np.loadtxt('data/spektrum140.txt', skiprows=1, unpack=True)[2]
-amplitude_err = np.loadtxt('data/spektrum140.txt', skiprows=1, unpack=True)[5] 
+phase_err = np.loadtxt('data/spektrum2500.txt', skiprows=1, unpack=True)[2]
+amplitude_err = np.loadtxt('data/spektrum2500.txt', skiprows=1, unpack=True)[5] 
 
-omega = np.array([120.1])
+omega = np.array([2490.1])
 step = 0.1
-while (omega[-1] <= 160.0):
+while (omega[-1] <= 2540):
     omega = np.append(omega, omega[-1] + 0.1)
-# print(len(omega))
+print(len(omega))
 # print(len(amplitude)) 
 
 # Fit Parameter
-popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega, amplitude, p0=[144, 20, 20], sigma=amplitude_err)
+popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega, amplitude, p0=[2530, 20, 20], sigma=amplitude_err)
 popt_phase, pcov_phase = [0,0]# curve_fit(phase_tan, omega[20:], phase[20:], p0=[50, 50], sigma=phase_err[20:])
 
 # x-Bereich
-omega_space = np.linspace(120, 170, 4000)
+omega_space = np.linspace(2490.1, 2540.1, 4000)
 
 # Plot für Amplitude
 ax1 = plt.subplot(211)
 plt.errorbar(omega, amplitude, fmt='.', label='Messdaten', zorder=1)
 plt.plot(omega_space, lorentz(omega_space, *popt_lorentz), label='Lorentz-Fit', zorder=10)
 plt.legend(loc='upper right')
-plt.xlim((128, 160))
-plt.ylim((50,270))
+plt.xlim((2490.1, 2540))
+# plt.ylim((50,270))
 plt.ylabel('Amplitude [$\mu V$]')
 plt.xlabel('Frequenz $\omega$ [Hz]')
-plt.title('Schwingungsamplitude [1]')
+plt.title('Schwingungsamplitude [2]')
 # plt.plot(omega_space, lorentz(omega_space, *popt_lorentz), label='Lorentz-Fit')
 
 # Plot für Phasendifferenz
@@ -51,16 +51,16 @@ ax2 = plt.subplot(212)
 plt.errorbar(omega, phase, fmt='.', label='Messdaten')
 # plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
 plt.legend(loc='upper right')
-plt.xlim((120, 160))
-plt.ylim((0, 3.5))
+plt.xlim((2490, 2540))
+plt.ylim((-0.5, 3.5))
 plt.ylabel('Phasendifferenz $\Delta \phi$')
 plt.xlabel('Frequenz $\omega$ [Hz]')
-plt.title('Phasenverschiebung [1]')
+plt.title('Phasenverschiebung [2]')
 
 plt.tight_layout()
 f_gcf = plt.gcf()
 f_gcf.set_size_inches(8.27, 11.69)
-plt.savefig('fig/Resonanzkurve_140.pdf')
+plt.savefig('fig/Resonanzkurve_2500.pdf')
 
 # Fit Daten ausgeben
 # Schwingungsamplitude
