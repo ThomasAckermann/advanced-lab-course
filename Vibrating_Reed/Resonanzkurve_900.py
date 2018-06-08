@@ -7,9 +7,9 @@ from scipy.stats import chi2
 def lorentz(omega_, omega_0, gamma, f_0):
     return f_0 / (np.sqrt((omega_0**2 - omega_**2)**2 + gamma**2 * omega_**2))
 
-def phase_tan(omega_, omega_0, gamma):
-    return np.arctan(gamma * omega_ / (omega_0**2 + omega_**2))
 
+def phase_tan(f, f_0, a, b, c):
+    return a * np.arctan((f - f_0) / b) + c
 
 # Daten laden
 # Gemittelte Werte laden
@@ -28,8 +28,8 @@ print(len(omega))
 # print(len(amplitude)) 
 
 # Fit Parameter
-popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega[200:-150], amplitude[200:-150], p0=[900, 20, 20], sigma=amplitude_err[150:-200])
-popt_phase, pcov_phase = [0,0]# curve_fit(phase_tan, omega[20:], phase[20:], p0=[50, 50], sigma=phase_err[20:])
+popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega[200:-180:5], amplitude[200:-180:5], p0=[910, 13, 20],sigma=amplitude_err[200:-180:5])
+popt_phase, pcov_phase = curve_fit(phase_tan, omega[:-80], phase[:-80], p0=[910, 20, 20, 2], sigma=phase_err[:-80])
 
 # x-Bereich
 omega_space = np.linspace(880, 930, 4000)
@@ -49,7 +49,7 @@ plt.title('Schwingungsamplitude [2]')
 # Plot für Phasendifferenz
 ax2 = plt.subplot(212)
 plt.errorbar(omega, phase, fmt='.', label='Messdaten')
-# plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
+plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
 plt.legend(loc='upper right')
 plt.xlim((880, 930))
 plt.ylim((-0.5, 3.5))
@@ -75,6 +75,10 @@ prob = np.round(1 - chi2.cdf(chi2_lorentz, dof_lorentz), 2) * 100
 print('chi2 Lorentz = ', chi2_lorentz)
 print('chi2_red Lorentz = ', chi2_red_lorentz)
 print('Fit Wahrscheinlichkeit Lorentz: ', prob, '%')
+
+guete = popt_lorentz[0] / popt_lorentz[2]
+delta_guete = np.sqrt((np.sqrt(pcov_lorentz[0][0]) / popt_lorentz[2])**2 + (popt_lorentz[0] * np.sqrt(pcov_lorentz[2][2]) / popt_lorentz[2]**2)**2)
+print('Güte Q = ', guete, '+/-', delta_guete)
 
 
 

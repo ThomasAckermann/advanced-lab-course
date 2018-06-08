@@ -8,7 +8,7 @@ def lorentz(omega_, omega_0, gamma, f_0):
     return f_0 / (np.sqrt((omega_0**2 - omega_**2)**2 + gamma**2 * omega_**2))
 
 def phase_tan(omega_, omega_0, gamma):
-    return np.arctan(gamma * omega_ / (omega_0**2 + omega_**2))
+    return np.arctan(gamma * omega_ / (omega_0**2 - omega_**2))
 
 
 # Daten laden
@@ -29,7 +29,7 @@ print(len(omega))
 
 # Fit Parameter
 popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega, amplitude, p0=[2530, 20, 20], sigma=amplitude_err)
-popt_phase, pcov_phase = [0,0]# curve_fit(phase_tan, omega[20:], phase[20:], p0=[50, 50], sigma=phase_err[20:])
+popt_phase, pcov_phase = curve_fit(phase_tan, omega[20:], phase[20:], p0=[50, 50], sigma=phase_err[20:])
 
 # x-Bereich
 omega_space = np.linspace(2490.1, 2540.1, 4000)
@@ -44,12 +44,11 @@ plt.xlim((2490.1, 2540))
 plt.ylabel('Amplitude [$\mu V$]')
 plt.xlabel('Frequenz $\omega$ [Hz]')
 plt.title('Schwingungsamplitude [3]')
-# plt.plot(omega_space, lorentz(omega_space, *popt_lorentz), label='Lorentz-Fit')
 
 # Plot für Phasendifferenz
 ax2 = plt.subplot(212)
 plt.errorbar(omega, phase, fmt='.', label='Messdaten')
-# plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
+plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
 plt.legend(loc='upper right')
 plt.xlim((2490, 2540))
 plt.ylim((-0.5, 3.5))
@@ -75,6 +74,10 @@ prob = np.round(1 - chi2.cdf(chi2_lorentz, dof_lorentz), 2) * 100
 print('chi2 Lorentz = ', chi2_lorentz)
 print('chi2_red Lorentz = ', chi2_red_lorentz)
 print('Fit Wahrscheinlichkeit Lorentz: ', prob, '%')
+
+guete = popt_lorentz[0] / popt_lorentz[2]
+delta_guete = np.sqrt((np.sqrt(pcov_lorentz[0][0]) / popt_lorentz[2])**2 + (popt_lorentz[0] * np.sqrt(pcov_lorentz[2][2]) / popt_lorentz[2]**2)**2
+print('Güte Q = ', guete, '+/-', delta_guete)
 
 
 
