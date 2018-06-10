@@ -12,31 +12,31 @@ def lorentz(omega_, omega_0, gamma, f_0):
 
 # Daten laden
 # Gemittelte Werte laden
-omega = np.loadtxt('data/data_1.txt', skiprows=1, unpack=True)[0]
-amplitude = np.loadtxt('data/data_1.txt', skiprows=1, unpack=True)[1]
+omega = np.loadtxt('data/data_11.txt', skiprows=1, unpack=True)[0]
+amplitude = np.loadtxt('data/data_11.txt', skiprows=1, unpack=True)[1]
 # Fehler Daten laden
-amplitude_err = np.loadtxt('data/data_1.txt', skiprows=1, unpack=True)[5]
+amplitude_err = np.loadtxt('data/data_11.txt', skiprows=1, unpack=True)[5]
 
 # Fit Parameter
 popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega, amplitude, p0=[144, 20, 20])# , sigma=amplitude_err)
 
 # x-Bereich
-omega_space = np.linspace(115, 170, 4000)
+omega_space = np.linspace(115, 154, 4000)
 
 # Plot für Amplitude
 plt.errorbar(omega, amplitude, fmt='.', label='Messdaten', zorder=1)
 plt.plot(omega_space, lorentz(omega_space, *popt_lorentz), label='Lorentz-Fit', zorder=10)
 plt.legend(loc='upper right')
-plt.xlim((115, 170))
+plt.xlim((115, 154))
 plt.ylim((0,270))
 plt.ylabel('Amplitude [$\mu V$]')
 plt.xlabel('Frequenz $\omega$ [Hz]')
-plt.title('Schwingungsamplitude mit Temperatur von: 25.3°C')
+plt.title('Schwingungsamplitude mit Temperatur von: 45.0°C')
 
 plt.tight_layout()
 # f_gcf = plt.gcf()
 # f_gcf.set_size_inches(8.27, 11.69)
-plt.savefig('fig/Resonanz140_temp1.pdf')
+plt.savefig('fig/Resonanz140_temp11.pdf')
 
 # Fit Daten ausgeben
 # Schwingungsamplitude
