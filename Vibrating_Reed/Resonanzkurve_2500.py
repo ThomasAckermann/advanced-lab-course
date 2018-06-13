@@ -4,8 +4,8 @@ from scipy.optimize import curve_fit
 from scipy.stats import chi2
 
 # Fit Funktion
-def lorentz(omega_, omega_0, gamma, f_0):
-    return f_0 / (np.sqrt((omega_0**2 - omega_**2)**2 + gamma**2 * omega_**2))
+def lorentz(omega_, omega_0, gamma, f_0, c):
+    return f_0 / (np.sqrt((omega_0**2 - omega_**2)**2 + gamma**2 * omega_**2)) + c
 
 def phase_tan(omega_, omega_0, gamma):
     return np.arctan(gamma * omega_ / (omega_0**2 - omega_**2))
@@ -32,7 +32,7 @@ while (omega[-1] <= 2585):
 cos_teil = amplitude * np.cos(phase)
 sin_teil = amplitude * np.sin(phase)
 # Fit Parameter
-popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega[34:-40], amplitude[34:-40], p0=[2556, 300, 0.65], sigma=amplitude_err[34:-40])
+popt_lorentz, pcov_lorentz = curve_fit(lorentz, omega, amplitude, p0=[2556, 300, 0.65, 2], sigma=amplitude_err)
 popt_linear, pcov_linear = curve_fit(linear, omega[70:-68], cos_teil[70:-68])
 # x-Bereich
 omega_space = np.linspace(2520, 2600, 5000)
@@ -42,6 +42,7 @@ ax1 = plt.subplot(311)
 plt.errorbar(omega, amplitude, fmt='.', label='Messdaten', zorder=1)
 plt.plot(omega, cos_teil, '.', label='$U_1 = A \cos(\phi)$')
 plt.plot(omega, sin_teil, '.', label='$U_2 = A \cos(\phi)$')
+# plt.plot(omega_space, lorentz(omega_space, *popt_lorentz))
 plt.plot(omega_space_linear, linear(omega_space_linear, *popt_linear), label='Linearer Fit')
 plt.legend(loc='upper right')
 plt.xlim((2525, 2590))
@@ -98,14 +99,24 @@ plt.title('Residuals [3]')
 
 
 
-print('############################################')
-guete_2 = omega_r / ((np.argmax(cos_teil) - np.argmin(cos_teil)) * step)
-guete_2_err = omega_r_err / ((np.argmax(cos_teil) - np.argmin(cos_teil)) * step)
-print('Guete 2: ', guete_2, '+/-', guete_2_err)
 
 
 plt.tight_layout(pad=0.3, w_pad=0.3, h_pad=0.3)
 f_gcf = plt.gcf()
 f_gcf.set_size_inches(8.27, 11.69)
 plt.savefig('fig/Resonanzkurve_2500.pdf')
+
+print('Resonanzfrequenz 2')
+omega_r_2 = - popt_linear[1] / popt_linear[0]
+omega_r_2_err = np.sqrt( (np.sqrt(pcov_linear[1][1])/popt_linear[0])**2 + (popt_linear[1]* np.sqrt(pcov_linear[0][0])/(popt_linear[0]**2))**2)
+print('Resonanzfrequenz 2: ', omega_r_2, '+/-', omega_r_2_err)
+
+
+
+
+
+print('############################################')
+guete_2 = omega_r_2 / ((np.argmax(cos_teil) - np.argmin(cos_teil)) * step)
+guete_2_err = omega_r_2_err / ((np.argmax(cos_teil) - np.argmin(cos_teil)) * step)
+print('Guete 2: ', guete_2, '+/-', guete_2_err)
 

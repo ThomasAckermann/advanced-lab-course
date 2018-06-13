@@ -131,4 +131,7 @@ guete_2_err = omega_r_err / ((np.argmax(cos_teil) - np.argmin(cos_teil)) * step)
 print('Guete 2: ', guete_2, '+/-', guete_2_err)
 
 
-
+print('Resonanzfrequenz 2')
+omega_r_2 = - popt_linear[1] / popt_linear[0]
+omega_r_2_err = np.sqrt( (np.sqrt(pcov_linear[1][1])/popt_linear[0])**2 + (popt_linear[1]* np.sqrt(pcov_linear[0][0])/(popt_linear[0]**2))**2)
+print('Resonanzfrequenz 2: ', omega_r_2, '+/-', omega_r_2_err)
