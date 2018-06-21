@@ -55,7 +55,7 @@ plt.title('Schwingungsamplitude [2]')
 # Plot für Phasendifferenz
 ax2 = plt.subplot(312)
 plt.errorbar(omega, phase, fmt='.', label='Messdaten')
-plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
+# plt.plot(omega_space, phase_tan(omega_space, *popt_phase), label='Phase-Fit')
 plt.legend(loc='upper left')
 plt.xlim((880, 930))
 plt.ylim((-0.5, 3.5))
