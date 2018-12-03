@@ -1,0 +1,3 @@
+bild = snapshot(cam);
+figure1 = figure
+bild_grau = rgb2gray(bild_rgb)

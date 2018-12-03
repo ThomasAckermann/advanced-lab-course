@@ -1,0 +1,6 @@
+cmake_minimum_required(VERSION 2.8)
+project(Aufgabe4)
+find_package(ITK REQUIRED)
+include(${ITK_USE_FILE})
+add_executable(Aufgabe4 MACOSX_BUNDLE aufgabe4.cxx)
+target_link_libraries(Aufgabe4 ${ITK_LIBRARIES})

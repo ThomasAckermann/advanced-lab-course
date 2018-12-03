@@ -1,0 +1,3 @@
+C:/FP/Allgemein/Aaron_Thomas/aufgabe4/build/CMakeFiles/Aufgabe4.dir
+C:/FP/Allgemein/Aaron_Thomas/aufgabe4/build/CMakeFiles/ALL_BUILD.dir
+C:/FP/Allgemein/Aaron_Thomas/aufgabe4/build/CMakeFiles/ZERO_CHECK.dir

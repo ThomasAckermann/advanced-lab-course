@@ -1,0 +1,3 @@
+C:/FP/Allgemein/Aaron_Thomas/aufgabe3/build/CMakeFiles/Aufgabe3_Registrierung.dir
+C:/FP/Allgemein/Aaron_Thomas/aufgabe3/build/CMakeFiles/ALL_BUILD.dir
+C:/FP/Allgemein/Aaron_Thomas/aufgabe3/build/CMakeFiles/ZERO_CHECK.dir
