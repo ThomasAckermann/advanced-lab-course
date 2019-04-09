@@ -1,6 +1,12 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from scipy.optimize import curve_fit
 
+
+
+
+def func(x, a, b):
+    return a * x + b
 
 freq = np.array([10, 20, 30, 40, 50, 60, 70, 80, 90, 100, 110, 120, 130, 140, 
     150, 200, 250, 300, 350, 1000, 10000, 50000, 75000, 100000, 500000])
@@ -12,32 +18,35 @@ u_e_err = np.array([])
 ver = u_a / u_e
 # ver_err = np.sqrt((u_a_err/u_e)**2 + (u_a * u_e_err / u_e**2)**2 )
 
-coefficients_1 = np.polyfit(np.log(freq[:12]), ver[:12], 1)
-polynomial_1 = np.poly1d(coefficients_1)
-arr_log = np.logspace(1, 3, 990) # 9900)
-arr = np.arange(10, 1000, 1)
-ys = polynomial_1(np.log(freq[12:]))#polynomial_1(np.log(freq[:12]))
+
+
+x = np.linspace(10,300,100000)
+
+popt, pcov = curve_fit(func, np.log10(freq[:6]), np.log10(ver[:6]))# , sigma=ver_err)
+
 
 plt.plot(freq, ver, label='Messdaten')
-plt.plot(freq[12:], ys, label='Fit')
+plt.plot(x, 10**func(np.log10(x), *popt), label='Fit')
 
-max_v = np.max(ver) * np.ones(len(freq))
-max_sqrt = (np.max(ver)/np.sqrt(2)) * np.ones(len(freq))
+max_v = np.max(ver[15:]) * np.ones(len(freq))
+max_sqrt = (np.max(ver[15:])/np.sqrt(2)) * np.ones(len(freq))
 # print(np.abs(ys - max_sqrt[0]))
-a = np.argmin(np.abs(ys - max_sqrt[0]))
 
-print(a)
-print(arr[a])
+d = (10**func(np.log10(x), *popt)) - max_sqrt[0]
+
+a = np.argmin(np.abs(d))
+print('Grenzfrequenz: ', x[a])
 plt.plot(freq, max_v, label='max')
 plt.plot(freq, max_sqrt, label='max_sqrt')
 
 plt.xlabel('Frequenz $f$')
 plt.ylabel('Verstaerkung $V$')
-plt.title('Abb. : Frequenzgang bei Emitterschaltung')
+plt.title('Abb. 1: Frequenzgang bei Emitterschaltung')
 plt.xscale('log')
+plt.yscale('log')
 plt.legend()
 plt.savefig('fig/emitter_frequenzgang.pdf')
-
+# plt.show()
 
 # maximum = np.max(ver)
 # print(maximum)
