@@ -1,0 +1,17 @@
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'ausarbeitung.blg'
+[43] biber-darwin:313> INFO - === Fri Apr 12, 2019, 08:28:34
+[66] Biber.pm:371> INFO - Reading 'ausarbeitung.bcf'
+[159] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[174] Biber.pm:3976> INFO - Processing section 0
+[191] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[193] bibtex.pm:1500> INFO - LaTeX decoding ...
+[200] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[205] Utils.pm:193> WARN - month field 'Jun' in entry 'ATL-OREACH-PUB-2018-001' is not an integer - this will probably not sort properly.
+[216] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[216] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[217] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[217] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[224] bbl.pm:617> INFO - Writing 'ausarbeitung.bbl' with encoding 'UTF-8'
+[225] bbl.pm:720> INFO - Output to ausarbeitung.bbl
+[225] Biber.pm:110> INFO - WARNINGS: 1

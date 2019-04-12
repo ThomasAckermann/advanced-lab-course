@@ -1,4 +1,4 @@
-\documentclass[12pt, a4paper, bibliography=totoc]{scrartcl}
+\documentclass[12pt, a4paper, bibliography=totoc]{scrreprt}
 
 
 %\input{~/Latex/article/article_config.tex}
@@ -46,25 +46,35 @@
 
 \tableofcontents
 
-\section{Introduction}
+
+\chapter*{Abstract}
+This is the abstract
+
+
+
+
+
+\chapter{Introduction}
 
 The goal of the lab course was to analyze data from the ATLAS experiment and 
 to calculate the mass of the $Z$ Boson.
 
-\subsection{Drell-Yan Process}
+\section{Drell-Yan Process}
 A $Z$ Boson can be created during the so called ``Drell-Yan'' Process.
 When a quark and an anti-quark collide either a virtual photon or a $Z$ Boson can be produced.
 
-\subsection{ATLAS Detector}
+\section{ATLAS Detector}
 The Detector consists of three main components: inner detector, calorimeters and the muon spectrometer.
 The inner detector is mainly used to reconstruct the trajectories of electrically charged particles.
 
 
 
-\section{Versuchsdurchführung}
+\chapter{Experimental procedure}
 
 
-
+\nocite{*}
+\appendix
+\printbibliography
 
 \end{document}
 
