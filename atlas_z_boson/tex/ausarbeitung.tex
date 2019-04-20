@@ -116,7 +116,25 @@ Feynmann diagramms ?
 the stored data about transvers impuls, the $\phi§$ degree and $\eta$ varible provide information about all the leptons recorded by the ATLAS detector and accordinlgy has more entries than the former analyzed data variables.
 
 \section{Calculation of the invariant mass of the $Z$ boson}
+According to the structure of the ATLAS detector, one can calculate the invariant mass in the following way:
 
+\begin{align}
+	M_{\mu} &= \sqrt{p_{\mu}p^{\mu}} = \sqrt{E_{1}E_{2}-\vec{p_{1}}\vec{p_{2}}}\\
+			&= \sqrt{E_{1}E_{2}-p_{T_{1}}p_{T_{2}} (\cos(\varphi_{1})\cos(\varphi_{2})+\sin(\varphi_{1})\sin(\varphi_{2})+\sinh(\eta_{1})\sinh(\eta_{2}))}
+\end{align}
+
+The first attempt to measure the mass was done by limiting the data to 2-lepton events. Further one ignored the events where $M_{\mu}^{2} < 0$. An attempt to calculate it with the above given formula and the build-in function TLorenz in ROOT provided the exact same result.\\
+As a result, the calculated results will be based on the ROOT method.
+
+\begin{figure}
+	\centering
+	\includegraphics[scale=0.5]{fig/mass_lz_log.pdf}
+	\caption{invariant Mass distribution from 2 lepton events}
+	\label{mass_lz_log}
+\end{figure}
+
+In ~\ref{mass_lz_log}, one can identify four peaks. The one on the right, at approximatly $91$ GeV, is the subject of this investigation and the goal is to characterize him better in the course of this papar.\\
+The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $Y$ decay. 
 \subsection{title} 
 \nocite{*}
 \appendix
