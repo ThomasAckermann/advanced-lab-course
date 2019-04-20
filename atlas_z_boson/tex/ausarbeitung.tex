@@ -1,14 +1,11 @@
 \documentclass[12pt, a4paper, bibliography=totoc]{scrreprt}
 
-
-%\input{~/Latex/article/article_config.tex}
-\input{config.tex}
-
 \title{Studying the $Z$ Boson with the ATLAS Detector at the LHC}
-\author{Aaron Mielke \& Thomas Ackermann}
+\author{Aarin Mielke \& Thomas Ackermann}
 
+
+\input{config.tex}
 \begin{document}
-
 
 \begin{center}
 	\makeatletter
@@ -44,14 +41,12 @@
 \normalsize
 \newpage
 
-\tableofcontents
-
 
 \chapter*{Abstract}
-This is the abstract
 
+Data from CERN in Geneva was analyzed in order to calculate the invariant mass of the $Z$ Boson
 
-
+\tableofcontents
 
 
 \chapter{Introduction}
@@ -61,34 +56,48 @@ to calculate the invariant mass of the $Z$ Boson.
 
 \section{The Standard Model of Particle Physics}
 
-The Standard Model of Particle Physics is the summarization of the known structure of matter.
-It implies, that matter is composed of the twelve elementary fermions with spin $\frac{1}{2}$, which are the quarks and leptons. Each of these particles has a corresponding anti-particle, which are equal except their opposite charge.
-\\
-\\
-Maybe the table?
-\\
-\\
-The interaction between these particles is divided in three categories and are mediated by bosons carrying spin 1. The weak force exchange particles are the massiv $Z$ and $W^{\pm}$ bosons, the massless photons for the electromagnetic force and eight massless gluons are mediating the strong force. 
+The Standard Model of Particle Physics (fig. \ref{fig:standard_model}) is the summarization of the known structure of matter.
+It implies, that matter is composed of the twelve elementary fermions with spin $\frac{1}{2}$, which are the quarks and leptons. 
+Each of these particles has a corresponding anti-particles, which are equal, except that they have opposite charge.
+
+\begin{figure}[h]
+	\centering
+    \includegraphics[scale=0.1]{fig/standard_model.png}
+	\caption{standard model of particle physics}
+    \label{fig:standard_model}
+\end{figure}
+
+There are three different interactions which are mediated by bosons carrying spin 1.
+The weak force exchange particles are the massiv $Z$ and $W^{\pm}$ bosons, the massless photons for the electromagnetic force and eight massless gluons are mediating the strong force. 
  
 \section{Drell-Yan Process}
-A $Z$ Boson can be created during the so called ``Drell-Yan'' Process. This process happens predominatly in proton-proton collisions.
-When a quark and an anti-quark collide either a virtual photon or a $Z$ Boson can be produced. 
-The $\gamma*$ or the $Z$ can then split into a lepton and its anti-particle partner like electron-positron or muon and anti-muon.
-The sum of the lepton and anti-particle partner momenta will then add up to the former boson momentum. A peak around 90 GeV will be observed correspondig to the $Z$ boson. 
+A $Z$ Boson can be created during the so called ``Drell-Yan'' Process. 
+This process happens predominatly in proton-proton collisions.
+When a quark and an anti-quark collide either a virtual photon $\gamma^\ast$ or a $Z$ Boson can be produced. 
+The $\gamma^\ast$ or the $Z$ can then split into a lepton and its anti-particle partner like electron-positron or muon and anti-muon.
+The sum of the lepton and anti-particle partner momenta will then add up to the former boson momentum. 
+A peak around $90$ \si{GeV} will be observed corresponding to the $Z$ boson. 
 
 \section{ATLAS Detector}
-The Detector consists of three main components: inner detector, calorimeters and the muon spectrometer. They are onion-like constructed. 
-The inner detector, the innermost layer, is mainly used to reconstruct the trajectories of electrically charged particles and to determine their momentum. With three aswell onion-like ordered tracking detectors, the pixel detector, the semi-conductor tracker and the transition radiation tracker, the inner detector can measure charged particles in a range of $|\eta| < 2.5$ and a $p_{T} > 400$ MeV.\\
+The Detector consists of three main components: inner detector, calorimeters and the muon spectrometer.
+They are onion-like constructed. 
+The inner detector, the innermost layer, is mainly used to reconstruct the trajectories of electrically charged particles and to determine their momentum. 
+With three aswell onion-like ordered tracking detectors, the pixel detector, the semi-conductor tracker and the transition radiation tracker, the inner detector can measure charged particles in a range of $\abs{\eta} < 2.5$ and a $p_{T} > 400$ \si{MeV}.\\
 
-The electromagnetic and the hadronic calorimeter allow to reconstruct the shower shapes of the showers from electromagnetically and strongly interacting particles. They are designed to contain the whole shower and cover a range up to $|\eta| < 4.9$. A precise energy measurement is possible.\\
+The electromagnetic and the hadronic calorimeter allow to reconstruct the shower shapes of the showers from electromagnetically and strongly interacting particles. 
+They are designed to contain the whole shower and cover a range up to $\abs{\eta} < 4.9$. 
+A precise energy measurement is possible.\\
 
-The outermost layer is the muon spectrometer. Muons would espace the ATLAS detector without it and can now be tracked. 
+The outermost layer is the muon spectrometer.
+Muons would espace the ATLAS detector without it and can now be tracked. 
 
 
 \chapter{Experimental procedure}
 
 \section{Get to known the data}
-Before starting with the computation of the mass of the $Z$ bosons. One has to make oneself familiar with the provided data from the ATLAS detector. The given data is preselected. One only has data from events where a primary vertex was found and at least one lepton has to have a minimal transvers momnetum of $p_{T} = 25$ GeV.
+Before starting with the computation of the mass of the $Z$ bosons one has to make oneself familiar with the provided data of the ATLAS detector. 
+The given data is preselcted. 
+One only has data from events where a primary vertex was found and at least one lepton has to have a minimal transvers momnetum of $p_{T} = 25$ \si{GeV}.
 
 \subsection{Particle entrance}
 \begin{figure}
@@ -97,23 +106,27 @@ Before starting with the computation of the mass of the $Z$ bosons. One has to m
 	\caption{z-postion distribution, particle entrence in ATLAS detector}
 	\label{vxp_z}
 \end{figure}
-To check where the particle enter the detector, one can evaluate the given date for the vxp\_z variable. The results are shown in~\ref{vxp_z}. The mean is shifted for $-9$ mm. This confirms, that the given data is from 2012. The collision of bunchs was not calibrated to the $0.0$ position back then.
-Left and right to the mean are two maxima, which corresponds with the assumption above. A momentum change of 90 degrees is impossible and most of the collisions take place at the place of the first intersection.
+To check where the particle enter the detector, one can evaluate the given date for the vxp\_z variable. 
+The results are shown in fig. \ref{vxp_z}. The mean is shifted for $-9$ \si{mm}. 
+This confirms, that the given data is from 2012. 
+The collision of bunchs was not calibrated to the $0.0$ position back then.
+Left and right to the mean are two maxima, which corresponds with the assumption above. 
+A momentum change of $90$ degrees is impossible and most of the collisions take place at the place of the first intersection.
 
 \subsection{leptons per event}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.15]{fig/number_produced_leptons.png}
 	\caption{leptons recorded per event}
 	\label{lep_n}
 \end{figure}
-To figure out, if one found an $Z$ decay, one analysis the leptons per event value of the data[\ref{lep_n}].
+To figure out, if one found an $Z$ decay, one analysis the leptons per event value of the data (fig. \ref{lep_n}).
 Around the wanted 2 leptons, one gets many events with 1 and 3 leptons. For this events to happen, one needs a $W^{\pm}$ decay involved.
 
 Feynmann diagramms ?
 
 \subsection{data of the leptons}
-the stored data about transvers impuls, the $\phi§$ degree and $\eta$ varible provide information about all the leptons recorded by the ATLAS detector and accordinlgy has more entries than the former analyzed data variables.
+The stored data about transvers impuls, the $\phi$ degree and $\eta$ varible provide information about all the leptons recorded by the ATLAS detector and accordinlgy has more entries than the former analyzed data variables.
 
 \section{Calculation of the invariant mass of the $Z$ boson}
 According to the structure of the ATLAS detector, one can calculate the invariant mass in the following way:
@@ -126,7 +139,7 @@ According to the structure of the ATLAS detector, one can calculate the invarian
 The first attempt to measure the mass was done by limiting the data to 2-lepton events. Further one ignored the events where $M_{\mu}^{2} < 0$. An attempt to calculate it with the above given formula and the build-in function TLorenz in ROOT provided the exact same result.\\
 As a result, the calculated results will be based on the ROOT method.
 
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{fig/mass_lz_log.pdf}
 	\caption{invariant Mass distribution from 2 lepton events}
@@ -135,7 +148,7 @@ As a result, the calculated results will be based on the ROOT method.
 
 In ~\ref{mass_lz_log}, one can identify four peaks. The one on the right, at approximatly $91$ GeV, is the subject of this investigation and the goal is to characterize him better in the course of this papar.\\
 The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $Y$ decay. 
-\subsection{title} 
+
 \nocite{*}
 \appendix
 \printbibliography
