@@ -61,17 +61,27 @@ It implies, that matter is composed of the twelve elementary fermions with spin 
 Each of these particles has a corresponding anti-particles, which are equal, except that they have opposite charge.
 
 \begin{figure}[h]
-	\centering
-    \includegraphics[scale=0.1]{fig/standard_model.png}
-	\caption{standard model of particle physics}
-    \label{fig:standard_model}
+\centering
+\includegraphics[scale=0.13]{fig/standard_model.png}
+\caption{standard model of particle physics}
+\label{fig:standard_model}
 \end{figure}
 
 There are three different interactions which are mediated by bosons carrying spin 1.
 The weak force exchange particles are the massiv $Z$ and $W^{\pm}$ bosons, the massless photons for the electromagnetic force and eight massless gluons are mediating the strong force. 
  
 \section{Drell-Yan Process}
-A $Z$ Boson can be created during the so called ``Drell-Yan'' Process. 
+A $Z$ Boson can be created during the so called ``Drell-Yan'' Process (fig. \ref{fig:drell_yan}). 
+
+
+\begin{figure}[h]
+\centering
+\includegraphics[scale=1]{fig/feynman_1.pdf}
+\caption{Drell-Yan process}
+\label{fig:drel_yan}
+\end{figure}
+
+
 This process happens predominatly in proton-proton collisions.
 When a quark and an anti-quark collide either a virtual photon $\gamma^\ast$ or a $Z$ Boson can be produced. 
 The $\gamma^\ast$ or the $Z$ can then split into a lepton and its anti-particle partner like electron-positron or muon and anti-muon.
@@ -94,23 +104,23 @@ Muons would espace the ATLAS detector without it and can now be tracked.
 
 \chapter{Experimental procedure}
 
-\section{Get to known the data}
+\section{Getting familiar with the data}
 Before starting with the computation of the mass of the $Z$ bosons one has to make oneself familiar with the provided data of the ATLAS detector. 
-The given data is preselcted. 
-One only has data from events where a primary vertex was found and at least one lepton has to have a minimal transvers momnetum of $p_{T} = 25$ \si{GeV}.
+The given data is preselected. 
+One only has data from events where a primary vertex was found and at least one lepton has a minimal transverse momentum of $p_{T} = 25$ \si{GeV}.
 
 \subsection{Particle entrance}
-\begin{figure}
+\begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{fig/vxp_z_redo.pdf}
-	\caption{z-postion distribution, particle entrence in ATLAS detector}
+	\caption{$z$-postion distribution, particle entrence in ATLAS detector}
 	\label{vxp_z}
 \end{figure}
 To check where the particle enter the detector, one can evaluate the given date for the vxp\_z variable. 
-The results are shown in fig. \ref{vxp_z}. The mean is shifted for $-9$ \si{mm}. 
-This confirms, that the given data is from 2012. 
-The collision of bunchs was not calibrated to the $0.0$ position back then.
-Left and right to the mean are two maxima, which corresponds with the assumption above. 
+The results are shown in fig. \ref{vxp_z}.
+The mean is shifted for $-9$ \si{mm}. 
+This confirms, that the given data is from 2012 because collisions of bunches were not calibrated to the $0.0$ position back then.
+Left and right to the mean are two maxima, which can also be explained with the assumption above. 
 A momentum change of $90$ degrees is impossible and most of the collisions take place at the place of the first intersection.
 
 \subsection{leptons per event}
@@ -136,18 +146,56 @@ According to the structure of the ATLAS detector, one can calculate the invarian
 			&= \sqrt{E_{1}E_{2}-p_{T_{1}}p_{T_{2}} (\cos(\varphi_{1})\cos(\varphi_{2})+\sin(\varphi_{1})\sin(\varphi_{2})+\sinh(\eta_{1})\sinh(\eta_{2}))}
 \end{align}
 
-The first attempt to measure the mass was done by limiting the data to 2-lepton events. Further one ignored the events where $M_{\mu}^{2} < 0$. An attempt to calculate it with the above given formula and the build-in function TLorenz in ROOT provided the exact same result.\\
-As a result, the calculated results will be based on the ROOT method.
 
+An attempt to calculate it with the above given formula and the build-in function \verb*+TLorenz+ in \verb*+ROOT+ provided the exact same result. 
+The calculated results will therefore be based on the \verb*+ROOT+ method.
+
+
+The first attempt to measure the mass was done by limiting the data to 2-lepton events. 
+Further one ignored the events where $M_{\mu}^{2} < 0$. 
 \begin{figure}[h]
 	\centering
 	\includegraphics[scale=0.5]{fig/mass_lz_log.pdf}
-	\caption{invariant Mass distribution from 2 lepton events}
+	\caption{invariant Mass distribution of 2 lepton events}
 	\label{mass_lz_log}
 \end{figure}
 
-In ~\ref{mass_lz_log}, one can identify four peaks. The one on the right, at approximatly $91$ GeV, is the subject of this investigation and the goal is to characterize him better in the course of this papar.\\
-The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $Y$ decay. 
+In ~\ref{mass_lz_log}, one can identify four peaks. 
+The one on the right, at approximatly $91$ \si{GeV}, is the subject of this investigation and the goal is to characterize it better in the course of this paper.\\
+The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $\Upsilon$ decay. 
+
+\section{Selecting} 
+The next step was to assert restictions to the dataset in order to ensure that a $Z$ decay was meassured.
+The impact of each of the restrictions can be seen in fig. 
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{fig/mass_lz_log.pdf}
+	\caption{cutflow histogramm}
+	\label{fig:cutflow}
+\end{figure}
+
+\section{Comparing Data and MC Simulation}
+One can now ask how well the meassured data matches with the theory. 
+In order to do this one can do MC Simulations and then compare with the data (fig. \ref{fig:data_mc}).
+The results match really well.
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{fig/vergleich_data_mc_final.pdf}
+	\caption{Comparison of meassured data and MC simulation}
+	\label{fig:data_mc}
+\end{figure}
+
+\section{Fitting the $Z$ mass}
+The best fit can be achieved by computing a convolution of a Gauss and a Breit-Wigner Curve.
+The reason is the Doppler effect (?)
+
+\section{Determining efficiencies}
+
+
+\section{Systematic errors}
+
+
 
 \nocite{*}
 \appendix
