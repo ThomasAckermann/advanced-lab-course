@@ -166,18 +166,22 @@ The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $\Up
 
 \section{Selecting} 
 The next step was to assert restictions to the dataset in order to ensure that a $Z$ decay was meassured.
-The impact of each of the restrictions can be seen in fig. 
+The impact of each of the restrictions can be seen in fig.\ref{fig:cutflow}. 
 \begin{figure}[h]
 	\centering
-	\includegraphics[scale=0.5]{fig/mass_lz_log.pdf}
+	\includegraphics[scale=0.5]{fig/cutflow.pdf}
 	\caption{cutflow histogramm}
 	\label{fig:cutflow}
 \end{figure}
+The eventbased cuts (in fig.\ref{fig:cutflow} the first four columns) have close to no impact on the selection because the given raw data from ATLAS is preselected on event and physics object level.
+As seen, the highest cut impact provides the 2 lepton cut, which  is necessary for a $Z$ decay. ATLAS only required one well measured primary vertex to save it as an event.
+The cut with the second highest impact is the $p_{T}$ Cut. Due to the high mass of the $Z$ Boson, one can restrict oneself to leptons with at least $25$ GeV. The distribution of the transvers momenta from the two decay leptons peaks around half the $Z$ mass. 
+
 
 \section{Comparing Data and MC Simulation}
 One can now ask how well the meassured data matches with the theory. 
-In order to do this one can do MC Simulations and then compare with the data (fig. \ref{fig:data_mc}).
-The results match really well.
+In order to do this one can do MC Simulations and then compare with the data (fig. \ref{fig:data_mc}). Three MC simulations for the possible leptons after the $Z$ decay are analysed in the same way as in section 2.3 explained. One has to scale the results according to the luminosity of the ATLAS detector ($1 fb^{-1}$).
+The comparison yields matching results.
 
 \begin{figure}[h]
 	\centering
@@ -189,6 +193,14 @@ The results match really well.
 \section{Fitting the $Z$ mass}
 The best fit can be achieved by computing a convolution of a Gauss and a Breit-Wigner Curve.
 The reason is the Doppler effect (?)
+
+\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5]{fig/invar_z_mass.pdf}
+	\caption{Comparison of meassured data and MC simulation}
+	\label{fig:fit}
+\end{figure}
+
 
 \section{Determining efficiencies}
 
