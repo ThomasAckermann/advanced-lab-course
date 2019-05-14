@@ -1,0 +1,107 @@
+(* Content-type: application/mathematica *)
+
+(*** Wolfram Notebook File ***)
+(* http://www.wolfram.com/nb *)
+
+(* CreatedBy='Mathematica 7.0' *)
+
+(*CacheID: 234*)
+(* Internal cache information:
+NotebookFileLineBreakTest
+NotebookFileLineBreakTest
+NotebookDataPosition[       145,          7]
+NotebookDataLength[      2922,         98]
+NotebookOptionsPosition[      2627,         84]
+NotebookOutlinePosition[      2974,         99]
+CellTagsIndexPosition[      2931,         96]
+WindowFrame->Normal*)
+
+(* Beginning of Notebook Content *)
+Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"x", ",", "y", ",", 
+    RowBox[{"z", " ", "Projektion", " ", "von", " ", "Koord", " ", "gamma3"}],
+     ",", " ", 
+    RowBox[{
+     RowBox[{"delta3", " ", "auf", " ", "die", " ", "Ebene", " ", "y"}], "=", 
+     "1"}]}], "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"proX", "[", 
+     RowBox[{"gamma3_", ",", " ", "delta3_"}], "]"}], ":=", 
+    RowBox[{"2", "*", 
+     RowBox[{
+      RowBox[{"Sin", "[", 
+       RowBox[{"gamma3", "*", 
+        RowBox[{"Pi", "/", "180"}]}], "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"gamma3", "*", 
+           RowBox[{"Pi", "/", "180"}]}], "]"}], "*", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"delta3", "*", 
+           RowBox[{"Pi", "/", "180"}]}], "]"}]}], "+", "1"}], ")"}]}]}]}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"proY", "[", 
+     RowBox[{"gamma3_", ",", " ", "delta3_"}], "]"}], ":=", "1"}], 
+   "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"proZ", "[", 
+     RowBox[{"gamma3_", ",", " ", "delta3_"}], "]"}], ":=", 
+    RowBox[{
+     RowBox[{"-", "2"}], "*", 
+     RowBox[{"Sin", "[", 
+      RowBox[{"delta3", "*", 
+       RowBox[{"Pi", "/", "180"}]}], "]"}], "*", 
+     RowBox[{
+      RowBox[{"Cos", "[", 
+       RowBox[{"gamma3", "*", 
+        RowBox[{"Pi", "/", "180"}]}], "]"}], "/", 
+      RowBox[{"(", 
+       RowBox[{
+        RowBox[{
+         RowBox[{"Cos", "[", 
+          RowBox[{"gamma3", "*", 
+           RowBox[{"Pi", "/", "180"}]}], "]"}], "*", 
+         RowBox[{"Cos", "[", 
+          RowBox[{"delta3", "*", 
+           RowBox[{"Pi", "/", "180"}]}], "]"}]}], "+", "1"}], 
+       ")"}]}]}]}]}]}]], "Input",
+ CellChangeTimes->{{3.6277147253409224`*^9, 3.627714960730736*^9}, {
+  3.627715060976512*^9, 3.627715087543359*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", 
+   RowBox[{"Listen", " ", "f\[UDoubleDot]r", " ", "Breitengrade"}], "*)"}], 
+  "\[IndentingNewLine]"}]], "Input",
+ CellChangeTimes->{{3.627715094578971*^9, 3.6277151357630434`*^9}}]
+},
+WindowSize->{607, 750},
+WindowMargins->{{611, Automatic}, {159, Automatic}},
+FrontEndVersion->"7.0 for Microsoft Windows (64-bit) (November 10, 2008)",
+StyleDefinitions->"Default.nb"
+]
+(* End of Notebook Content *)
+
+(* Internal cache information *)
+(*CellTagsOutline
+CellTagsIndex->{}
+*)
+(*CellTagsIndex
+CellTagsIndex->{}
+*)
+(*NotebookFileOutline
+Notebook[{
+Cell[545, 20, 1853, 55, 152, "Input"],
+Cell[2401, 77, 222, 5, 52, "Input"]
+}
+]
+*)
+
+(* End of internal cache information *)
