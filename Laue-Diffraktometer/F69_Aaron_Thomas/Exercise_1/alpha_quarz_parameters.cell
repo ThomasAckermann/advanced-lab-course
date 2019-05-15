@@ -1,0 +1,7 @@
+<!DOCTYPE Crystal>
+<Crystal>
+ <Spacegroup symbol="154"/>
+ <Cell beta="90.00000000000001" gamma="120" alpha="90.00000000000001" a="4.9137" b="4.9137" c="5.4047"/>
+ <Orientation phi="0" omega="-0" chi="0"/>
+ <RotationAxis x="1" y="0" z="0" type="0"/>
+</Crystal>
