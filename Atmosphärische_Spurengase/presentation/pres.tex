@@ -1,0 +1,32 @@
+\documentclass{beamer}
+\input{config.tex}
+
+\usepackage{algpseudocode}
+
+\newtheorem{lem}{Lemma}
+%\newtheorem{th}{Theorem}
+%\newtheorem{cor}{Corollary}
+
+\title{Atmosphärische Spurensuche}
+\author{Aaron Mielke \& Thomas Ackermann}
+\date{\today}
+
+
+\begin{document}
+
+\maketitle
+
+% \tableofcontents
+
+\begin{frame}
+\frametitle{Tensor-Train Decomposition}
+Tensor-Train format:
+\begin{align*}
+    A (i_1, \ldots, i_d) = \sum_{\alpha_1, \ldots , \alpha_{d-1}}&  G^{(1)} (i_1, \alpha_1) \cdot G^{(2)}(\alpha_1, i_2, \alpha_2) \cdot \ldots \\
+   & \cdot G^{(d)} (\alpha_{d-1}, i_d) 
+\end{align*}
+Where $G^{(k)}$ is a $r_{k-1} \times n_k \times r_k$ tensor.
+\end{frame}
+
+
+\end{document}
