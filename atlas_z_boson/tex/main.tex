@@ -65,7 +65,7 @@ Each of these particles has a corresponding anti-particles, which are equal, exc
 %\begin{figure}%[h]
 %\centering
     \begin{center}
-    \includegraphics[width=\linewidth]{fig/standard_model.png}
+    \includegraphics[width=0.9\linewidth]{fig/standard_model.png}
     \captionof{figure}{standard model of particle physics}
 \label{fig:standard_model}
     \end{center}
@@ -221,9 +221,9 @@ Possible decays are shown in \ref{fig:three_lepton}
 \subsubsection{Data of the leptons}
 The stored data about transvers impuls, the $\phi$ degree and $\eta$ varible provide information about all the leptons recorded by the ATLAS detector and accordinlgy has more entries than the former analyzed data variables.
 \begin{center}
-    \includegraphics[width=\linewidth]{fig/lep_eta_redo.pdf}
-    \includegraphics[width=\linewidth]{fig/lep_phi_redo.pdf}
-    \includegraphics[width=\linewidth]{fig/lep_pt_redo.pdf}
+    \includegraphics[width=\linewidth]{fig/p_T_final.pdf}
+    \includegraphics[width=\linewidth]{fig/eta_final.pdf}
+    \includegraphics[width=\linewidth]{fig/phi_final.pdf}
     \captionof{figure}{Distributions of $\eta$, $\phi$ and $p_t$}
 \end{center}
 
@@ -255,6 +255,11 @@ The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $\Up
 
 \subsection{Selecting} 
 The next step was to assert restictions to the dataset in order to ensure that a $Z$ decay was meassured.
+The restrictions that were used are:
+\begin{enumerate}
+    \item \textbf{Weights} 
+\end{enumerate}
+
 The impact of each of the restrictions can be seen in fig.\ref{fig:cutflow}. 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/cutflow.pdf}
@@ -266,9 +271,10 @@ As seen, the highest cut impact provides the 2 lepton cut, which  is necessary f
 The cut with the second highest impact is the $p_{T}$ Cut. Due to the high mass of the $Z$ Boson, one can restrict oneself to leptons with at least $25$ GeV. The distribution of the transvers momenta from the two decay leptons peaks around half the $Z$ mass. 
 
 
-\subsection{Comparing Data and MC Simulation}
+\subsection{Comparing Data and Monte Carlo Simulation}
 One can now ask how well the meassured data matches with the theory. 
-In order to do this one can do MC Simulations and then compare with the data (fig. \ref{fig:data_mc}). Three MC simulations for the possible leptons after the $Z$ decay are analysed in the same way as in section 2.3 explained. One has to scale the results according to the luminosity of the ATLAS detector ($1 fb^{-1}$).
+In order to do this one can perform Monte Carlo (MC) simulations and then compare with the data (fig. \ref{fig:data_mc}). 
+Three MC simulations for the possible leptons after the $Z$ decay are analysed in the same way as in section 2.3 explained. One has to scale the results according to the luminosity of the ATLAS detector ($1 fb^{-1}$).
 The comparison yields matching results.
 
 \begin{center}
@@ -290,11 +296,11 @@ The reason is the Doppler effect (?)
 
 \subsection{Determining efficiencies}
 For determining the efficiency of the identification the tag and probe method (which was introduced earlier) is used.
-The efficiency was computed for the MC-Simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}
+The efficiency was computed for the MC simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}
 
 \begin{center}
-    \includegraphcis[width=\linewidth]{fig/efficiency_comparison.pdf}
-    \caption{figure}{Comparison of the efficiencies of the MC-simulation and the real data}
+    \includegraphics[width=\linewidth]{fig/efficency_comparison.pdf}
+    \captionof{figure}{Comparison of the efficiencies of the MC simulation and the real data}
     \label{fig:efficiency_comp}
 \end{center}
 
@@ -302,8 +308,6 @@ The efficiency was computed for the MC-Simulation and for the real data and can 
 \section{Discussion}
 
 \subsection{Systematic errors}
-
-\section{}
 
 \nocite{*}
 \appendix
