@@ -152,7 +152,7 @@ Breit-Wigner Distribution:
 \begin{align}
     f_{\text{BW}} = \frac{\mathcal{N} k}{(E^2 - M^2)^2 + M^2 \Gamma^2} ,
 \end{align}
-with $k = \frac{M\Gamma \gamma \sqrt{8}}{\pi \sqrt{M^2 + \gamma}}$ and $\gamma = M \sqrt{M^2 + \Gamma^2}$. $Gamma$ is the decay width.\\
+with $k = \frac{M\Gamma \gamma \sqrt{8}}{\pi \sqrt{M^2 + \gamma}}$ and $\gamma = M \sqrt{M^2 + \Gamma^2}$. $\Gamma$ is the decay width.\\
 One also needs a third distributions which is the convolution of the Gauss and the Breit-Wigner Distribution in order to account for the uncertainties caused the detector.
 The Breit-Wigner describes the physical decay process. 
 However it does not consider the energy uncertainties which can be recognized by the gaussian distribution.
@@ -219,14 +219,21 @@ Possible decays are shown in \ref{fig:three_lepton}
 \end{center}
 
 \subsubsection{Data of the leptons}
-The stored data about transvers impuls, the $\phi$ degree and $\eta$ varible provide information about all the leptons recorded by the ATLAS detector and accordinlgy has more entries than the former analyzed data variables.
+%The stored data about transvers impuls, the $\phi$ degree and $\eta$ varible provide %information about all the leptons recorded by the ATLAS detector and accordinlgy has more %
+%entries than the former analyzed data variables.
+The stored data about the transverse momentum, the $\phi$ degree and the $\eta$ variable gives insight about the geometry and the data saving of the ATLAS experiment.
 \begin{center}
     \includegraphics[width=\linewidth]{fig/p_T_final.pdf}
+    \captionof{figure}{Distributions of $p_T$}
+\end{center}    
+One can identify a sharp rise at $25$ GeV for the transverse momentum. At ATLAS only events with at least one lepton above this threshold will be stored.
+\begin{center}
     \includegraphics[width=\linewidth]{fig/eta_final.pdf}
     \includegraphics[width=\linewidth]{fig/phi_final.pdf}
-    \captionof{figure}{Distributions of $\eta$, $\phi$ and $p_t$}
+    \captionof{figure}{Distributions of $\eta$ and $\phi$}
 \end{center}
-
+From the geometry one assumes an even distribution for the $\phi$ and $\eta$ values.
+It only applies for the first. The $\eta$ value has areas with a lack of data entries. This is a setback of the ATLAS geometry seen in fig. \ref{fig:cross_section_detector}. Around $\eta = 1.8$, one misses the Barrel or the Endcap who are necessary for the event recognition. 
 
 \subsection{Calculation of the invariant mass of the $Z$ boson}
 According to the structure of the ATLAS detector, one can calculate the invariant mass in the following way:
@@ -257,7 +264,19 @@ The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $\Up
 The next step was to assert restictions to the dataset in order to ensure that a $Z$ decay was meassured.
 The restrictions that were used are:
 \begin{enumerate}
-    \item \textbf{Weights} 
+    \item \textbf{Weights}: 
+    Applies a weight to the events in the MC files, in contrast each event in real data counts as one event.
+    \item \textbf{Trigger}: events pass if the applied trigger identifies a $Z$ decay into an electron or muon pair.
+    \item \textbf{GRL}: The Good Run List only allows events where meaningful data for physical analysis is gatherd.
+    \item \textbf{Vertex}: Requires al least one well measured vertex per event.
+    \item \textbf{2 Leptons}: Restrict the data to 2 lepton events.
+    \item \textbf{PDGID}: A number is assigned to each particle through a track reconstruction in the detectors. $e$, $\mu$ and $\tau$ are respectivly identified with the integers 11, 13, and 15.
+    \item \textbf{Charge}: Checks if the leptons from the $Z$ decay have opposit charge.
+    \item \textbf{$p_{T}$ Cut}: Set an lower limit for the lepton energy to acknowledge the high $Z$ mass.
+    \item \textbf{Isolation}: Events pass if the observed leptons are well distinguishable from the background.
+    \item \textbf{Tight ID}: Lepton reconstruction algorithms allow to label leptons. Only ones labeled with "tight" will proceed.
+    \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it. 
+        
 \end{enumerate}
 
 The impact of each of the restrictions can be seen in fig.\ref{fig:cutflow}. 
@@ -267,8 +286,9 @@ The impact of each of the restrictions can be seen in fig.\ref{fig:cutflow}.
 	\label{fig:cutflow}
 \end{center}
 The eventbased cuts (in fig.\ref{fig:cutflow} the first four columns) have close to no impact on the selection because the given raw data from ATLAS is preselected on event and physics object level.
-As seen, the highest cut impact provides the 2 lepton cut, which  is necessary for a $Z$ decay. ATLAS only required one well measured primary vertex to save it as an event.
-The cut with the second highest impact is the $p_{T}$ Cut. Due to the high mass of the $Z$ Boson, one can restrict oneself to leptons with at least $25$ GeV. The distribution of the transvers momenta from the two decay leptons peaks around half the $Z$ mass. 
+The most impact provides the 2 lepton Cut. As seen in \ref{lep_n}, most of the events do not fulfill this criteria.
+%As seen, the highest cut impact provides the 2 lepton cut, which  is necessary for a $Z$ %decay. ATLAS only required one well measured primary vertex to save it as an event.
+%The cut with the second highest impact is the $p_{T}$ Cut. Due to the high mass of the $Z$ %Boson, one can restrict oneself to leptons with at least $25$ GeV. The distribution of the %transvers momenta from the two decay leptons peaks around half the $Z$ mass. 
 
 
 \subsection{Comparing Data and Monte Carlo Simulation}
@@ -284,8 +304,7 @@ The comparison yields matching results.
 \end{center}
 
 \subsection{Fitting the $Z$ mass}
-The best fit can be achieved by computing a convolution of a Gauss and a Breit-Wigner Curve.
-The reason is the Doppler effect (?)
+\ref{fig:fit} underlines the assumption from section 1.5, the best fit is provided by the convolution of a gaussian and a Breit-Wigner distribution. 
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/invar_z_mass.pdf}
@@ -293,10 +312,23 @@ The reason is the Doppler effect (?)
 	\label{fig:fit}
 \end{center}
 
+One can determine the mass of the $Z$ boson and the decay width to: 
 
+\begin{align}
+M_Z &= (90.634 \pm 0.005) \ \text{GeV}\\
+\Gamma &= (3.529 \pm 0.015) \ \text{GeV}
+\end{align}
+
+A comparison of the results with the values (table \ref{table:zboson}) of the Particle Data Group yields differences of the order $1$ GeV.
+ 
+\begin{align}
+\Delta M_Z &= (0.554 \pm 0.005) \ \text{GeV}\\
+\Delta \Gamma &= (1.034 \pm 0.015) \ \text{GeV}
+\end{align}
+ 
 \subsection{Determining efficiencies}
 For determining the efficiency of the identification the tag and probe method (which was introduced earlier) is used.
-The efficiency was computed for the MC simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}
+The efficiency was computed for the MC simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}.
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/efficency_comparison.pdf}
@@ -304,10 +336,22 @@ The efficiency was computed for the MC simulation and for the real data and can 
     \label{fig:efficiency_comp}
 \end{center}
 
+One achieves an efficiency for this method of approximatly $90-95\%$ over the whole momentum sprectrum, which is not influenced by the applied \textit{$p_T$ Cut}.
 
 \section{Discussion}
+The diffrence between the calculated result and the litrature value of the $Z$ mass yields an underestimation of the involved errors. This is true, for the lab course one neglects all sorts of error, only the error according to the fit is recognised.
+Just from the volume of the data, one assumes that the stastical error is reduced to a minimum. The uncertainty scales with $\frac{1}{\sqrt{N}}$.
+For the provided data one concludes, that $\Delta_{stat.} \ll \Delta_{syst.}$.
+Various factors contribute to systematic errors. The variance of the convoluted fit ($\sigma = (1.576 \pm 0.010)$ GeV) provides a first estimate about the exent of the errors.
+One of the prominent errors is the energy resolution in the calorimeter, which gets improved since the start of the ATLAS experiment. 
+Another major part, which influences the uncertainty, comes with the diffrent used triggers.
+Firstly, to record an event, triggers have to be passed which work with unknown efficiency. 
+Later on, at the analysis of the data, one implements various filters (explained above). With more time the used thresholds could be optimized.
+As the diffrence of the values implies, a good understanding and recognition of the systematic uncertainties is necessary to improve the results.\\
+\\
+Nevertheless, after one made oneself familiar with \verb*+ROOT+ and the data, aswell with the Monte Carlo files, one was able to get insight into modern analysis in particle physics. The results ,even without extensiv error aknowledgment, verifies the used approach to identify the $Z$ boson mass.  
 
-\subsection{Systematic errors}
+%\subsection{Systematic errors}
 
 \nocite{*}
 \appendix
