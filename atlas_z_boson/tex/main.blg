@@ -1,48 +1,19 @@
-This is BibTeX, Version 0.99d (TeX Live 2018/Arch Linux)
-Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
-The top-level auxiliary file: main.aux
-I found no \citation commands---while reading file main.aux
-I found no \bibdata command---while reading file main.aux
-I found no \bibstyle command---while reading file main.aux
-You've used 0 entries,
-            0 wiz_defined-function locations,
-            83 strings with 482 characters,
-and the built_in function-call counts, 0 in all, are:
-= -- 0
-> -- 0
-< -- 0
-+ -- 0
-- -- 0
-* -- 0
-:= -- 0
-add.period$ -- 0
-call.type$ -- 0
-change.case$ -- 0
-chr.to.int$ -- 0
-cite$ -- 0
-duplicate$ -- 0
-empty$ -- 0
-format.name$ -- 0
-if$ -- 0
-int.to.chr$ -- 0
-int.to.str$ -- 0
-missing$ -- 0
-newline$ -- 0
-num.names$ -- 0
-pop$ -- 0
-preamble$ -- 0
-purify$ -- 0
-quote$ -- 0
-skip$ -- 0
-stack$ -- 0
-substring$ -- 0
-swap$ -- 0
-text.length$ -- 0
-text.prefix$ -- 0
-top$ -- 0
-type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 0
-write$ -- 0
-(There were 3 error messages)
+[0] Config.pm:302> INFO - This is Biber 2.11
+[0] Config.pm:305> INFO - Logfile is 'main.blg'
+[41] biber-darwin:313> INFO - === Fri May 17, 2019, 15:11:53
+[71] Biber.pm:371> INFO - Reading 'main.bcf'
+[179] Biber.pm:854> INFO - Using all citekeys in bib section 0
+[194] Biber.pm:3976> INFO - Processing section 0
+[207] Biber.pm:4136> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[209] bibtex.pm:1500> INFO - LaTeX decoding ...
+[242] bibtex.pm:1316> INFO - Found BibTeX data source 'bibliography.bib'
+[281] Utils.pm:193> WARN - ISBN '978-1-107-03426-6 and 1-107-03426-4' in entry 'UBHD-67475342' is invalid - run biber with '--validate_datamodel' for details.
+[299] Utils.pm:193> WARN - month field 'Aug' in entry 'ATL-OREACH-PUB-2016-001' is not an integer - this will probably not sort properly.
+[300] Utils.pm:193> WARN - month field 'Jun' in entry 'ATL-OREACH-PUB-2018-001' is not an integer - this will probably not sort properly.
+[328] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[329] UCollate.pm:68> INFO - Overriding locale 'en-US' defaults 'variable = shifted' with 'variable = non-ignorable'
+[330] Biber.pm:3804> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'en-US'
+[331] Biber.pm:3810> INFO - No sort tailoring available for locale 'en-US'
+[355] bbl.pm:617> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[359] bbl.pm:720> INFO - Output to main.bbl
+[359] Biber.pm:110> INFO - WARNINGS: 3
