@@ -21,17 +21,16 @@
 	\makeatother
 \end{center}
 \section*{Abstract}
-The experiment was conducted in the scope of the advanced lab course in physics at the Heidelberg University. \\
+The experiment was conducted in the week of the $8^\text{th}$ April, $2019$ in the scope of the advanced lab course in physics at the Heidelberg University. \\
 The goal was making oneself familiar with data analysis tools that are common in the field of particle physics.
-Therefore data from the ATLAS experiment at CERN (Geneva) was used to calculate the invariant mass of the $Z$ boson, one of the three bosons responsible for the weak interaction. \\
-The experiment was conducted in the week of the $8^\text{th}$ April, 2019.
+Therefore data from the ATLAS experiment at CERN (Geneva) was used to calculate the invariant mass of the $Z$ boson, one of the three bosons responsible for the weak interaction. 
 
 \tableofcontents
 \newpage
 \begin{multicols}{2}
 \section{Introduction}
 
-The main goal of the lab course is to analyze data from the ATLAS experiment with the library \verb*+ROOT+ for \verb*+Python+ and to calculate the invariant mass of the $Z$ Boson. 
+The main goal of the lab course was to analyze data from the ATLAS experiment with the library \verb*+ROOT+ for \verb*+Python+ and to calculate the invariant mass of the $Z$ Boson. 
 
 \subsection{The Standard Model of Particle Physics}
 
@@ -42,13 +41,13 @@ Each of these particles has a corresponding anti-particles, which are equal, exc
     \begin{center}
 \label{fig:standard_model}
     \includegraphics[width=0.9\linewidth]{fig/standard_model.png}
-    \captionof{figure}{standard model of particle physics}
+    \captionof{figure}{Standard model of particle physics}
     \end{center}
 
-There are three different interactions which are mediated by bosons carrying spin 1.
-    The weak force exchange particles are the massive $Z$ and $W^{\pm}$ bosons, the massless photons for the electromagnetic force and eight massless gluons are mediating the strong force. 
-    In this experiment the $Z$ Boson is especially important. Its properties are shown in table \ref{table:zboson}:
-    %\begin{table}
+There are three different interactions which are mediated by bosons carrying spin $1$.
+The exchange particles of the weak force are the massive $Z$ and $W^{\pm}$ bosons, the massless photons for the electromagnetic force and eight massless gluons are mediating the strong force. 
+The main interest of this experiment lies in the $Z$ Boson.
+Its properties are shown in table \ref{table:zboson}:
         \begin{center}
             \begin{tabular*}{\linewidth}{c c c}
         \toprule
@@ -60,7 +59,6 @@ There are three different interactions which are mediated by bosons carrying spi
             \captionof{table}{Properties of the $Z$ Boson}
         \label{table:zboson}
         \end{center}
-%\end{table}
 
 
 \subsection{Drell-Yan Process}
@@ -74,7 +72,7 @@ A $Z$ Boson can be created during the so called ``Drell-Yan'' Process (fig. \ref
 
 This process happens predominately in proton-proton collisions.
 When a quark and an anti-quark collide either a virtual photon $\gamma^\ast$ or a $Z$ Boson can be produced. 
-The $\gamma^\ast$ or the $Z$ can then split into a lepton and its anti-particle partner like electron-positron or muon and anti-muon.
+The $\gamma^\ast$ or the $Z$ can then split into a lepton and its anti-particle partner, like electron-positron or muon and anti-muon.
 The sum of the lepton and anti-particle partner momenta will then add up to the former boson momentum. 
 A peak around $90$ \si{GeV} will be observed corresponding to the $Z$ boson. 
 
@@ -82,29 +80,29 @@ A peak around $90$ \si{GeV} will be observed corresponding to the $Z$ boson.
 \subsubsection{Components}
 The Detector consists of three main components: inner detector, calorimeters and the muon spectrometer.
 They are onion-like constructed. 
-The inner detector, the innermost layer, is mainly used to reconstruct the trajectories of electrically charged particles and to determine their momentum. 
+The inner detector, the innermost layer, is mainly used to reconstruct the trajectories of electrically charged particles and to determine their momenta. 
 With three also onion-like ordered tracking detectors, the pixel detector, the semi-conductor tracker and the transition radiation tracker, the inner detector can measure charged particles in a range of $\abs{\eta} < 2.5$ and a $p_{T} > 400$ \si{MeV}.\\
 
-The electromagnetic and the hadronic calorimeter allow to reconstruct the shower shapes of the showers from electromagnetically and strongly interacting particles. 
-They are designed to contain the whole shower and cover a range up to $\abs{\eta} < 4.9$. 
+The electromagnetic and the hadronic calorimeter allow to reconstruct the shapes of the showers from electromagnetically and strongly interacting particles. 
+They are designed to contain the whole shower and cover a range of up to $\abs{\eta} < 4.9$. 
 A precise energy measurement is possible.\\
 The outermost layer is the muon spectrometer.
 Muons would escape the ATLAS detector without it and can now be tracked. 
 
 \subsubsection{Geometry of the detector}
 In figure \ref{fig:cross_section_detector} one can see a drawing of the cross section of the ATLAS detector, which has a rotational symmetry around the $z$-axis.
-A good understanding of the detector is necessary to compute the $Z$ bosons mass later on. 
-One introduces the so called pseudo rapidity $\eta$:
+A good understanding of the detector geometry is necessary to compute the $Z$ bosons mass later on. 
+One introduces the so called pseudo rapidity $\eta$
 \begin{align}
-    \eta = - \log \tan \left( \frac{\theta}{2} \right)
+    \eta = - \log \tan \left( \frac{\theta}{2} \right).
 \end{align}
-The components of the momentum of a given particle are:
+The components of the momentum of a given particle are
 \begin{align}
     p_x = p_T \cos \phi \\
-    p_y = p_T \sin \phi
+    p_y = p_T \sin \phi ,
 \end{align}
 where $p_T$ is the transversal momentum.
-By using the $\eta$ definition one can derive $p_z$ in the following way:
+By using the $\eta$ definition one can derive $p_z$ in the following way
 \begin{align}
     & p_z = p_t \cot \theta \\
     & \text{use: } \cot (2\arctan \e^{-x}) = \sinh x \\
@@ -118,29 +116,29 @@ By using the $\eta$ definition one can derive $p_z$ in the following way:
 
 \subsection{Distributions}
 For the experiment the following distributions are important.\\
-Gaussian distribution:
+\textbf{Gaussian distribution}
 \begin{align}
     f_{\text{G}} (E) = \frac{\mathcal{N}}{\sqrt{2 \pi \sigma^2}} \exp \left( - \frac{(E - \mu )^2}{2 \sigma^2} \right)
 \end{align}
-Breit-Wigner Distribution:
+\textbf{Breit-Wigner Distribution}
 \begin{align}
     f_{\text{BW}} = \frac{\mathcal{N} k}{(E^2 - M^2)^2 + M^2 \Gamma^2} ,
 \end{align}
-with $k = \frac{M\Gamma \gamma \sqrt{8}}{\pi \sqrt{M^2 + \gamma}}$ and $\gamma = M \sqrt{M^2 + \Gamma^2}$. $\Gamma$ is the decay width.\\
-One also needs a third distributions which is the convolution of the Gauss and the Breit-Wigner Distribution in order to account for the uncertainties caused the detector.
+where $k = \frac{M\Gamma \gamma \sqrt{8}}{\pi \sqrt{M^2 + \gamma}}$ and $\gamma = M \sqrt{M^2 + \Gamma^2}$. $\Gamma$ is the decay width.\\
+One also needs a third distributions which is the \textit{convolution} of the Gauss and the Breit-Wigner Distribution in order to account for the uncertainties, caused by the detector.
 The Breit-Wigner describes the physical decay process. 
-However it does not consider the energy uncertainties which can be recognized by the Gaussian distribution.
+However, it does not consider the energy uncertainties which can be accounted for by the Gaussian distribution.
 A convolution of two functions $(f \ast g)$ is defined as:
 \begin{align}
     (f \ast g) (x) = \int f(y)g(x-y)\dd y
 \end{align}
 \subsection{Efficiency}
 The efficiency of the measurements plays a crucial role. 
-At the ATLAS detector it consists of for components:
+At the ATLAS detector it consists of four components
 \begin{align}
-     \epsilon_{\text{tot}} =  \epsilon_{\text{recon}} \times \epsilon_{\text{id}} \times \epsilon_{\text{trig}} \times \epsilon_{\text{add}} 
+     \epsilon_{\text{tot}} =  \epsilon_{\text{recon}} \times \epsilon_{\text{id}} \times \epsilon_{\text{trig}} \times \epsilon_{\text{add}}  .
 \end{align}
-The focus on this experiment lies on the identification efficiency.
+The focus of this experiment lies on the identification efficiency.
 One can get an estimate for $\epsilon_{\text{id}}$ by using the so called tag and probe method.
 One searches for one event where two electrons are involved. 
 Now strict conditions are applied on one of the electrons, the \textit{tag} electron, 
@@ -159,12 +157,12 @@ One only has data from events where a primary vertex was found and at least one 
 
 \subsubsection{Particle entrance}
 \begin{center}
-	\includegraphics[width=0.8\linewidth]{fig/vxp_z_redo.pdf}
+	\includegraphics[width=0.8\linewidth]{fig/vxp_z_final.pdf}
     \captionof{figure}{$z$-position distribution, particle entrance in ATLAS detector}
 	\label{vxp_z}
 \end{center}
 To check where the particle entered the detector, one can evaluate the given data for the $vxp_z$ variable. 
-The results are shown in fig. \ref{vxp_z}.
+The results are shown in figure \ref{vxp_z}.
 The mean is shifted by $-9$ \si{mm}. 
 This confirms, that the given data is from 2012, because collisions of bunches were not calibrated to the $0.0$ position back then \cite{atlasbeamspot}.
 Left and right to the mean are two maxima, which can also be explained with the assumption above. 
@@ -173,12 +171,12 @@ A momentum change of $90 ^\circ$ is impossible and most of the collisions take p
 \subsubsection{leptons per event}
 
 \begin{center}
-	\includegraphics[width=0.8\linewidth]{fig/number_produced_leptons.png}
-    \captionof{figure}{leptons recorded per event}
+	\includegraphics[width=0.8\linewidth]{fig/lep_n_final.pdf}
+    \captionof{figure}{Leptons recorded per event}
 	\label{lep_n}
 \end{center}
 
-To figure out, if one found a $Z$ decay, one analysis the \textit{leptons per event} value of the data (fig. \ref{lep_n}).
+To figure out, if one found a $Z$ decay, one analyzes the \textit{leptons per event} value of the data (fig. \ref{lep_n}).
 Around the wanted two leptons, one gets many events with one and three leptons. 
 For these events to happen, one needs a $W^{\pm}$ decay.
 Possible decays are shown in \ref{fig:three_lepton}
@@ -191,7 +189,8 @@ Possible decays are shown in \ref{fig:three_lepton}
 \end{center}
 
 \subsubsection{Data of the leptons}
-One can identify a sharp rise at $25$ \si{GeV} for the transverse momentum. At ATLAS only events with at least one lepton above this threshold will be stored.
+One can identify a sharp rise at $25$ \si{GeV} for the transverse momentum. 
+At ATLAS only events with at least one lepton above this threshold will be stored.
 \begin{center}
     \includegraphics[width=0.8\linewidth]{fig/p_T_final.pdf}
     \captionof{figure}{Distributions of $p_T$}
@@ -203,32 +202,30 @@ The stored data (the $\phi$ angle and the $\eta$ variable) gives insight about t
     \captionof{figure}{Distributions of $\eta$ and $\phi$}
 \end{center}
 From the geometry one assumes an even distribution for the $\phi$ and $\eta$ values.
-It only applies for the first. The $\eta$ value has areas with a lack of data entries. 
-This is a setback of the ATLAS geometry seen in fig. \ref{fig:cross_section_detector}. 
+It only applies for the first. 
+The $\eta$ value has areas with a lack of data entries. 
+This is a setback of the ATLAS geometry seen in figure \ref{fig:cross_section_detector}. 
 Around $\eta = 1.8$, one misses the \textit{Barrel} or the \textit{Endcap} who are necessary for the event recognition. 
 
 \subsection{Calculation of the invariant mass of the $Z$ boson}
-According to the structure of the ATLAS detector, one can calculate the invariant mass in the following way:
+According to the structure of the ATLAS detector, one can calculate the invariant mass in the following way
 
 \begin{align}
-	M_{\mu} &= \sqrt{p_{\mu}p^{\mu}} = \sqrt{E_{1}E_{2}-\vec{p_{1}}\vec{p_{2}}}%\\
-			%&= \sqrt{E_{1}E_{2}-p_{T_{1}}p_{T_{2}} (\cos(\varphi_{1})\cos(\varphi_{2})+\sin(\varphi_{1})\sin(\varphi_{2})+\sinh(\eta_{1})\sinh(\eta_{2}))}
+	M_{\mu} &= \sqrt{p_{\mu}p^{\mu}} = \sqrt{E_{1}E_{2}-\vec{p_{1}}\vec{p_{2}}} .
+			%&= \sqrt{E_{1}E_{2}-p_{T_{1}}p_{T_{2}} (\cos(\varphi_{1})\cos(\varphi_{2})+\sin(\varphi_{1})\sin(\varphi_{2})+\sinh(\eta_{1})\sinh(\eta_{2}))} .
 \end{align}
-
-
 An attempt to calculate it with the above given formula and the build-in function \verb*+TLorenz+ in \verb*+ROOT+ provided the exact same result. 
 The calculated results will therefore be based on the \verb*+ROOT+ method.
 
-
-The first attempt to measure the mass was done by limiting the data to 2-lepton events. 
-Further one ignored the events where $M_{\mu}^{2} < 0$. 
+The first attempt to measure the mass was done by limiting the data to $2$-lepton events. 
+Furthermore, one ignored the events where $M_{\mu}^{2} < 0$. 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/mass_lz_log.pdf}
     \captionof{figure}{Invariant Mass distribution of 2 lepton events}
 	\label{mass_lz_log}
 \end{center}
 
-In ~\ref{mass_lz_log}, one can identify four peaks. 
+In figure \ref{mass_lz_log}, one can identify four peaks. 
 The one on the right, at approximately $91$ \si{GeV}, is the subject of this investigation and the goal is to characterize it better in the course of this paper.\\
 The two on the left are respectable by the virtue of the $J/{\Psi}$ and the $\Upsilon$ decay. 
 
@@ -249,22 +246,24 @@ The restrictions that were used are:
     \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it. 
 \end{enumerate}
 
-The impact of each of the restrictions can be seen in fig.\ref{fig:cutflow}. 
+The impact of each of the restrictions can be seen in figure \ref{fig:cutflow}. 
 \begin{center}
-	\includegraphics[width=\linewidth]{fig/cutflow.pdf}
+	\includegraphics[width=\linewidth]{fig/cutflow_hist_final.pdf}
     \captionof{figure}{cutflow histogram}
 	\label{fig:cutflow}
 \end{center}
 The event based cuts (in fig.\ref{fig:cutflow} the first four columns) have close to no impact on the selection because the given raw data from ATLAS is preselected on event and physics object level.
-The most impact provides the 2 lepton Cut. As seen in \ref{lep_n}, most of the events do not fulfill this criteria.
+The $2$-lepton cut has th biggest impact.
+As seen in \ref{lep_n}, most of the events do not fulfill this criteria.
 %As seen, the highest cut impact provides the 2 lepton cut, which  is necessary for a $Z$ %decay. ATLAS only required one well measured primary vertex to save it as an event.
 %The cut with the second highest impact is the $p_{T}$ Cut. Due to the high mass of the $Z$ %Boson, one can restrict oneself to leptons with at least $25$ GeV. The distribution of the %transvers momenta from the two decay leptons peaks around half the $Z$ mass. 
 
 
 \subsection{Comparing Data and Monte Carlo Simulation}
 One can now ask how well the measured data matches with the theory. 
-In order to do this one can perform Monte Carlo (MC) simulations and then compare with the data (fig. \ref{fig:data_mc}). 
-Three MC simulations for the possible leptons after the $Z$ decay are analyzed in the same way as in section 2.3 explained. One has to scale the results according to the luminosity of the ATLAS detector ($1 fb^{-1}$).
+Hence, one can perform Monte Carlo (MC) simulations and then compare with the real data (fig. \ref{fig:data_mc}). 
+Three MC simulations for the possible leptons after the $Z$ decay are analyzed in the same way as in section 2.3 explained. 
+One has to scale the results according to the luminosity of the ATLAS detector ($1 fb^{-1}$).
 The comparison yields matching results.
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/vergleich_data_mc_final.pdf}
@@ -284,7 +283,7 @@ M_Z &= (90.634 \pm 0.005) \ \text{GeV}\\
 \end{align}
 
 \begin{center}
-	\includegraphics[width=\linewidth]{fig/invar_z_mass.pdf}
+	\includegraphics[width=\linewidth]{fig/invar_mass_final.pdf}
     \captionof{figure}{Comparison of measured data and MC simulation}
 	\label{fig:fit}
 \end{center}
@@ -297,7 +296,7 @@ A comparison of the results with the values (table \ref{table:zboson}) of the Pa
 \end{align}
  
 \subsection{Determining efficiencies}
-For determining the efficiency of the identification the tag and probe method (which was introduced earlier) is used.
+For determining the efficiency of the identification, the tag and probe method (which was introduced earlier) is used.
 The efficiency was computed for the MC simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}.
 
 \begin{center}
@@ -306,7 +305,7 @@ The efficiency was computed for the MC simulation and for the real data and can 
     \label{fig:efficiency_comp}
 \end{center}
 
-One achieves an efficiency for this method of approximately $90-95\%$ over the whole momentum range.
+With this method, one achieves an efficiency of approximately $90-95\%$ over the whole momentum range.
 
 \section{Discussion}
 The difference between the calculated result and the literature value of the $Z$ mass suggests that the errors were underestimated.
@@ -331,6 +330,4 @@ The results, even without extensive error acknowledgment, verifies the used appr
 \printbibliography
 \end{multicols}
 \end{document}
-
-
 
