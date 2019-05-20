@@ -1,0 +1,86 @@
+% personal data
+\date{\today}
+
+
+% language
+\usepackage{polyglossia}
+\setmainlanguage{english}
+\setotherlanguages{german}
+\usepackage{microtype}
+\usepackage{dcolumn}
+
+\usepackage[style=numeric,
+			natbib=true,
+			backend=biber]{biblatex}		%Bibliographie
+\usepackage[autostyle=true,
+			 german=quotes]
+			 {csquotes}					%Anführungszeichen
+\usepackage{blindtext}
+
+
+%math and theorems
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsopn}					%Matheoperatoren
+\usepackage[amsmath,thmmarks,hyperref]{ntheorem}
+\usepackage{mathtools}
+\usepackage{mathdots}					%Punkte
+\usepackage{dsfont}
+\usepackage{upgreek}					%Griechische Buchstaben
+\usepackage{bbm}						%Mengensymbol
+\usepackage{physics}					%Physiksymbole
+\usepackage{relsize}						%Größenangaben
+\usepackage[separate-uncertainty,
+			per-mode=symbol]
+			{siunitx}					%Einheiten
+%\usepackage{tikz}						%Zeichnen
+\usepackage{upgreek}					%Griechische Buchstaben
+
+
+%useful packages
+%\usepackage{geometry}
+\usepackage{xcolor}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{csquotes}
+\usepackage{todonotes}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage[labelfont=bf]{caption}
+\usepackage{wrapfig}
+\usepackage{enumitem}
+%\usepackage{xr} % cross referencing
+%\usepackage{titling}
+%\usepackage{titlesec}
+%\usepackage[Bjornstrup]
+%			{fncychap}					%Kapitellayout
+
+
+\setmainfont{Linux Libertine O}
+\setsansfont{Linux Biolinum O}
+
+\usepackage{scrhack}					%Verbesserung Pakete
+\usepackage{xltxtra}						%fontec
+
+
+\newcommand{\im}{\mathrm{i}}
+\newcommand{\e}{\mathrm{e}}
+\renewcommand{\pi}{\uppi}
+\renewcommand{\epsilon}{\varepsilon}
+
+
+\addbibresource{bibliography.bib}
+
+%color settings
+\definecolor{myred}{RGB}{196,19,47} 
+\definecolor{myblue}{RGB}{0,139,139}
+
+
+%appendix
+\usepackage[toc,page]{appendix}
+
+%killing indent
+\setlength{\parindent}{0pt}
+\usepackage{multicol}
+\usepackage{siunitx}
+\usepackage{chemformula}

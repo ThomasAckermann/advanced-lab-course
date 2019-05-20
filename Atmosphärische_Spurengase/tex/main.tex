@@ -1,0 +1,91 @@
+\documentclass[12pt, a4paper, bibliography=totoc]{scrartcl}
+
+\input{config.tex}
+
+\title{FP18 Atmospheric Trace Gases}
+\author{Aaron Mielke \& Thomas Ackermann}
+\date{\today}
+
+\begin{document}
+
+\begin{center}
+	\makeatletter
+	\thispagestyle{empty}
+	\large{Fortgeschrittenen-Praktikum}	
+	\hfill
+    \large{Summer term 2019}
+    \vspace{5mm}
+	\rule{\textwidth}{0.2pt}
+    \vfill
+	\Huge\textbf{\@title} \\
+	\vspace{10mm}
+	\large{\@author} \\
+	\normalfont
+	\vfill	
+	\makeatother
+\end{center}
+
+\normalsize
+\newpage
+
+\section*{Abstract}
+This experiment was conducted in the scope of the advanced lab course in physics at the Heidelberg University. \\
+The experiment was conducted in the week of the $8^\text{th}$ april, 2019.
+
+\tableofcontents
+\newpage
+\begin{multicols}{2}
+\section{Introduction}
+
+\subsection{Composition}
+Earths atmosphere is made up of mixture of many gases.
+Table \ref{fig:atm_comp} shows a list of the main components.
+\begin{center}
+\begin{tabular*}{\linewidth}{c c c}
+\toprule
+Gas & Symbol & Volume Fraction \\
+\midrule
+Nitrogen & \ch{N2} & $78.084 \%$ \\
+    Oxygen & \ch{O2} & $20.942\%$ \\
+    Argon & \ch{Ar} & 0.934 \% \\
+    Carbon Dioxide & \ch{CO2} & 358 \si{ppmv} \\
+
+\bottomrule
+\end{tabular*}
+    \captionof{table}{Gases in the atmosphere} %\cite{atm_components}
+    \label{fig:atm_comp}
+\end{center}
+
+\subsection{DOAS}
+
+    \textit{Differential Optical Absorption Spectroscopy} (DOAS) is used to determine the concentration of a particular trace gas in the atmosphere - which is the goal of this experiment.
+    The main principle is the following: one takes two images of spectra, one which was taken on earth (so with the atmosphere) and one where the atmosphere is not present (from a satelite). 
+Every gas absorbs specific wave lengths of light, so if one takes a look at the two spectr one can see that there characteristic parts of the spectrum with the atmosphere were the intensities are lower.
+By knowing which characteristic part belongs to which gas one can determine the density of a specific gas.
+
+    \subsubsection{Lambert-Beer Law}
+The intensity of a beam of light (electromagnetic wave) decreases when moving through matter due to absorption and scattering.
+The amount of Intensity loss can be computed via the Lambert-Beer law.
+    Let $I_0 (\lambda)$ be the initial intensity of the light beam. 
+    After passing through a medium with length $L$ the Intensity $I(\lambda, L)$ will be
+    \begin{align}
+        I(\lambda, L) = I_0 (\lambda) \exp (- \rho L \sigma (\lambda)),
+    \end{align}
+    where $\sigma (\lambda)$ is the absorption cross section and $\rho$ the concentration of the trace gas.
+
+
+\section{Experimental Procedure}
+\subsection{Characterization of the measuring instruments}
+ 
+    There are two different main effects that can cause inaccuracy in the measurements.
+Due to Brownian motion in the cables a small current can flow - the so called dark current.
+    One can get an estimate for how big it is by conducting a long measurement (in our case one minute) where the camera is covered.
+The other effect is the offset.
+Here many short measurements were taken where the camera was also covered.
+Both dark current and offset are subtracted from all proceeding spectra.
+
+
+
+\end{multicols}
+\end{document}
+
