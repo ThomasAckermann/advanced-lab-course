@@ -66,28 +66,27 @@ Wenn nun zwei Spektren, wie beschrieben, aufgenommen werden
 können das charakteristische Verhalten der Gase daran erkannt werden dass die Intensitäten an manchen stellen kleiner sind.
 Wenn man nun weiß welche charakteristika zu welchen Gasen gehören kann die Dichte des Gases in der Atmosphäre bestimmt werden.
 
-    \subsubsection{Lambert-Beer Law}
-    Die Intensität eines Lichtestrahls (einer Elektromagnetischen Welle) nimmt ab wenn es durch Materie propagiert. 
-
-The intensity of a beam of light (electromagnetic wave) decreases when moving through matter due to absorption and scattering.
-The amount of Intensity loss can be computed via the Lambert-Beer law.
-    Let $I_0 (\lambda)$ be the initial intensity of the light beam. 
-    After passing through a medium with length $L$ the Intensity $I(\lambda, L)$ will be
+\subsubsection{Lambert-Beer Law}
+Die Intensität eines Lichtestrahls (einer Elektromagnetischen Welle) nimmt durch Streuung und Absorption ab, wenn es durch Materie propagiert. 
+Die Größe des verlustes kann mithilfe des Lambert-Beer Gesetzes bestimmt werden.
+    Sei $I_0 (\lambda)$ die Startintensität des Lichtstrahls, dann ist die Intensität $I(\lambda, L)$ nachdem der Lichtstrahl eine Länge $L$ der Mediums überwunden hat
     \begin{align}
         I(\lambda, L) = I_0 (\lambda) \exp (- \rho L \sigma (\lambda)),
     \end{align}
-    where $\sigma (\lambda)$ is the absorption cross section and $\rho$ the concentration of the trace gas.
+    wobei $\sigma (\lambda)$ der Absorptionswirkungsquerschnitt und $\rho$ die Konzentration des Spurengases ist.
 
+\subsection{Messgrößen}
+Die Konzentration eines Spurengases ist die Zahl der Moleküle pro Volumeneinheit.
+Eine andere wichtige Größe ist die mixing ratio.
+Sie gibt den relativen Anteil eines Spurengases im Vergleich zur Luftmenge an und wird mit \si{[ppm]} oder \si{[ppt]} angegeben. 
 
-\section{Experimental Procedure}
-\subsection{Characterization of the measuring instruments}
- 
-    There are two different main effects that can cause inaccuracy in the measurements.
-Due to Brownian motion in the cables a small current can flow - the so called dark current.
-    One can get an estimate for how big it is by conducting a long measurement (in our case one minute) where the camera is covered.
-The other effect is the offset.
-Here many short measurements were taken where the camera was also covered.
-Both dark current and offset are subtracted from all proceeding spectra.
+\section{Versuchsdurchführung}
+\subsection{Charakterisierung der Messinstrumente}
+ Es gibt zwei Haupteffejte die Ungenauigkeiten bei der Messung verursachen können.
+Durch Brownsche Bewegung in den Kabeln wird ein kleiner elektrischer Strom erzeugt, den man auch Dunkelstrom nennt.
+Um die Größenordnung des Dunkelstromes einzuschätzen werden einminütige Messungen durchgeführt, bei denen die Kamera abgedeckt ist.
+Die CCD-Kameras haben außerdem ein Offset, welcher durch viele kurze Messungen bestimmt werden kann.
+Dunkelstrom und Offset müssen bei jedem folgenden Spektrum abgezogen werden.
 
 
 
