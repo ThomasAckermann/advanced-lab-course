@@ -2,23 +2,28 @@ import numpy as np
 import matplotlib.pyplot as plt
 import matplotlib.image as mpimg
 
-
 coord_list = []
 
-def clicked()
+def clicked(event):
 	global ix, iy
 	ix, iy =  event.xdata, event.ydata
 	entry = [ix, iy]
-	print("x_data: {}, y_data: {}")
+	print("x_data: {}, y_data: {}".format(ix, iy))
 	coord_list.append(entry)
-	return entry
+	return entry 
 
-path = "C:\PSLViewer-4.3-win32-SECURED\F69_Aaron_Thomas\Exercise_2\quartz_0.png"
+path = "Exercise_2/quartz_20.png"
 img = mpimg.imread(path)
-plt.imshow(img)
-plt.show()
+ax = plt.gca()
+fig = plt.gcf()
+implot = ax.imshow(img)
 
 cid = fig.canvas.mpl_connect("button_press_event", clicked)
 
+plt.show()
+
 print(coord_list)
-np.save('data.npy', coord_list)
+
+np.save('data_quartz_20.npy', coord_list)
+np.savetxt('data_quartz_20.txt', coord_list)
+
