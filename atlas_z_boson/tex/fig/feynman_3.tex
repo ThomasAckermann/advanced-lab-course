@@ -1,32 +1,20 @@
 \documentclass[tikz]{standalone}
 \usepackage{tikz}
-\usepackage{tikz-feynman}
+\usepackage[compat=1.1.0]{tikz-feynman}
 \begin{document}
-\begin{tikzpicture}
 
-  \begin{feynman}
-    \vertex (a) {\(d\)};
-    \vertex [right=of a] (b);
-    \vertex [above right=of b] (c);
-    \vertex [above right=of c] (f1) {\(e^{-}\)};
-    \vertex [below right=of c] (f2) {\(\overline{\nu}_{e^{-}}\)};
-    \vertex [below =of a] (d) {\(\overline{u}\)};
-    \vertex [right=of d] (e);
-    \vertex [below right=of e] (f);
-     \vertex [above right=of f] (f3) {\(e^{-}\)};
-    \vertex [below right=of f] (f4) {\(e^{+}\)};
+%\begin{tikzpicture}
 
- 
-    \diagram* {
-      (a) -- [fermion] (b) -- [boson, edge label=\(W^{-}\)] (c),
-      (d) -- [anti fermion] (e) -- [boson, edge label'=\(Z^{0}\)] (f),
-      (f1) -- [anti fermion] (c) -- [anti fermion] (f2),
-      (f3) -- [anti fermion] (f) -- [anti fermion] (f4),
-      
-      (b) -- [edge label' = \(\overline{u}\) ] (e),
-};
-\end{feynman}
+  %\begin{feynman}
 
-\end{tikzpicture}
+\feynmandiagram[horizontal' = a to b] {
+	i2 [particle=\(d\)] -- [fermion] a  -- [fermion] i1 [particle=\(\overline{u}\)],
+	a -- [photon, edge label=\(W^{-}\)] b ,
+	f1 [particle=\(\nu_{e^{-}}\)] -- [fermion] b -- [fermion] f2 [particle=\(e^{-}\)],
+	};
+	
+%\end{feynman}
+
+%\end{tikzpicture}
 
 \end{document}
