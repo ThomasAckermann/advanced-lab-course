@@ -1,0 +1,1 @@
+Transpose[{Take[$Failed, All, 2], Take[$Failed, All, 2]}]
