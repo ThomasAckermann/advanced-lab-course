@@ -132,9 +132,10 @@ A convolution of two functions $(f \ast g)$ is defined as:
 \begin{align}
     (f \ast g) (x) = \int f(y)g(x-y)\dd y
 \end{align}
+
 \subsection{Efficiency}
-The efficiency of the measurements plays a crucial role. 
-At the ATLAS detector it consists of four components
+Another important part of evaluating the data is to estimate the efficiencies of the different triggers.
+At the ATLAS detector it consists of four components:
 \begin{align}
      \epsilon_{\text{tot}} =  \epsilon_{\text{recon}} \times \epsilon_{\text{id}} \times \epsilon_{\text{trig}} \times \epsilon_{\text{add}}  .
 \end{align}
@@ -218,7 +219,7 @@ The calculated results will therefore be based on the \verb*+ROOT+ method.
 The first attempt to measure the mass was done by limiting the data to $2$-lepton events. 
 Furthermore, one ignored the events where $M_{\mu}^{2} < 0$. 
 \begin{center}
-	\includegraphics[width=\linewidth]{fig/invar_mass_final.pdf}
+	\includegraphics[width=\linewidth]{fig/invar_mass_dist_corrected_axis_title.pdf}
     \captionof{figure}{Invariant Mass distribution of 2 lepton events.}
 	\label{mass_lz_log}
 \end{center}
@@ -233,16 +234,16 @@ The next step was to assert restrictions to the dataset in order to ensure that 
 The restrictions that were used are:
 \begin{enumerate}
     \item \textbf{Weights}: Applies a weight to the events in the MC files, in contrast each event in real data counts as one event.
-    \item \textbf{Trigger}: Events pass if the applied trigger identifies a $Z$ decay into an electron or muon pair.
+    \item \textbf{Trigger}: Events pass if the applied trigger identifies a $Z$ decay into an electron or muon pair with energy above 25 \si{[GeV]}.
     \item \textbf{GRL}: The Good Run List only allows events where meaningful data for physical analysis is gathered.
     \item \textbf{Vertex}: Requires at least one well measured vertex per event.
     \item \textbf{2 Leptons}: Restrict the data to 2 lepton events.
     \item \textbf{PDGID}: A number is assigned to each particle. $e$, $\mu$ and $\tau$ are respectively identified with the integers 11, 13, and 15.
     \item \textbf{Charge}: Checks if the leptons from the $Z$ decay have opposite charge.
-    \item \textbf{$p_{T}$ Cut}: Set an lower limit for the lepton energy to acknowledge the high $Z$ mass.
-    \item \textbf{Isolation}: Events pass if the observed leptons are well distinguishable from the background.
+    \item \textbf{$p_{T}$ Cut}: Set an lower limit for the lepton energy to acknowledge the high $Z$ mass ($p_{T} > 25 \si{[GeV]}$).
+    \item \textbf{Isolation}: Events pass if the observed leptons are well distinguishable from the background ($< 0.1$).
     \item \textbf{Tight ID}: Lepton reconstruction algorithms allow to label leptons. Only the ones labeled with "tight" will proceed.
-    \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it. 
+    \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it ($70 - 110 \si{[GeV]}$). 
 \end{enumerate}
 
 The impact of each of the restrictions can be seen in figure \ref{fig:cutflow}. 
@@ -299,7 +300,7 @@ For determining the efficiency of the identification, the tag and probe method (
 The efficiency was computed for the MC simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}.
 
 \begin{center}
-    \includegraphics[width=1.1\linewidth]{fig/efficency_comparison.pdf}
+    \includegraphics[width=1.1\linewidth]{fig/efficency_comparison_v2.pdf}
     \captionof{figure}{Comparison of the efficiencies of the MC simulation and the real data.}
     \label{fig:efficiency_comp}
 \end{center}
