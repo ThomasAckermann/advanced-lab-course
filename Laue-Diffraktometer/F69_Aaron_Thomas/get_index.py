@@ -12,7 +12,7 @@ def clicked(event):
 	coord_list.append(entry)
 	return entry 
 
-path = "Exercise_2/quartz_120.png"
+path = "Exercise_2/quartz_80.png"
 img = mpimg.imread(path)
 ax = plt.gca()
 fig = plt.gcf()
@@ -24,6 +24,6 @@ plt.show()
 
 print(coord_list)
 
-np.save('data_quartz_120_v2.npy', coord_list)
-np.savetxt('data_quartz_120_v2.txt', coord_list)
+#np.save('data_quartz_120_v2.npy', coord_list)
+#np.savetxt('data_quartz_120_v2.txt', coord_list)
 
