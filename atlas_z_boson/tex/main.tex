@@ -244,19 +244,19 @@ The restrictions that were used are:
 %%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%
     \item \textbf{GRL}: The Good Run List only allows events where meaningful data for physical analysis is gathered.
     \item \textbf{Vertex}: Requires at least one well measured primary vertex per event.
-    \item \textbf{2 Leptons}: Restrict the data to 2 lepton events.
+    \item \textbf{2-Leptons}: Restrict the data to 2 lepton events.
     \item \textbf{PDGID}: A number is assigned to each particle. $e$, $\mu$ and $\tau$ are respectively identified with the integers 11, 13, and 15.
     \item \textbf{Charge}: Checks if the leptons from the $Z$ decay have opposite charge.
     \item \textbf{$p_{T}$ Cut}: Set an lower limit for the lepton energy to acknowledge the high $Z$ mass ($p_{T} > 25 \si{GeV}$).
     \item \textbf{Isolation}: Events pass if the observed leptons are well distinguishable from the background ($< 0.1$).
     \item \textbf{Tight ID}: Lepton reconstruction algorithms allow to label leptons. Only the ones labeled with "tight" will proceed.
-    \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it ($70 - 110 \si{GeV}$). 
+    \item \textbf{$Z$ Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it ($70 - 110 \si{GeV}$). 
 \end{enumerate}
 
 The impact of each of the restrictions can be seen in figure \ref{fig:cutflow}. 
 \begin{center}
 	\includegraphics[width=1.1\linewidth]{fig/cutflow_hist_final.pdf}
-    \captionof{figure}{cutflow histogram.}
+    \captionof{figure}{Cutflow histogram.}
 	\label{fig:cutflow}
 \end{center}
 The event based cuts (in fig.\ref{fig:cutflow} the first four columns) have close to no impact on the selection because the given raw data from ATLAS is preselected on event and physics object level.
@@ -269,7 +269,7 @@ As seen in figure \ref{lep_n}, most of the events do not fulfill this criteria.
 \subsection{Comparing Data and Monte Carlo Simulation}
 One can now ask how well the measured data matches with the theory. 
 Hence, one can perform Monte Carlo (MC) simulations and then compare with the real data (fig. \ref{fig:data_mc}). 
-Three MC simulations for the possible lepton flavour after the $Z$ decay are analyzed in the same way as explained in section 2.3. 
+Three MC simulations for the possible lepton flavour in the $Z$ decay are analyzed in the same way as explained in section 2.3. 
 One has to scale the results according to the luminosity of the open dataset ($1 fb^{-1}$).
 The comparison yields matching results.
 \begin{center}
@@ -302,7 +302,7 @@ A comparison of the results with the values (table \ref{table:zboson}) of the Pa
 \Delta \Gamma &= (1.034 \pm 0.015) \ \text{GeV}
 \end{align}
  
-\subsection{Determining efficiencies}
+\subsection{Determining Efficiencies}
 For determining the efficiency of the identification, the tag and probe method (which was introduced earlier) is used.
 The efficiency was computed for the MC simulation and for the real data and can be seen in figure \ref{fig:efficiency_comp}.
 
