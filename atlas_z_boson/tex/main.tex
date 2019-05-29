@@ -139,7 +139,9 @@ A convolution of two functions $(f \ast g)$ is defined as:
 \end{align}
 
 \subsection{Efficiency}
-Another important part of evaluating the data is to estimate the efficiencies of the different triggers.
+% Another important part of evaluating the data is to estimate the efficiencies of the different triggers.
+%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%
+Another part of evaluating the data is to estimate the particle detection efficiencies.
 At the ATLAS detector it consists of four components:
 \begin{align}
      \epsilon_{\text{tot}} =  \epsilon_{\text{recon}} \times \epsilon_{\text{id}} \times \epsilon_{\text{trig}} \times \epsilon_{\text{add}}  .
@@ -170,7 +172,7 @@ One only has data from events where a primary vertex was found and at least one 
 To check where the particle collisions occur, one can evaluate the given data for the $vxp_z$ variable. 
 The results are shown in figure \ref{vxp_z}.
 The mean is shifted by $-9$ \si{mm}. 
-This confirms, that the given data is from 2012, because collisions of bunches were not calibrated to the $0.0$ position back then \cite{atlasbeamspot}.
+his confirms, that the given data is from 2012, because collisions of bunches were not calibrated to the $0.0$ position back then \cite{atlasbeamspot}.
 There are two maxima which can also be explained with the assumption above. 
 
 \subsubsection{Leptons per Event}
@@ -182,7 +184,7 @@ There are two maxima which can also be explained with the assumption above.
 \end{center}
 
 To figure out, if one found a $Z$ decay, one analyzes the \textit{leptons per event} value of the data (fig. \ref{lep_n}).
-Around the wanted two leptons, one gets many events with one and three leptons. 
+Around the wanted two leptons, one gets many events with one and three charged leptons. 
 For these events to happen, one needs a $W^{\pm}$ decay.
 Possible decays are shown in figure \ref{fig:three_lepton}.
     \begin{center}
@@ -195,6 +197,7 @@ Possible decays are shown in figure \ref{fig:three_lepton}.
 
 \subsubsection{Lepton Kinematics}
 One can identify a sharp rise at $25$ \si{GeV} for the transverse momentum. 
+%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%
 %At ATLAS only events with at least one lepton above this threshold will be stored.
 \begin{center}
     \includegraphics[width=0.8\linewidth]{fig/p_T_final.pdf}
@@ -237,7 +240,8 @@ The next step was to assert restrictions to the dataset in order to ensure that 
 The restrictions that were used are:
 \begin{enumerate}
     \item \textbf{Weights}: Applies a weight to the events in the MC files, in contrast each event in real data counts as one event.
-    \item \textbf{Trigger}: Events pass if the applied trigger identifies a lepton with energy above 25 \si{GeV}.
+    \item \textbf{Trigger}: Events pass if the applied trigger identifies a lepton with energy above 5 \si{GeV}.
+%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% ÜBERPRÜFEN %%%%%%%%%%%%%%%%%%%%%
     \item \textbf{GRL}: The Good Run List only allows events where meaningful data for physical analysis is gathered.
     \item \textbf{Vertex}: Requires at least one well measured primary vertex per event.
     \item \textbf{2 Leptons}: Restrict the data to 2 lepton events.
