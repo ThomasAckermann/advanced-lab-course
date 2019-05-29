@@ -24,8 +24,8 @@
 The experiment was conducted in the week of the $8^\text{th}$ April, $2019$ in the scope of the advanced lab course in physics at the Heidelberg University. \\
 The goal was making oneself familiar with data analysis tools that are common in the field of particle physics.
 Therefore data from the ATLAS experiment at CERN (Geneva) was used to calculate the invariant mass of the $Z$ boson.
-The Data was collected at $\sqrt{s} = 8 \si{[TeV]}$ which corresponds to an integrated Luminosity of $\mathcal{L} = 1 \si{[fb^{-1}]}$.
-The final estimate of the calculations is $(90.634 \pm 0.005 )\si{[GeV]}$.
+The Data was collected at $\sqrt{s} = 8 \si{TeV}$ which corresponds to an integrated Luminosity of $\mathcal{L} = 1 \si{fb^{-1}}$.
+The final estimate of the calculations is $(90.634 \pm 0.005 )\si{GeV}$.
 \tableofcontents
 \newpage
 \begin{multicols}{2}
@@ -57,13 +57,13 @@ Its properties are shown in table \ref{table:zboson}:
                 \small{0} & \small {$91.1876 \pm 0.0021$} & \small{$2.4952 \pm 0.0023$} \\
         \bottomrule
     \end{tabular*}
-            \captionof{table}{Properties of the $Z$ Boson.}
+            \captionof{table}{Properties of the $Z$ boson.}
         \label{table:zboson}
         \end{center}
 
 
 \subsection{Drell-Yan Process}
-A $Z$ Boson can be created during the so called ``Drell-Yan'' process (fig. \ref{fig:drell_yan}). 
+A $Z$ boson can be created during the so called ``Drell-Yan'' process (fig. \ref{fig:drell_yan}). 
 
     \begin{center}
 \includegraphics[width=0.55\linewidth]{fig/feynman_0.pdf}
@@ -87,17 +87,17 @@ With three also onion-like ordered tracking detectors, the pixel detector, the s
 The electromagnetic and the hadronic calorimeter allow to reconstruct the shapes of the showers from electromagnetically and strongly interacting particles. 
 They are designed to contain the whole shower and cover a range of up to $\abs{\eta} < 4.9$. 
 A precise energy measurement is possible.\\
-The outermost layer is the muon spectrometer used for tracking Muons.
+The outermost layer is the muon spectrometer used for detecting Muons.
 
 \subsubsection{Geometry of the Detector}
-In figure \ref{fig:cross_section_detector} one can see a image of the cross section of the ATLAS detector, which has a rotational symmetry around the $z$-axis.
+In figure \ref{fig:cross_section_detector} one can see an image of the cross section of the ATLAS detector, which has a rotational symmetry around the $z$-axis.
 \begin{center}
 	\includegraphics[width=0.8\linewidth]{fig/detector_geometry.png}
 	\captionof{figure}{Cross section of the ATLAS detector.}
 	\label{fig:cross_section_detector}
 \end{center}
 A good understanding of the detector geometry is necessary to compute the $Z$ bosons mass later on. 
-One introduces the so called pseudo-rapidity $\eta$
+One introduces the so called pseudorapidity $\eta$
 \begin{align}
     \eta = - \log \tan \left( \frac{\theta}{2} \right).
 \end{align}
@@ -173,7 +173,7 @@ The mean is shifted by $-9$ \si{mm}.
 This confirms, that the given data is from 2012, because collisions of bunches were not calibrated to the $0.0$ position back then \cite{atlasbeamspot}.
 There are two maxima which can also be explained with the assumption above. 
 
-\subsubsection{leptons per event}
+\subsubsection{Leptons per Event}
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/lep_n_final.pdf}
@@ -189,16 +189,16 @@ Possible decays are shown in figure \ref{fig:three_lepton}.
         \includegraphics[width=0.45\linewidth]{fig/feynman_1.pdf} \hfill
         \includegraphics[width=0.45\linewidth]{fig/feynman_2.pdf} \\
         \includegraphics[width=0.45\linewidth]{fig/feynman_3.png}
-\captionof{figure}{Feynman graphs for final states with one to three leptons.}
+\captionof{figure}{Feynman graphs for final states with one to three charged leptons.}
 \label{fig:three_lepton}
 \end{center}
 
 \subsubsection{Lepton Kinematics}
 One can identify a sharp rise at $25$ \si{GeV} for the transverse momentum. 
-At ATLAS only events with at least one lepton above this threshold will be stored.
+%At ATLAS only events with at least one lepton above this threshold will be stored.
 \begin{center}
     \includegraphics[width=0.8\linewidth]{fig/p_T_final.pdf}
-    \captionof{figure}{Distributions of $p_T$.}
+    \captionof{figure}{Distribution of $p_T$.}
 \end{center}    
 The stored data (the $\phi$ angle and the $\eta$ variable) gives insight about the geometry.
 \begin{center}
@@ -209,16 +209,15 @@ From the geometry one assumes an even distribution for the $\phi$ and $\eta$ val
 It only applies for the first. 
 The $\eta$ value has areas with a lack of data entries. 
 This is a setback of the ATLAS geometry seen in figure \ref{fig:cross_section_detector}. 
-Around $\eta = 1.5$, one misses the \textit{Barrel} or the \textit{Endcap} which are necessary for the event recognition. 
+Around $\eta = 1.5$, one partly misses the \textit{Barrel} or the \textit{Endcap} which are necessary for the event recognition. 
 
 \subsection{Calculation of the invariant mass of the $Z$ boson}
-According to the structure of the ATLAS detector, one can calculate the invariant mass in the following way
-
+One can calculate the invariant mass with
 \begin{align}
 	M_{\mu} &= \sqrt{p_{\mu}p^{\mu}}. 
 			%&= \sqrt{E_{1}E_{2}-p_{T_{1}}p_{T_{2}} (\cos(\varphi_{1})\cos(\varphi_{2})+\sin(\varphi_{1})\sin(\varphi_{2})+\sinh(\eta_{1})\sinh(\eta_{2}))} .
 \end{align}
-An attempt to calculate it with the above given formula and the build-in function \verb*+TLorenz+ in \verb*+ROOT+ provided the exact same result. 
+An attempt to calculate it with the above given formula and the build-in class \verb*+TLorenz+ in \verb*+ROOT+ provided the exact same result. 
 The calculated results will therefore be based on the \verb*+ROOT+ method.
 
 The first attempt to measure the mass was done by limiting the data to $2$-lepton events. 
@@ -238,16 +237,16 @@ The next step was to assert restrictions to the dataset in order to ensure that 
 The restrictions that were used are:
 \begin{enumerate}
     \item \textbf{Weights}: Applies a weight to the events in the MC files, in contrast each event in real data counts as one event.
-    \item \textbf{Trigger}: Events pass if the applied trigger identifies a lepton with energy above 25 \si{[GeV]}.
+    \item \textbf{Trigger}: Events pass if the applied trigger identifies a lepton with energy above 25 \si{GeV}.
     \item \textbf{GRL}: The Good Run List only allows events where meaningful data for physical analysis is gathered.
-    \item \textbf{Vertex}: Requires at least one well measured vertex per event.
+    \item \textbf{Vertex}: Requires at least one well measured primary vertex per event.
     \item \textbf{2 Leptons}: Restrict the data to 2 lepton events.
     \item \textbf{PDGID}: A number is assigned to each particle. $e$, $\mu$ and $\tau$ are respectively identified with the integers 11, 13, and 15.
     \item \textbf{Charge}: Checks if the leptons from the $Z$ decay have opposite charge.
-    \item \textbf{$p_{T}$ Cut}: Set an lower limit for the lepton energy to acknowledge the high $Z$ mass ($p_{T} > 25 \si{[GeV]}$).
+    \item \textbf{$p_{T}$ Cut}: Set an lower limit for the lepton energy to acknowledge the high $Z$ mass ($p_{T} > 25 \si{GeV}$).
     \item \textbf{Isolation}: Events pass if the observed leptons are well distinguishable from the background ($< 0.1$).
     \item \textbf{Tight ID}: Lepton reconstruction algorithms allow to label leptons. Only the ones labeled with "tight" will proceed.
-    \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it ($70 - 110 \si{[GeV]}$). 
+    \item \textbf{Z Mass}: With the known $Z$ mass, one can restrict the mass of the di-leptons to a range around it ($70 - 110 \si{GeV}$). 
 \end{enumerate}
 
 The impact of each of the restrictions can be seen in figure \ref{fig:cutflow}. 
@@ -288,7 +287,7 @@ M_Z &= (90.634 \pm 0.005) \ \text{GeV}\\
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/invar_z_mass.pdf}
-    \captionof{figure}{Different fits for $Z$ Boson mass.}
+    \captionof{figure}{Different fits for $Z$ boson mass.}
 	\label{fig:fit}
 \end{center}
 
