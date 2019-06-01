@@ -143,15 +143,14 @@ Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umfo
 
 wobei das Polynom $\sum b_k \lambda^k$ für die Breitband Effekte zuständig ist.
 
+\textcolor{red}{Brauchen wir noch mehr Grundlagen?}
 
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
-
-
 \subsection{Software kennenlernen}\label{get_to_know_the_software}
 
-Während des Versuches wurde das Programm DOASIS verwendet um die Spektren aufzunehmen und später die Fits durchzuführen.\\
-Zu Beginn wurde durch Variieren der Messzeit (\textit{exposure time}) und der Anzahl der Scans (\textit{exposures}) ein erster Überblick über das Programm DOASIS verschafft.
+Während des Versuches wurde das Programm \verb*+DOASIS+ verwendet um die Spektren aufzunehmen und später die Fits durchzuführen.\\
+Zu Beginn wurde durch Variieren der Messzeit (\textit{exposure time}) und der Anzahl der Scans (\textit{exposures}) ein erster Überblick über das Programm \verb*+DOASIS+ verschafft.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/test_7_spectrum.pdf}
@@ -269,6 +268,7 @@ Es wurden Spektren von  \ch{CO2}, \ch{H2O}, \ch{O3} und \ch{O4} angepasst.
 Bei dem Referenzspektrum von \ch{H2O} wurde ,im Gegensatz zu den anderen Spektren, das Spektrum erweitert. Dafür wurden um die Struktur Nullwerte eingefügt. \textcolor{red}{Klingt blöd}
  
 \subsubsection{\ch{NO2} Spektrum von einer gefüllten Gaszelle}\label{sssec:lab_no2_spectra}
+
 Um die in den vorigen Abschnitten durchgeführten Vorbereitungen zu testen wird das Spektrum der Halogenlampe untersucht, wenn eine Glasküvette mit \ch{NO2} gefüllt in den Lichtweg gestellt wird.
 \textcolor{red}{Vielleicht hier Bild oder Sketch vom Versuchsaufbau}
 
@@ -279,7 +279,7 @@ Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte in
 \end{align}
 
 Bei der Aufnahme der Spektren ist drauf zu achten, dass kein Teilbereich in Sättigung ist. Ein mögliches Anpassen der Einstellungen der Messungen ist ohne weiteres Möglich. Eine Änderung der Anzahl der Scans oder der Sättigung macht sich nur als eine Konstante bemerkbar, die im 
-\textcolor{red}{ergänzen warum änderungen nichts ausmachen}
+\textcolor{red}{ergänzen warum Änderungen nichts ausmachen}
 
 Über einen \textit{least-square-fit} wird nun die SCD so variiert, sodass das $\chi^2$ minimiert wird. In \ref{fig:different_fit_ranges} wurden die Fitparameter bei verschiedenen Fitbereichen betrachtet. Dabei wurde immer ein Polynom 5. Grades ohne Offset gefittet.
 Den optimalen Fitbereich lässt sich über ein Überlagerung (siehe Abbildung \ref{fig:range_search}) des aufgenommenen Spektrums mit dem \ch{NO2} Referenzspektrum finden.
@@ -306,24 +306,106 @@ Mit der nun bestimmten \textit{slant column density} kann nun die \ch{NO2} Konze
 Die Länge wurde von Hand auf $2.0 \pm 0.1$\si{cm} bestimmt, sodass sich mit der Gaußschen Fehlerfortpflanzung eine Konzentration von
 
 \begin{align}
-	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} [\frac{\text{molecules}}{\si{liter}}]
+	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{molecules}}{\si{liter}}\Bigr]
 \end{align}
 
 ergibt.	
 Ebenfalls lässt sich nun das Mischverhältnis auf
 
 \begin{align}
-	R = (9.22 \pm 0.45) *10^{-3}
+	R = \frac{\rho_{\ch{NO2}}}{\rho_{std.}} = (9.22 \pm 0.45) *10^{-3}
 \end{align}
 
-beziffern.
+beziffern. Dazu wurde für die $\rho_{std.}$ aus den Normalbedingungen gewonnen.
+
+\begin{align}
+	\rho_{std.} = \frac{N_A}{V_M}.
+\end{align}
  	
+Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\si{liter}}{\si{mol}}$.
+
 \subsection{Atmosphärische Messungen}\label{ssec:atmospheric_measurements}
+
+Nachdem man sich nun mit dem Messverfahren und der Analyse der Daten vertraut gemacht hat, werden nun atmosphärische Spurengase untersucht. In diesem Praktikumsversuch beschränkt man sich auf \ch{O3} und \ch{NO2}.
+Für die Analyse wurde ein Tag ausgesucht, bei dem gutes Wetter herrschte, sodass Wolken nicht die Messung beeinträchtigen können, über einen langen Zeitraum aufgenommen wurde, sowie nicht zu weit in der Vergangenheit lag, da man einer möglichen Abweichung von Dunkelstrom und Offset minimieren wollte.
+Die Wahl fiel auf den 23.04.2019, wo über einen Zeitraum von $9:13 - 23:56$ UTC aufgenommen wurde.
+
+\subsubsection{Optimierung des Fitalgorithmuses}\label{sssec:configure_fit}
+
+Die für die \verb*+DOASIS+ nötige Referenzmessung, die Fraunhoferreferenz, wurde die Tagesmessung mit dem niedrigsten
+\textit{solar zenith angle} (SZA) ausgewählt. Da der statistische Lichtweg hier am kürzesten ist und somit am wenigsten von möglichen Spurengasen absorbiert wurde.
+Um nun die Parameter des Fits optimal anpassen zu können, wird ein Spektrum bei $80$ SZA ausgewählt um die größtmögliche Differenz zwischen den beiden Spektren zu erzeugen. Dies gewährleistet, dass die zu untersuchenden Strukturen am prägnantesten hervortreten.
+\\
+Aufgrund des inelastischen \textit{rotational Raman scattering} kommt es zu leichten Wellenlängenverschiebungen, dies sorgt für eine Art \textit{Auffüllung} der starken Absorptionslinien.
+Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhoferspektrum berechnet.
+Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzspektren der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.
+\\
+Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als first fit reference, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. \ch{H20} konnte dabei nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
+\textcolor{red}{Wirkungsquerschnitte? muss einheitlich sein. Danach noch präzisieren starr manche}
+
+\subsubsection{Untersuchung der Tagesmessung}
+
+Nachdem die Fitbereiche optimiert wurde, werden die die Daten des ganzen Tages untersucht. Dabei standen 436 Aufnahmen zur Verfügung.
+
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
+	\captionof{figure}{$\delta$SCD von \ch{NO2} über den Tag des 24.04.2019}
+	\label{fig:delta_SCD_time_NO2}
+\end{center}
+       
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_O3.pdf}
+	\captionof{figure}{$\delta$SCD von \ch{O3} über den Tag des 24.04.2019}
+	\label{fig:Delta_SCD_time_O3}
+\end{center}       
+
+\textit{Warum die so aussehen}
+
+Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rückschlüsse über eine Konzentrationsänderung über den Tag zu.
+
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/Langley_Plot_NO2_cut.pdf}
+	\captionof{figure}{Langley-Plot von \ch{NO2}}
+	\label{fig:langley_NO2}
+\end{center}
+
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/Langley_Plot_O3_cut.pdf}
+	\captionof{figure}{Langley-Plot von \ch{O3}}
+	\label{fig:langley_O3}
+\end{center}
+
+\textcolor{red}{Erklärung usw., außerdem Fit für $\text{SCD}_ref$ von \ch{O3}}
+
+Eine Veranschaulichung der Konstanz \textcolor{red}{?} von  \ch{O3} lässt sich über die \textit{vertical column density}(VCD) aufzeigen.
+\\
+\textcolor{red}{Hier dann der Plot, wir haben es bisher leider gegen das Falsche aufgetragen}
+\\
+Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge: 
+
+\begin{align}
+	VCD = SCD \cdot \cos(\theta)
+\end{align}
+
+\textcolor{red}{Vergleich mit Daten von Satellitenmessungen}
 
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
+Einen Einblick in die vertikale Verteilung der Spurengase liefert die MAX-DOASIS Methode.
+Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7\circ,12\circ \text{und} 90\circ$ beinhalten. Dabei wurde immer beim kleinsten Winkel angefangen.
+Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt.
+Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. Dies war wie folgt der Fall $1.\text{Messung}:1550-1750, 2.\text{Messung}:1550-1720, 4.\text{Messung}:1550-1750, 5.\text{Messung}:1550-1750$.
+Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
+Eine $\delta$SCD Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
+\\
+\textcolor{red}{Hier die Plots, welche Gase in Troposphäre, Wolken?, usw.}
+\\
+
+\section{Diskussion}\label{sec:discussion}
+
 
 \end{multicols}
+
 \newpage
 
 \appendix
@@ -332,7 +414,7 @@ beziffern.
 \newcolumntype{d}[1]{D{.}{.}{3.1}}
 \begin{center}
 	
-	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c@{.} c}
+	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c d{1} c}
 		\toprule
 		Belichtungszeit [\si{ms}] & \multicolumn{1}{c}{Mittelwert [$\frac{\text{counts}}{\text{pixel}}$]} & Standardabweichung [$\frac{\text{counts}}{\text{pixel}}$] \\
 		52500 & $316.0$ & $460.9$ \\
