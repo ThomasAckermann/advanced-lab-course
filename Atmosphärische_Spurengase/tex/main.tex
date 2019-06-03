@@ -150,7 +150,7 @@ wobei das Polynom $\sum b_k \lambda^k$ für die Breitband Effekte zuständig ist
 \subsection{Software kennenlernen}\label{get_to_know_the_software}
 
 Während des Versuches wurde das Programm \verb*+DOASIS+ verwendet um die Spektren aufzunehmen und später die Fits durchzuführen.\\
-Zu Beginn wurde durch Variieren der Messzeit (\textit{exposure time}) und der Anzahl der Scans (\textit{exposures}) ein erster Überblick über das Programm \verb*+DOASIS+ verschafft.
+Zu Beginn wurde durch variieren der Messzeit (\textit{exposure time}) und der Anzahl der Scans (\textit{exposures}) ein erster Überblick über das Programm \verb*+DOASIS+ verschafft.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/test_7_spectrum.pdf}
@@ -164,12 +164,12 @@ Zu Beginn wurde durch Variieren der Messzeit (\textit{exposure time}) und der An
 \subsubsection{Offset und Dunkelstrom}\label{sssec:O&D}
 
 Es gibt zwei Haupteffekte die Ungenauigkeiten bei der Messung verursachen können.
-Durch Brownsche Bewegung in den Kabeln wird ein kleiner elektrischer Strom erzeugt, den man auch Dunkelstrom nennt.
-Um die Größenordnung des Dunkelstromes einzuschätzen werden einminütige Messungen durchgeführt, bei denen die Kamera abgedeckt ist.
+Durch Brownsche Bewegung in den Kabeln wird ein kleiner elektrischer Strom erzeugt, den man auch als Dunkelstrom bezeichnet.
+Um die Größenordnung des Dunkelstromes einzuschätzen werden einminütige Messungen durchgeführt, bei denen die Kamera abgedeckt ist.\\
 Die CCD-Kameras haben außerdem ein Offset, welcher durch viele kurze Messungen bestimmt werden kann.\\
 Dunkelstrom und Offset müssen bei jedem folgenden Spektrum abgezogen werden.
 Die Messung des Offsets wurde als erstes Durchgeführt. 
-Hierbei wurden 20000 Messungen mit jeweils $3$ \si{ms} Messzeit durchgeführt.
+Hierbei wurden $20000$ Messungen mit jeweils $3$ \si{ms} Messzeit durchgeführt.
 Anschließend wurde der Dunkelstrom bei verschiedenen Messzeiten gemessen (siehe Abbildung \ref{fig:dark_current}).
     
 \begin{center}
@@ -181,7 +181,7 @@ Anschließend wurde der Dunkelstrom bei verschiedenen Messzeiten gemessen (siehe
 \subsubsection{Instrumenten- und totales Rauschen}\label{sssec:instrumental_total_noise}
 
 Wie im oberen Abschnitt \ref{sssec:O&D} gesehen, entstehen Messfehler, die zeitlich nicht konstant sind. Zunächst widmet man sich dem instrumentenbedingten Rauschen.
-Dazu werden zwei Offsets mit identischen Einstellungen kurz hintereinander aufgenommen, über die entstandene Differenz($\sigma_D$) lässt sich dann das Instrumentenrauschen bestimmen 
+Dazu werden zwei Offsets mit identischen Einstellungen kurz hintereinander aufgenommen, über die entstandene Differenz ($\sigma_D$) lässt sich dann das Instrumentenrauschen bestimmen 
 
 \begin{align}
 \sigma_{I} = \frac{1}{\sqrt{2}}\sigma_D.\label{eq:instrumental_noise}
