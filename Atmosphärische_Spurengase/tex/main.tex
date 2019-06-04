@@ -61,7 +61,7 @@ Tabelle \ref{fig:atm_comp} zeigt eine Liste der Hauptkomponenten.
     Ozon & \ch{O3} & 0.04 \si{ppmv} \\
 	\bottomrule
 \end{tabular*}
-    \captionof{table}{Gase in der Atmosphäre} %\cite{atm_components}
+    \captionof{table}{Gase in der Atmosphäre \cite{atm_script}} %\cite{atm_components}
     \label{fig:atm_comp}
 \end{center}
 
@@ -86,7 +86,7 @@ Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
 
 \begin{center}
     \includegraphics[width=0.7\linewidth]{fig/gas_spectra.png}
-    \captionof{figure}{Charakteristische Linien verschiedener Gase}	
+    \captionof{figure}{Charakteristische Linien verschiedener Gase \cite{atm_script}}	
     \label{fig:gas_spectra}
 \end{center}
 
@@ -105,7 +105,7 @@ Die Intensität eines Lichtstrahls (einer Elektromagnetischen Welle) nimmt durch
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/lambert_beer.png}
-    \captionof{figure}{Darstellung des Lambert-Beer Gesetzes}
+    \captionof{figure}{Darstellung des Lambert-Beer Gesetzes \cite{atm_script}}
 	\label{fig:lambert-beer}
 \end{center}
 
@@ -122,7 +122,7 @@ wobei $\sigma (\lambda)$ der Absorptionswirkungsquerschnitt und $\rho$ die Konze
 
 \subsubsection{Fraunhofer Referenzspektrum}\label{sssec:fraunhofer_reference}
 
-Um die Strukturen der Sonne zu berücksichtigen wird ein Fraunhofer Referenzspektrum verwendet.
+Um die Strukturen der Sonne bei DOAS zu berücksichtigen wird ein Fraunhofer Referenzspektrum verwendet, welches ein Spektrum der Atmosphäre ist bei dem Spurengase die untersucht werden sollen nur sehr wenig Absorption zeigen.
 
 \subsubsection{Spurengas Absorption}\label{sssec:trace_gas_absorption}
 
@@ -135,7 +135,20 @@ welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfade
 
 \subsubsection{Ring-Effekt}
 
+Man kann beobachten, dass die Tiefe der Fraunhofer Linien kleiner ist, wenn man gestreutes Sonnenlicht mit direktem Sonnenlicht vergleicht.
+Der Grund dafür ist inelastische Raman-Streuung, welche dazu führt, dass die Wellenlängen der Photonen während der Streuung verändert werden.
+Daraus folgt, dass Absorptionslinien aufgefüllt werden, da sich die Wellenlägen sich zu diesen Linen verschieben. 
+Dies bezeichnet als \textit{Ring-Effekt}.
+
+\textcolor{blue}{Abschnitt gefällt mir noch nicht}
+
 \subsection{Breitband Effekte}
+
+Das Sonnenlicht wird von Aerosolen und Wassertröpfchen in den Wolken gestreut und absorbiert (\textit{Mie Streuung}) und von Luftmolekülen gestreut (\textit{Rayleigh Streuung}).
+Die Summe aus Streuungs- und Absorbtionseffekten wird als Extinktion ($\epsilon_M$ und $\epsilon_R$ in diesem Fall) bezeichnet.
+Beide Prozesse sind elsastisch, was bedeutet, dass sich die Wellenlängen nicht verändern.
+Die Wahrscheinlichkeit für Rayleigh Streuung skaliert mit $\lambda^{-4}$ und ist somit besonders bei kurzen Wellenlängen vorhanden.
+Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.
 
 \subsection{Modifiziertes Lambert-Beer Gesetz}\label{ssec:mod_lamb-beer_law}
 
@@ -154,15 +167,17 @@ Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umfo
     &= - R(\lambda) - \sum_i \sigma_i (\lambda) S_i (\lambda) - \sum_k b_k \lambda^k.\label{eq:optical_density}
 \end{align}
 
-Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitband Effekte und $R(\lambda)$ ist das Ring-Spektrum.
+Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitband Effekte und $R(\lambda)$ ist das Ring-Spektrum.\\
+Bei DOAS werden nun alle besprochenen Effekte miteinbezogen und ein Model für die Optische Dichte erstellt. 
+Das Model wird dann mit der gemessenen Optischen Dichte verglichen und ein Fit erzeugt, welcher ensteht indem die Parameter so variiert werden, dass 
 
 \begin{align*}
-    \chi^2 = \left[ \log \left( \frac{I_0 + I_\text{ofs}}{I}\right) - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right]^2
+    \chi^2 = \left[ \log \left( \frac{I_0 + I_\text{ofs}}{I}\right) - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right]^2,
 \end{align*}
-
+minimiert wird.
 
 \textcolor{red}{Brauchen wir noch mehr Grundlagen?}\\
-\textcolor{blue}{Ring Effekt, Breitband und $\chi^2$ einfügen}
+\textcolor{blue}{Ring Effekt, Breitband und $\chi^2$ wurden eingefügt. Denke das ist dann genug.}
 
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
@@ -382,21 +397,23 @@ Die Wahl fiel auf den 23.04.2019, wo über einen Zeitraum von $9:13 - 23:56$ UTC
 \subsubsection{Optimierung des Fitalgorithmuses}\label{sssec:configure_fit}
 
 Die für die \verb*+DOASIS+ nötige Referenzmessung, die Fraunhoferreferenz, wurde die Tagesmessung mit dem niedrigsten
-\textit{solar zenith angle} (SZA) ausgewählt. Da der statistische Lichtweg hier am kürzesten ist und somit am wenigsten von möglichen Spurengasen absorbiert wurde.
-Um nun die Parameter des Fits optimal anpassen zu können, wird ein Spektrum bei $80$ SZA ausgewählt um die größtmögliche Differenz zwischen den beiden Spektren zu erzeugen. Dies gewährleistet, dass die zu untersuchenden Strukturen am prägnantesten hervortreten.
-\\
-Aufgrund des inelastischen \textit{rotational Raman scattering} kommt es zu leichten Wellenlängenverschiebungen, dies sorgt für eine Art \textit{Auffüllung} der starken Absorptionslinien.
+\textit{solar zenith angle} (SZA) ausgewählt. 
+Da der statistische Lichtweg hier am kürzesten ist und somit am wenigsten von möglichen Spurengasen absorbiert wurde.
+Um nun die Parameter des Fits optimal anpassen zu können, wird ein Spektrum bei $80$ SZA ausgewählt um die größtmögliche Differenz zwischen den beiden Spektren zu erzeugen. 
+Dies gewährleistet, dass die zu untersuchenden Strukturen am prägnantesten hervortreten. \\
+Aufgrund der inelastischen \textit{Raman-Streuung} kommt es zu leichten Wellenlängenverschiebungen, dies sorgt für eine Art \textit{Auffüllung} der starken Absorptionslinien.
 Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhoferspektrum berechnet.
-Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzspektren der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.
-\\
-Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als first fit reference, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
+Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzspektren der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. 
+Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
+Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
 \ch{H20} kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
 
 \textcolor{red}{Wirkungsquerschnitte? muss einheitlich sein. Danach noch präzisieren starr manche}
 
 \subsubsection{Untersuchung der Tagesmessung}
 
-Nachdem die Fitbereiche optimiert wurde, werden die die Daten des ganzen Tages untersucht. Dabei standen 436 Aufnahmen zur Verfügung.
+Nachdem die Fitbereiche optimiert wurden, werden die Daten des ganzen Tages untersucht. 
+Hierbei standen 436 Aufnahmen zur Verfügung.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
@@ -615,9 +632,10 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 
 %\vspace{2cm}
 \vfill
-\begin{center}
-	
-    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c c}
+\begin{center}	
+    %\hspace{-2em}
+    %\begin{table}
+        \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c c}
 		\toprule
 		Nummer & Winkel & Molekül & Fit coeff. & shift & squeeze \\
 		\midrule
