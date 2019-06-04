@@ -54,21 +54,29 @@ Tabelle \ref{fig:atm_comp} zeigt eine Liste der Hauptkomponenten.
 	Stickstoff & \ch{N2} & $78.084 \%$ \\
     Sauerstoff & \ch{O2} & $20.942\%$ \\
     Argon & \ch{Ar} & 0.934 \% \\
+    Wasserdampf & \ch{H2O} & ca. 1 \% \\
     Kohlenstoffdioxid & \ch{CO2} & 358 \si{ppmv} \\
+    Wasserstoff & \ch{H2} & 0.55 \si{ppmv} \\
+    Kohlenmonoxid & \ch{CO} & 0.11 \si{ppmv} \\
+    Ozon & \ch{O3} & 0.04 \si{ppmv} \\
 	\bottomrule
 \end{tabular*}
-
     \captionof{table}{Gase in der Atmosphäre} %\cite{atm_components}
     \label{fig:atm_comp}
 \end{center}
 
+Ozon ist ein sehr effizienter Absorber von UV Strahlung und bietet daher einen Schutz vor schädlicher Strahlung für den Menschen.
 
 \subsection{Messgrößen}\label{ssec:Messgröße}
 
-Die Konzentration eines Spurengases ist die Zahl der Moleküle pro Volumeneinheit.
+    Die Konzentration eines Spurengases ist die Zahl der Moleküle pro Volumeneinheit und hat daher die Dimension $\si{[Moleküle/cm^3]}$.\\
 Eine andere wichtige Größe ist das Mischverhältnis.
-Sie gibt den relativen Anteil eines Spurengases im Vergleich zur Luftmenge an und wird mit \si{[ppm]} oder \si{[ppt]} angegeben. 
-
+Sie der relative Anteil eines Spurengases im Vergleich zur Luftmenge und wird mit \si{[ppm]} oder \si{[ppt]} angegeben. 
+    Bei diesem Versuch ist ebenfalls die \textit{column density}
+    \begin{align}
+        \text{CD} = \int \rho(s) \dd s,
+    \end{align}
+    welche die Einheit $\si{[Moleküle / cm^2]}$ hat.
 \subsection{DOAS}\label{ssec:DOAS}
 
 \textit{Differential Optical Absorption Spectroscopy} (DOAS) wird verwendet um die Konzentration eines bestimmten Spurengases in der Atmosphäre zu bestimmen - was das Ziel dieses Experimentes ist.
@@ -125,7 +133,7 @@ welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfade
     \text{SCD} = S_i (\lambda) = \int_0^{L(\lambda)} \rho_i (s) \dd s ,\label{eq:SCD}
 \end{align}
 
-\subsection{Ring-Effekt}
+\subsubsection{Ring-Effekt}
 
 \subsection{Breitband Effekte}
 
@@ -148,9 +156,9 @@ Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umfo
 
 Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitband Effekte und $R(\lambda)$ ist das Ring-Spektrum.
 
-\begin{align}
-    \chi^2 = \left[ \log \left( \frac{I_0 + I_\text{ofs}}{I}\right) - R - \sum_i \sigma_i S_i - \sum_K b_k \lambda^k \right]^2
-\end{align}
+\begin{align*}
+    \chi^2 = \left[ \log \left( \frac{I_0 + I_\text{ofs}}{I}\right) - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right]^2
+\end{align*}
 
 
 \textcolor{red}{Brauchen wir noch mehr Grundlagen?}
@@ -247,7 +255,7 @@ Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Par
 	coeff_2 &= 9.3859 \cdot 10^{-6} \pm 1.193 \cdot 10^{-7} 
 \end{align}
  
-Über die \textit{full width at half max}(FWHM) lässt sich nun die optische Auflösung des Spektrometers bestimmen.
+Über die \textit{full width at half max} (FWHM) lässt sich nun die optische Auflösung des Spektrometers bestimmen.
 
 \begin{center}
 	
@@ -325,7 +333,7 @@ Mit der nun bestimmten \textit{slant column density} kann nun die \ch{NO2} Konze
 Die Länge wurde von Hand auf $2.0 \pm 0.1$\si{cm} bestimmt, sodass sich mit der Gaußschen Fehlerfortpflanzung eine Konzentration von
 
 \begin{align}
-	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{molecules}}{\si{liter}}\Bigr]
+	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\si{liter}}\Bigr]
 \end{align}
 
 ergibt.	
@@ -423,12 +431,12 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 \section{Diskussion}\label{sec:discussion}
 
 
+\nocite{*}
+\appendix
 \end{multicols}
-
 \newpage
 
-\appendix
-
+% TABELLEN
 \section{Tabellen}\label{tables}
 \newcolumntype{d}[1]{D{.}{.}{3.1}}
 \begin{center}
@@ -450,8 +458,8 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\label{fig:dark_current_exposure_time}
 \end{center}
 
-\vspace{2cm}
-
+%\vspace{2cm}
+\vfill
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c}
@@ -472,8 +480,8 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\label{fig:difference_offset}
 \end{center}
 
-\vspace{2cm}
-
+%\vspace{2cm}
+\vfill
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c}
@@ -494,8 +502,8 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\label{fig:difference_offset_halogen}
 \end{center}
 
-\vspace{2cm}
-
+%\vspace{2cm}
+\vfill
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c}
@@ -514,7 +522,8 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	
 \end{center}
 
-\vspace{2cm}
+%\vspace{2cm}
+\vfill
 
 \begin{center}
 	
@@ -533,7 +542,8 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\label{fig:optical_resolution}
 \end{center}
 
-\vspace{2cm}
+%\vspace{2cm}
+\vfill
 
 \begin{center}
 	
@@ -552,8 +562,8 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\label{fig:different_fit_ranges}
 \end{center}
 
-\vspace{2cm}
-
+%\vspace{2cm}
+\newpage
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c}
@@ -571,11 +581,11 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\label{fig:fit_of_atmospheric_data}
 \end{center}
 
-\vspace{2cm}
-
+%\vspace{2cm}
+\vfill
 \begin{center}
 	
-	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c c}
+    \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c c}
 		\toprule
 		Nummer & Winkel & Molekül & Fit coeff. & shift & squeeze \\
 		\midrule
@@ -616,6 +626,9 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	\captionof{table}{Fitergebnisse verschiedner Winkel}
 	\label{fig:fit_multi_axis_DOAS}
 \end{center}
+
+\newpage
+\printbibliography
 
 \end{document}
 
