@@ -155,9 +155,9 @@ Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.
 Wenn man nun diese Effekte mit einbezieht, so kann man ein neues modifiziertes Lambert-Beer Gesetz aufstellen.
 
 \begin{align*}
-    I(\lambda, L) = & I_0 (\lambda) \exp \left( -R ( \lambda ) - \sum_i \sigma_i (\lambda)
-    S_i (\lambda) \right) \times \\
-    & \exp \left[ - L \left( \sigma_{i0} (\lambda) \rho_o + \epsilon_R (\lambda) + \epsilon_M (\lambda) \right) \right], \label{eq:mod_lambert_beer_law}
+    I(\lambda, L) = & I_0 (\lambda) \exp \left( -R - \sum_i \sigma_i
+    S_i \right) \times \\
+    & \exp \left[ - L \left( \sigma_{i0} \rho_o + \epsilon_R + \epsilon_M \right) \right], \label{eq:mod_lambert_beer_law}
 \end{align*}
 
 Die erste Exponentialfunktion beinhaltet alle Kurzband Effekte und die zweite alle Breitband Effekte.
@@ -172,7 +172,8 @@ Bei DOAS werden nun alle besprochenen Effekte miteinbezogen und ein Model für d
 Das Model wird dann mit der gemessenen Optischen Dichte verglichen und ein Fit erzeugt, welcher ensteht indem die Parameter so variiert werden, dass 
 
 \begin{align*}
-    \chi^2 = \left[ \log \left( \frac{I_0 + I_\text{ofs}}{I}\right) - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right]^2,
+    \chi^2 = ( \log \frac{I_0 + I_\text{ofs}}{I} - R & - \sum_i \sigma_i S_i \\ 
+    & - \sum_k b_k \lambda^k )^2 ,
 \end{align*}
 minimiert wird.
 
@@ -267,9 +268,9 @@ Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anh
 Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Parameter: 
 
 \begin{align}
-	coeff_0 &= 292.61 \pm 0.043611\\
-	coeff_1 &= 0.12726 \pm 0.00016266\\
-	coeff_2 &= 9.3859 \cdot 10^{-6} \pm 1.193 \cdot 10^{-7} 
+    \text{coeff}_0 &= 292.61 \pm 0.043611\\
+    \text{coeff}_1 &= 0.12726 \pm 0.00016266\\
+    \text{coeff}_2 &= 9.3859 \cdot 10^{-6} \pm 1.193 \cdot 10^{-7} 
 \end{align}
  
 Über die \textit{full width at half max} (FWHM) lässt sich nun die optische Auflösung des Spektrometers bestimmen.
@@ -377,13 +378,13 @@ ergibt.
 Ebenfalls lässt sich nun das Mischverhältnis auf
 
 \begin{align}
-	R = \frac{\rho_{\ch{NO2}}}{\rho_{std.}} = (9.22 \pm 0.45) *10^{-3}
+    R = \frac{\rho_{\ch{NO2}}}{\rho_{\text{std}}} = (9.22 \pm 0.45) *10^{-3}
 \end{align}
 
-beziffern. Dazu wurde für die $\rho_{std.}$ aus den Normalbedingungen gewonnen.
+beziffern. Dazu wurde für die $\rho_{\text{std}}$ aus den Normalbedingungen gewonnen.
 
 \begin{align}
-	\rho_{std.} = \frac{N_A}{V_M}.
+    \rho_{\text{std}} = \frac{N_A}{V_M}.
 \end{align}
  	
 Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\si{\litre}}{\si{\mol}}$.
