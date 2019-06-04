@@ -161,7 +161,8 @@ Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitband Effekte und $
 \end{align*}
 
 
-\textcolor{red}{Brauchen wir noch mehr Grundlagen?}
+\textcolor{red}{Brauchen wir noch mehr Grundlagen?}\\
+\textcolor{blue}{Ring Effekt, Breitband und $\chi^2$ einfügen}
 
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
@@ -227,9 +228,10 @@ Es zeigt sich in Abbildung \ref{fig:total_noise} die gleiche Charakteristik wie 
 \\
 Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick in die optische Dichte des relativen totalen Rauschens. Dazu wurden die zuvor aufgenommenen Spektren durcheinander geteilt und anschließend der Logarithmus des Ergebnisses betrachtet.
 
-%\\
-%\textcolor{red}{Hier brauchen wir eines der Bilder log\_nummer.sp2}
-%\\
+\\
+\textcolor{red}{Hier brauchen wir eines der Bilder log\_nummersp2} \\
+\textcolor{blue}{Bild eingefügt, ist Bild nummer 1 ok?}
+\\
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/hal_log.pdf}
@@ -289,15 +291,30 @@ Die Faltung einer Funktion $f$ mit einer Funktion $g$ ist definiert als
     (f \ast g) (x) := \int f(y) g(x-y) \dd y .
 \end{align}
 
-Die Faltung sorgt zusätzlich dafür, dass das Spektrum geglättet wird.
-Wellenlänge die außerhalb des Bereiches der Messgeräte liegt werden durch die Faltung abgeschnitten.\\
+% Die Faltung sorgt zusätzlich dafür, dass das Spektrum geglättet wird.
+Wellenlängen die außerhalb des Bereiches der Messgeräte liegen werden durch die Faltung abgeschnitten.\\
 Es wurden Spektren von  \ch{CO2}, \ch{H2O}, \ch{O3} und \ch{O4} angepasst.
-Bei dem Referenzspektrum von \ch{H2O} wurde ,im Gegensatz zu den anderen Spektren, das Spektrum erweitert. Dafür wurden um die Struktur Nullwerte eingefügt. \textcolor{red}{Klingt blöd}
- 
+Das Referenzspektrum von \ch{H2O} wurde, im Gegensatz zu den anderen Spektren, vergrößert. 
+Hierfür wurden Nullwerte an den Rändern eingefügt.\\
+Die Faltung hat zusätzlich noch den Effekt, die Spektren zu glätten.
+
+\textcolor{red}{Klingt blöd}\\
+\textcolor{blue}{Klingt es so besser?} 
+
 \subsubsection{\ch{NO2} Spektrum von einer gefüllten Gaszelle}\label{sssec:lab_no2_spectra}
 
-Um die in den vorigen Abschnitten durchgeführten Vorbereitungen zu testen wird das Spektrum der Halogenlampe untersucht, wenn eine Glasküvette mit \ch{NO2} gefüllt in den Lichtweg gestellt wird.
-\textcolor{red}{Vielleicht hier Bild oder Sketch vom Versuchsaufbau}
+Um die in den vorigen Abschnitten durchgeführten Vorbereitungen zu testen wird das Spektrum einer Halogenlampe untersucht, bei der eine Glasküvette, mit \ch{NO2} gefüllt, in den Lichtweg gestellt wird.
+
+\textcolor{red}{Vielleicht hier Bild oder Sketch vom Versuchsaufbau}\\
+\textcolor{blue}{Ist das Bild des Glases nötig?}
+
+\begin{center}
+    %\includegraphics[width=0.7\linewidth]{fig/photo/glas.png}
+    \includegraphics[width=\linewidth]{fig/photo/aufbau_1.png}
+    \captionof{figure}{Versuchsaufbau bei der Messung mit der Halogenlampe}	
+    \label{fig:aufbau_hal}
+\end{center}
+
 
 Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte innerhalb der Gasküvette die Konzetration bestimmen (vgl. Gleichung \eqref{eq:lambert_beer_law} und \eqref{eq:optical_density})
 
@@ -305,11 +322,16 @@ Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte in
 \tau = \ln(\frac{I_0(\lambda)}{I(\lambda)}) = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L.
 \end{align}
 
-Bei der Aufnahme der Spektren ist drauf zu achten, dass kein Teilbereich in Sättigung ist. Ein mögliches Anpassen der Einstellungen der Messungen ist ohne weiteres Möglich. Eine Änderung der Anzahl der Scans oder der Sättigung macht sich nur als eine Konstante bemerkbar, die im 
+Bei der Aufnahme der Spektren ist beachten, dass kein Teilbereich in Sättigung ist. 
+Ein mögliches Anpassen der Einstellungen der Messungen ist ohne weiteres Möglich. 
+Eine Änderung der Anzahl der Scans oder der Sättigung macht sich wegen des Logarithmus nur als eine Konstante bemerkbar, die im \textcolor{blue}{Fit durch einen Konstanten Term berücksichtigt wird (?)}.
+
 \textcolor{red}{ergänzen warum Änderungen nichts ausmachen}
 
-Über einen \textit{least-square-fit} wird nun die SCD so variiert, sodass das $\chi^2$ minimiert wird. In \ref{fig:different_fit_ranges} wurden die Fitparameter bei verschiedenen Fitbereichen betrachtet. Dabei wurde immer ein Polynom 5. Grades ohne Offset gefittet.
-Den optimalen Fitbereich lässt sich über ein Überlagerung (siehe Abbildung \ref{fig:range_search}) des aufgenommenen Spektrums mit dem \ch{NO2} Referenzspektrum finden.
+Über einen \textit{least-square-fit} wird nun die SCD so variiert, dass das $\chi^2$ minimiert wird. 
+In \ref{fig:different_fit_ranges} wurden die Fitparameter bei verschiedenen Fitbereichen betrachtet. 
+Dabei wurde immer ein Polynom 5. Grades ohne Offset gefittet.
+Den optimalen Fitbereich lässt sich über eine Überlagerung (siehe Abbildung \ref{fig:range_search}) des aufgenommenen Spektrums mit dem \ch{NO2} Referenzspektrum finden.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/range_search_test.png}
@@ -333,7 +355,7 @@ Mit der nun bestimmten \textit{slant column density} kann nun die \ch{NO2} Konze
 Die Länge wurde von Hand auf $2.0 \pm 0.1$\si{cm} bestimmt, sodass sich mit der Gaußschen Fehlerfortpflanzung eine Konzentration von
 
 \begin{align}
-	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\si{liter}}\Bigr]
+	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\si{\litre}}\Bigr]
 \end{align}
 
 ergibt.	
@@ -349,7 +371,7 @@ beziffern. Dazu wurde für die $\rho_{std.}$ aus den Normalbedingungen gewonnen.
 	\rho_{std.} = \frac{N_A}{V_M}.
 \end{align}
  	
-Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\si{liter}}{\si{mol}}$.
+Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\si{\litre}}{\si{\mol}}$.
 
 \subsection{Atmosphärische Messungen}\label{ssec:atmospheric_measurements}
 
@@ -367,7 +389,9 @@ Aufgrund des inelastischen \textit{rotational Raman scattering} kommt es zu leic
 Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhoferspektrum berechnet.
 Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzspektren der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.
 \\
-Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als first fit reference, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. \ch{H20} konnte dabei nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
+Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als first fit reference, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
+\ch{H20} kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
+
 \textcolor{red}{Wirkungsquerschnitte? muss einheitlich sein. Danach noch präzisieren starr manche}
 
 \subsubsection{Untersuchung der Tagesmessung}
@@ -421,12 +445,20 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 Einen Einblick in die vertikale Verteilung der Spurengase liefert die MAX-DOASIS Methode.
 Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ,12^\circ \text{und} 90^\circ$ beinhalten. Dabei wurde immer beim kleinsten Winkel angefangen.
 Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt.
-Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. Dies war wie folgt der Fall $1.\text{Messung}:1550-1750, 2.\text{Messung}:1550-1720, 4.\text{Messung}:1550-1750, 5.\text{Messung}:1550-1750$.
+Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
+Dies war wie folgt der Fall $1.\text{Messung}:1550-1750, 2.\text{Messung}:1550-1720, 4.\text{Messung}:1550-1750, 5.\text{Messung}:1550-1750$.
 Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
 Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
 \\
 \textcolor{red}{Hier die Plots, welche Gase in Troposphäre, Wolken?, usw.}
 \\
+
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/photo/wetter.png}
+    \captionof{figure}{Wetterverhältnisse am Tag der Messung (02.05.2019) }
+	\label{fig:weather}
+\end{center}
+ 
 
 \section{Diskussion}\label{sec:discussion}
 
