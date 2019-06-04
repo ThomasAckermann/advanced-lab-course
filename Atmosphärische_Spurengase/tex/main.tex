@@ -114,18 +114,24 @@ wobei $\sigma (\lambda)$ der Absorptionswirkungsquerschnitt und $\rho$ die Konze
 
 \subsubsection{Fraunhofer Referenzspektrum}\label{sssec:fraunhofer_reference}
 
+Um die Strukturen der Sonne zu berücksichtigen wird ein Fraunhofer Referenzspektrum verwendet.
+
 \subsubsection{Spurengas Absorption}\label{sssec:trace_gas_absorption}
 
-Die Hauptmessgröße des DOAS is die \textit{slant column density} ($SCD$ oder $S$)
-welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfades der Länge $L$
+Die Hauptmessgröße des DOAS ist die \textit{slant column density} (SCD oder $S$),
+welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfades der Länge $L$ definiert ist.
     
 \begin{align}
-    SCD = S_i (\lambda) = \int_0^{L(\lambda)} \rho_i (s) \dd s ,\label{eq:SCD}
+    \text{SCD} = S_i (\lambda) = \int_0^{L(\lambda)} \rho_i (s) \dd s ,\label{eq:SCD}
 \end{align}
+
+\subsection{Ring-Effekt}
+
+\subsection{Breitband Effekte}
 
 \subsection{Modifiziertes Lambert-Beer Gesetz}\label{ssec:mod_lamb-beer_law}
 
-Wenn man nun diese Effekte mit einbezieht, so kann man ein neues modifiziertes Lambert-Beer Gesetz ausstellen.
+Wenn man nun diese Effekte mit einbezieht, so kann man ein neues modifiziertes Lambert-Beer Gesetz aufstellen.
 
 \begin{align*}
     I(\lambda, L) = & I_0 (\lambda) \exp \left( -R ( \lambda ) - \sum_i \sigma_i (\lambda)
@@ -134,14 +140,18 @@ Wenn man nun diese Effekte mit einbezieht, so kann man ein neues modifiziertes L
 \end{align*}
 
 Die erste Exponentialfunktion beinhaltet alle Kurzband Effekte und die zweite alle Breitband Effekte.
-Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umformt erhält man die optische Dichte $\tau$:
-
+Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umformt erhält man die optische Dichte $\tau$
 \begin{align}
 \tau &= \log \frac{I}{I_0} \\
-    &= - R(\lambda) - \sum_i \sigma_i (\lambda) S_i (\lambda) - \sum_k b_k \lambda^k,\label{eq:optical_density}
+    &= - R(\lambda) - \sum_i \sigma_i (\lambda) S_i (\lambda) - \sum_k b_k \lambda^k.\label{eq:optical_density}
 \end{align}
 
-wobei das Polynom $\sum b_k \lambda^k$ für die Breitband Effekte zuständig ist.
+Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitband Effekte und $R(\lambda)$ ist das Ring-Spektrum.
+
+\begin{align}
+    \chi^2 = \left[ \log \left( \frac{I_0 + I_\text{ofs}}{I}\right) - R - \sum_i \sigma_i S_i - \sum_K b_k \lambda^k \right]^2
+\end{align}
+
 
 \textcolor{red}{Brauchen wir noch mehr Grundlagen?}
 
@@ -184,7 +194,7 @@ Wie im oberen Abschnitt \ref{sssec:O&D} gesehen, entstehen Messfehler, die zeitl
 Dazu werden zwei Offsets mit identischen Einstellungen kurz hintereinander aufgenommen, über die entstandene Differenz ($\sigma_D$) lässt sich dann das Instrumentenrauschen bestimmen 
 
 \begin{align}
-\sigma_{I} = \frac{1}{\sqrt{2}}\sigma_D.\label{eq:instrumental_noise}
+\sigma_{I} = \frac{\sigma_D}{\sqrt{2}}.\label{eq:instrumental_noise}
 \end{align}
 
 Ein Auftragen des Rauschens gegen die Anzahl der Scans liefert einen linearen Zusammenhang (siehe Diagramm \ref{fig:instrumental_noise})
@@ -208,9 +218,18 @@ Um systematische Strukturen, wie das Schwanken der Lampenintensität zwischen de
 Es zeigt sich in Abbildung \ref{fig:total_noise} die gleiche Charakteristik wie in Abbildung \ref{fig:instrumental_noise}. Lediglich die Stärke des Rauschen unterscheidet sich, was aber zu erwarten war, da im totalen Rauschen auch das Instrumentenrauschen integriert ist.
 \\
 Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick in die optische Dichte des relativen totalen Rauschens. Dazu wurden die zuvor aufgenommenen Spektren durcheinander geteilt und anschließend der Logarithmus des Ergebnisses betrachtet.
-\\
-\textcolor{red}{Hier brauchen wir eines der Bilder log\_nummer.sp2}
-\\
+
+%\\
+%\textcolor{red}{Hier brauchen wir eines der Bilder log\_nummer.sp2}
+%\\
+
+\begin{center}
+    \includegraphics[width=\linewidth]{fig/hal_log.pdf}
+    \captionof{figure}{Optische Dichte der Halogenlampe}	
+    \label{fig:hal_log}
+\end{center}
+
+
 Man erwartet, dass der Mittelwert bei Null liegt, da zwischen der Aufnahme der Spektren so wenig wie möglich Zeit vergangen ist. Allerdings kann bei kleinerer Channelzahl höhere Schwankungen ausgemacht werden und insgesamt ist ein kurven artiger Verlauf zu erkennen.
 Das größere Schwanken lässt sich darauf zurückführen, dass bei kleiner Channelzahl die \textit{Counts} geringer ausfallen als bei höherer Channelzahl.
 Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobachtete Krümmung, welche bei höherer Scanzahl größer wird. Die Schwankungen verlieren bei höheren \textit{Counts} an Bedeutung.
@@ -296,9 +315,9 @@ Damit konnten beim Fit die Parameter
 
 \begin{align}
 	\chi^2 &= 4.367 \cdot 10^{-3},\\
-	fit coeff &= -4.96 \cdot 10^{17} \pm 1.95 \cdot 10^{15},\\
-	shift &= 0.0955 \pm 0.00538,\\
-	squeeze &= 0.993 \pm 0.000159, 
+    \text{fit coeff} &= -4.96 \cdot 10^{17} \pm 1.95 \cdot 10^{15},\\
+    \text{shift} &= 0.0955 \pm 0.00538,\\
+    \text{squeeze} &= 0.993 \pm 0.000159, 
 \end{align}
 
 erreicht werden.
@@ -349,13 +368,13 @@ Nachdem die Fitbereiche optimiert wurde, werden die die Daten des ganzen Tages u
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
-	\captionof{figure}{$\delta$SCD von \ch{NO2} über den Tag des 24.04.2019}
+    \captionof{figure}{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 24.04.2019}
 	\label{fig:delta_SCD_time_NO2}
 \end{center}
        
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_O3.pdf}
-	\captionof{figure}{$\delta$SCD von \ch{O3} über den Tag des 24.04.2019}
+    \captionof{figure}{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.2019}
 	\label{fig:Delta_SCD_time_O3}
 \end{center}       
 
@@ -375,16 +394,16 @@ Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rücks
 	\label{fig:langley_O3}
 \end{center}
 
-\textcolor{red}{Erklärung usw., außerdem Fit für $\text{SCD}_ref$ von \ch{O3}}
+\textcolor{red}{Erklärung usw., außerdem Fit für $\text{SCD}_{ref}$ von \ch{O3}}
 
-Eine Veranschaulichung der Konstanz \textcolor{red}{?} von  \ch{O3} lässt sich über die \textit{vertical column density}(VCD) aufzeigen.
+Eine Veranschaulichung der Konstanz \textcolor{red}{?} von  \ch{O3} lässt sich über die \textit{vertical column density} (VCD) aufzeigen.
 \\
 \textcolor{red}{Hier dann der Plot, wir haben es bisher leider gegen das Falsche aufgetragen}
 \\
 Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge: 
 
 \begin{align}
-	VCD = SCD \cdot \cos(\theta)
+    \text{VCD} = \text{SCD} \cdot \cos(\theta)
 \end{align}
 
 \textcolor{red}{Vergleich mit Daten von Satellitenmessungen}
@@ -392,11 +411,11 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
 Einen Einblick in die vertikale Verteilung der Spurengase liefert die MAX-DOASIS Methode.
-Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7\circ,12\circ \text{und} 90\circ$ beinhalten. Dabei wurde immer beim kleinsten Winkel angefangen.
+Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ,12^\circ \text{und} 90^\circ$ beinhalten. Dabei wurde immer beim kleinsten Winkel angefangen.
 Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt.
 Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. Dies war wie folgt der Fall $1.\text{Messung}:1550-1750, 2.\text{Messung}:1550-1720, 4.\text{Messung}:1550-1750, 5.\text{Messung}:1550-1750$.
 Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
-Eine $\delta$SCD Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
+Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
 \\
 \textcolor{red}{Hier die Plots, welche Gase in Troposphäre, Wolken?, usw.}
 \\
