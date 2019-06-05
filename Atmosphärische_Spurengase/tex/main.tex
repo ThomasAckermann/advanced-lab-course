@@ -144,7 +144,7 @@ Dies bezeichnet als \textit{Ring-Effekt}.
 
 \textcolor{blue}{Abschnitt gefällt mir noch nicht}
 
-\subsection{Breitband Effekte}
+\subsection{Breitband Komponenten}
 
 Das Sonnenlicht wird von Aerosolen und Wassertröpfchen in den Wolken gestreut und absorbiert (\textit{Mie Streuung}) und von Luftmolekülen gestreut (\textit{Rayleigh Streuung}).
 Die Summe aus Streuungs- und Absorbtionseffekten wird als Extinktion ($\epsilon_M$ und $\epsilon_R$ in diesem Fall) bezeichnet.
@@ -214,6 +214,7 @@ Anschließend wurde der Dunkelstrom bei verschiedenen Messzeiten gemessen (siehe
     \captionof{figure}{Abhängigkeit des Dunkelstromes von der Messzeit}
 	\label{fig:dark_current}
 \end{center}
+\textcolor{blue}{Fehlt hier noch der Offset Plot?}
 
 \subsubsection{Instrumenten- und totales Rauschen}\label{sssec:instrumental_total_noise}
 
@@ -247,6 +248,7 @@ Es zeigt sich in Abbildung \ref{fig:total_noise} die gleiche Charakteristik wie 
 Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick in die optische Dichte des relativen totalen Rauschens. Dazu wurden die zuvor aufgenommenen Spektren durcheinander geteilt und anschließend der Logarithmus des Ergebnisses betrachtet.
 
 \\
+\textcolor{blue}{Fehlt hier berechnung der optical resolution?}
 \textcolor{red}{Hier brauchen wir eines der Bilder log\_nummersp2} \\
 \textcolor{blue}{Bild eingefügt, ist Bild nummer 1 ok?}
 \\
@@ -463,22 +465,23 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
 Einen Einblick in die vertikale Verteilung der Spurengase liefert die MAX-DOASIS Methode.
-Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ,12^\circ \text{und} 90^\circ$ beinhalten. Dabei wurde immer beim kleinsten Winkel angefangen.
-Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt.
-Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
-Dies war wie folgt der Fall $1.\text{Messung}:1550-1750, 2.\text{Messung}:1550-1720, 4.\text{Messung}:1550-1750, 5.\text{Messung}:1550-1750$.
-Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
-Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
-\\
-\textcolor{red}{Hier die Plots, welche Gase in Troposphäre, Wolken?, usw.}
-\\
+Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ, 12^\circ \text{und} 90^\circ$ beinhalten. 
+Dabei wurde immer beim kleinsten Winkel angefangen.
+Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt (siehe Abbildung \ref{fig:weather}).
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/photo/wetter.png}
     \captionof{figure}{Wetterverhältnisse am Tag der Messung (02.05.2019) }
 	\label{fig:weather}
-\end{center}
- 
+\end{center} 
+
+Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
+Dies war wie folgt der Fall $1.\text{Messung}:1550-1750$, $2.\text{Messung}:1550-1720$, $4.\text{Messung}:1550-1750$, $5.\text{Messung}:1550-1750$.
+Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
+Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
+\\
+\textcolor{red}{Hier die Plots, welche Gase in Troposphäre, Wolken?, usw.}
+\\
 
 \section{Diskussion}\label{sec:discussion}
 

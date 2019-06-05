@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
@@ -27,15 +28,15 @@ result_of_convolution_O4_error  = np.genfromtxt(dateiname, skip_header=1,usecols
 VCD = (6*10**18+result_of_convolution_O3) * np.cos(2 * np.pi * SZA / 360)
 VCD_error =(6*10**18 + result_of_convolution_O3_error) * np.cos(2 * np.pi * SZA / 360)
 
-#plot
-
+# plot
 k = np.linspace(0,3.5,500)
-plot = plt.errorbar(StartZeit, VCD, yerr= VCD_error, label='Messdaten für O3',fmt = '.')
+# plot = plt.errorbar(StartZeit, VCD, yerr=VCD_error, label='Messdaten für O3',fmt='.')
+plot = plt.errorbar(StartZeit, VCD, label='Messdaten für O3', fmt='.', markersize=3)
 axes = plt.gca()
 plt.ylabel("VCD für O3")
 plt.xlabel("Uhrzeit UCT")
 
-#nötig falls gegen Uhrzeit geplottet wird
+# nötig falls gegen Uhrzeit geplottet wird
 
 for index, label in enumerate(axes.xaxis.get_ticklabels()):
     if index % 45 !=0:
