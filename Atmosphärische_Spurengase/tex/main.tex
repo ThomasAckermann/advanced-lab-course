@@ -213,7 +213,6 @@ Anschließend wurde der Dunkelstrom bei verschiedenen Messzeiten gemessen (siehe
     \captionof{figure}{Abhängigkeit des Dunkelstromes von der Messzeit}
 	\label{fig:dark_current}
 \end{center}
-\textcolor{blue}{Fehlt hier noch der Offset Plot?}
 
 \subsubsection{Instrumenten- und totales Rauschen}\label{sssec:instrumental_total_noise}
 
@@ -246,10 +245,6 @@ Es zeigt sich in Abbildung \ref{fig:total_noise} die gleiche Charakteristik wie 
 \\
 Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick in die optische Dichte des relativen totalen Rauschens. Dazu wurden die zuvor aufgenommenen Spektren durcheinander geteilt und anschließend der Logarithmus des Ergebnisses betrachtet.
 
-\\
-\textcolor{blue}{Fehlt hier berechnung der optical resolution?}
-\\
-
 \begin{center}
     \includegraphics[width=\linewidth]{fig/hal_log.pdf}
     \captionof{figure}{Optische Dichte der Halogenlampe}	
@@ -265,13 +260,14 @@ Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobach
 
 Zur Kalibrierung des Spektrometers wird eine Quecksilberdampflampe verwendet, da diese gut zu identifizierende Spektrallinien aufweist.
 Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
-
+Es wäre ebenfalls eine Spektrallinie bei ca. $313$ \si{nm} gegeben. 
+Diese wurde allerdings nicht zur Kallibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit vier verschiedene Linien zu finden sind \cite{doas08}.
 Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Parameter: 
 
 \begin{align}
-    \text{coeff}_0 &= 292.61 \pm 0.043611\\
-    \text{coeff}_1 &= 0.12726 \pm 0.00016266\\
-    \text{coeff}_2 &= 9.3859 \cdot 10^{-6} \pm 1.193 \cdot 10^{-7} 
+    \text{coeff}_0 &= 292.61 \pm 0.043611, \\
+    \text{coeff}_1 &= 0.12726 \pm 0.00016266, \\
+    \text{coeff}_2 &= 9.3859 \cdot 10^{-6} \pm 1.193 \cdot 10^{-7}. 
 \end{align}
  
 Über die \textit{full width at half max} (FWHM) lässt sich nun die optische Auflösung des Spektrometers bestimmen.
@@ -354,10 +350,16 @@ Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte in
 
 Bei der Aufnahme der Spektren ist beachten, dass kein Teilbereich in Sättigung ist. 
 Ein mögliches Anpassen der Einstellungen der Messungen ist ohne weiteres Möglich. 
-Eine Änderung der Anzahl der Scans oder der Sättigung macht sich wegen des Logarithmus nur als eine Konstante bemerkbar, die im \textcolor{blue}{Fit durch einen Konstanten Term berücksichtigt wird (?)}.
-
-\textcolor{red}{ergänzen warum Änderungen nichts ausmachen}
-
+Eine Änderung der Anzahl der Scans oder der Sättigung macht sich nicht bemerkbar.
+Dies liegt daran, dass Änderung der Parameter sich auf die Intensitäten als Faktor niederschlägt. 
+Aus dem Lambert-Beer Gesetz folgt
+\begin{align}
+    \log \left( \frac{m}{n} \frac{I_\text{F} I_{0, i}}{I_i I_{0, \text{F}}} \right) = \log \left(\frac{m}{n} \text{e}^{(\sigma \rho \Delta L)}\right) ,
+\end{align}
+wobei $m$ und $n$ hier für die verschiedenen Scananzahlen und Sättigungen stehen. 
+$I_\text{F}$ bezeichnet das Fraunhoferspektrum und $I_i$ ein beliebiges.
+$I_{0, \text{F}}$ und $I_{0, i}$ sind gleich.
+\\
 Über einen \textit{least-square-fit} wird nun die SCD so variiert, dass das $\chi^2$ minimiert wird. 
 In \ref{fig:different_fit_ranges} wurden die Fitparameter bei verschiedenen Fitbereichen betrachtet. 
 Dabei wurde immer ein Polynom 5. Grades ohne Offset gefittet.
@@ -385,14 +387,14 @@ Mit der nun bestimmten \textit{slant column density} kann nun die \ch{NO2} Konze
 Die Länge wurde von Hand auf $2.0 \pm 0.1$\si{cm} bestimmt, sodass sich mit der Gaußschen Fehlerfortpflanzung eine Konzentration von
 
 \begin{align}
-	\rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\si{\litre}}\Bigr]
+    \rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\ell}\Bigr]
 \end{align}
 
 ergibt.	
 Ebenfalls lässt sich nun das Mischverhältnis auf
 
 \begin{align}
-    R = \frac{\rho_{\ch{NO2}}}{\rho_{\text{std}}} = (9.22 \pm 0.45) *10^{-3}
+    R = \frac{\rho_{\ch{NO2}}}{\rho_{\text{std}}} = (9.22 \pm 0.45) *10^{-3},
 \end{align}
 
 beziffern. Dazu wurde für die $\rho_{\text{std}}$ aus den Normalbedingungen gewonnen.
@@ -401,7 +403,7 @@ beziffern. Dazu wurde für die $\rho_{\text{std}}$ aus den Normalbedingungen gew
     \rho_{\text{std}} = \frac{N_A}{V_M}.
 \end{align}
  	
-Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\si{\litre}}{\si{\mol}}$.
+Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\ell}{\si{\mol}}$.
 
 \subsection{Atmosphärische Messungen}\label{ssec:atmospheric_measurements}
 
@@ -421,7 +423,10 @@ Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhof
 Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzen der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. 
 Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
 Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
-\ch{H20} kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
+Der Referenzwirkungsquerschnitt von \ch{H2O} kann bei \ch{O3} .. nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
+
+kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
+
 
 \textcolor{red}{Danach noch präzisieren starr manche}
 
@@ -442,8 +447,35 @@ Hierbei standen $436$ Aufnahmen zur Verfügung.
 	\label{fig:Delta_SCD_time_O3}
 \end{center}       
 
-\textit{Warum die so aussehen}
-
+In Abbildung \ref{fig:delta_SCD_time_NO2} ist zu erkennen, dass $\Delta$SCD \ch{NO2} zunächst niedrig ist, zum Abend in jedoch stark zunimmt.
+Grund dafür sind chemische Prozesse die Unterschiedlich stark bei verschiedner Sonneneinstrahlungen stattfinden.
+Am Morgen (was hier nicht abgebildet ist) nimmt die Sonneneinstrahlung zu wodurch die Reaktion
+\begin{align}
+    \ch{NO2} + h \nu \to \ch{NO} + \ch{O} (^3\text{P}). \label{eq:creation_no}
+\end{align}
+vermehrt stattfindet.
+Dadurch sinkt die Mischrate von \ch{NO2} zunächst.
+Gleichzeitig kommt es zur Dissoziation 
+\begin{align}
+    \ch{N2O5} + h\nu \to \ch{NO2} + \ch{NO3},
+\end{align}
+wobei \ch{NO3} wieder weiter reagieren kann
+\begin{align}
+    \ch{NO3} + h\nu \to \ch{NO} + \ch{O2}, \\
+    \ch{NO3} + h\nu \to \ch{NO2} + \ch{O}.
+\end{align}
+Diese Reaktionen treten vermehrt über den Tag auf, wodurch $\Delta$SCD wieder steigt. 
+Bei den Messungen hier wurde erst am Vormittag begonnen, weswegen man nicht sehen kann, dass $\Delta$SCD morgens ebenfalls sehr hoch ist.
+Ab 16:00 Uhr kann man einen starken Anstieg feststellen, welcher auf den Feierabend zurückzuführen ist.\\
+Bei \ch{O3} in Abbildung \ref{fig:delta_SCD_time_O3} ist ein ähnliches verhalten zu beobachten.
+In der Atmosphäre findet folgende Gleichgewichtsreaktion statt:
+\begin{align}
+    \ch{O3} + \ch{NO} \Leftrightarrow \ch{NO2} + \ch{O2}
+\end{align}
+Aus der Reaktion \ref{eq:creation_no} geht hervor, dass sich über den Tag die \ch{O3} Konzentration verringert, da mehr \ch{NO} entsteht.
+Der Grund hierfür ist, dass die Reaktion \ref{eq:creation_no} über den Tag verstärkt vorkommt.
+Es ist kein Einfluss durch den Feierabendverkehr wie in Abbildung \ref{fig:delta_SCD_time_NO2} zu erkennen, da \ch{O3} viel stärker in der Stratosphäre als in der Troposphäre vorkommt, sodass kleine \ch{O3} Änderungen nur im Fehlerbereich liegen.
+\\
 Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rückschlüsse über eine Konzentrationsänderung über den Tag zu.
 
 \begin{center}
@@ -460,17 +492,20 @@ Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rücks
 
 \textcolor{red}{Erklärung usw., außerdem Fit für $\text{SCD}_{ref}$ von \ch{O3}}
 
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/scd_fit_o3.pdf}
+    \captionof{figure}{$\Delta$SCD von \ch{O3} mit Fits.}
+	\label{fig:scd_fit_o3}
+\end{center}
+
+
 Eine Veranschaulichung der Konstanz \textcolor{red}{?} von  \ch{O3} lässt sich über die \textit{vertical column density} (VCD) aufzeigen.
-\\
-\textcolor{red}{Hier dann der Plot, wir haben es bisher leider gegen das Falsche aufgetragen}
-\\
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/VCD_O3_over_day.pdf}
     \captionof{figure}{VCD von \ch{O3} über einen Tag lang gemessen }
 	\label{fig:weather}
 \end{center} 
-
 
 Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge: 
 
@@ -482,7 +517,7 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
-Einen Einblick in die vertikale Verteilung der Spurengase liefert die MAX-DOASIS Methode.
+Einen Einblick in die vertikale Verteilung der Spurengase liefert die Multi Axis DOAS Methode.
 Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ, 12^\circ \text{und} 90^\circ$ beinhalten. 
 Dabei wurde immer beim kleinsten Winkel angefangen.
 Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt (siehe Abbildung \ref{fig:weather}).
@@ -503,19 +538,19 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
     
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/max_DOAS_O3.pdf}
-    \captionof{figure}{max DOAS von \ch{O3}}
+    \captionof{figure}{MAX-DOAS von \ch{O3}}
 	\label{fig:max_doas_o3}
 \end{center}
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/max_DOAS_NO2.pdf}
-    \captionof{figure}{max DOAS von \ch{NO2}}
+    \captionof{figure}{MAX-DOAS von \ch{NO2}}
 	\label{fig:max_doas_no2}
 \end{center}
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/max_DOAS_O4.pdf}
-    \captionof{figure}{max DOAS von \ch{O4}}
+    \captionof{figure}{MAX-DOAS von \ch{O4}}
 	\label{fig:max_doas_o4}
 \end{center}
 
@@ -678,7 +713,7 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 \begin{center}	
     %\hspace{-2em}
     %\begin{table}
-        \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c c}
+        \begin{tabular}{@{\extracolsep{\fill}} c c c c c c}
 		\hline %\toprule
 		Nummer & Winkel & Molekül & Fit coeff. & shift & squeeze \\
 		\hline %\midrule
@@ -714,7 +749,7 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 		& & \ch{NO2} & $2.00 \cdot 10^{16} \pm 4.75 \cdot 10^{14}$ & $0.0706 \pm 0.0325$ & $0.992 \pm 0.0011$\\
 		& & \ch{O4} & $1.9 \cdot 10^{43} \pm 3.361 \cdot 10^{41}$ & $-0.209 \pm 0.0285$ & $0.981 \pm 0.00182$\\
         \hline %\bottomrule
-	\end{tabular*}
+	\end{tabular}
 	
 	\captionof{table}{Fitergebnisse verschiedner Winkel}
 	\label{fig:fit_multi_axis_DOAS}

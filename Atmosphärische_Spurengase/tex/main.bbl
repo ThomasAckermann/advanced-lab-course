@@ -28,7 +28,7 @@
            giveni={C\bibinitperiod}}}%
       }
       \list{institution}{1}{%
-        {Institue of Environmental Physics}%
+        {Institute of Environmental Physics}%
       }
       \strng{namehash}{cb10d3e580dacf8bda6d5d7c3539f69d}
       \strng{fullhash}{cb10d3e580dacf8bda6d5d7c3539f69d}
@@ -50,6 +50,31 @@
       \verb{url}
       \verb https://www.physi.uni-heidelberg.de/Einrichtungen/FP/anleitungen/F18.pdf
       \endverb
+    \endentry
+    \entry{doas08}{article}{}
+      \name{author}{1}{}{%
+        {{hash=392b9655853eff0067996aa119e4edcd}{%
+           family={Ulrich\bibnamedelima Platt},
+           familyi={U\bibinitperiod\bibinitdelim P\bibinitperiod},
+           given={Jochen\bibnamedelima Stutz},
+           giveni={J\bibinitperiod\bibinitdelim S\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Environmental Physics}%
+      }
+      \strng{namehash}{392b9655853eff0067996aa119e4edcd}
+      \strng{fullhash}{392b9655853eff0067996aa119e4edcd}
+      \strng{bibnamehash}{392b9655853eff0067996aa119e4edcd}
+      \strng{authorbibnamehash}{392b9655853eff0067996aa119e4edcd}
+      \strng{authornamehash}{392b9655853eff0067996aa119e4edcd}
+      \strng{authorfullhash}{392b9655853eff0067996aa119e4edcd}
+      \field{sortinit}{U}
+      \field{sortinithash}{36a2444f5238e0dcf4bb59704df6624d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Differential Optical Absorption Spectroscopy}
+      \field{year}{2008}
+      \true{nocite}
     \endentry
   \enddatalist
 \endrefsection

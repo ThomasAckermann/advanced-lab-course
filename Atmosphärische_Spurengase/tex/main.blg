@@ -1,15 +1,15 @@
 [0] Config.pm:304> INFO - This is Biber 2.12
 [0] Config.pm:307> INFO - Logfile is 'main.blg'
-[40] biber-darwin:315> INFO - === Tue Jun  4, 2019, 15:15:29
-[61] Biber.pm:371> INFO - Reading 'main.bcf'
-[171] Biber.pm:886> INFO - Using all citekeys in bib section 0
-[187] Biber.pm:4093> INFO - Processing section 0
-[201] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
-[203] bibtex.pm:1523> INFO - LaTeX decoding ...
-[207] bibtex.pm:1340> INFO - Found BibTeX data source 'bibliography.bib'
-[225] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
-[225] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
-[225] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
-[225] Biber.pm:3927> INFO - No sort tailoring available for locale 'de-DE'
-[233] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
-[234] bbl.pm:739> INFO - Output to main.bbl
+[46] biber-darwin:315> INFO - === Thu Jun  6, 2019, 16:07:59
+[68] Biber.pm:371> INFO - Reading 'main.bcf'
+[177] Biber.pm:886> INFO - Using all citekeys in bib section 0
+[192] Biber.pm:4093> INFO - Processing section 0
+[204] Biber.pm:4254> INFO - Looking for bibtex format file 'bibliography.bib' for section 0
+[205] bibtex.pm:1523> INFO - LaTeX decoding ...
+[210] bibtex.pm:1340> INFO - Found BibTeX data source 'bibliography.bib'
+[246] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'normalization = NFD' with 'normalization = prenormalized'
+[246] UCollate.pm:68> INFO - Overriding locale 'de-DE' defaults 'variable = shifted' with 'variable = non-ignorable'
+[247] Biber.pm:3921> INFO - Sorting list 'nty/global//global/global' of type 'entry' with template 'nty' and locale 'de-DE'
+[247] Biber.pm:3927> INFO - No sort tailoring available for locale 'de-DE'
+[266] bbl.pm:636> INFO - Writing 'main.bbl' with encoding 'UTF-8'
+[268] bbl.pm:739> INFO - Output to main.bbl
