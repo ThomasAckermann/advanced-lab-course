@@ -31,7 +31,9 @@
 \section*{Abstract}
 
 This experiment was conducted in the scope of the advanced lab course in physics at the Heidelberg University. \\
-The experiment was conducted in the week of the $8^\text{th}$ april, 2019.
+The main goal was to find the Concentration of \ch{NO2} and \ch{O3} in the atmosphere by using the DOAS method. 
+Measurements were taken in the week of the $29^\text{th}$ april, 2019.
+
 
 \tableofcontents
 \newpage
@@ -179,9 +181,6 @@ Das Model wird dann mit der gemessenen Optischen Dichte verglichen und ein Fit e
 \end{align*}
 minimiert wird.
 
-\textcolor{red}{Brauchen wir noch mehr Grundlagen?}\\
-\textcolor{blue}{Ring Effekt, Breitband und $\chi^2$ wurden eingefügt. Denke das ist dann genug.}
-
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
 \subsection{Software kennenlernen}\label{get_to_know_the_software}
@@ -249,8 +248,6 @@ Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick i
 
 \\
 \textcolor{blue}{Fehlt hier berechnung der optical resolution?}
-\textcolor{red}{Hier brauchen wir eines der Bilder log\_nummersp2} \\
-\textcolor{blue}{Bild eingefügt, ist Bild nummer 1 ok?}
 \\
 
 \begin{center}
@@ -324,9 +321,6 @@ Die Faltung hat zusätzlich noch den Effekt, die Spektren zu glätten.
 \subsubsection{\ch{NO2} Spektrum von einer gefüllten Gaszelle}\label{sssec:lab_no2_spectra}
 
 Um die in den vorigen Abschnitten durchgeführten Vorbereitungen zu testen wird das Spektrum einer Halogenlampe untersucht, bei der eine Glasküvette, mit \ch{NO2} gefüllt, in den Lichtweg gestellt wird.
-
-\textcolor{red}{Vielleicht hier Bild oder Sketch vom Versuchsaufbau}\\
-\textcolor{blue}{Ist das Bild des Glases nötig?}
 
 \begin{center}
     %\includegraphics[width=0.7\linewidth]{fig/photo/glas.png}
@@ -413,7 +407,7 @@ Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
 Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
 \ch{H20} kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
 
-\textcolor{red}{Wirkungsquerschnitte? muss einheitlich sein. Danach noch präzisieren starr manche}
+\textcolor{red}{Danach noch präzisieren starr manche}
 
 \subsubsection{Untersuchung der Tagesmessung}
 
@@ -480,7 +474,7 @@ Dies war wie folgt der Fall $1.\text{Messung}:1550-1750$, $2.\text{Messung}:1550
 Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
 Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
 \\
-\textcolor{red}{Hier die Plots, welche Gase in Troposphäre, Wolken?, usw.}
+\textcolor{red}{Welche Gase in Troposphäre, Wolken?, usw.}
 \\
     
 \begin{center}
@@ -641,14 +635,14 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c}
-		\toprule
+		\hline %\toprule
 		Molekül & Wellenlänge [\si{nm}] & Fit coeff. & shift & squeeze \\
-		\midrule
+		\hline %\midrule
 		\ch{O3} & $311.07-339.71$ & $3.36 \cdot 10^{19} \pm 7.71 \cdot 10^{17}$ & $0.0135 \pm 0.00985$ & $0.992 \pm 0.00119$ \\
 		\ch{NO2} & $413.40-467.43$ & $3.08 \cdot 10^{16} \pm 6.35 \cdot 10^{14}$ & $0.114 \pm 0.026$ & $0.99 \pm 0.000799$\\
 		\ch{H2O} & $439.3-451.06$ & $7.68 \cdot 10^{21} \pm 1.19 \cdot 10^{22}$ & $0.0538 \pm 0.0264$ & $0.972 \pm 0.00372$ \\
 		\ch{O4} & $440.13-451.57$ & $4.01 \cdot 10^{43} \pm 2.17 \cdot 10^{43}$ & $0.0439 \pm 0.0285$ & $0.972 \pm 0.00427$\\
-		\bottomrule
+		\hline %\bottomrule
 	\end{tabular*}
 	
 	\captionof{table}{Fit mit Atmosphärendaten}
@@ -661,9 +655,9 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
     %\hspace{-2em}
     %\begin{table}
         \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c c}
-		\toprule
+		\hline %\toprule
 		Nummer & Winkel & Molekül & Fit coeff. & shift & squeeze \\
-		\midrule
+		\hline %\midrule
 		1 & 7 & \ch{O3} & $1.09 \cdot 10^{18} \pm 5.9 \cdot 10^{16}$ & $0.15 \pm 0.0227$ & $0.99 \pm 0.00244$ \\
 		& & \ch{NO2} & $5.72 \cdot 10^{16} \pm 5.523 \cdot 10^{14}$ & $0.0716 \pm 0.0119$ & $0.993 \pm 0.000383$\\
 		& & \ch{O4} & $3.41 \cdot 10^{43} \pm 8.08 \cdot 10^{41}$ & $0.308 \pm 0.0284$ & $0.988 \pm 0.00178$\\
@@ -695,7 +689,7 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 		& 12 & \ch{O3} & $7.53 \cdot 10^{17} \pm 7.60 \cdot 10^{16}$ & $0.179 \pm 0.0425$ & $0.992 \pm 0.00463$ \\
 		& & \ch{NO2} & $2.00 \cdot 10^{16} \pm 4.75 \cdot 10^{14}$ & $0.0706 \pm 0.0325$ & $0.992 \pm 0.0011$\\
 		& & \ch{O4} & $1.9 \cdot 10^{43} \pm 3.361 \cdot 10^{41}$ & $-0.209 \pm 0.0285$ & $0.981 \pm 0.00182$\\
-		\bottomrule
+        \hline %\bottomrule
 	\end{tabular*}
 	
 	\captionof{table}{Fitergebnisse verschiedner Winkel}
