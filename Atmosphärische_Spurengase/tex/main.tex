@@ -261,7 +261,7 @@ Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobach
 Zur Kalibrierung des Spektrometers wird eine Quecksilberdampflampe verwendet, da diese gut zu identifizierende Spektrallinien aufweist.
 Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
 Es wäre ebenfalls eine Spektrallinie bei ca. $313$ \si{nm} gegeben. 
-Diese wurde allerdings nicht zur Kallibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit vier verschiedene Linien zu finden sind \cite{doas08}.
+Diese wurde allerdings nicht zur Kallibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit vier verschiedene Linien zu finden sind \cite{doas08}.\\
 Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Parameter: 
 
 \begin{align}
@@ -423,14 +423,9 @@ Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhof
 Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzen der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. 
 Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
 Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
-Der Referenzwirkungsquerschnitt von \ch{H2O} kann bei \ch{O3} .. nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
+Der Referenzwirkungsquerschnitt von \ch{H2O} kann bei \textcolor{red}{\ch{O3} ..} nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
 
-kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
-
-
-\textcolor{red}{Danach noch präzisieren starr manche}
-
-\subsubsection{Untersuchung der Tagesmessung}
+\subsubsection{Untersuchung der Tagesmessung}\label{sssec:tagesmessung}
 
 Nachdem die Fitbereiche optimiert wurden, werden die Daten des ganzen Tages untersucht. 
 Hierbei standen $436$ Aufnahmen zur Verfügung.
@@ -444,11 +439,11 @@ Hierbei standen $436$ Aufnahmen zur Verfügung.
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_O3.pdf}
     \captionof{figure}{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.2019}
-	\label{fig:Delta_SCD_time_O3}
+	\label{fig:delta_SCD_time_O3}
 \end{center}       
 
-In Abbildung \ref{fig:delta_SCD_time_NO2} ist zu erkennen, dass $\Delta$SCD \ch{NO2} zunächst niedrig ist, zum Abend in jedoch stark zunimmt.
-Grund dafür sind chemische Prozesse die Unterschiedlich stark bei verschiedner Sonneneinstrahlungen stattfinden.
+In Abbildung \ref{fig:delta_SCD_time_NO2} ist zu erkennen, dass $\Delta$SCD von \ch{NO2} zunächst niedrig ist, zum Abend hin jedoch stark zunimmt.\\
+Grund dafür sind chemische Prozesse die Unterschiedlich stark bei verschiedener Sonneneinstrahlungen stattfinden.
 Am Morgen (was hier nicht abgebildet ist) nimmt die Sonneneinstrahlung zu wodurch die Reaktion
 \begin{align}
     \ch{NO2} + h \nu \to \ch{NO} + \ch{O} (^3\text{P}). \label{eq:creation_no}
@@ -467,7 +462,7 @@ wobei \ch{NO3} wieder weiter reagieren kann
 Diese Reaktionen treten vermehrt über den Tag auf, wodurch $\Delta$SCD wieder steigt. 
 Bei den Messungen hier wurde erst am Vormittag begonnen, weswegen man nicht sehen kann, dass $\Delta$SCD morgens ebenfalls sehr hoch ist.
 Ab 16:00 Uhr kann man einen starken Anstieg feststellen, welcher auf den Feierabend zurückzuführen ist.\\
-Bei \ch{O3} in Abbildung \ref{fig:delta_SCD_time_O3} ist ein ähnliches verhalten zu beobachten.
+Bei $\Delta$SCD von \ch{O3} in Abbildung \ref{fig:delta_SCD_time_O3} ist ein ähnliches verhalten zu beobachten.
 In der Atmosphäre findet folgende Gleichgewichtsreaktion statt:
 \begin{align}
     \ch{O3} + \ch{NO} \Leftrightarrow \ch{NO2} + \ch{O2}
@@ -490,7 +485,11 @@ Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rücks
 	\label{fig:langley_O3}
 \end{center}
 
-\textcolor{red}{Erklärung usw., außerdem Fit für $\text{SCD}_{ref}$ von \ch{O3}}
+Ein linearer Zusammenhang entspricht einer Konstanten Konzentration über den Tag. 
+Es scheint als würde sowohl bei \ch{O3} als auch bei \ch{NO2} eine konstante Konzentration über den Tag vorliegt.
+Allerdings muss beachtet werden, dass Messungen vom Morgen nicht vorhanden sind.
+Die Konzentration von \ch{NO2} ist, wie in Abschnitt \ref{sssec:tagesmessung} besprochen, am Morgen geringer als am Abend.
+Wenn nun die Messungen vom Morgen im Langley-Plot dabei wären, könnte keine Gerade mehr eindeutig festgemacht werden.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/scd_fit_o3.pdf}
@@ -498,8 +497,7 @@ Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rücks
 	\label{fig:scd_fit_o3}
 \end{center}
 
-
-Eine Veranschaulichung der Konstanz \textcolor{red}{?} von  \ch{O3} lässt sich über die \textit{vertical column density} (VCD) aufzeigen.
+Der horizontale Verlauf der \textit{vertical column density} (VCD) bestätigt die Aussage, dass die \ch{O3} Konzentration konstant über den Tag ist.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/VCD_O3_over_day.pdf}
