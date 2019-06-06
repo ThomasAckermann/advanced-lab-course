@@ -399,7 +399,7 @@ Nachdem man sich nun mit dem Messverfahren und der Analyse der Daten vertraut ge
 Für die Analyse wurde ein Tag ausgesucht, bei dem gutes Wetter herrschte, sodass Wolken nicht die Messung beeinträchtigen können, über einen langen Zeitraum aufgenommen wurde, sowie nicht zu weit in der Vergangenheit lag, da man einer möglichen Abweichung von Dunkelstrom und Offset minimieren wollte.
 Die Wahl fiel auf den 23.04.2019, wo über einen Zeitraum von $9:13 - 23:56$ UTC aufgenommen wurde.
 
-\subsubsection{Optimierung des Fitalgorithmuses}\label{sssec:configure_fit}
+\subsubsection{Optimierung des Fitalgorithmus}\label{sssec:configure_fit}
 
 Die für die \verb*+DOASIS+ nötige Referenzmessung, die Fraunhoferreferenz, wurde die Tagesmessung mit dem niedrigsten
 \textit{solar zenith angle} (SZA) ausgewählt. 
@@ -408,7 +408,7 @@ Um nun die Parameter des Fits optimal anpassen zu können, wird ein Spektrum bei
 Dies gewährleistet, dass die zu untersuchenden Strukturen am prägnantesten hervortreten. \\
 Aufgrund der inelastischen \textit{Raman-Streuung} kommt es zu leichten Wellenlängenverschiebungen, dies sorgt für eine Art \textit{Auffüllung} der starken Absorptionslinien.
 Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhoferspektrum berechnet.
-Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzspektren der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. 
+Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzen der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. 
 Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
 Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
 \ch{H20} kann nicht immer verwendet werden, da es in manchen Bereichen Singularitäten aufweist.
@@ -418,7 +418,7 @@ Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit R
 \subsubsection{Untersuchung der Tagesmessung}
 
 Nachdem die Fitbereiche optimiert wurden, werden die Daten des ganzen Tages untersucht. 
-Hierbei standen 436 Aufnahmen zur Verfügung.
+Hierbei standen $436$ Aufnahmen zur Verfügung.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/SCD_Time_Plot_NO2.pdf}

@@ -28,12 +28,15 @@ result_of_convolution_O4_error  = np.genfromtxt(dateiname, skip_header=1,usecols
 def linear(x, a, c):
     return a * x + c
 
-popt, pcov = curve_fit(linear, AMF[:416],np.abs(result_of_convolution_O3[:416]),p0=[1.0 * 10**19,-1.0 * 10**19])
+# popt, pcov = curve_fit(linear, AMF[:416],np.abs(result_of_convolution_O3[:416]),p0=[1.0 * 10**19,-1.0 * 10**19])
+popt, pcov = curve_fit(linear, AMF[:416], result_of_convolution_O3[:416],p0=[1.0 * 10**19,-1.0 * 10**19])
 
 #plot
 k = np.linspace(1,3.5,500)
-plot = plt.errorbar(AMF[:416],np.abs(result_of_convolution_O3[:416]), yerr=result_of_convolution_O3_error[:416], label='Messdaten für O3',fmt = '.')
-plt.plot(k ,linear( k , *popt), 'r-', label='Fit', color='black') 
+# plot = plt.errorbar(AMF[:416],np.abs(result_of_convolution_O3[:416]), yerr=result_of_convolution_O3_error[:416], label='Messdaten für O3',fmt = '.')
+plot = plt.errorbar(AMF[:416], result_of_convolution_O3[:416], yerr=result_of_convolution_O3_error[:416], label='Messdaten für O3',fmt = '.')
+
+plt.plot(k ,linear(k , *popt), 'r-', label='Fit', color='black') 
 axes = plt.gca()
 plt.ylabel("$\Delta$SCD für O3")
 plt.xlabel("AMF")
