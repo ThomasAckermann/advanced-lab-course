@@ -1,0 +1,43 @@
+Aufbau 
+
+
+"Abstract"
+    - Aufbau Atmosphäre 
+    - Spurengase sind in Tropo und Strato (Hauptaugenmerk)
+    - Qualitativ Troposphäre
+    - Beschränkung auf spurengase o3 o4 no2
+    - Was wird gemessen / Wie wird gemessen
+
+Inhaltsangabe
+
+Theorie 
+    - DOAS
+    - Lambert-Beer (Mit Erklärung Wirkungsquerschnitt) mit Erklärung Fit
+    - Kurzband Effekte 
+        - Fraunhofer
+        - Ring
+        - Was ist SCD
+    - Breitband Effekte
+        - Mie/Rayleigh Streuung
+    - Modifizierter Fit (Lambert-Beer modified)
+        - Kleine Zusammenfassung
+
+Versuchsdurchfühung
+    - Versuchsaufbau 
+        - Bilder
+        - Verbal Dunkelstrom Offset (ganz kurz)    
+    - Auflösung Spektrometer
+        - Maxima von Quecksilber 
+        - FWHM bestimmt
+            -> Auflösung wird bei hohen Wellenlängen besser
+    - Labormessungen
+        - Halogenlampe
+            - Wie wurde fitbereich ausgesucht
+            - Kein Ringspektrum
+            - Berechnung Dichte NO2 (Nachfragen nach offiziellen Wert)
+    - Atmosphärishce Messungen
+        - Fraunhofer Referenz mit niedrigsten SZA
+            - Tabelle (Messung wann begonnen winkel bis wann etc)
+            - AMF <-> Winkel
+            
+ 
