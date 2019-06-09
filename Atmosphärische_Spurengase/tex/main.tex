@@ -534,7 +534,6 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 \\
 \textcolor{red}{Welche Gase in Troposphäre, Wolken?, usw.}
 \\
-    
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/max_DOAS_O3.pdf}
     \captionof{figure}{MAX-DOAS von \ch{O3}}
@@ -552,6 +551,42 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
     \captionof{figure}{MAX-DOAS von \ch{O4}}
 	\label{fig:max_doas_o4}
 \end{center}
+
+$\Delta$SCD gibt hierbei nur die Änderung von SCD in der Troposphäre an.
+Dies kann man sehen, wenn man SCD als
+\begin{align}
+    \text{SCD} = \text{SCD}_\text{Trop} + \text{SCD}_\text{Strat},
+\end{align}
+schreibt.
+Dann ist 
+\begin{align}
+\Delta\text{SCD} =& \text{SCD}_{\text{Mess}} - \text{SCD}_\text{ref} \\
+    =& (\text{SCD}_{\text{Trop, \ Mess}} + \text{SCD}_{\text{Strat}}) \\
+    & - (\text{SCD}_{\text{Trop, \ Ref}} + \text{SCD}_{\text{Strat}}) \\
+    =& \text{SCD}_{\text{Trop, \ Mess}} - \text{SCD}_{\text{Trop, \ Ref}}.
+\end{align}
+
+Bei niedrigen Winkeln sind die Lichtstrahlen statistisch länger in der Troposphäre und werden daher stärker absorbiert.
+Durch berechnen des Verhältnisses der $\Delta$SCD Werte lässt sich ein Vergleich zwischen den einzelnen Molekülen ziehen,
+denn diese geben an bei welchen Molekülen am meisten in der Troposphäre absorbiert wird.
+Den niedrigsten Wert hat hier 
+
+\begin{center}
+	
+	\begin{tabular*}{\linewidth}{c c}
+		\toprule
+        Molekül & Verhältnis $\Delta \text{SCD}$ \\
+        \midrule
+        \ch{O3} & $1.0 \pm 0.4$ \\
+        \ch{NO2} & $1.4 \pm 1.1$ \\
+        \ch{O4} & $1.7 \pm 0.7$\\
+		\bottomrule
+	\end{tabular*}
+    \captionof{table}{Verhältnis der $Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}} 
+	\label{fig:ratio_dscd}
+\end{center}
+
+
 
 
 \section{Diskussion}\label{sec:discussion}
