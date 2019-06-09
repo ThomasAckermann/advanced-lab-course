@@ -276,12 +276,12 @@ Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Par
 	
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c}
 	\toprule
-	Maximum & Channel & FWHM [\si{nm}] \\
+	Maximum & Wellenlänge & FWHM [\si{nm}] \\
 	\midrule
-	1 & $\sim 160$ & $1.2 \pm 0.1$ \\
-	2 & $\sim 594$ & $0.8 \pm 0.1$ \\
-	3 & $\sim 945$ & $0.6 \pm 0.1$ \\
-	4 & $\sim 1240$ & $0.7 \pm 0.1$ \\
+	1 & $\sim 313$ & $1.2 \pm 0.1$ \\
+	2 & $\sim 365$ & $0.8 \pm 0.1$ \\
+	3 & $\sim 404$ & $0.6 \pm 0.1$ \\
+	4 & $\sim 436$ & $0.7 \pm 0.1$ \\
 	\bottomrule
 \end{tabular*}
 
@@ -372,7 +372,8 @@ Den optimalen Fitbereich lässt sich über eine Überlagerung (siehe Abbildung \
 \end{center}
 
 Die Überlagerung zeigt im Channelbereich $1000-1700$ die gleichen Strukturen. Der Fit wird in diesem Berich durchgeführt.
-Für die genau Bestimmung der \ch{NO2} Konzentration wurde ein Channelbereich von $1206-1663$ ausgewählt, dabei wurde darauf geachtet, dass die die Intensität bei einer Wellenlänge von $470$\si{nm} ca. $80$\% betrug.
+Für die genau Bestimmung der \ch{NO2} Konzentration wurde ein Channelbereich von $1026-1663$ ausgewählt, was einem Wellenlängenbereich von $413.46 - 477.25$ \si{nm} entspricht.
+Dabei wurde darauf geachtet, dass die Intensität bei einer Wellenlänge von $470$\si{nm} ca. $80$\% betrug.
 Damit konnten beim Fit die Parameter
 
 \begin{align}
@@ -516,7 +517,7 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
 Einen Einblick in die vertikale Verteilung der Spurengase liefert die Multi Axis DOAS Methode.
-Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ, 12^\circ \text{und} 90^\circ$ beinhalten. 
+Es wurden vier Messreihen aufgenommen, die jeweils Messungen bei $7^\circ$, $12^\circ$ und $90^\circ$ beinhalten. 
 Dabei wurde immer beim kleinsten Winkel angefangen.
 Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt (siehe Abbildung \ref{fig:weather}).
 
@@ -526,8 +527,8 @@ Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt (
 	\label{fig:weather}
 \end{center} 
 
-Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
-Dies war wie folgt der Fall $1.\text{Messung}:1550-1750$, $2.\text{Messung}:1550-1720$, $4.\text{Messung}:1550-1750$, $5.\text{Messung}:1550-1750$.
+Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ ($461.76 - 489.80$\si{nm}) durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
+Bei den Messungen 1, 4, 5 wurde ein Bereich von $466.58 - 485.26$ \si{nm} und bei Messung 2 ein Bereich von $466.58 - 482.52$ \si{nm} eingestellt.
 Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
 Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
 \\
@@ -629,37 +630,17 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 
 %\vspace{2cm}
 \vfill
-\begin{center}
-	
-	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c}
-		\toprule
-		Maximum & Channel & Maximum [$\frac{\text{counts}}{\text{pixel}}$] & FWHM [\si{nm}]\\
-		\midrule
-		1 & $\sim 160$ & $635.8$ & $1.2 \pm 0.1$\\
-		2 & $\sim 594$ & $920.0$ & $0.8 \pm 0.1$\\
-		3 & $\sim 945$ & $1150.5$ & $0.7 \pm 0.1$ \\
-		4 & $\sim 1240$ & $3612.3$ & $0.7 \pm 0.1$ \\
-		\bottomrule
-	\end{tabular*}
-	
-	\captionof{table}{Maxima des Quechsilberdampfspektrums (unkalibriert)} 
-	\label{fig:max_mercury_uncalibrated}
-	
-\end{center}
-
-%\vspace{2cm}
-\vfill
 
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c}
 		\toprule
-		Maximum & Channel & FWHM [\si{nm}] \\
+        Maximum & Wellenlänge \si{[nm]} & FWHM [\si{nm}] \\
 		\midrule
-		1 & $\sim 160$ & $1.2 \pm 0.1$ \\
-		2 & $\sim 594$ & $0.8 \pm 0.1$ \\
-		3 & $\sim 945$ & $0.6 \pm 0.1$ \\
-		4 & $\sim 1240$ & $0.7 \pm 0.1$ \\
+		1 & $\sim 313$ & $1.2 \pm 0.1$ \\
+		2 & $\sim 365$ & $0.8 \pm 0.1$ \\
+		3 & $\sim 404$ & $0.6 \pm 0.1$ \\
+		4 & $\sim 436$ & $0.7 \pm 0.1$ \\
 		\bottomrule
 	\end{tabular*}
 	
@@ -674,12 +655,12 @@ Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte ve
 	
 	\begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c c c}
 		\toprule
-		Bereich &$\chi^{2}\cdot 10^{-4}$ & \multicolumn{1}{c}{Fit coeff. $\cdot 10^{15}$} & shift & squeeze \\
+        Wellenlängenbereich \si{[nm]}&$\chi^{2}\cdot 10^{-4}$ & \multicolumn{1}{c}{Fit coeff. $\cdot 10^{15}$} & shift & squeeze \\
 		\midrule
-		$1150-1379$ & $8.67$ & $-484 \pm 1.97$ & $-0.00497 \pm 0.00495$ & $0.994 \pm 0.000333$ \\
-		$1026-1377$ & $19.2$ & $-472 \pm 2.08$ & $0.0533 \pm 0.00682$ & $0.955 \pm 0.000261$\\
-		$1026-1496$ & $33.2$ & $-475 \pm 2.23$ & $0.052 \pm 0.00682$ & $0.995 \pm 0.000246$ \\
-		$1026-1663$ & $43.7$ & $-488 \pm 1.95$ & $0.091 \pm 0.00546$ & $0.993 \pm 0.000162$\\
+		$466.58 - 449.86$ & $8.67$ & $-484 \pm 1.97$ & $-0.00497 \pm 0.00495$ & $0.994 \pm 0.000333$ \\
+		$413.46 - 449.74$ & $19.2$ & $-472 \pm 2.08$ & $0.0533 \pm 0.00682$ & $0.955 \pm 0.000261$\\
+		$413.46 - 461.38$ & $33.2$ & $-475 \pm 2.23$ & $0.052 \pm 0.00682$ & $0.995 \pm 0.000246$ \\
+		$413.46 - 477.25$ & $43.7$ & $-488 \pm 1.95$ & $0.091 \pm 0.00546$ & $0.993 \pm 0.000162$\\
 		\bottomrule
 	\end{tabular*}
 	

@@ -1,5 +1,8 @@
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib import rcParams
+rcParams['font.size'] = 15
+rcParams['text.usetex'] = True
 
 angle = np.array([7, 12])
 
@@ -7,7 +10,7 @@ angle = np.array([7, 12])
 # ======== Daten laden  ========
 # 
 # ========  Messung 1 ========
-O3_1 = np.array([1.07 * 10**18, 7. * 10**17])
+O3_1 = np.array([1.09 * 10**18, 7.5 * 10**17])
 O3_1_error = np.array([5.9 * 10**16, 5.12 * 10**16])
 NO2_1 = np.array([5.72 * 10**16, 4.92 * 10**16])
 NO2_1_error = np.array([5.5236 * 10**14, 5.39 * 10**14])
@@ -32,8 +35,32 @@ O3_4 = np.array([8.81*10**17, 7.53*10**17])
 O3_4_error = np.array([7.16*10**16, 7.60*10**16])
 NO2_4 = np.array([2.6*10**16, 2.00*10**16])
 NO2_4_error = np.array([5.13*10**14, 4.75*10**14])
-O4_4 = np.array([2.81*10**43, 1.9*10**41])
+O4_4 = np.array([2.81*10**43, 1.9*10**43])
 O4_4_error = np.array([3.52*10**41, 3.361*10**41])
+
+o3_list = np.array([O3_1, O3_2, O3_3, O3_4])
+print(np.array(o3_list)[:,0])
+mean_o3_7 = np.mean(o3_list[:,0])
+mean_o3_12 = np.mean(o3_list[:,0])
+o3_ratio = mean_o3_7 / mean_o3_12
+o3_ratio_err = np.sqrt((np.std(o3_list[:,0])/mean_o3_12)**2 + (mean_o3_7 * np.std(o3_list[:,1]) / mean_o3_12**2)**2)
+print('Verhältnis O_3: ', o3_ratio, '+-', o3_ratio_err)
+
+
+no2_list = np.array([NO2_1, NO2_2, NO2_3, NO2_4])
+mean_no2_7 = np.mean(no2_list[:,0])
+mean_no2_12 = np.mean(no2_list[:,1])
+no2_ratio = mean_no2_7 / mean_no2_12
+no2_ratio_err = np.sqrt((np.std(no2_list[:,0])/mean_no2_12)**2 + (mean_no2_7 * np.std(no2_list[:,1]) / mean_no2_12**2)**2)
+print('Verhältnis NO_2: ', no2_ratio, '+-', no2_ratio_err)
+
+o4_list = np.array([O4_1, O4_2, O4_3, O4_4])
+mean_o4_7 = np.mean(o4_list[:,0])
+mean_o4_12 = np.mean(o4_list[:,1])
+o4_ratio = mean_o4_7 / mean_o4_12
+o4_ratio_err = np.sqrt((np.std(o4_list[:,0])/mean_o4_12)**2 + (mean_o4_7 * np.std(o4_list[:,1]) / mean_o4_12**2)**2)
+print('Verhältnis O_4: ', o4_ratio, '+-', o4_ratio_err)
+
 
 
 

@@ -2,6 +2,11 @@ import numpy as np
 import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from datetime import datetime
+from matplotlib import rcParams
+rcParams['font.size'] = 23
+rcParams['text.usetex'] = True
+# rcParams['text.latex.preamble'] = '\usepackage{libertine}'
+
 
 #import data
 
@@ -24,19 +29,41 @@ result_of_convolution_NO2_error  = np.genfromtxt(dateiname, skip_header=1,usecol
 result_of_convolution_O4  = np.genfromtxt(dateiname, skip_header=1,usecols=(13))
 result_of_convolution_O4_error  = np.genfromtxt(dateiname, skip_header=1,usecols=(14))
 
+# result_of_convolution_O3 = np.delete(result_of_convolution_O3, np.argmax(result_of_convolution_O3))
+# result_of_convolution_O3_error = np.delete(result_of_convolution_O3_error, np.argmax(result_of_convolution_O3))
+
+# print(np.argmax(VCD))
+# print(np.max(VCD))
+# print(np.shape(VCD), np.shape(VCD_error))
+# VCD = np.array([VCD.pop(np.argmax(result_of_convolution_O3))])
+# VCD_error = np.array([VCD_error.pop(np.argmax(result_of_convolution_O3))])
 #fit
 def linear(x, a, c):
     return a * x + c
 
+up_lim = 414
 # popt, pcov = curve_fit(linear, AMF[:416],np.abs(result_of_convolution_O3[:416]),p0=[1.0 * 10**19,-1.0 * 10**19])
-popt_1, pcov_1 = curve_fit(linear, AMF[:416], result_of_convolution_O3[:416],p0=[1.0 * 10**19,-1.0 * 10**19])
-popt_2, pcov_2 = curve_fit(linear, AMF[380:394], result_of_convolution_O3[380:394],p0=[1.0 * 10**19,-1.0 * 10**19])
+popt_1, pcov_1 = curve_fit(linear, AMF[:up_lim], result_of_convolution_O3[:up_lim],p0=[1.0 * 10**19,-1.0 * 10**19])
+popt_2, pcov_2 = curve_fit(linear, AMF[380:387], result_of_convolution_O3[380:387],p0=[1.0 * 10**19,-1.0 * 10**19])
 
 
 #plot
 k = np.linspace(-0.1,3.5,500)
+
+AMF = np.delete(AMF[:up_lim], np.argmax(result_of_convolution_O3[:up_lim]))
+result_of_convolution_O3_error = np.delete(result_of_convolution_O3_error[:up_lim], np.argmax(result_of_convolution_O3[:up_lim]))
+result_of_convolution_O3 = np.delete(result_of_convolution_O3[:up_lim], np.argmax(result_of_convolution_O3[:up_lim]))
+
 # plot = plt.errorbar(AMF[:416],np.abs(result_of_convolution_O3[:416]), yerr=result_of_convolution_O3_error[:416], label='Messdaten für O3',fmt = '.')
-plot = plt.errorbar(AMF[:416], result_of_convolution_O3[:416], yerr=result_of_convolution_O3_error[:416], label='Messdaten für O3',fmt = '.')
+result_of_convolution = result_of_convolution_O3[:up_lim]
+result_of_convolution = np.append(result_of_convolution[:220], result_of_convolution[364:])
+AMF = AMF[:up_lim]
+AMF = np.append(AMF[:220], AMF[364:])
+result_of_convolution_O3_err = result_of_convolution_O3_error[:up_lim]
+result_of_convolution_O3_err = np.append(result_of_convolution_O3_err[:220], result_of_convolution_O3_err[364:])
+
+
+plot = plt.errorbar(AMF, np.abs(result_of_convolution), yerr=result_of_convolution_O3_err, label='Messdaten für O3',fmt = '.')
 plt.plot(k ,linear(k , *popt_1), 'r-', label='Fit 1', color='black') 
 plt.plot(k ,linear(k , *popt_2), 'r-', label='Fit 2', color='black') 
 

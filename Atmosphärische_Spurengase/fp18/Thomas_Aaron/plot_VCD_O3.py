@@ -31,9 +31,27 @@ result_of_convolution_NO2_error  = np.genfromtxt(dateiname, skip_header=1,usecol
 result_of_convolution_O4  = np.genfromtxt(dateiname, skip_header=1,usecols=(13))
 result_of_convolution_O4_error  = np.genfromtxt(dateiname, skip_header=1,usecols=(14))
 
-VCD = (7.9325*10**18+result_of_convolution_O3) * np.cos(2 * np.pi * SZA / 360)
-VCD_error =np.sqrt((result_of_convolution_O3_error*np.cos(2*np.pi*SZA/360))**2 + (0.017*10**18*np.cos(2*np.pi*SZA/360))**2)
+print(SZA)
+# VCD = (7.9325*10**18+result_of_convolution_O3) * np.cos(2 * np.pi * SZA / 360) / (2.6 * 10**16)
+VCD = (0.97*10**19+result_of_convolution_O3) * np.cos(2 * np.pi * SZA / 360) / (2.6 * 10**16)
+VCD_error = np.sqrt((result_of_convolution_O3_error*np.cos(2*np.pi*SZA/360))**2 + (0.017*10**18*np.cos(2*np.pi*SZA/360))**2) / (2.6 * 10**16)
 
+VCD_error = np.delete(VCD_error, np.argmax(VCD))
+StartZeit = np.delete(StartZeit, np.argmax(VCD))
+VCD = np.delete(VCD, np.argmax(VCD))
+
+# AMF = np.delete(AMF[:416], np.argmax(result_of_convolution_O3[:416]))
+# result_of_convolution_O3_error = np.delete(result_of_convolution_O3_error[:416], np.argmax(result_of_convolution_O3[:416]))
+# result_of_convolution_O3 = np.delete(result_of_convolution_O3[:416], np.argmax(result_of_convolution_O3[:416]))
+
+# VCD_error = VCD_error[200:]
+# StartZeit = StartZeit[200:]
+# VCD = VCD[200:]
+# print(np.argmax(VCD))
+# print(np.max(VCD))
+# print(np.shape(VCD), np.shape(VCD_error))
+# VCD = np.array([VCD.pop(np.argmax(result_of_convolution_O3))])
+# VCD_error = np.array([VCD_error.pop(np.argmax(result_of_convolution_O3))])
 # plot
 k = np.linspace(0,3.5,500)
 plot = plt.errorbar(StartZeit, VCD, yerr=VCD_error, label='Messdaten für O3',fmt='ks', markersize=4)
