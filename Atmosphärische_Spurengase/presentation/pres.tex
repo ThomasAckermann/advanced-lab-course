@@ -14,33 +14,34 @@
 \begin{frame}
 \frametitle{Einführung}
     \section{Einführung}
-Schichten in der Atmosphäre\\
-    \begin{figure}[h]
-        \includegraphics[width=0.5\textwidth]{fig/photo/erdatmosphäre.png}
-    \end{figure}
     Wichtig in diesem Versuch: Tropos- und Stratosphäre\\
     Beschränkung auf die Spurengase \ch{O3}, \ch{O4} und \ch{NO2} 
+
+    \begin{figure}[h]
+        \includegraphics[width=0.4\textwidth]{fig/photo/erdatmosphäre.png}
+    \end{figure}
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Inhaltsangabe}
-    Theoretische Grundlagen\\
-    \vfill
-    Labormessungen\\
-    \vfill
-    Atmosphärische Messungen 
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Messgrößen}
     \begin{itemize}
-        \item Konzentration: Moleküle pro Volumeneinheit
-        \item Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
-        \item Column density: $CD = \int \rho (s) \dd s$
-    \end{itemize}
+        \item[-] Theoretische Grundlagen
+    \vfill
+\item[-] Labormessungen
+    \vfill
+\item[-] Atmosphärische Messungen 
 \end{frame}
+
+
+% \begin{frame}
+% \frametitle{Messgrößen}
+%     \begin{itemize}
+%         \item Konzentration: Moleküle pro Volumeneinheit
+%         \item Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
+%         \item Column density: $CD = \int \rho (s) \dd s$
+%     \end{itemize}
+% \end{frame}
 
 \begin{frame}
     \frametitle{DOAS}
@@ -50,9 +51,9 @@ Schichten in der Atmosphäre\\
     \begin{itemize}
         \item[-] Verwendung: Konzentration von Spurengasen bestimmen
         \item[-] Benutze Chrakteristische Profile von Molekülen
-        \item[-] Messung bei unterschiedlichen Winkeln 
+        \item[-] Vergleich von optischen Dichten
+        \item[-] Bestimmung Konzentration in Tropo- oder Stratosphäre
     \end{itemize}
-    %\hfill
     \column{0.4\textwidth}
     \begin{minipage}{80mm}
         \includegraphics[width=0.5\textwidth]{fig/gas_spectra.png}
@@ -65,7 +66,6 @@ Schichten in der Atmosphäre\\
     \begin{figure}[h]
         \includegraphics[width=0.6\textwidth]{fig/lambert_beer.png}
     \end{figure}
-\pause
     \begin{align}
     I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
     \end{align}
@@ -84,7 +84,7 @@ Schichten in der Atmosphäre\\
     \tau = \log \frac{I}{I_0} = - \rho L \sigma (\lambda).
 \end{align}
 $\tau$ : Optische Dichte\\
-Erstelle Fit durch minimierung von
+Erstelle Fit durch Minimierung von
     \begin{align}
         \chi^2 = ( \log \frac{I_0}{I} - \rho L \sigma )^2. 
     \end{align}
@@ -112,7 +112,7 @@ Fraunhofer Referenzspektrum
     \frametitle{Breitband Effekte}
     \begin{itemize}
         \item Streuung von Sonnenlicht 
-        \item $\to$ Mie und Reyleig Streuung
+        \item $\to$ Mie und Reyleigh Streuung
         \item Summe aus Streuung und Absorbtion : \textit{Extinktion} $\epsilon_M$ und $\epsilon_R$
     \end{itemize}
 \end{frame}
