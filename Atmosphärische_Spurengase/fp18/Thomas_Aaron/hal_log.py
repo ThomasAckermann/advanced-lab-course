@@ -11,7 +11,7 @@ data = np.loadtxt('log_1.txt')
 x = data[:,0]
 y = data[:,1]
 
-plt.plot(x, y, 'ks', markersize=2)
+plt.plot(x[1:], y[1:], 'ks', markersize=2)
 plt.xlabel('Channels')
 plt.ylabel('Optical Density')
 plt.savefig('hal_log.pdf')

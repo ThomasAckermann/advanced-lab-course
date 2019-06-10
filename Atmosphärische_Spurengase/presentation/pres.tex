@@ -5,7 +5,6 @@
 \author{Aaron Mielke \& Thomas Ackermann}
 \date{\today}
 
-
 \begin{document}
 
 \maketitle
@@ -14,19 +13,13 @@
 
 \begin{frame}
 \frametitle{Einführung}
-    \section{Theoretische Grundlagen}
-Aufbau der Atmosphäre \\
+    \section{Einführung}
+Schichten in der Atmosphäre\\
+    \begin{figure}[h]
+        \includegraphics[width=0.7\textwidth]{fig/erdatmosphäre.jpg}
+    \end{figure}
+    Wichtig in diesem Versuch: Tropos- und Stratosphäre\\
     Beschränkung auf die Spurengase \ch{O3}, \ch{O4} und \ch{NO2} 
-\end{frame}
-
-
-\begin{frame}
-\frametitle{Messgrößen}
-    \begin{itemize}
-        \item Konzentration: Moleküle pro Volumeneinheit
-        \item Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
-        \item Columnd density: $CD = \int \rho (s) \dd s$
-    \end{itemize}
 \end{frame}
 
 
@@ -41,6 +34,15 @@ Aufbau der Atmosphäre \\
 
 
 \begin{frame}
+\frametitle{Messgrößen}
+    \begin{itemize}
+        \item Konzentration: Moleküle pro Volumeneinheit
+        \item Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
+        \item Column density: $CD = \int \rho (s) \dd s$
+    \end{itemize}
+\end{frame}
+
+\begin{frame}
     \frametitle{DOAS}
     \section{Theoretische Grundlagen}
     \begin{columns}
@@ -48,6 +50,7 @@ Aufbau der Atmosphäre \\
     \begin{itemize}
         \item[-] Verwendung: Konzentration von Spurengasen bestimmen
         \item[-] Benutze Chrakteristische Profile von Molekülen
+        \item[-] Messung bei unterschiedlichen Winkeln 
     \end{itemize}
     %\hfill
     \column{0.4\textwidth}
@@ -69,7 +72,7 @@ Aufbau der Atmosphäre \\
     \begin{itemize}
         \item $L$ Länge des Mediums
         \item $\rho$ Dichte
-        \item $\sigma (\lambda)$ Absorptionswirkungsquerschnitt
+        \item $\sigma (\lambda)$ Absorptionswirkungsquerschnitt % Absorptionswirkungsquerschnitt ist wahrscheinlichkeit dass bei bestimmen winkel absorption stattfindet
     \end{itemize}
 \end{frame}
 
@@ -94,10 +97,14 @@ Fraunhofer Referenzspektrum
     \begin{itemize}
         \item Berücksichtigung der Strukturen der Sonne
     \end{itemize}
+    \begin{figure}[h]
+        \includegraphics[width=0.7\textwidth]{fig/fraunhofer_linien.png}
+    \end{figure}
+\pause
     Ring-Effekt
     \begin{itemize}
         \item Inelastische Raman-Streuung
-        \item Wellenlängen ändern siich
+        \item Wellenlängen ändern sich
     \end{itemize}
 \end{frame}
 
@@ -110,12 +117,21 @@ Fraunhofer Referenzspektrum
     \end{itemize}
 \end{frame}
 
+\begin{frame}
+    \frametitle{Breitband Effekte}
+    Mie und Rayleigh Streuung sind elastisch\\
+    Rayleigh: $\sim \lambda^{-4}$\\
+    Mie: keine starke $\lambda$ Abhängigkeit
+\end{frame}
 
 \begin{frame}
     \frametitle{Modifiziertes Lamber-Beer Gesetz}
     \begin{align}
         I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp (-L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M)
     \end{align}
+    Erste Exponentialfunktion: Kurzband Effekte\\
+    Zweite Exponentialfunktion: Breitband Effekte
+    \pause
     Neues $\chi^2$
     \begin{align}
         \chi^2 = ( \log\frac{I_0 + I_\text{Ofs}}{I} - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k )^2.
@@ -162,11 +178,11 @@ Fraunhofer Referenzspektrum
     \frametitle{Halogenlampen Messung}
 
     \begin{figure}[h]
-        \includegraphics[width=0.5\textwidth]{fig/photo/aufbau_1.png}
+        \includegraphics[width=0.7\textwidth]{fig/photo/aufbau_1.png}
     \end{figure}
 
     \begin{figure}[h]
-        \includegraphics[width=0.5\textwidth]{fig/photo/glas_test.png}
+        \includegraphics[width=0.3\textwidth]{fig/photo/glas_test.png}
     \end{figure}
 \end{frame}
 
@@ -174,21 +190,142 @@ Fraunhofer Referenzspektrum
     \frametitle{Halogenlampen Messung}
 \begin{itemize}
     \item Atmosphärische Einflüsse vernachlässigbar
-        \begin{align}
- \to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot     \rho_{\ch{NO2}} \cdot L
-        \end{align}
+\end{itemize}
+\begin{align}
+ \to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L
+\end{align}
+    \begin{itemize}
     \item Fitbereich: Suche nach Überlagerung mit \ch{NO2} Referenz
     \item Hier verwendet: $(413.46 - 477.25) \si{nm}$
-    \item \begin{align}
-            \to \rho_\ch{NO2} = (2.48 \pm 0.12) \cdot 10^20 \si{\frac{\text{Moleküle}}{\ell}}
+    \end{itemize}
+    \begin{align}
+\to \rho_\ch{NO2} = (2.48 \pm 0.12) \cdot 10^{20} \si{\frac{\text{Moleküle}}{\ell}}
     \end{align}
-\end{itemize}
 \end{frame}
 
 \begin{frame}
     \section{Atmosphärische Messungen}
+    \frametitle{Versuchsaufbau}
+    \begin{figure}[h]
+        \includegraphics[width=0.5\textwidth]{fig/photo/aufbau_2.png}
+    \end{figure}
 \end{frame}
 
+
+\begin{frame}
+    \frametitle{Atmosphärische Messungen}
+    \begin{itemize}
+        \item Jetzt erweitertes Lambert-Beer Gesetz
+        \item Untersuchung von SCD
+    \end{itemize}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Tagesmessung \ch{NO2}}
+\begin{center}
+    \includegraphics[width=.9\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
+    \captionof{figure}{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 24.04.2019}
+    \label{fig:delta_SCD_time_NO2}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tagesmessung \ch{NO2}}
+    Am Morgen:
+    \begin{align}
+        \ch{NO2} + h \nu \to \ch{NO} + \ch{O}(^3\text{P})
+    \end{align}
+    \pause
+    Gleichzeitig Dissoziation:
+    \begin{align}
+        \ch{N2O5} + h \nu \to \ch{NO2} + \ch{NO3}
+    \end{align}
+    \pause
+    Reagiert weiter:
+    \begin{align}
+        \ch{NO3} + h \nu \to \ch{NO} + \ch{O2}\\
+        \ch{NO3} + h \nu \to \ch{NO2} + \ch{O}
+    \end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tagesmessung \ch{O3}}
+\begin{center}
+    \includegraphics[width=.9\linewidth]{fig/SCD_Time_Plot_O3.pdf}
+    \captionof{figure}{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.    2019}
+    \label{fig:delta_SCD_time_O3}
+\end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tagesmessung \ch{O3}}
+    \ch{O3} und \ch{NO2} sind im Gleichgewicht:
+    \begin{align}
+         \ch{O3} + \ch{NO} \rightleftharpoons \ch{NO2} + \ch{O2}
+    \end{align}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Langley Plot von \ch{NO2}}
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/Langley_Plot_NO2_cut.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Langley Plot von \ch{O3}}
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/Langley_Plot_O3_cut.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Fit $\Delta$SCD von \ch{O3}}
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/scd_fit_o3.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Vertical Column Density \ch{O3}}
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/VCD_O3_over_day.pdf}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{Multi Axis DOAS}
+    Liefert Einblick in die vertikale Verteilung der Spurengase \\
+    Vier Messreihen bei $7^\circ$, $12^\circ$ und $90^\circ$ \\
+    \pause
+    \begin{center}
+    \includegraphics[width=.7\linewidth]{fig/photo/wetter.png}
+    \end{center}
+\end{frame}
+
+\begin{frame}
+    \frametitle{MAX-DOAS \ch{O3}}
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{fig/max_DOAS_O3.pdf}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{MAX-DOAS \ch{NO2}}
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{fig/max_DOAS_NO2.pdf}
+    \end{figure}
+\end{frame}
+
+
+\begin{frame}
+    \frametitle{MAX-DOAS \ch{O4}}
+    \begin{figure}
+    \includegraphics[width=0.9\linewidth]{fig/max_DOAS_O4.pdf}
+    \end{figure}
+\end{frame}
 
 
 \end{document}
