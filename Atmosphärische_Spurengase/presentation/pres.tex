@@ -16,7 +16,7 @@
     \section{Einführung}
 Schichten in der Atmosphäre\\
     \begin{figure}[h]
-        \includegraphics[width=0.7\textwidth]{fig/erdatmosphäre.jpg}
+        \includegraphics[width=0.5\textwidth]{fig/photo/erdatmosphäre.png}
     \end{figure}
     Wichtig in diesem Versuch: Tropos- und Stratosphäre\\
     Beschränkung auf die Spurengase \ch{O3}, \ch{O4} und \ch{NO2} 
@@ -63,7 +63,7 @@ Schichten in der Atmosphäre\\
 \begin{frame}
     \frametitle{Lambert-Beer}
     \begin{figure}[h]
-        \includegraphics[width=0.5\textwidth]{fig/lambert_beer.png}
+        \includegraphics[width=0.6\textwidth]{fig/lambert_beer.png}
     \end{figure}
 \pause
     \begin{align}
@@ -112,7 +112,7 @@ Fraunhofer Referenzspektrum
     \frametitle{Breitband Effekte}
     \begin{itemize}
         \item Streuung von Sonnenlicht 
-        \item $to$ Mie und Reyleig Streuung
+        \item $\to$ Mie und Reyleig Streuung
         \item Summe aus Streuung und Absorbtion : \textit{Extinktion} $\epsilon_M$ und $\epsilon_R$
     \end{itemize}
 \end{frame}
@@ -264,6 +264,28 @@ Fraunhofer Referenzspektrum
     \begin{align}
          \ch{O3} + \ch{NO} \rightleftharpoons \ch{NO2} + \ch{O2}
     \end{align}
+    \ch{O3} Hauptsächlich in Stratosphäre
+\end{frame}
+
+\begin{frame}
+    \frametitle{Langley Plots}
+    $\Delta$ SCD wird gegen Air Mass Factor (AMF) aufgetragen\\
+    \begin{align}
+        \text{AMF}(\theta) := \frac{\text{SCD}(\theta)}{\text{VCD}} \approx \frac{1}{\cos (\theta)}
+    \end{align}
+    \begin{figure}
+        \includegraphics[width=0.9\linewidth]{fig/langley_sza.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Langley Plots}
+    Die totale SCD ist $S = \Delta S + S_F$\\
+    $S_F$ kann mit Langley Plot bestimmt werden\\
+    Wenn Konzentration konstant $\to$ Linearer Langley Plot
+    \begin{align}
+    \Delta \text{SCD} = \text{VCD} A - S_F
+    \end{align}
 \end{frame}
 
 \begin{frame}
@@ -289,17 +311,35 @@ Fraunhofer Referenzspektrum
 
 \begin{frame}
     \frametitle{Vertical Column Density \ch{O3}}
+    Vertical Column Density (VCA) ist:
+    \begin{align}
+        \text{VCD} = \text{SCD} \cos (\theta)
+    \end{align}
+\end{frame} 
+
+\begin{frame}
+    \frametitle{Vertical Column Density \ch{O3}}
     \begin{figure}
     \includegraphics[width=.9\linewidth]{fig/VCD_O3_over_day.pdf}
     \end{figure}
 \end{frame}
 
+\begin{frame}
+    Sateliten Bilder hier.
+\end{frame}
 
 \begin{frame}
     \frametitle{Multi Axis DOAS}
     Liefert Einblick in die vertikale Verteilung der Spurengase \\
-    Vier Messreihen bei $7^\circ$, $12^\circ$ und $90^\circ$ \\
-    \pause
+    Jetzt $\alpha$: Winkel zwischen Horizont und Richtung der Kamera
+    \begin{figure}
+        \includegraphics[width=.6\linewidth]{fig/photo/max_doas.png}
+    \end{figure}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Multi Axis DOAS}
+    Vier Messreihen bei jeweils $7^\circ$, $12^\circ$ und $90^\circ$ \\
     \begin{center}
     \includegraphics[width=.7\linewidth]{fig/photo/wetter.png}
     \end{center}
