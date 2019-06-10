@@ -31,8 +31,11 @@
 \section*{Abstract}
 
 This experiment was conducted in the scope of the advanced lab course in physics at the Heidelberg University. \\
-The main goal was to find the Concentration of \ch{NO2} and \ch{O3} in the atmosphere by using the DOAS method. 
+The main goal was to find the concentration of \ch{NO2} and \ch{O3} in the atmosphere by using the DOAS method. \\
 Measurements were taken in the week of the $29^\text{th}$ april, 2019.
+Due to a lack of clear sky conditions during this week, the analyzed data was from the $23^\text{th}$ april, 2019. One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{formula}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
+The measurements of the tropospheric concentrations was not very purposful because heavy and thick clouds interfered with the measurements. Regardless of this setback one found at least, with a comparison of the vertical densities from the troposhere and starosphere, that \ch{O3} is mainly found in the stratosphere. 
+
 
 
 \tableofcontents
@@ -141,7 +144,7 @@ welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfade
 
 Man kann beobachten, dass die Tiefe der Fraunhofer Linien kleiner ist, wenn man gestreutes Sonnenlicht mit direktem Sonnenlicht vergleicht.
 Der Grund dafür ist inelastische Raman-Streuung, welche dazu führt, dass die Wellenlängen der Photonen während der Streuung verändert werden.
-Daraus folgt, dass Absorptionslinien aufgefüllt werden, da sich die Wellenlägen sich zu diesen Linen verschieben. 
+Daraus folgt, dass Absorptionslinien aufgefüllt werden, da sich die Wellenlängen sich zu diesen Linien verschieben. 
 Dies bezeichnet als \textit{Ring-Effekt}.
 
 \textcolor{blue}{Abschnitt gefällt mir noch nicht}
@@ -149,8 +152,8 @@ Dies bezeichnet als \textit{Ring-Effekt}.
 \subsection{Breitband Komponenten}
 
 Das Sonnenlicht wird von Aerosolen und Wassertröpfchen in den Wolken gestreut und absorbiert (\textit{Mie Streuung}) und von Luftmolekülen gestreut (\textit{Rayleigh Streuung}).
-Die Summe aus Streuungs- und Absorbtionseffekten wird als Extinktion ($\epsilon_M$ und $\epsilon_R$ in diesem Fall) bezeichnet.
-Beide Prozesse sind elsastisch, was bedeutet, dass sich die Wellenlängen nicht verändern.
+Die Summe aus Streuungs- und Absorptionseffekten wird als Extinktion ($\epsilon_M$ und $\epsilon_R$ in diesem Fall) bezeichnet.
+Beide Prozesse sind elastisch, was bedeutet, dass sich die Wellenlängen nicht verändern.
 Die Wahrscheinlichkeit für Rayleigh Streuung skaliert mit $\lambda^{-4}$ und ist somit besonders bei kurzen Wellenlängen vorhanden.
 Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.
 
@@ -173,7 +176,7 @@ Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umfo
 
 Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitband Effekte und $R(\lambda)$ ist das Ring-Spektrum.\\
 Bei DOAS werden nun alle besprochenen Effekte miteinbezogen und ein Model für die Optische Dichte erstellt. 
-Das Model wird dann mit der gemessenen Optischen Dichte verglichen und ein Fit erzeugt, welcher ensteht indem die Parameter so variiert werden, dass 
+Das Model wird dann mit der gemessenen Optischen Dichte verglichen und ein Fit erzeugt, welcher entsteht indem die Parameter so variiert werden, dass 
 
 \begin{align*}
     \chi^2 = ( \log \frac{I_0 + I_\text{ofs}}{I} - R & - \sum_i \sigma_i S_i \\ 
@@ -259,9 +262,9 @@ Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobach
 \subsubsection{Kalibrierung des Spektrometers}\label{sssec:calibrating_the_spectrometer}
 
 Zur Kalibrierung des Spektrometers wird eine Quecksilberdampflampe verwendet, da diese gut zu identifizierende Spektrallinien aufweist.
-Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
+Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entsprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
 Es wäre ebenfalls eine Spektrallinie bei ca. $313$ \si{nm} gegeben. 
-Diese wurde allerdings nicht zur Kallibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit vier verschiedene Linien zu finden sind \cite{doas08}.\\
+Diese wurde allerdings nicht zur Kalibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit vier verschiedene Linien zu finden sind \cite{doas08}.\\
 Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Parameter: 
 
 \begin{align}
@@ -317,7 +320,7 @@ Die Faltung hat zusätzlich noch den Effekt, die Spektren zu glätten.
 \subsubsection{\ch{NO2} Spektrum von einer gefüllten Gaszelle}\label{sssec:lab_no2_spectra}
 
 Um die in den vorigen Abschnitten durchgeführten Vorbereitungen zu testen wird das Spektrum einer Halogenlampe untersucht, bei der eine Glasküvette, mit \ch{NO2} gefüllt, in den Lichtweg gestellt wird.
-Die Glas küvette hatte eine Länge von ungefähr $2$\si{cm}.
+Die Glasküvette hatte eine Länge von ungefähr $2$\si{cm}.
 Es wurden folgende Abstände eingestellt:
 \begin{center}
 
@@ -342,7 +345,7 @@ Es wurden folgende Abstände eingestellt:
 \end{center}
 
 
-Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte innerhalb der Gasküvette die Konzetration bestimmen (vgl. Gleichung \eqref{eq:lambert_beer_law} und \eqref{eq:optical_density})
+Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte innerhalb der Gasküvette die Konzentration bestimmen (vgl. Gleichung \eqref{eq:lambert_beer_law} und \eqref{eq:optical_density})
 
 \begin{align}
 \tau = \ln(\frac{I_0(\lambda)}{I(\lambda)}) = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L.
@@ -371,7 +374,7 @@ Den optimalen Fitbereich lässt sich über eine Überlagerung (siehe Abbildung \
 	\label{fig:range_search}
 \end{center}
 
-Die Überlagerung zeigt im Channelbereich $1000-1700$ die gleichen Strukturen. Der Fit wird in diesem Berich durchgeführt.
+Die Überlagerung zeigt im Channelbereich $1000-1700$ die gleichen Strukturen. Der Fit wird in diesem Bereich durchgeführt.
 Für die genau Bestimmung der \ch{NO2} Konzentration wurde ein Channelbereich von $1026-1663$ ausgewählt, was einem Wellenlängenbereich von $413.46 - 477.25$ \si{nm} entspricht.
 Dabei wurde darauf geachtet, dass die Intensität bei einer Wellenlänge von $470$\si{nm} ca. $80$\% betrug.
 Damit konnten beim Fit die Parameter
@@ -766,7 +769,7 @@ Am Tag der Messung war es sehr bewölkt, so dass man davon ausgehen kann dass $\
         \hline %\bottomrule
 	\end{tabular}
 	
-	\captionof{table}{Fitergebnisse verschiedner Winkel}
+	\captionof{table}{Fitergebnisse verschiedener Winkel}
 	\label{fig:fit_multi_axis_DOAS}
 \end{center}
 
