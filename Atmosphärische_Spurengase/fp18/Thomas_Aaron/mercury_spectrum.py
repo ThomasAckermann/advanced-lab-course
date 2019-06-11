@@ -4,14 +4,14 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from matplotlib import rcParams
 
-rcParams['font.size'] = 20
+rcParams['font.size'] = 24
 rcParams['text.usetex'] = True
 
 data = np.loadtxt('hg_data.txt')
 x = data[:,0]
 y = data[:,1]
 
-plt.plot(x,y, 'ks', markersize=2)
+plt.plot(x,y, 'ks', markersize=3)
 plt.xlabel('Channel')
 plt.ylabel('Intensität')
 
