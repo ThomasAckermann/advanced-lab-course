@@ -567,12 +567,72 @@ Dann ist
 \Delta\text{SCD} =& \text{SCD}_{\text{Mess}} - \text{SCD}_\text{ref} \\
     =& (\text{SCD}_{\text{Trop, \ Mess}} + \text{SCD}_{\text{Strat}}) \\
     & - (\text{SCD}_{\text{Trop, \ Ref}} + \text{SCD}_{\text{Strat}}) \\
-    =& \text{SCD}_{\text{Trop, \ Mess}} - \text{SCD}_{\text{Trop, \ Ref}}.
+    =& \text{SCD}_{\text{Trop, \ Mess}} - \text{SCD}_{\text{Trop, \ Ref}}. \label{eq:SCD_trop}
 \end{align}
 
-Bei niedrigen Winkeln sind die Lichtstrahlen statistisch länger in der Troposphäre und werden daher stärker absorbiert.
-Durch berechnen des Verhältnisses der $\Delta$SCD Werte lässt sich ein Vergleich zwischen den einzelnen Molekülen ziehen,
-denn diese geben an bei welchen Molekülen am meisten in der Troposphäre absorbiert wird.
+Über ein Vergleich der $\text{VCD}_{strat}$ (berechnet in Abschnitt \ref{sssec:tagesmessung})
+und der hier bestimmbaren $\text{VCD}_{trop}$  von \ch{O3} kann darauf geschlossen werden, dass \ch{O3} hauptsächlich in der Stratosphäre gefunden werden kann.
+Zur Berechnung von $\text{VCD}_{trop}$ müssen zunächst ein paar Vorüberlegungen angestrengt werden.
+Zunächst gilt für den troposphärischen \textit{air mass factor}
+
+\begin{align}
+AMF_{trop}(\alpha) = \frac{SCD_{trop}(\alpha)}{VCD_{trop}},
+\end{align}
+
+was sich nun mit Gleichung \ref{eq:SCD_trop} zu 
+
+\begin{align}
+VCD_{trop}(\alpha) = \frac{\Delta SCD_{trop}(\alpha)}{AMF_{trop}(\alpha)-AMF_{trop(ref)}}, 
+\end{align} 
+
+bzw.
+
+\begin{align}
+VCD_{trop}(\alpha) = \frac{\Delta SCD_{trop}(\alpha)}{DAMF_{trop}(\alpha)}, 
+\end{align}  
+
+mit $DAMF_{trop}(\alpha) = AMF_{trop}(\alpha)-AMF_{trop}(ref)$ ergibt.
+In unserem Fall ist es möglich den \textit{air mass factor} mit
+
+\begin{align}
+AMF_{trop} \approx \frac{1}{sin(\alpha)}
+\end{align}
+
+zu nähern, sodass sich schlussendlich die VCD bestimmen lässt.
+
+\begin{align}
+VCD_{trop} = \frac{\Delta SCD_{trop}(\alpha)}{\frac{1}{\sin(\alpha)}-1}.
+\end{align}
+
+Die Messungen von \ch{O3} ergeben nun VCD, die in der Tabelle aufgezeigt sind.
+
+\begin{center}
+	
+	\begin{tabular*}{\linewidth}{c c c}
+		\toprule
+		Messung & Winkel & VCD [$\frac{\text{Moleküle}}{\si{cm}^2}$] \\
+		\midrule
+		1 & 7 & $1.51 \cdot 10^{17} \pm 8.19 \cdot 10^{15}$  \\
+		& 12 & $2.00 \cdot 10^{17} \pm 1.34 \cdot 10^{16}$\\
+		2 & 7 & $8.62 \cdot 10^{16} \pm 9.41 \cdot 10^{15}$ \\
+		& 12 & $8.48 \cdot 10^{16} \pm 2.00 \cdot 10^{16}$\\
+		3 & 7 &  $8.34 \cdot 10^{16} \pm 9.99 \cdot 10^{15}$\\
+		& 12 & $9.21 \cdot 10^{16} \pm 1.82 \cdot 10^{16}$\\
+		4 & 7 & $1.22 \cdot 10^{17} \pm 9.94 \cdot 10^{15}$ \\
+		& 12 & $1.98 \cdot 10^{17} \pm 2.00 \cdot 10^{16}$\\
+		\bottomrule
+	\end{tabular*}
+	\captionof{table}{$VCD_{trop}$ der verschiedenen \ch{O3} Messungen} 
+	\label{fig:VCD_O3_trop}
+\end{center}
+
+Es wurden somit $VCD_{trop}$ Werte im Bereich von $3.3 - 7.7 \si{DU}$ gemessen. Dadurch lässt sich mit dem Vergleich zur stratosphärischen Messung von $\sim 300 \si{DU}$ (vgl. Abbildung \ref{fig:VCD_O3_over_day}) festhalten, dass \ch{O3} vorwiegend in der Stratosphäre vorkommt.\\
+
+Einen qualitativen Ansatz liefert das Verhältnis der $\Delta$SCD Werte der $7°$ und $12°$ Messungen, da dies darüber Aufschluss gibt, welches Spurengas am stärksten von der Verlängerung der Weglänge in der Troposphäre abhängig ist. 	
+Bei niedrigen Winkeln sind die Lichtstrahlen statistisch länger in der Troposphäre und werden daher stärker von dort vorkommenden Spurengasen absorbiert.
+Den niedrigsten Wert hatte hier \ch{O3}, dies untermauert nun, dass es hauptsächlich in der Stratosphäre vorzufinden ist.
+Im Gegensatz dazu hatte \ch{O4} die stärkste Veränderung. \\
+
 \begin{center}
 	
 	\begin{tabular*}{\linewidth}{c c}
@@ -588,9 +648,8 @@ denn diese geben an bei welchen Molekülen am meisten in der Troposphäre absorb
 	\label{fig:ratio_dscd}
 \end{center}
 
-Den niedrigsten Wert hatte hier \ch{O3}, weshalb zu vermuten ist, dass es Hauptsächlich in der Stratosphäre vorzufinden ist.
-\ch{O4} hatte die stärkste Veränderung. 
 Am Tag der Messung war es sehr bewölkt, so dass man davon ausgehen kann dass $\Delta$VCD von \ch{O4} sehr stark von der Bewölkung abhängt.
+Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterverhältnisse nicht zu, da eine dichte Wolkendecke die Messergebnisse stark beeinflusste, die Messdaten legen nur die Vermutung nahe, dass \ch{O4} und \ch{NO2} auch vermehrt in der Troposhäre zu finden sind.
 
 
 \section{Diskussion}\label{sec:discussion}
