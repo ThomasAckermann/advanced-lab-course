@@ -283,7 +283,6 @@ Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick i
     \label{fig:hal_log}
 \end{center}
 
-
 Man erwartet, dass der Mittelwert bei Null liegt, da zwischen der Aufnahme der Spektren so wenig wie möglich Zeit vergangen ist. Allerdings kann bei kleinerer Channelzahl höhere Schwankungen ausgemacht werden und insgesamt ist ein kurven artiger Verlauf zu erkennen.
 Das größere Schwanken lässt sich darauf zurückführen, dass bei kleiner Channelzahl die \textit{Counts} geringer ausfallen als bei höherer Channelzahl.
 Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobachtete Krümmung, welche bei höherer Scanzahl größer wird. Die Schwankungen verlieren bei höheren \textit{Counts} an Bedeutung.
@@ -291,7 +290,18 @@ Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobach
 \subsubsection{Kalibrierung des Spektrometers}\label{sssec:calibrating_the_spectrometer}
 
 Zur Kalibrierung des Spektrometers wird eine Quecksilberdampflampe verwendet, da diese gut zu identifizierende Spektrallinien aufweist.
-Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entsprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
+Das aufgenommene Spektrum (siehe Abbildung \ref{fig:hg_spectrum}) wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entsprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
+
+
+\begin{center}
+    %\includegraphics[width=0.7\linewidth]{fig/photo/glas.png}
+    \includegraphics[width=\linewidth]{fig/hg_spectrum.pdf}
+    \captionof{figure}{Spektrum der Quecksilberlampe}	
+    \label{fig:aufbau_hal}
+\end{center}
+
+
+
 Es wäre ebenfalls eine Spektrallinie bei ca. $313$ \si{nm} gegeben. 
 Diese wurde allerdings nicht zur Kalibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit drei verschiedene Linien zu finden sind \cite{doas08}.\\
 Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Parameter: 

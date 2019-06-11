@@ -120,9 +120,12 @@ Fraunhofer Referenzspektrum
     Rayleigh: $\sim \lambda^{-4}$\\
     Mie: keine starke $\lambda$ Abhängigkeit
     \end{itemize}
+\end{frame}
 
+\begin{frame}
+    \frametitle{Breitband Effekte}
     \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/rayleigh_mie.png}
+    \includegraphics[width=0.7\linewidth]{fig/rayleigh_mie.png}
     \end{figure}
 \end{frame}
 
@@ -130,7 +133,7 @@ Fraunhofer Referenzspektrum
 \begin{frame}
     \frametitle{Modifiziertes Lamber-Beer Gesetz}
     \begin{align}
-        I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp(-L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M)
+        I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp\left(-L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M\right)
     \end{align}
     Erste Exponentialfunktion: Kurzband Effekte\\
     Zweite Exponentialfunktion: Breitband Effekte\\
@@ -156,7 +159,13 @@ Fraunhofer Referenzspektrum
     \end{figure}
 \end{frame}
 
+\begin{frame}
+    \framtitle{Spektrum der Quecksilberlampe}
 
+    \begin{figure}[h]
+        \includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
+    \end{figure}
+\end{frame}
 \begin{frame}
     \frametitle{Auflösung des Spektrometers} 
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c}
