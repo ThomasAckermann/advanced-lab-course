@@ -16,7 +16,6 @@
     \section{Einführung}
     Wichtig in diesem Versuch: Tropos- und Stratosphäre\\
     Beschränkung auf die Spurengase \ch{O3}, \ch{O4} und \ch{NO2} 
-
     \begin{figure}[h]
         \includegraphics[width=0.4\textwidth]{fig/photo/erdatmosphäre.png}
     \end{figure}
@@ -31,6 +30,7 @@
 \item[-] Labormessungen
     \vfill
 \item[-] Atmosphärische Messungen 
+\end{itemize}
 \end{frame}
 
 
@@ -100,7 +100,10 @@ Fraunhofer Referenzspektrum
     \begin{figure}[h]
         \includegraphics[width=0.7\textwidth]{fig/fraunhofer_linien.png}
     \end{figure}
-\pause
+\end{frame}
+
+\begin{frame}
+\frametitle{Kurzband Effekte}
     Ring-Effekt
     \begin{itemize}
         \item Inelastische Raman-Streuung
@@ -117,20 +120,24 @@ Fraunhofer Referenzspektrum
     Rayleigh: $\sim \lambda^{-4}$\\
     Mie: keine starke $\lambda$ Abhängigkeit
     \end{itemize}
+
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/rayleigh_mie.png}
+    \end{figure}
 \end{frame}
 
 
 \begin{frame}
     \frametitle{Modifiziertes Lamber-Beer Gesetz}
     \begin{align}
-        I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp (-L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M)
+        I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp(-L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M)
     \end{align}
     Erste Exponentialfunktion: Kurzband Effekte\\
     Zweite Exponentialfunktion: Breitband Effekte\\
     \pause
     Neues $\chi^2$
     \begin{align}
-        \chi^2 = ( \log\frac{I_0 + I_\text{Ofs}}{I} - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k )^2.
+        \chi^2 = \left( \log\frac{I_0 + I_\text{Ofs}}{I} - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right)^2.
     \end{align}
 \end{frame}
 
@@ -146,9 +153,6 @@ Fraunhofer Referenzspektrum
     \frametitle{Auflösung des Spektrometers}
     \begin{figure}[h]
         \includegraphics[width=0.5\textwidth]{fig/photo/hg_lampe.png}
-    \end{figure}
-    \pause
-    \begin{figure}
     \end{figure}
 \end{frame}
 
@@ -319,7 +323,13 @@ Fraunhofer Referenzspektrum
 \end{frame}
 
 \begin{frame}
-    Sateliten Bilder hier.
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
+    \end{figure}
+
+    \begin{figure}
+    \includegraphics[width=.9\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -362,4 +372,20 @@ Fraunhofer Referenzspektrum
 \end{frame}
 
 
+\begin{frame}
+    \begin{center}
+        \frametitle{MAX-DOAS Messung}
+	\begin{tabular*}{\linewidth}{c c}
+		\toprule
+        Molekül & Verhältnis $\Delta \text{SCD}$ \\
+        \midrule
+        \ch{O3} & $1.0 \pm 0.4$ \\
+        \ch{NO2} & $1.4 \pm 1.1$ \\
+        \ch{O4} & $1.7 \pm 0.7$\\
+		\bottomrule
+	\end{tabular*}
+    \captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
+	\label{fig:ratio_dscd}
+\end{center}
+\end{frame}
 \end{document}
