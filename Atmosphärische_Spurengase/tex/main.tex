@@ -33,17 +33,22 @@
 This experiment was conducted in the scope of the advanced lab course in physics at the Heidelberg University. \\
 The main goal was to find the concentration of \ch{NO2} and \ch{O3} in the atmosphere by using the DOAS method. \\
 Measurements were taken in the week of the $29^\text{th}$ april, 2019.
-Due to a lack of clear sky conditions during this week, the analyzed data was from the $23^\text{th}$ april, 2019. One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{formula}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
-The measurements of the tropospheric concentrations was not very purposful because heavy and thick clouds interfered with the measurements. Regardless of this setback one found at least, with a comparison of the vertical densities from the troposhere and starosphere, that \ch{O3} is mainly found in the stratosphere. 
+Due to a lack of clear sky conditions during this week, the analyzed data was from the $23^\text{th}$ april, 2019. 
+One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{formula}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
+The measurements of the tropospheric concentrations was not very purposful because heavy and thick clouds interfered with the measurements. 
+Regardless of this setback one found at least, with a comparison of the vertical densities from the troposhere and stratosphere, that \ch{O3} is mainly found in the stratosphere. 
 
-
+\newpage
 
 \tableofcontents
 \newpage
 
 \begin{multicols}{2}
 
-\section{Introduction}\label{sec:Intro}
+\section{Theoretische Grundlagen}\label{sec:Intro}
+Die genaue Bestimmung der Konzentration verschiedener Spurengase ist eine wichtige Aufgabe in der Umweltphysik.
+    Eine Möglichkeit zur Bestimmung ist das Prinzip der \textit{Differential Optical Absorption Spectrocopy } (DOAS), welche zahlreiche Anwendungen findet.
+Einige Grundlagen zur Atmosphäre und die Funktionsweise von DOAS soll im folgenden erklärt werden.
 
 \subsection{Zusammensetzung der Atmosphäre}\label{ssec:Comp_Atmo}
 
@@ -106,7 +111,7 @@ Die Lösung hier besteht daraus, dass Spektrum mit verschiedenen Winkeln aufgeno
 Die mittlere Weglänge die das Licht zurücklegt ist viel kürzer wenn genau im Zenit gemessen wird als bei anderen Winkeln.
 Daher ist hier die Absorption durch Spurengase viel geringer sodass man einen ähnlichen Unterschied wie bei einem Satelliten erhält.
 
-\subsubsection{Lambert-Beer Law}\label{sssec:Lamb-Beer_law}
+\subsubsection{Lambert-Beer Gesetz}\label{sssec:Lamb-Beer_law}
 
 Die Intensität eines Lichtstrahls (einer Elektromagnetischen Welle) nimmt durch Streuung und Absorption ab, wenn es durch Materie propagiert (siehe Abbildung \ref{fig:lambert-beer}).
 
@@ -131,6 +136,14 @@ wobei $\sigma (\lambda)$ der Absorptionswirkungsquerschnitt und $\rho$ die Konze
 
 Um die Strukturen der Sonne bei DOAS zu berücksichtigen wird ein Fraunhofer Referenzspektrum verwendet, welches ein Spektrum der Atmosphäre ist bei dem Spurengase die untersucht werden sollen nur sehr wenig Absorption zeigen.
 
+\begin{center}
+    \includegraphics[width=\linewidth]{fig/fraunhofer_linien.png}
+    \captionof{figure}{Fraunhofer Spektrum}	
+    \label{fig:fraunhofer_spectrum}
+\end{center}
+
+
+
 \subsubsection{Spurengas Absorption}\label{sssec:trace_gas_absorption}
 
 Die Hauptmessgröße des DOAS ist die \textit{slant column density} (SCD oder $S$),
@@ -142,12 +155,11 @@ welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfade
 
 \subsubsection{Ring-Effekt}
 
-Man kann beobachten, dass die Tiefe der Fraunhofer Linien kleiner ist, wenn man gestreutes Sonnenlicht mit direktem Sonnenlicht vergleicht.
+Wie in Abbildung \ref{fig:fraunhofer_spectrum} zu sehen gibt es im Fraunhoferspektrum verschiedene Absorptionslien.
+Es ist zu beobachten, dass die Tiefe dieser Linen schwächer ist, wenn man gestreutes Sonnenlicht mit direktem Sonnenlicht vergleicht.
 Der Grund dafür ist inelastische Raman-Streuung, welche dazu führt, dass die Wellenlängen der Photonen während der Streuung verändert werden.
-Daraus folgt, dass Absorptionslinien aufgefüllt werden, da sich die Wellenlängen sich zu diesen Linien verschieben. 
-Dies bezeichnet als \textit{Ring-Effekt}.
-
-\textcolor{blue}{Abschnitt gefällt mir noch nicht}
+Durch Änderung der Wellenlängen werden die Absorptionslinien aufgefüllt
+Dies bezeichnet man als \textit{Ring-Effekt}.
 
 \subsection{Breitband Komponenten}
 
@@ -156,6 +168,14 @@ Die Summe aus Streuungs- und Absorptionseffekten wird als Extinktion ($\epsilon_
 Beide Prozesse sind elastisch, was bedeutet, dass sich die Wellenlängen nicht verändern.
 Die Wahrscheinlichkeit für Rayleigh Streuung skaliert mit $\lambda^{-4}$ und ist somit besonders bei kurzen Wellenlängen vorhanden.
 Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.
+
+\begin{center}
+    \includegraphics[width=0.8\linewidth]{fig/rayleigh_mie.png}
+    \captionof{figure}{Darstellung Rayleigh- und Mie-Extinktion \cite{platt10}}	
+    \label{fig:rayleigh_mie}
+\end{center}
+
+
 
 \subsection{Modifiziertes Lambert-Beer Gesetz}\label{ssec:mod_lamb-beer_law}
 
@@ -264,7 +284,7 @@ Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobach
 Zur Kalibrierung des Spektrometers wird eine Quecksilberdampflampe verwendet, da diese gut zu identifizierende Spektrallinien aufweist.
 Das aufgenommene Spektrum wurde nach bekannten Spektrallinien untersucht und anhand von vier Maxima (entsprechend den Channelnummern: 335, 595, 946, 1239) das Spektrometer kalibriert. 
 Es wäre ebenfalls eine Spektrallinie bei ca. $313$ \si{nm} gegeben. 
-Diese wurde allerdings nicht zur Kalibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit vier verschiedene Linien zu finden sind \cite{doas08}.\\
+Diese wurde allerdings nicht zur Kalibrierung verwendet, da man aus der Literatur herauslesen kann, dass an dieser Stelle in Wirklichkeit drei verschiedene Linien zu finden sind \cite{doas08}.\\
 Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Parameter: 
 
 \begin{align}
@@ -314,10 +334,7 @@ Das Referenzspektrum von \ch{H2O} wurde, im Gegensatz zu den anderen Spektren, v
 Hierfür wurden Nullwerte an den Rändern eingefügt.\\
 Die Faltung hat zusätzlich noch den Effekt, die Spektren zu glätten.
 
-\textcolor{red}{Klingt blöd}\\
-\textcolor{blue}{Klingt es so besser?} 
-
-\subsubsection{\ch{NO2} Spektrum von einer gefüllten Gaszelle}\label{sssec:lab_no2_spectra}
+\subsubsection{\ch{NO2} Spektrum einer gefüllten Glasküvette}\label{sssec:lab_no2_spectra}
 
 Um die in den vorigen Abschnitten durchgeführten Vorbereitungen zu testen wird das Spektrum einer Halogenlampe untersucht, bei der eine Glasküvette, mit \ch{NO2} gefüllt, in den Lichtweg gestellt wird.
 Die Glasküvette hatte eine Länge von ungefähr $2$\si{cm}.
@@ -427,7 +444,7 @@ Um dies Vorzubeugen wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhof
 Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzen der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden die jeweiligen Fitbereiche ermittelt. 
 Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
 Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
-Der Referenzwirkungsquerschnitt von \ch{H2O} kann bei \textcolor{red}{\ch{O3} ..} nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
+Der Referenzwirkungsquerschnitt von \ch{H2O} kann bei \ch{O3} nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
 
 \subsubsection{Untersuchung der Tagesmessung}\label{sssec:tagesmessung}
 
@@ -507,7 +524,7 @@ Der horizontale Verlauf der \textit{vertical column density} (VCD) bestätigt di
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/VCD_O3_over_day.pdf}
     \captionof{figure}{VCD von \ch{O3} über einen Tag lang gemessen }
-	\label{fig:weather}
+	\label{fig:VCD_O3_over_day}
 \end{center} 
 
 Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge: 
@@ -516,7 +533,23 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
     \text{VCD} = \text{SCD} \cdot \cos(\theta)
 \end{align}
 
-\textcolor{red}{Vergleich mit Daten von Satellitenmessungen}
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus}
+    \captionof{figure}{DOAS VCD Messung mit Satelit aufgenommen}
+	\label{fig:DOAS_satelit}
+\end{center} 
+
+\begin{center}
+	\includegraphics[width=\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
+    \captionof{figure}{TOMS VCD Messung mit Satelit aufgenommen}
+	\label{fig:TOMS_satelit}
+\end{center} 
+Die beiden Satelitbilder in Abbildung \ref{fig_DOAS_satelit} und \ref{fig:TOMS_satelit} zeigen die VCD Werte von Ozon über Baden-Württemberg am 23.04.2019.
+DOAS zeigt bei den Koordinaten von Heidelberg einen Wert im Bereich von $363.8 - 367.5 \si{DU}$ an und TOMS einen Wert zwischen $352.5 \si{DU}$ und $358.3 \si{DU}$ an.
+Die mit dem Sateliten aufgenommenen Werte sind also beide höher als die hier berechneten Werte.
+Allerdings ist auch zu sehen, dass die Werte die beiden Messmethoden untereinander ebenfalls nicht übereinstimmen.
+Abweichungen können dadurch entstehen, dass hier zum Großteil nur die Ozonkonzentration der Stratosphäre berechnet wurde und die Troposphäre vernächlässigt wird.
+
 
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
@@ -535,9 +568,7 @@ Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ ($461.76 - 489.80$\s
 Bei den Messungen 1, 4, 5 wurde ein Bereich von $466.58 - 485.26$ \si{nm} und bei Messung 2 ein Bereich von $466.58 - 482.52$ \si{nm} eingestellt.
 Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
 Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
-\\
-\textcolor{red}{Welche Gase in Troposphäre, Wolken?, usw.}
-\\
+
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/max_DOAS_O3.pdf}
     \captionof{figure}{MAX-DOAS von \ch{O3}}
@@ -760,7 +791,7 @@ Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterv
 		$413.46 - 461.38$ & $33.2$ & $-475 \pm 2.23$ & $0.052 \pm 0.00682$ & $0.995 \pm 0.000246$ \\
 		$413.46 - 477.25$ & $43.7$ & $-488 \pm 1.95$ & $0.091 \pm 0.00546$ & $0.993 \pm 0.000162$\\
 		\bottomrule
-	\end{tabular*}
+    \end{tabular*}
 	
 	\captionof{table}{Fit bei verschiedenen  Fitbereichen}
 	\label{fig:different_fit_ranges}

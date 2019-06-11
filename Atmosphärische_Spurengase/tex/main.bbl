@@ -51,6 +51,59 @@
       \verb https://www.physi.uni-heidelberg.de/Einrichtungen/FP/anleitungen/F18.pdf
       \endverb
     \endentry
+    \entry{klose16}{book}{}
+      \name{author}{1}{}{%
+        {{hash=58c7d428c3d71a01cffa9be8128c0acc}{%
+           family={Klose},
+           familyi={K\bibinitperiod},
+           given={Brigitte},
+           giveni={B\bibinitperiod}}}%
+      }
+      \strng{namehash}{58c7d428c3d71a01cffa9be8128c0acc}
+      \strng{fullhash}{58c7d428c3d71a01cffa9be8128c0acc}
+      \strng{bibnamehash}{58c7d428c3d71a01cffa9be8128c0acc}
+      \strng{authorbibnamehash}{58c7d428c3d71a01cffa9be8128c0acc}
+      \strng{authornamehash}{58c7d428c3d71a01cffa9be8128c0acc}
+      \strng{authorfullhash}{58c7d428c3d71a01cffa9be8128c0acc}
+      \field{sortinit}{K}
+      \field{sortinithash}{9fd838a31ba64d981e8f44562bd33f89}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Meteorologie}
+      \field{year}{2016}
+      \true{nocite}
+    \endentry
+    \entry{platt10}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2d08e45836af2489432561d3a1969181}{%
+           family={Platt},
+           familyi={P\bibinitperiod},
+           given={Ulrich},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Environmental Physics}%
+      }
+      \strng{namehash}{2d08e45836af2489432561d3a1969181}
+      \strng{fullhash}{2d08e45836af2489432561d3a1969181}
+      \strng{bibnamehash}{2d08e45836af2489432561d3a1969181}
+      \strng{authorbibnamehash}{2d08e45836af2489432561d3a1969181}
+      \strng{authornamehash}{2d08e45836af2489432561d3a1969181}
+      \strng{authorfullhash}{2d08e45836af2489432561d3a1969181}
+      \field{sortinit}{P}
+      \field{sortinithash}{8d51b3d5b78d75b54308d706b9bbe285}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Multitalent für Spurengase}
+      \field{year}{2010}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://www.pro-physik.de/restricted-files/100246
+      \endverb
+      \verb{url}
+      \verb https://www.pro-physik.de/restricted-files/100246
+      \endverb
+    \endentry
     \entry{doas08}{article}{}
       \name{author}{1}{}{%
         {{hash=392b9655853eff0067996aa119e4edcd}{%
@@ -74,6 +127,31 @@
       \field{labeltitlesource}{title}
       \field{title}{Differential Optical Absorption Spectroscopy}
       \field{year}{2008}
+      \true{nocite}
+    \endentry
+    \entry{wagner14}{article}{}
+      \name{author}{1}{}{%
+        {{hash=bd24481acbb10c452488a953118cbdc4}{%
+           family={Wagner},
+           familyi={W\bibinitperiod},
+           given={Thomas},
+           giveni={T\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Environmental Physics}%
+      }
+      \strng{namehash}{bd24481acbb10c452488a953118cbdc4}
+      \strng{fullhash}{bd24481acbb10c452488a953118cbdc4}
+      \strng{bibnamehash}{bd24481acbb10c452488a953118cbdc4}
+      \strng{authorbibnamehash}{bd24481acbb10c452488a953118cbdc4}
+      \strng{authornamehash}{bd24481acbb10c452488a953118cbdc4}
+      \strng{authorfullhash}{bd24481acbb10c452488a953118cbdc4}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Cloud detection and classification based on MAX-DOAS observations}
+      \field{year}{2014}
       \true{nocite}
     \endentry
   \enddatalist
