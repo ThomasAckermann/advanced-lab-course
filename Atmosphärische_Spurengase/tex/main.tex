@@ -30,13 +30,14 @@
 
 \section*{Abstract}
 
-This experiment was conducted in the scope of the advanced lab course in physics at the Heidelberg University. \\
+This experiment was conducted in the scope of the advanced lab course in physics at the University of Heidelberg. \\
 The main goal was to find the concentration of \ch{NO2} and \ch{O3} in the atmosphere by using the DOAS method. \\
 Measurements were taken in the week of the $29^\text{th}$ april, 2019.
 Due to a lack of clear sky conditions during this week, the analyzed data was from the $23^\text{th}$ april, 2019. 
-One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{formula}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
+One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{O3}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
 The measurements of the tropospheric concentrations was not very descriptively because heavy and thick clouds interfered with the measurements. 
-Regardless of this setback one found at least a trend for the three trace gases \ch{O3}, \ch{No2} and \ch{O4}. The ratio between the measurments at $7^{\circ}$ and $12^{\circ}$ yields that \ch{O3} is mainly found in the staratosphere where the ohter twos are present in the troposhere aswell.
+Regardless of this setback one found at least a trend for the three trace gases \ch{O3}, \ch{No2} and \ch{O4}. 
+The ratio between the measurments at $7^{\circ}$ and $12^{\circ}$ yields that \ch{O3} is mainly found in the staratosphere where the other two are present in the troposhere aswell.
 
 \newpage
 
@@ -48,7 +49,7 @@ Regardless of this setback one found at least a trend for the three trace gases 
 \section{Theoretische Grundlagen}\label{sec:Intro}
 Die genaue Bestimmung der Konzentration verschiedener Spurengase ist eine wichtige Aufgabe in der Umweltphysik.
     Eine Möglichkeit zur Bestimmung ist das Prinzip der \textit{Differential Optical Absorption Spectrocopy } (DOAS), welche zahlreiche Anwendungen findet.
-Einige Grundlagen zur Atmosphäre und die Funktionsweise von DOAS soll im Folgenden erklärt werden.
+Einige Grundlagen zur Atmosphäre und die Funktionsweise von DOAS sollen im Folgenden erklärt werden.
 
 \subsection{Zusammensetzung der Atmosphäre}\label{ssec:Comp_Atmo}
 
@@ -97,12 +98,12 @@ Sie der relative Anteil eines Spurengases im Vergleich zur Luftmenge und wird mi
     \begin{align}
         \text{CD} = \int \rho(s) \dd s,
     \end{align}
-    welche die Einheit $\si{[Moleküle / cm^2]}$ hat.
+    von großer Bedeutung, welche die Einheit $\si{[Moleküle / cm^2]}$ besitzt.
 \subsection{DOAS}\label{ssec:DOAS}
 
 \textit{Differential Optical Absorption Spectroscopy} (DOAS) wird verwendet um die Konzentration eines bestimmten Spurengases in der Atmosphäre zu bestimmen - was das Ziel dieses Experimentes ist.
 Das Hauptprinzip ist das Folgende: 
-    Man nimmt zwei Spektren auf, eines welches auf der Erde aufgenommen wurde (also mit Absorption des Sonnenlichtes durch die Atmosphäre) und eines bei dem die Atmosphäre nicht präsent ist (Von Satellit aus aufgenommen.)
+    Man nimmt zwei Spektren auf, eines welches auf der Erde aufgenommen wurde (also mit Absorption des Sonnenlichtes durch die Atmosphäre) und eines bei dem die Atmosphäre nicht präsent ist (Von Satellit aus aufgenommen).
 Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
 
 \begin{center}
@@ -112,12 +113,13 @@ Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
 \end{center}
 
 Wenn nun zwei Spektren, wie beschrieben, aufgenommen werden 
-können das charakteristische Verhalten der Gase daran erkannt werden dass die Intensitäten an manchen stellen kleiner sind.
+kann das charakteristische Verhalten der Gase daran erkannt werden, dass die Intensitäten an manchen stellen kleiner sind.
 
-Wenn man nun weiß welche Charakteristika zu welchen Gasen gehören kann die Dichte des Gases in der Atmosphäre bestimmt werden.
-In diesem Versuchsaufbau steht allerdings kein Satellit zur Verfügung so dass sich die frage stellt wie man an ein Sonnenspektrum ohne Atmosphäre kommt.
-Die Lösung hier besteht daraus, dass Spektrum mit verschiedenen Winkeln aufgenommen wird und dann verglichen wird.
-Die mittlere Weglänge die das Licht zurücklegt ist viel kürzer wenn genau im Zenit gemessen wird als bei anderen Winkeln.
+Wenn man nun weiß welche Charakteristika zu welchen Gasen gehören kann die Dichte des Gases in der Atmosphäre bestimmt werden.\\
+In diesem Versuchsaufbau steht allerdings kein Satellit zur Verfügung, so dass sich die Frage stellt wie man an ein Sonnenspektrum ohne Atmosphärische Einwirkung erhält.
+
+Die Lösung hier besteht daraus das Spektrum mit verschiedenen Winkeln aufzunehmen und dann zu vergleichen.
+Die mittlere Weglänge die das Licht zurücklegt ist statistisch viel kürzer, wenn genau im Zenit gemessen wird als bei anderen Winkeln.
 Daher ist hier die Absorption durch Spurengase viel geringer sodass man einen ähnlichen Unterschied wie bei einem Satelliten erhält.
 
 \subsubsection{Lambert-Beer Gesetz}\label{sssec:Lamb-Beer_law}
@@ -138,12 +140,15 @@ Sei $I_0 (\lambda)$ die Startintensität des Lichtstrahls, dann ist die Intensit
 \end{align}
 
 wobei $\sigma (\lambda)$ der Absorptionswirkungsquerschnitt und $\rho$ die Konzentration des Spurengases ist.
+Der Absorptionswirkungsquerschnitt gibt eine Wahrscheinlichkeit für eine Absorption bei einer bestimmten Wellenlänge $\lambda$ an.
 
 \subsection{Kurzband Komponenten}\label{ssec:Kurzband}
 
 \subsubsection{Fraunhofer Referenzspektrum}\label{sssec:fraunhofer_reference}
 
-Um die Strukturen der Sonne bei DOAS zu berücksichtigen wird ein Fraunhofer Referenzspektrum verwendet, welches ein Spektrum der Atmosphäre ist bei dem Spurengase die untersucht werden sollen nur sehr wenig Absorption zeigen.
+Das Fraunhoferspektrum \ref{fig:fraunhofer_spectrum} zeigt das unbeeinflusste Spektrum des Sonnenlichtes. 
+Dieses zeigt viele Strukturen, die in DOAS berücksichtigt werden müssen. 
+Daher wird ein Fraunhofer Referenzspektrum verwendet.
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/fraunhofer_linien.png}
@@ -165,7 +170,7 @@ welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfade
 \subsubsection{Ring-Effekt}
 
 Wie in Abbildung \ref{fig:fraunhofer_spectrum} zu sehen gibt es im Fraunhoferspektrum verschiedene Absorptionslien.
-Es ist zu beobachten, dass die Tiefe dieser Linen schwächer ist, wenn man gestreutes Sonnenlicht mit direktem Sonnenlicht vergleicht.
+Es ist zu beobachten, dass die Tiefe dieser Linen schwächer ist, wenn man gestreutes Sonnenlicht mit direktem Sonnenlicht vergleicht.\\
 Der Grund dafür ist inelastische Raman-Streuung, welche dazu führt, dass die Wellenlängen der Photonen während der Streuung verändert werden.
 Durch Änderung der Wellenlängen werden die Absorptionslinien aufgefüllt
 Dies bezeichnet man als \textit{Ring-Effekt}.
@@ -556,13 +561,13 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus}
-    \captionof{figure}{DOAS VCD Messung mit Satelit aufgenommen \footnote{\href{https://disc.gsfc.nasa.gov/datasets/OMDOAO3G_V003/summary}}}
+    \captionof{figure}{DOAS VCD Messung mit Satelit aufgenommen} %\footnote{\href{https://disc.gsfc.nasa.gov/datasets/OMDOAO3G_V003/summary}}}
 	\label{fig:DOAS_satelit}
 \end{center} 
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
-    \captionof{figure}{TOMS VCD Messung mit Satelit aufgenommen \footnote{\href{https://disc.gsfc.nasa.gov/datasets/TOMSEPL3_V008/summary}}}
+    \captionof{figure}{TOMS VCD Messung mit Satelit aufgenommen}% \footnote{\href{https://disc.gsfc.nasa.gov/datasets/TOMSEPL3_V008/summary}}}
 	\label{fig:TOMS_satelit}
 \end{center} 
 Die beiden Satelitbilder in Abbildung \ref{fig_DOAS_satelit} und \ref{fig:TOMS_satelit} zeigen die VCD Werte von Ozon über Baden-Württemberg am 23.04.2019.
@@ -708,16 +713,32 @@ Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterv
 
 Der Versuch behandelt verschiedene Einsatzmöglichkeiten der DOAS Methode zur Bestimmung der atmosphärischen Spurengase.\\
  
-Zu Beginn wurde die Messapparatur kennengelernt und auf mögliche systematische Fehler wie der Offset und Dunkelstrom untersucht, die beide jeweils einen linearen Zusammenhang mit der Anzahl der Scans aufwiesen. Im verwendeten Analyseprogramm \verb*+DOASIS+ wurden die Werte der beiden Einflüsse hinterlegt, um im Verlauf des Versuches die aufgenommenen Spektren korrigieren zu können. Des weiteren wurde auf Rauschen untersucht, dass im Verlauf des Versuchs über eine große Anzahl an Scans pro Spektrum jedoch minimiert wurde.
+Zu Beginn wurde die Messapparatur kennengelernt und auf mögliche systematische Fehler wie der Offset und Dunkelstrom untersucht, die beide jeweils einen linearen Zusammenhang mit der Anzahl der Scans aufwiesen. 
+Im verwendeten Analyseprogramm \verb*+DOASIS+ wurden die Werte der beiden Einflüsse hinterlegt, um im Verlauf des Versuches die aufgenommenen Spektren korrigieren zu können. 
+Des weiteren wurde auf Rauschen untersucht, dass im Verlauf des Versuchs über eine große Anzahl an Scans pro Spektrum jedoch minimiert wurde.
 Eine Kalibrierung der Software \verb*+DOASIS+ wurde ebenfalls durchgeführt um in nachfolgenden Versuchsteilen sinnvolle Vergleichswerte für Fitbereiche zu erhalten.\\
 
-Eine erste Anwendung von DOAS wurde dann mit einer Labormessung der Konzentration von \ch{NO2} in einer Glasküvette kennengelernt. Dabei handelt es sich um eine \textit{aktive} DOAS Messung, da das Spektrometer direkt auf die Lichtquelle gerichtet wird. 
+Eine erste Anwendung von DOAS wurde dann mit einer Labormessung der Konzentration von \ch{NO2} in einer Glasküvette kennengelernt. 
+Dabei handelt es sich um eine \textit{aktive} DOAS Messung, da das Spektrometer direkt auf die Lichtquelle gerichtet wird. 
 Über eine Anpassung des Fitbereichs auf die gut erkennbaren \ch{NO2} Strukturen konnte eine Konzentration von $(2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\ell}\Bigr]$ bzw. einem Mischungsverhältnis von $9.311 \pm 0.004 \si{ppt}$ berechnet werden. 
 Um diese Werte zu erhalten wurde die Fitroutine von \verb*+DOASIS+ verwendet, welche einen $\chi^2$ Wert von $4.367 \cdot 10^{-3}$ ermittelte. Auch über die erhaltenen Fitresiduals welche sich im Größenordnungsbereich von $\pm 1 \cdot 10^{-2}$ bewegte, konnte nochmals die Qualität des Fits bestätigen.\\
 
 Eine andere Einsatzmethode wurde im dritten Versuchsteil vorgestellt, wo vor allem die stratosphärische Konzentration von \ch{O3} und \ch{NO2} untersucht wurde.
+Zunächst wurden die Messungen vom 23.04.2019 untersucht.
+Das Teleskop hatte hier einen SZA von $80^\circ$, was dafür sorgt, dass hauptsächlich die stratosphärischen Konzentrationen aufgenommen wurden.
+Hierbei wurde die SCD über den Tag bestimmt.
+Interessant war hier, dass im \ch{NO2} Bild der Einfluss des Feierabendverkehrs beobachtet werden konnte.\\
+Anschließend wurden Langley-Plots erstellt, mithilfe derer man die VCD bestimmen kann, wenn die Langley-Plots linear sind.
+Dies war für \ch{O3} der Fall.
+Es zeigte sich, dass das VCA von \ch{O3} bei ca. 300\si{DU} lag.
+Der Wert wurde mit Satelitenbildern verglichen, wobei sich zeigte, dass die Werte der Sateliten beide um ca 50 \si{DU} höher lagen.
+Grund hierfür war, dass in der Messung hier die troposphärische Konzentration nicht berücksichtigt wurde.\\
 
-   
+Im letzten Versuchtsteil wurden jeweils vier Messungen bei $7^\circ$ und $12^\circ$ zwischen Kamera und Erde durchgeführt.
+Dies gibt Ausschluss darüber welche Spurengase eher in der Troposphäre und welche eher in der Stratosphäre auftreten.
+Hier lassen sich keine genauen Aussagen treffen, da die Daten nicht sehr eindeutig waren da der Himmel am Tag der Messung stark bewölkt war.
+Allerdings lässt sich die Tendenz erahnen, dass \ch{O3} eher in der Troposphäre auftritt.
+
 
 \nocite{*}
 \appendix
