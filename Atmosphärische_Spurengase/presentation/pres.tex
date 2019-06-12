@@ -12,7 +12,7 @@
 % \tableofcontents
 
 \begin{frame}
-\frametitle{Einführung}
+	\frametitle{Einführung}
     \section{Einführung}
     Wichtig in diesem Versuch: Tropos- und Stratosphäre\\
     Beschränkung auf die Spurengase \ch{O3}, \ch{O4} und \ch{NO2} 
@@ -27,10 +27,10 @@
     \begin{itemize}
         \item[-] Theoretische Grundlagen
     \vfill
-\item[-] Labormessungen
+		\item[-] Labormessungen
     \vfill
-\item[-] Atmosphärische Messungen 
-\end{itemize}
+		\item[-] Atmosphärische Messungen 
+	\end{itemize}
 \end{frame}
 
 
@@ -67,7 +67,7 @@
         \includegraphics[width=0.6\textwidth]{fig/lambert_beer.png}
     \end{figure}
     \begin{align}
-    I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
+    	I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
     \end{align}
     \begin{itemize}
         \item $L$ Länge des Mediums
@@ -80,11 +80,11 @@
 \begin{frame}
     \frametitle{DOAS-Fit}
     Forme Lambert-Beer um:
-\begin{align}
-    \tau = \log \frac{I}{I_0} = - \rho L \sigma (\lambda).
-\end{align}
-$\tau$ : Optische Dichte\\
-Erstelle Fit durch Minimierung von
+	\begin{align}
+    	\tau = \log \frac{I}{I_0} = - \rho L \sigma (\lambda).
+	\end{align}
+	$\tau$ : Optische Dichte\\
+	Erstelle Fit durch Minimierung von
     \begin{align}
         \chi^2 = ( \log \frac{I_0}{I} - \rho L \sigma )^2. 
     \end{align}
@@ -93,7 +93,7 @@ Erstelle Fit durch Minimierung von
 
 \begin{frame}
     \frametitle{Kurzband Effekte}
-Fraunhofer Referenzspektrum
+	Fraunhofer Referenzspektrum
     \begin{itemize}
         \item Berücksichtigung der Strukturen der Sonne
     \end{itemize}
@@ -103,7 +103,7 @@ Fraunhofer Referenzspektrum
 \end{frame}
 
 \begin{frame}
-\frametitle{Kurzband Effekte}
+	\frametitle{Kurzband Effekte}
     Ring-Effekt
     \begin{itemize}
         \item Inelastische Raman-Streuung
@@ -125,7 +125,7 @@ Fraunhofer Referenzspektrum
 \begin{frame}
     \frametitle{Breitband Effekte}
     \begin{figure}
-    \includegraphics[width=0.7\linewidth]{fig/rayleigh_mie.png}
+    	\includegraphics[width=0.7\linewidth]{fig/rayleigh_mie.png}
     \end{figure}
 \end{frame}
 
@@ -160,29 +160,29 @@ Fraunhofer Referenzspektrum
 \end{frame}
 
 \begin{frame}
-    \framtitle{Spektrum der Quecksilberlampe}
-
-    \begin{figure}[h]
+    \frametitle{Spektrum der Quecksilberlampe}
+	\begin{figure}[h]
         \includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
     \end{figure}
 \end{frame}
+
 \begin{frame}
     \frametitle{Auflösung des Spektrometers} 
     \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}} c c c}
-    \toprule
-    Maximum & Wellenlänge & FWHM [\si{nm}] \\
-    \midrule
-    1 & $\sim 313$ & $1.2 \pm 0.1$ \\
-    2 & $\sim 365$ & $0.8 \pm 0.1$ \\
-    3 & $\sim 404$ & $0.6 \pm 0.1$ \\
-    4 & $\sim 436$ & $0.7 \pm 0.1$ \\
-    \bottomrule
-\end{tabular*}
+    	\toprule
+    	Maximum & Wellenlänge & FWHM [\si{nm}] \\
+    	\midrule
+    	1 & $\sim 313$ & $1.2 \pm 0.1$ \\
+    	2 & $\sim 365$ & $0.8 \pm 0.1$ \\
+    	3 & $\sim 404$ & $0.6 \pm 0.1$ \\
+    	4 & $\sim 436$ & $0.7 \pm 0.1$ \\
+    	\bottomrule
+	\end{tabular*}
 \end{frame}
 
 \begin{frame}
     \section{Labormessungen}
-    \frametitle{Halogenlampen Messung}
+    \frametitle{Halogenlampen Messung \textit{aktiv} DOAS}
 
     \begin{figure}[h]
         \includegraphics[width=0.7\textwidth]{fig/photo/aufbau_1.png}
@@ -193,85 +193,111 @@ Fraunhofer Referenzspektrum
     \end{figure}
 \end{frame}
 
-\begin{frame}
+\begin{frame} 
     \frametitle{Halogenlampen Messung}
-\begin{itemize}
-    \item Atmosphärische Einflüsse vernachlässigbar
-\end{itemize}
-\begin{align}
- \to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L
-\end{align}
+	\begin{itemize}
+    	\item Atmosphärische Einflüsse vernachlässigbar
+	\end{itemize}
+	\begin{align}
+	 	\to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L
+	\end{align}
     \begin{itemize}
-    \item Fitbereich: Suche nach Überlagerung mit \ch{NO2} Referenz
-    \item Hier verwendet: $(413.46 - 477.25) \si{nm}$
+    	\item Fitbereich: Suche nach Überlagerung mit \ch{NO2} Referenz
+	\end{itemize}
+	\begin{figure}[h]
+		\includegraphics[width=0.5\textwidth]{fig/range_search_test.png}
+		\caption{Vergleich der optischen Dichten von Literatur- und Versuchspektrum}
+	\end{figure}
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Halogenlampen Messung}
+     \begin{figure}[h]
+    	\includegraphics[width=1\textwidth]{fig/fit_labor.png}
+    	\caption{Fitergebnis}
+    \end{figure}
+    \begin{itemize} 
+    	\item Fitbereich: $(413.46 - 477.25) \si{nm}$
+    		\begin{align}
+    		   \text{Fitparameter:}\ \chi^2 &= 4.367 \cdot 10^{-3}\\
+    		   \text{fit coeff} &= -4.96 \cdot 10^{17} \pm 1.95 10^{15}
+    		\end{align}
     \end{itemize}
-    \begin{align}
-\to \rho_\ch{NO2} = (2.48 \pm 0.12) \cdot 10^{20} \si{\frac{\text{Moleküle}}{\ell}}
-    \end{align}
+\end{frame} 
+
+\begin{frame}
+	\frametitle{Halogenlampen Messung}
+	\begin{align}
+		\text{Fitbereich:}\ (413.&46 - 477.25) \si{nm}\\
+		\text{Fitparameter:}\ \chi^2 &= 4.367 \cdot 10^{-3}\\
+		\text{fit coeff} &= -4.96 \cdot 10^{17} \pm 1.95 10^{15}
+	\end{align}
+	\begin{align}    
+		\to \rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \si{\frac{\text{Moleküle}}{\ell}}
+	\end{align}
 \end{frame}
 
 \begin{frame}
     \section{Atmosphärische Messungen}
-    \frametitle{Versuchsaufbau}
-    \begin{figure}[h]
-        \includegraphics[width=0.5\textwidth]{fig/photo/aufbau_2.png}
-    \end{figure}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Atmosphärische Messungen}
-    \begin{itemize}
-        \item Jetzt erweitertes Lambert-Beer Gesetz
-        \item Untersuchung von SCD
-    \end{itemize}
-\end{frame}
-
-
-\begin{frame}
-    \frametitle{Tagesmessung \ch{NO2}}
-\begin{center}
-    \includegraphics[width=.9\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
-    \captionof{figure}{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 24.04.2019}
-    \label{fig:delta_SCD_time_NO2}
-\end{center}
+    \frametitle{Versuchsaufbau atmosphärische Messungen (\textit{passiv} DOAS)}
+     \begin{columns}
+    	\column{.5\textwidth}
+    		\begin{figure}[h]
+    			\includegraphics[width=1\textwidth]{fig/photo/aufbau_2.png}
+    		\end{figure}
+    	\column{0.5\textwidth}
+    		\begin{itemize}
+    			\item[-] Jetzt erweitertes Lambert-Beer Gesetz
+    			\item[-] Untersuchung von SCD
+    		\end{itemize}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Tagesmessung \ch{NO2}}
-    Am Morgen:
-    \begin{align}
-        \ch{NO2} + h \nu \to \ch{NO} + \ch{O}(^3\text{P})
-    \end{align}
+    \frametitle{Tagesmessung \ch{NO2} und \ch{O3}}
+	\begin{columns}
+	  \column{0.5\textwidth}
+	  	\begin{figure}
+	  		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
+    		\caption{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 24.04.2019}
+    		\label{fig:delta_SCD_time_NO2}
+        \end{figure}
+      \column{0.5\textwidth}
+    	\begin{figure}
+    		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_O3.pdf}
+    		\caption{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.2019}
+    		\label{fig:delta_SCD_time_O3}
+    	\end{figure}  		
+    \end{columns}
+\end{frame}
+
+\begin{frame}
+    \frametitle{Tagesmessung \ch{NO2} und \ch{O3}}
+    \begin{columns}
+      \column{0.5\linewidth}    
+    	Am Morgen:
+    	\begin{align}
+    		\ch{NO2} + h \nu \to \ch{NO} + \ch{O}(^3\text{P})
+    	\end{align}
     \pause
-    Gleichzeitig Dissoziation:
-    \begin{align}
-        \ch{N2O5} + h \nu \to \ch{NO2} + \ch{NO3}
-    \end{align}
+    	Gleichzeitig Dissoziation:
+    	\begin{align}
+    		\ch{N2O5} + h \nu \to \ch{NO2} + \ch{NO3}
+    	\end{align}
     \pause
-    Reagiert weiter:
-    \begin{align}
-        \ch{NO3} + h \nu \to \ch{NO} + \ch{O2}\\
-        \ch{NO3} + h \nu \to \ch{NO2} + \ch{O}
-    \end{align}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Tagesmessung \ch{O3}}
-\begin{center}
-    \includegraphics[width=.9\linewidth]{fig/SCD_Time_Plot_O3.pdf}
-    \captionof{figure}{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.    2019}
-    \label{fig:delta_SCD_time_O3}
-\end{center}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Tagesmessung \ch{O3}}
-    \ch{O3} und \ch{NO2} sind im Gleichgewicht:
-    \begin{align}
-         \ch{O3} + \ch{NO} \rightleftharpoons \ch{NO2} + \ch{O2}
-    \end{align}
-    \ch{O3} Hauptsächlich in Stratosphäre
+    	Reagiert weiter:
+    	\begin{align}
+    		\ch{NO3} + h \nu \to \ch{NO} + \ch{O2}\\
+    		\ch{NO3} + h \nu \to \ch{NO2} + \ch{O}
+    	\end{align}
+    \pause	
+      \column{0.5\linewidth}
+      	\ch{O3} und \ch{NO2} befinden sich im Gleichgewicht:
+      		\begin{align}
+      			\ch{O3} + \ch{NO} \rightleftharpoons \ch{NO2} + \ch{O2}
+      		\end{align}
+      	\ch{O3} hauptsächlich in der Stratosphäre	
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -289,56 +315,63 @@ Fraunhofer Referenzspektrum
     \frametitle{Langley Plots}
     Die totale SCD ist $S = \Delta S + S_F$\\
     $S_F$ kann mit Langley Plot bestimmt werden\\
-    Wenn Konzentration konstant $\to$ Linearer Langley Plot
+    Falls Konzentration konstant $\to$ Linearität im Langley Plot
     \begin{align}
-    \Delta \text{SCD} = \text{VCD} A - S_F
+    	\Delta \text{SCD}(AMF(\theta)) = \text{SCD}(AMF(\theta)) - S_F
     \end{align}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Langley Plot von \ch{NO2}}
-    \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/Langley_Plot_NO2_cut.pdf}
-    \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Langley Plot von \ch{O3}}
-    \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/Langley_Plot_O3_cut.pdf}
-    \end{figure}
+    \frametitle{Langley Plot von \ch{NO2} und \ch{O3}}
+    \begin{columns}
+      \column{0.5\linewidth}
+        \begin{figure}
+    		\includegraphics[width=1.15\linewidth]{fig/Langley_Plot_NO2_cut.pdf}
+            \caption{Langley Plot von \ch{NO2}}   
+	 	\end{figure}
+ 	  \column{0.5\linewidth}
+ 	    \begin{figure}
+ 	    	\includegraphics[width=1.15\linewidth]{fig/Langley_Plot_O3_cut.pdf}
+ 	        \caption{Langley Plot von \ch{O3}}
+     	\end{figure} 
+    \end{columns} 	
 \end{frame}
 
 \begin{frame}
     \frametitle{Fit $\Delta$SCD von \ch{O3}}
     \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/scd_fit_o3.pdf}
+    	\includegraphics[width=.7\linewidth]{fig/scd_fit_o3.pdf}
+    	\caption{Fit der Tagesmessung \ch{O3}}
     \end{figure}
+	\begin{align}
+		S_{ref}= (0.97 \cdot 10^{19}\pm 0.17 \cdot 10^{19}) \si{\frac{Moleküle}{cm^2}}
+	\end{align}
 \end{frame}
 
 \begin{frame}
     \frametitle{Vertical Column Density \ch{O3}}
-    Vertical Column Density (VCA) ist:
     \begin{align}
-        \text{VCD} = \text{SCD} \cos (\theta)
+    	\text{Vertical Column Density (VCA) ist:}\	\text{VCD} = \text{SCD}_\text{ges} \cos (\theta)
     \end{align}
-\end{frame} 
-
-\begin{frame}
-    \frametitle{Vertical Column Density \ch{O3}}
+    \vspace{-1cm}
     \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/VCD_O3_over_day.pdf}
-    \end{figure}
+    	\includegraphics[width=.7\linewidth]{fig/VCD_O3_over_day.pdf}
+		\caption{vertical column density Tagesmessung \ch{O3}}    
+	\end{figure}
 \end{frame}
 
 \begin{frame}
-    \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
-    \end{figure}
-
-    \begin{figure}
-    \includegraphics[width=.9\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
-    \end{figure}
+	\begin{columns}
+	  \column{0.5\linewidth}
+	 	\begin{figure}[l]	
+    	\includegraphics[width=1\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
+    	\end{figure}
+      \column{0.5\linewidth}
+    	\begin{figure}[r]
+    		\includegraphics[width=1\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
+    	\end{figure}
+    \end{columns}
+	
 \end{frame}
 
 \begin{frame}
@@ -354,21 +387,21 @@ Fraunhofer Referenzspektrum
     \frametitle{Multi Axis DOAS}
     Vier Messreihen bei jeweils $7^\circ$, $12^\circ$ und $90^\circ$ \\
     \begin{center}
-    \includegraphics[width=.7\linewidth]{fig/photo/wetter.png}
+    	\includegraphics[width=.7\linewidth]{fig/photo/wetter.png}
     \end{center}
 \end{frame}
 
 \begin{frame}
     \frametitle{MAX-DOAS \ch{O3}}
     \begin{figure}
-    \includegraphics[width=0.9\linewidth]{fig/max_DOAS_O3.pdf}
+    	\includegraphics[width=0.9\linewidth]{fig/max_DOAS_O3.pdf}
     \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{MAX-DOAS \ch{NO2}}
     \begin{figure}
-    \includegraphics[width=0.9\linewidth]{fig/max_DOAS_NO2.pdf}
+    	\includegraphics[width=0.9\linewidth]{fig/max_DOAS_NO2.pdf}
     \end{figure}
 \end{frame}
 
@@ -376,7 +409,7 @@ Fraunhofer Referenzspektrum
 \begin{frame}
     \frametitle{MAX-DOAS \ch{O4}}
     \begin{figure}
-    \includegraphics[width=0.9\linewidth]{fig/max_DOAS_O4.pdf}
+    	\includegraphics[width=0.9\linewidth]{fig/max_DOAS_O4.pdf}
     \end{figure}
 \end{frame}
 
@@ -384,17 +417,18 @@ Fraunhofer Referenzspektrum
 \begin{frame}
     \begin{center}
         \frametitle{MAX-DOAS Messung}
-	\begin{tabular*}{\linewidth}{c c}
-		\toprule
-        Molekül & Verhältnis $\Delta \text{SCD}$ \\
-        \midrule
-        \ch{O3} & $1.0 \pm 0.4$ \\
-        \ch{NO2} & $1.4 \pm 1.1$ \\
-        \ch{O4} & $1.7 \pm 0.7$\\
-		\bottomrule
-	\end{tabular*}
-    \captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
-	\label{fig:ratio_dscd}
-\end{center}
+		\begin{tabular*}{\linewidth}{c c}
+			\toprule
+        	Molekül & Verhältnis $\Delta \text{SCD}$ \\
+        	\midrule
+        	\ch{O3} & $1.0 \pm 0.4$ \\
+        	\ch{NO2} & $1.4 \pm 1.1$ \\
+        	\ch{O4} & $1.7 \pm 0.7$\\
+			\bottomrule
+		\end{tabular*}
+    	\captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
+		\label{fig:ratio_dscd}
+	\end{center}
 \end{frame}
+
 \end{document}
