@@ -17,7 +17,7 @@
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
-            \item[-] Verwendung von DOAS 
+            \item[-] Verwendung von \textit{Differential Optical Absorption Spectroscopy} (DOAS) 
             \item[-] Messung von \ch{O3}, \ch{O4} und \ch{NO2} 
         \end{itemize}
         \column{0.5\textwidth}
@@ -48,16 +48,14 @@
     \column{0.5\textwidth}
         \begin{figure}
         \includegraphics[width=0.8\textwidth]{fig/gas_spectra.png}
-        \caption{Charakeristische Profile}
+        \caption{Charakteristische Absorptionsstrukturen \cite{atm_script}}
         \end{figure}
     
     \column{.5\textwidth}
     \begin{itemize}
-        \item[-] \textit{Differential Optical Absorption Spectroscopy}
+        \item[-] Verwendung: Vorkommen von Spurengasen in Tropo- und Stratosphäre
             \pause
-        \item[-] Verwendung: Konzentration von Spurengasen in Tropo- und Stratosphäre
-            \pause
-        \item[-] Benutze Chrakteristische Profile von Molekülen
+        \item[-] Benutze charakteristische Absorptionsstrukturen von Molekülen
             \pause
         \item[-] Vergleich von optischen Dichten
     \end{itemize}
@@ -69,10 +67,10 @@
 \begin{itemize}
     \item[-] Konzentration: Moleküle pro Volumeneinheit
         \pause
-    \item[-] Column density: $CD = \int \rho (s) \dd s$
+    \item[-] Säulendichte: $CD = \int \rho (s) \dd s$
         \begin{itemize}
-            \item Slant Column Density SCD oder $S$
-            \item Vertical Column Density VCD
+            \item schräge Säulendichte SCD oder $S$
+            \item vertikale Säulendichte VCD
         \end{itemize}
         \pause
     \item[-] Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
@@ -84,7 +82,7 @@
     \frametitle{Lambert-Beer}
     \begin{figure}[h]
         \includegraphics[width=0.8\textwidth]{fig/lambert_beer.png}
-        \caption{Abosorption eines Lichtstrahles}
+        \caption{Absorption eines Lichtstrahles}
     \end{figure}
     \begin{align}
     	I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
@@ -164,8 +162,8 @@
 \end{frame}
 
 \begin{frame}
-    \section{Auflösungs des Spektrometers}
-    \frametitle{Messung mit Quecksilberlampe}
+    \section{Auflösung des Spektrometers}
+    \frametitle{Messung mit Quecksilberdampflampe}
     \begin{columns}
         \column{0.4\linewidth}
     \begin{figure}
@@ -175,7 +173,7 @@
         \column{0.6\linewidth}
 	\begin{figure}
         \includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
-        \caption{Spektrum der Quecksilberlampe}
+        \caption{Spektrum der Quecksilberdampflampe}
     \end{figure}
     \end{columns}
 \end{frame}
@@ -197,7 +195,7 @@
 
 \begin{frame}
     \section{Labormessungen}
-    \frametitle{Halogenlampen Messung \textit{aktiv} DOAS}
+    \frametitle{Halogenlampenmessung \textit{aktiv} DOAS}
 
     \begin{figure}[h]
         \includegraphics[width=0.7\textwidth]{fig/photo/aufbau_1.png}
@@ -209,9 +207,9 @@
 \end{frame}
 
 \begin{frame} 
-    \frametitle{Halogenlampen Messung}
+    \frametitle{Halogenlampenmessung}
 	\begin{itemize}
-    	\item Atmosphärische Einflüsse vernachlässigbar
+    	\item Labormessung: atmosphärische Einflüsse vernachlässigbar
 	\end{itemize}
 	\begin{align}
 	 	\to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L
@@ -226,7 +224,7 @@
 \end{frame} 
 
 \begin{frame}
-	\frametitle{Halogenlampen Messung}
+	\frametitle{Halogenlampenmessung}
      \begin{figure}[h]
     	\includegraphics[width=1\textwidth]{fig/fit_labor.png}
     	\caption{Fitergebnis}
@@ -235,13 +233,13 @@
     	\item Fitbereich: $(413.46 - 477.25) \si{nm}$
     		\begin{align}
     		   \text{Fitparameter:}\ \chi^2 &= 4.367 \cdot 10^{-3}\\
-    		   \text{fit coeff} &= -4.96 \cdot 10^{17} \pm 1.95 10^{15}
+    		   \text{fit coeff} &= 4.96 \cdot 10^{17} \pm 1.95 10^{15}
     		\end{align}
     \end{itemize}
 \end{frame} 
 
 \begin{frame}
-	\frametitle{Halogenlampen Messung}
+	\frametitle{Halogenlampenmessung}
 	\begin{align}
 		\text{Fitbereich:}\ (413.&46 - 477.25) \si{nm}\\
 		\text{Fitparameter:}\ \chi^2 &= 4.367 \cdot 10^{-3}\\
@@ -254,7 +252,7 @@
 
 \begin{frame}
     \section{Atmosphärische Messungen}
-    \frametitle{Versuchsaufbau atmosphärische Messungen (\textit{passiv} DOAS)}
+    \frametitle{Versuchsaufbau atmosphärischer Messungen (\textit{passiv} DOAS)}
      \begin{columns}
     	\column{.5\textwidth}
     		\begin{figure}[h]
