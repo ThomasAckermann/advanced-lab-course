@@ -1,7 +1,7 @@
 \documentclass{beamer}
 \input{config.tex}
 
-\title{Atmosphärische Spurensuche}
+\title{Atmosphärische Spurenstoffe}
 \author{Aaron Mielke \& Thomas Ackermann}
 \date{\today}
 
@@ -361,16 +361,13 @@
 \end{frame}
 
 \begin{frame}
-	\begin{columns}
-	  \column{0.5\linewidth}
-	 	\begin{figure}[l]	
-    	\includegraphics[width=1\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
-    	\end{figure}
-      \column{0.5\linewidth}
-    	\begin{figure}[r]
-    		\includegraphics[width=1\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
-    	\end{figure}
-    \end{columns}
+	 \frametitle{Vertical Column Density \ch{O3} von NASA Messungen}
+	 \begin{figure}	
+    	\includegraphics[width=0.7\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
+    \end{figure}
+    \begin{figure}
+    	\includegraphics[width=0.7\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
+    \end{figure}
 	
 \end{frame}
 
@@ -380,15 +377,17 @@
     Jetzt $\alpha$: Winkel zwischen Horizont und Richtung der Kamera
     \begin{figure}
         \includegraphics[width=.6\linewidth]{fig/photo/max_doas.png}
+        \caption{schematischer Lichtweg bei Multi Axis DOAS Messungen}
     \end{figure}
 \end{frame}
 
 \begin{frame}
     \frametitle{Multi Axis DOAS}
     Vier Messreihen bei jeweils $7^\circ$, $12^\circ$ und $90^\circ$ \\
-    \begin{center}
+    \begin{figure}
     	\includegraphics[width=.7\linewidth]{fig/photo/wetter.png}
-    \end{center}
+    	\caption{Wetterverhältnisse am 02.05.2019}
+    \end{figure}
 \end{frame}
 
 \begin{frame}
@@ -407,28 +406,42 @@
 
 
 \begin{frame}
+\begin{columns}
+  \column{0.5\linewidth}    
     \frametitle{MAX-DOAS \ch{O4}}
+    \vspace{-1cm}
     \begin{figure}
-    	\includegraphics[width=0.9\linewidth]{fig/max_DOAS_O4.pdf}
+    	\includegraphics[width=1.2\linewidth]{fig/max_DOAS_O4.pdf}
     \end{figure}
-\end{frame}
-
-
-\begin{frame}
-    \begin{center}
-        \frametitle{MAX-DOAS Messung}
+  \column{0.5\linewidth}
+	\begin{center}
+		\frametitle{MAX-DOAS Messung}
 		\begin{tabular*}{\linewidth}{c c}
 			\toprule
-        	Molekül & Verhältnis $\Delta \text{SCD}$ \\
-        	\midrule
-        	\ch{O3} & $1.0 \pm 0.4$ \\
-        	\ch{NO2} & $1.4 \pm 1.1$ \\
-        	\ch{O4} & $1.7 \pm 0.7$\\
+			Molekül & Verhältnis $\Delta \text{SCD}$ \\
+			\midrule
+			\ch{O3} & $1.0 \pm 0.4$ \\
+			\ch{NO2} & $1.4 \pm 1.1$ \\
+			\ch{O4} & $1.7 \pm 0.7$\\
 			\bottomrule
 		\end{tabular*}
-    	\captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
+		\captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
 		\label{fig:ratio_dscd}
 	\end{center}
+\end{columns}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Fazit}
+		\begin{itemize}
+			\item[-] konnten die Erwartungen in unseren Messungen wiederfinden  
+			 \pause
+			\item[-] aufgrund Näherungen werden Fehler unterschätzt
+			 \pause
+			\item[-] Wetterverhältnisse beeinflussen stark die Messergebnisse
+			 \pause
+			\item[-] gibt guten Einblick in die Arbeit mit dem DOAS Verfahren
+		\end{itemize}
 \end{frame}
 
 \end{document}
