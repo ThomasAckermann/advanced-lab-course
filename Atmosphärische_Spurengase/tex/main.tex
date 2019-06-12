@@ -35,8 +35,8 @@ The main goal was to find the concentration of \ch{NO2} and \ch{O3} in the atmos
 Measurements were taken in the week of the $29^\text{th}$ april, 2019.
 Due to a lack of clear sky conditions during this week, the analyzed data was from the $23^\text{th}$ april, 2019. 
 One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{formula}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
-The measurements of the tropospheric concentrations was not very purposful because heavy and thick clouds interfered with the measurements. 
-Regardless of this setback one found at least, with a comparison of the vertical densities from the troposhere and stratosphere, that \ch{O3} is mainly found in the stratosphere. 
+The measurements of the tropospheric concentrations was not very descriptively because heavy and thick clouds interfered with the measurements. 
+Regardless of this setback one found at least a trend for the three trace gases \ch{O3}, \ch{No2} and \ch{O4}. The ratio between the measurments at $7^{\circ}$ and $12^{\circ}$ yields that \ch{O3} is mainly found in the staratosphere where the ohter twos are present in the troposhere aswell.
 
 \newpage
 
@@ -436,10 +436,10 @@ Ebenfalls lässt sich nun das Mischverhältnis auf
 \begin{align}
     R &= \frac{\rho_{\ch{NO2}}}{\rho_{\text{std}}-\rho_{\ch{NO2}}}\\ 
     &= (9.311 \pm 0.004) \cdot 10^{-3}\\
-    &= (9.311 \pm 0.004) \cdot 10^{3} \si{ppm}
+    &= 9.311 \pm 0.004 \si{ppt}
 \end{align}
 
-beziffern. Dazu wurde für die $\rho_{\text{std}}$ aus den Normalbedingungen gewonnen.
+beziffern. Dazu wurde die $\rho_{\text{std}}$ aus den Normalbedingungen gewonnen.
 
 \begin{align}
     \rho_{\text{std}} = \frac{N_A}{V_M}.
@@ -706,6 +706,18 @@ Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterv
 
 \section{Diskussion}\label{sec:discussion}
 
+Der Versuch behandelt verschiedene Einsatzmöglichkeiten der DOAS Methode zur Bestimmung der atmosphärischen Spurengase.\\
+ 
+Zu Beginn wurde die Messapparatur kennengelernt und auf mögliche systematische Fehler wie der Offset und Dunkelstrom untersucht, die beide jeweils einen linearen Zusammenhang mit der Anzahl der Scans aufwiesen. Im verwendeten Analyseprogramm \verb*+DOASIS+ wurden die Werte der beiden Einflüsse hinterlegt, um im Verlauf des Versuches die aufgenommenen Spektren korrigieren zu können. Des weiteren wurde auf Rauschen untersucht, dass im Verlauf des Versuchs über eine große Anzahl an Scans pro Spektrum jedoch minimiert wurde.
+Eine Kalibrierung der Software \verb*+DOASIS+ wurde ebenfalls durchgeführt um in nachfolgenden Versuchsteilen sinnvolle Vergleichswerte für Fitbereiche zu erhalten.\\
+
+Eine erste Anwendung von DOAS wurde dann mit einer Labormessung der Konzentration von \ch{NO2} in einer Glasküvette kennengelernt. Dabei handelt es sich um eine \textit{aktive} DOAS Messung, da das Spektrometer direkt auf die Lichtquelle gerichtet wird. 
+Über eine Anpassung des Fitbereichs auf die gut erkennbaren \ch{NO2} Strukturen konnte eine Konzentration von $(2.48 \pm 0.12) \cdot 10^{20} \Bigl[ \frac{\text{Moleküle}}{\ell}\Bigr]$ bzw. einem Mischungsverhältnis von $9.311 \pm 0.004 \si{ppt}$ berechnet werden. 
+Um diese Werte zu erhalten wurde die Fitroutine von \verb*+DOASIS+ verwendet, welche einen $\chi^2$ Wert von $4.367 \cdot 10^{-3}$ ermittelte. Auch über die erhaltenen Fitresiduals welche sich im Größenordnungsbereich von $\pm 1 \cdot 10^{-2}$ bewegte, konnte nochmals die Qualität des Fits bestätigen.\\
+
+Eine andere Einsatzmethode wurde im dritten Versuchsteil vorgestellt, wo vor allem die stratosphärische Konzentration von \ch{O3} und \ch{NO2} untersucht wurde.
+
+   
 
 \nocite{*}
 \appendix
