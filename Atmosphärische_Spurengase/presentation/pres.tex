@@ -82,7 +82,7 @@
     \frametitle{Lambert-Beer}
     \begin{figure}[h]
         \includegraphics[width=0.8\textwidth]{fig/lambert_beer.png}
-        \caption{Absorption eines Lichtstrahles}
+        \caption{Absorption eines Lichtstrahles \cite{atm_script}}
     \end{figure}
     \begin{align}
     	I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
@@ -272,13 +272,13 @@
 	  \column{0.5\textwidth}
 	  	\begin{figure}
 	  		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
-    		\caption{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 24.04.2019}
+    		\caption{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 23.04.2019}
     		\label{fig:delta_SCD_time_NO2}
         \end{figure}
       \column{0.5\textwidth}
     	\begin{figure}
     		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_O3.pdf}
-    		\caption{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.2019}
+    		\caption{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 23.04.2019}
     		\label{fig:delta_SCD_time_O3}
     	\end{figure}  		
     \end{columns}
@@ -321,6 +321,7 @@
     \end{align}
     \begin{figure}
         \includegraphics[width=0.9\linewidth]{fig/langley_sza.png}
+        \caption{schematischer Lichtweg durch die Atmosphäre für unterschiedliche Sonnenzenitwinkel \cite{atm_script}}
     \end{figure}
 \end{frame}
 
@@ -362,26 +363,35 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vertical Column Density \ch{O3}}
+    \frametitle{Vertikale Säulendichte \ch{O3}}
     \begin{align}
-    	\text{Vertical Column Density (VCA) ist:}\	\text{VCD} = \text{SCD}_\text{ges} \cos (\theta)
+    	\text{Vertikale Säulendichte (VCA) ist:}\	\text{VCD} = \text{SCD}_\text{ges} \cos (\theta)
     \end{align}
     \vspace{-1cm}
     \begin{figure}
     	\includegraphics[width=.7\linewidth]{fig/VCD_O3_over_day.pdf}
-		\caption{vertical column density Tagesmessung \ch{O3}}    
+		\caption{vertikale Säulendichte Tagesmessung \ch{O3}}    
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	 \frametitle{Vertical Column Density \ch{O3} von NASA Messungen}
-	 \begin{figure}	
-    	\includegraphics[width=0.7\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
-    \end{figure}
-    \begin{figure}
-    	\includegraphics[width=0.7\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
-    \end{figure}
-	
+	 \frametitle{Vertikale Säulendichte \ch{O3} von NASA Messungen}
+	 \vspace{-0.35cm}
+	 \begin{columns}
+       \column{0.9\linewidth}	
+	 		\begin{figure}	
+    			\includegraphics[width=0.65\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
+    		\end{figure}
+    	\vspace{-1cm}
+    		\begin{figure}
+    			\includegraphics[width=0.65\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
+    			\caption{\ch{O3} Satellitenmessungen des 23.04.2019 \cite{giovanni_nasa}}
+    		\end{figure}		
+      \column{0.1\linewidth}
+      		\begin{figure}	
+      			\includegraphics[width=1\linewidth]{fig/DOAS_VCD_Ozone_legende.png}
+      		\end{figure}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -390,7 +400,7 @@
     Jetzt $\alpha$: Winkel zwischen Horizont und Richtung der Kamera
     \begin{figure}
         \includegraphics[width=.6\linewidth]{fig/photo/max_doas.png}
-        \caption{schematischer Lichtweg bei Multi Axis DOAS Messungen}
+        \caption{schematischer Lichtweg bei Multi Axis DOAS Messungen \cite{atm_script}}
     \end{figure}
 \end{frame}
 
