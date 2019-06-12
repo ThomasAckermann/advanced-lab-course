@@ -14,11 +14,18 @@
 \begin{frame}
 	\frametitle{Einführung}
     \section{Einführung}
-    Wichtig in diesem Versuch: Tropos- und Stratosphäre\\
-    Beschränkung auf die Spurengase \ch{O3}, \ch{O4} und \ch{NO2} 
-    \begin{figure}[h]
-        \includegraphics[width=0.4\textwidth]{fig/photo/erdatmosphäre.png}
+    \begin{columns}
+        \column{0.5\textwidth}
+        \begin{itemize}
+            \item[-] Verwendung von DOAS 
+            \item[-] Messung von \ch{O3}, \ch{O4} und \ch{NO2} 
+        \end{itemize}
+        \column{0.5\textwidth}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{fig/photo/erdatmosphäre.png}
+        \caption{Schichten der Atmosphäre}
     \end{figure}
+    \end{columns}
 \end{frame}
 
 
@@ -33,38 +40,51 @@
 	\end{itemize}
 \end{frame}
 
-
-% \begin{frame}
-% \frametitle{Messgrößen}
-%     \begin{itemize}
-%         \item Konzentration: Moleküle pro Volumeneinheit
-%         \item Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
-%         \item Column density: $CD = \int \rho (s) \dd s$
-%     \end{itemize}
-% \end{frame}
-
 \begin{frame}
     \frametitle{DOAS}
     \section{Theoretische Grundlagen}
     \begin{columns}
-    \column{.6\textwidth}
+
+    \column{0.5\textwidth}
+        \begin{figure}
+        \includegraphics[width=0.8\textwidth]{fig/gas_spectra.png}
+        \caption{Charakeristische Profile}
+        \end{figure}
+    
+    \column{.5\textwidth}
     \begin{itemize}
-        \item[-] Verwendung: Konzentration von Spurengasen bestimmen
+        \item[-] \textit{Differential Optical Absorption Spectroscopy}
+            \pause
+        \item[-] Verwendung: Konzentration von Spurengasen in Tropo- und Stratosphäre
+            \pause
         \item[-] Benutze Chrakteristische Profile von Molekülen
+            \pause
         \item[-] Vergleich von optischen Dichten
-        \item[-] Bestimmung Konzentration in Tropo- oder Stratosphäre
     \end{itemize}
-    \column{0.4\textwidth}
-    \begin{minipage}{80mm}
-        \includegraphics[width=0.5\textwidth]{fig/gas_spectra.png}
-    \end{minipage}
-    \end{columns}
+\end{columns}
 \end{frame}
+
+\begin{frame}
+\frametitle{Messgrößen}
+\begin{itemize}
+    \item[-] Konzentration: Moleküle pro Volumeneinheit
+        \pause
+    \item[-] Column density: $CD = \int \rho (s) \dd s$
+        \begin{itemize}
+            \item Slant Column Density SCD oder $S$
+            \item Vertical Column Density VCD
+        \end{itemize}
+        \pause
+    \item[-] Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
+    \end{itemize}
+\end{frame}
+
 
 \begin{frame}
     \frametitle{Lambert-Beer}
     \begin{figure}[h]
-        \includegraphics[width=0.6\textwidth]{fig/lambert_beer.png}
+        \includegraphics[width=0.8\textwidth]{fig/lambert_beer.png}
+        \caption{Abosorption eines Lichtstrahles}
     \end{figure}
     \begin{align}
     	I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
@@ -81,49 +101,48 @@
     \frametitle{DOAS-Fit}
     Forme Lambert-Beer um:
 	\begin{align}
-    	\tau = \log \frac{I}{I_0} = - \rho L \sigma (\lambda).
+        & I = I_0 \exp (-\rho L \sigma (\lambda)) \\
+        \Leftrightarrow \ &\tau = \log \frac{I}{I_0} = - \rho L \sigma (\lambda).
 	\end{align}
-	$\tau$ : Optische Dichte\\
+    \pause
 	Erstelle Fit durch Minimierung von
     \begin{align}
-        \chi^2 = ( \log \frac{I_0}{I} - \rho L \sigma )^2. 
+        \chi^2 = ( \log \frac{I_0}{I} -\underbrace{\rho L}_{\text{CD}} \sigma )^2. 
     \end{align}
 \end{frame}
 
 
 \begin{frame}
-    \frametitle{Kurzband Effekte}
-	Fraunhofer Referenzspektrum
-    \begin{itemize}
-        \item Berücksichtigung der Strukturen der Sonne
-    \end{itemize}
-    \begin{figure}[h]
-        \includegraphics[width=0.7\textwidth]{fig/fraunhofer_linien.png}
+    \frametitle{Kurzbandeffekte}
+    \begin{columns}
+        \column{0.6\linewidth}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{fig/fraunhofer_linien.png}
+        \caption{Fraunhoferspektrum}
     \end{figure}
+        \column{0.4\linewidth}
+        \begin{itemize}
+            \item[-]{Fraunhofer Linien}
+                \pause
+            \item[-]{Ring-Effekt}
+        \end{itemize}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
-	\frametitle{Kurzband Effekte}
-    Ring-Effekt
+    \frametitle{Breitbandeffekte}
     \begin{itemize}
-        \item Inelastische Raman-Streuung
-        \item Wellenlängen ändern sich
-    \end{itemize}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Breitband Effekte}
-    \begin{itemize}
-        \item Elastische Streuung von Sonnenlicht 
-        \item $\to$ Mie und Reyleigh Streuung
-        \item Summe aus Streuung und Absorbtion : \textit{Extinktion} $\epsilon_M$ und $\epsilon_R$
+        \item[-] Elastische Streuung von Sonnenlicht $\to$ Mie und Rayleigh Streuung
+            \pause
+        \item[-] Summe aus Streuung und Absorbtion : \textit{Extinktion} $\epsilon_M$ und $\epsilon_R$
+            \pause
     Rayleigh: $\sim \lambda^{-4}$\\
     Mie: keine starke $\lambda$ Abhängigkeit
     \end{itemize}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Breitband Effekte}
+    \frametitle{Atmosphärische Effekte}
     \begin{figure}
     	\includegraphics[width=0.7\linewidth]{fig/rayleigh_mie.png}
     \end{figure}
@@ -131,9 +150,9 @@
 
 
 \begin{frame}
-    \frametitle{Modifiziertes Lamber-Beer Gesetz}
+    \frametitle{Modifiziertes Lambert-Beer Gesetz}
     \begin{align}
-        I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp\left(-L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M\right)
+        I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp\left( -L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M\right)
     \end{align}
     Erste Exponentialfunktion: Kurzband Effekte\\
     Zweite Exponentialfunktion: Breitband Effekte\\
@@ -145,25 +164,20 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{Versuchsaufbau}
-    \section{Versuchsaufbau}
-    Was sollte hier nochmal hin?
-    Bild von Spektrometer
-\end{frame}
-
-\begin{frame}
     \section{Auflösungs des Spektrometers}
-    \frametitle{Auflösung des Spektrometers}
-    \begin{figure}[h]
-        \includegraphics[width=0.5\textwidth]{fig/photo/hg_lampe.png}
+    \frametitle{Messung mit Quecksilberlampe}
+    \begin{columns}
+        \column{0.4\linewidth}
+    \begin{figure}
+        \includegraphics[width=\textwidth]{fig/photo/hg_lampe.png}
+        \caption{Verwendete Lichtquelle}
     \end{figure}
-\end{frame}
-
-\begin{frame}
-    \frametitle{Spektrum der Quecksilberlampe}
-	\begin{figure}[h]
+        \column{0.6\linewidth}
+	\begin{figure}
         \includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
+        \caption{Spektrum der Quecksilberlampe}
     \end{figure}
+    \end{columns}
 \end{frame}
 
 \begin{frame}
@@ -178,6 +192,7 @@
     	4 & $\sim 436$ & $0.7 \pm 0.1$ \\
     	\bottomrule
 	\end{tabular*}
+    \captionof{figure}{FWHM der Intensitätsmaxima}
 \end{frame}
 
 \begin{frame}
