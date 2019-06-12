@@ -536,13 +536,19 @@ Ein linearer Zusammenhang entspricht einer Konstanten Konzentration über den Ta
 Es scheint als würde sowohl bei \ch{O3} als auch bei \ch{NO2} eine konstante Konzentration über den Tag vorliegt.
 Allerdings muss beachtet werden, dass Messungen vom Morgen nicht vorhanden sind.
 Die Konzentration von \ch{NO2} ist, wie in Abschnitt \ref{sssec:tagesmessung} besprochen, am Morgen geringer als am Abend.
-Wenn nun die Messungen vom Morgen im Langley-Plot dabei wären, könnte keine Gerade mehr eindeutig festgemacht werden.
+Wenn nun die Messungen vom Morgen im Langley-Plot vorhanden wären, könnte keine Gerade mehr eindeutig festgemacht werden.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/scd_fit_o3.pdf}
     \captionof{figure}{$\Delta$SCD von \ch{O3} mit Fits.}
 	\label{fig:scd_fit_o3}
 \end{center}
+
+Über einen Geradenfit im Langley Plot von \ch{O3} kann nun die $\text{SCD}_\text{ref}$, welche der y-Achsenabschnitt ist, abgelesen werden. Um einen Fehler aufgrund unserer schwankenden Messergebnisse zu erhalten wurde eine zweite zu rechtfertigende Gerade angegeben. Die Differenz der beiden y-Achsenabschnitte erlaubt es einen Fehler der $\text{SCD}_\text{ref}$ abzuschätzen.
+ 
+\begin{align}
+	\text{SCD}_\text{ref}= (0.97 \cdot 10^{19}\pm 0.17 \cdot 10^{19}) \si{\frac{Moleküle}{cm^2}}.
+\end{align}	
 
 Der horizontale Verlauf der \textit{vertical column density} (VCD) bestätigt die Aussage, dass die \ch{O3} Konzentration konstant über den Tag ist.
 
@@ -555,7 +561,7 @@ Der horizontale Verlauf der \textit{vertical column density} (VCD) bestätigt di
 Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge: 
 
 \begin{align}
-    \text{VCD} = \text{SCD} \cdot \cos(\theta)
+    \text{VCD} = ( \Delta \text{SCD} + \text{SCD}_\text{ref}) \cdot \cos(\theta)
 \end{align}
 
 \begin{center}
@@ -641,13 +647,7 @@ was sich nun mit Gleichung \ref{eq:SCD_trop} zu
     VCD_{trop}(\alpha) = \frac{\Delta SCD_{trop}(\alpha)}{AMF_{trop}(\alpha)-AMF_{trop}(ref)}, 
 \end{align} 
 
-bzw.
-
-\begin{align}
-VCD_{trop}(\alpha) = \frac{\Delta SCD_{trop}(\alpha)}{DAMF_{trop}(\alpha)}, 
-\end{align}  
-
-mit $DAMF_{trop}(\alpha) = AMF_{trop}(\alpha)-AMF_{trop}(ref)$ ergibt.
+ergibt.
 In unserem Fall ist es möglich den \textit{air mass factor} mit
 
 \begin{align}
