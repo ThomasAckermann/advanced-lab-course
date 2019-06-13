@@ -17,17 +17,16 @@
     \begin{columns}
         \column{0.5\textwidth}
         \begin{itemize}
-            \item[-] Verwendung von DOAS 
+            \item[-] Verwendung von \textit{Differential Optical Absorption Spectroscopy} (DOAS) 
             \item[-] Messung von \ch{O3}, \ch{O4} und \ch{NO2} 
         \end{itemize}
         \column{0.5\textwidth}
     \begin{figure}
         \includegraphics[width=\textwidth]{fig/photo/erdatmosphäre.png}
-        \caption{Schichten der Atmosphäre}
+        \caption{Schichten der Atmosphäre \cite{amt_zones}}
     \end{figure}
     \end{columns}
 \end{frame}
-
 
 \begin{frame}
     \frametitle{Inhaltsangabe}
@@ -45,23 +44,19 @@
     \section{Theoretische Grundlagen}
     \begin{columns}
 
-    \column{0.5\textwidth}
+      \column{0.5\textwidth}
         \begin{figure}
         \includegraphics[width=0.8\textwidth]{fig/gas_spectra.png}
-        \caption{Charakeristische Profile}
+        \caption{Charakteristische Absorptionsstrukturen \cite{atm_script}}
         \end{figure}
     
-    \column{.5\textwidth}
-    \begin{itemize}
-        \item[-] \textit{Differential Optical Absorption Spectroscopy}
-            \pause
-        \item[-] Verwendung: Konzentration von Spurengasen in Tropo- und Stratosphäre
-            \pause
-        \item[-] Benutze Chrakteristische Profile von Molekülen
-            \pause
-        \item[-] Vergleich von optischen Dichten
-    \end{itemize}
-\end{columns}
+      \column{.5\textwidth}
+    	\begin{itemize}
+        	\item[-] Verwendung: Vorkommen von Spurengasen in Tropo- und Stratosphäre
+        	\item[-] Benutze charakteristische Absorptionsstrukturen von Molekülen
+        	\item[-] Vergleich von optischen Dichten
+    	\end{itemize}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -69,22 +64,23 @@
 \begin{itemize}
     \item[-] Konzentration: Moleküle pro Volumeneinheit
         \pause
-    \item[-] Column density: $CD = \int \rho (s) \dd s$
+    \item[-] Säulendichte: $CD = \int \rho (s) \dd s$
         \begin{itemize}
-            \item Slant Column Density SCD oder $S$
-            \item Vertical Column Density VCD
+            \item schräge Säulendichte SCD oder $S$
+            \item vertikale Säulendichte VCD
+            \item werden in $\frac{\text{Moleküle}}{\text{cm}^2}$ angegeben
+            \item für \ch{O3}: $1 \text{Dobson Unit(DU)} = 2.6 \cdot 10^{16} \frac{\text{Moleküle}}{\text{cm}^2}$ 
         \end{itemize}
         \pause
     \item[-] Mischverhältnis: Relativer Anteil von Spurengas zu Luftmenge
     \end{itemize}
 \end{frame}
 
-
 \begin{frame}
-    \frametitle{Lambert-Beer}
+    \frametitle{Lambert-Beer Gesetz}
     \begin{figure}[h]
         \includegraphics[width=0.8\textwidth]{fig/lambert_beer.png}
-        \caption{Abosorption eines Lichtstrahles}
+        \caption{Absorption eines Lichtstrahles \cite{atm_script}}
     \end{figure}
     \begin{align}
     	I(\lambda, L) = I_0 (\lambda) \exp (- \rho  L \sigma (\lambda) )
@@ -95,7 +91,6 @@
         \item $\sigma (\lambda)$ Absorptionswirkungsquerschnitt % Absorptionswirkungsquerschnitt ist wahrscheinlichkeit dass bei bestimmen winkel absorption stattfindet
     \end{itemize}
 \end{frame}
-
 
 \begin{frame}
     \frametitle{DOAS-Fit}
@@ -111,20 +106,19 @@
     \end{align}
 \end{frame}
 
-
 \begin{frame}
     \frametitle{Kurzbandeffekte}
     \begin{columns}
-        \column{0.6\linewidth}
-    \begin{figure}
-        \includegraphics[width=\textwidth]{fig/fraunhofer_linien.png}
-        \caption{Fraunhoferspektrum}
-    \end{figure}
-        \column{0.4\linewidth}
+      \column{0.6\linewidth}
+    	\begin{figure}
+        	\includegraphics[width=\textwidth]{fig/fraunhofer_linien.png}
+        	\caption{Fraunhoferspektrum \cite{fraunhofer}}
+    	\end{figure}
+      \column{0.4\linewidth}
         \begin{itemize}
-            \item[-]{Fraunhofer Linien}
-                \pause
-            \item[-]{Ring-Effekt}
+			\item[-]{Fraunhoferlinien}
+        	\pause
+        	\item[-]{Ring-Effekt}
         \end{itemize}
     \end{columns}
 \end{frame}
@@ -134,7 +128,7 @@
     \begin{itemize}
         \item[-] Elastische Streuung von Sonnenlicht $\to$ Mie und Rayleigh Streuung
             \pause
-        \item[-] Summe aus Streuung und Absorbtion : \textit{Extinktion} $\epsilon_M$ und $\epsilon_R$
+        \item[-] Summe aus Streuung und Absorption : \textit{Extinktion} $\epsilon_M$ und $\epsilon_R$
             \pause
     Rayleigh: $\sim \lambda^{-4}$\\
     Mie: keine starke $\lambda$ Abhängigkeit
@@ -144,39 +138,39 @@
 \begin{frame}
     \frametitle{Atmosphärische Effekte}
     \begin{figure}
-    	\includegraphics[width=0.7\linewidth]{fig/rayleigh_mie.png}
+    	\includegraphics[width=0.65\linewidth]{fig/rayleigh_mie.png}
+    	\caption{Breit- und Kurzbandeffekte \cite{platt10}}
     \end{figure}
 \end{frame}
-
 
 \begin{frame}
     \frametitle{Modifiziertes Lambert-Beer Gesetz}
     \begin{align}
         I = I_0 \exp(-R - \sum_i \sigma_i S_i) \exp\left( -L (\sigma_{i0}\rho_0) + \epsilon_R + \epsilon_M\right)
     \end{align}
-    Erste Exponentialfunktion: Kurzband Effekte\\
-    Zweite Exponentialfunktion: Breitband Effekte\\
+    Erste Exponentialfunktion: Kurzbandeffekte\\
+    Zweite Exponentialfunktion: Breitbandeffekte\\
     \pause
-    Neues $\chi^2$
+    Neues $\chi^2$:
     \begin{align}
-        \chi^2 = \left( \log\frac{I_0 + I_\text{Ofs}}{I} - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right)^2.
+        \chi^2 = \left( \log\frac{I_0 + I_\text{Ofs}}{I} - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right)^2
     \end{align}
 \end{frame}
 
 \begin{frame}
-    \section{Auflösungs des Spektrometers}
-    \frametitle{Messung mit Quecksilberlampe}
+    \section{Auflösung des Spektrometers}
+    \frametitle{Messung mit Quecksilberdampflampe}
     \begin{columns}
-        \column{0.4\linewidth}
-    \begin{figure}
-        \includegraphics[width=\textwidth]{fig/photo/hg_lampe.png}
-        \caption{Verwendete Lichtquelle}
-    \end{figure}
-        \column{0.6\linewidth}
-	\begin{figure}
-        \includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
-        \caption{Spektrum der Quecksilberlampe}
-    \end{figure}
+      \column{0.4\linewidth}
+    	\begin{figure}
+        	\includegraphics[width=\textwidth]{fig/photo/hg_lampe.png}
+        	\caption{Verwendete Lichtquelle}
+    	\end{figure}
+      \column{0.6\linewidth}
+		\begin{figure}
+        	\includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
+        	\caption{Spektrum der Quecksilberdampflampe}
+    	\end{figure}
     \end{columns}
 \end{frame}
 
@@ -197,56 +191,65 @@
 
 \begin{frame}
     \section{Labormessungen}
-    \frametitle{Halogenlampen Messung \textit{aktiv} DOAS}
+    \frametitle{Halogenlampenmessung (\textit{aktiv} DOAS)}
 
     \begin{figure}[h]
         \includegraphics[width=0.7\textwidth]{fig/photo/aufbau_1.png}
     \end{figure}
-
+	\vspace{-0.2cm}
     \begin{figure}[h]
         \includegraphics[width=0.3\textwidth]{fig/photo/glas_test.png}
+        \caption{Versuchsaufbau Labormessung}
     \end{figure}
 \end{frame}
 
 \begin{frame} 
-    \frametitle{Halogenlampen Messung}
+    \frametitle{Halogenlampenmessung}
+    
 	\begin{itemize}
-    	\item Atmosphärische Einflüsse vernachlässigbar
+    	\item Labormessung: atmosphärische Einflüsse vernachlässigbar
 	\end{itemize}
+
 	\begin{align}
 	 	\to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L
 	\end{align}
+	
     \begin{itemize}
     	\item Fitbereich: Suche nach Überlagerung mit \ch{NO2} Referenz
 	\end{itemize}
+
 	\begin{figure}[h]
 		\includegraphics[width=0.5\textwidth]{fig/range_search_test.png}
-		\caption{Vergleich der optischen Dichten von Literatur- und Versuchspektrum}
+		\caption{Vergleich der optischen Dichten von Literatur- und Versuchsspektrum}
 	\end{figure}
 \end{frame} 
 
 \begin{frame}
-	\frametitle{Halogenlampen Messung}
+	\frametitle{Halogenlampenmessung}
      \begin{figure}[h]
     	\includegraphics[width=1\textwidth]{fig/fit_labor.png}
-    	\caption{Fitergebnis}
+    	\caption{Fitergebnis der \ch{NO2} Labormessung}
     \end{figure}
+
     \begin{itemize} 
     	\item Fitbereich: $(413.46 - 477.25) \si{nm}$
+    	
     		\begin{align}
     		   \text{Fitparameter:}\ \chi^2 &= 4.367 \cdot 10^{-3}\\
-    		   \text{fit coeff} &= -4.96 \cdot 10^{17} \pm 1.95 10^{15}
+    		   \text{fit coeff} &= 4.96 \cdot 10^{17} \pm 1.95 10^{15}
     		\end{align}
+    		
     \end{itemize}
 \end{frame} 
 
 \begin{frame}
-	\frametitle{Halogenlampen Messung}
+	\frametitle{Halogenlampenmessung}
 	\begin{align}
 		\text{Fitbereich:}\ (413.&46 - 477.25) \si{nm}\\
 		\text{Fitparameter:}\ \chi^2 &= 4.367 \cdot 10^{-3}\\
-		\text{fit coeff} &= -4.96 \cdot 10^{17} \pm 1.95 10^{15}
+		\text{fit coeff} &= 4.96 \cdot 10^{17} \pm 1.95 \cdot 10^{15}
 	\end{align}
+	
 	\begin{align}    
 		\to \rho_{\ch{NO2}} = (2.48 \pm 0.12) \cdot 10^{20} \si{\frac{\text{Moleküle}}{\ell}}
 	\end{align}
@@ -254,17 +257,18 @@
 
 \begin{frame}
     \section{Atmosphärische Messungen}
-    \frametitle{Versuchsaufbau atmosphärische Messungen (\textit{passiv} DOAS)}
-     \begin{columns}
-    	\column{.5\textwidth}
-    		\begin{figure}[h]
-    			\includegraphics[width=1\textwidth]{fig/photo/aufbau_2.png}
-    		\end{figure}
-    	\column{0.5\textwidth}
-    		\begin{itemize}
-    			\item[-] Jetzt erweitertes Lambert-Beer Gesetz
-    			\item[-] Untersuchung von SCD
-    		\end{itemize}
+    \frametitle{Atmosphärische Messungen (\textit{passiv} DOAS)}
+    \begin{columns}
+      \column{.5\textwidth}
+    	\begin{figure}[h]
+    		\includegraphics[width=1\textwidth]{fig/photo/aufbau_2.png}
+    		\caption{Teleskopausrichtung}
+    	\end{figure}
+      \column{0.5\textwidth}
+    	\begin{itemize}
+    		\item[-] Jetzt erweitertes Lambert-Beer Gesetz
+    		\item[-] Untersuchung von SCD
+    	\end{itemize}
     \end{columns}
 \end{frame}
 
@@ -274,13 +278,13 @@
 	  \column{0.5\textwidth}
 	  	\begin{figure}
 	  		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
-    		\caption{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 24.04.2019}
+    		\caption{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 23.04.2019}
     		\label{fig:delta_SCD_time_NO2}
         \end{figure}
       \column{0.5\textwidth}
     	\begin{figure}
     		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_O3.pdf}
-    		\caption{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 24.04.2019}
+    		\caption{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 23.04.2019}
     		\label{fig:delta_SCD_time_O3}
     	\end{figure}  		
     \end{columns}
@@ -318,11 +322,14 @@
 \begin{frame}
     \frametitle{Langley Plots}
     $\Delta$ SCD wird gegen Air Mass Factor (AMF) aufgetragen\\
+    
     \begin{align}
         \text{AMF}(\theta) := \frac{\text{SCD}(\theta)}{\text{VCD}} \approx \frac{1}{\cos (\theta)}
     \end{align}
+    
     \begin{figure}
         \includegraphics[width=0.9\linewidth]{fig/langley_sza.png}
+        \caption{schematischer Lichtweg durch die Atmosphäre für unterschiedliche Sonnenzenitwinkel \cite{atm_script}}
     \end{figure}
 \end{frame}
 
@@ -331,6 +338,7 @@
     Die totale SCD ist $S = \Delta S + S_F$\\
     $S_F$ kann mit Langley Plot bestimmt werden\\
     Falls Konzentration konstant $\to$ Linearität im Langley Plot
+    
     \begin{align}
     	\Delta \text{SCD}(AMF(\theta)) = \text{SCD}(AMF(\theta)) - S_F
     \end{align}
@@ -340,7 +348,7 @@
     \frametitle{Langley Plot von \ch{NO2} und \ch{O3}}
     \begin{columns}
       \column{0.5\linewidth}
-        \begin{figure}
+    	\begin{figure}
     		\includegraphics[width=1.15\linewidth]{fig/Langley_Plot_NO2_cut.pdf}
             \caption{Langley Plot von \ch{NO2}}   
 	 	\end{figure}
@@ -358,32 +366,44 @@
     	\includegraphics[width=.7\linewidth]{fig/scd_fit_o3.pdf}
     	\caption{Fit der Tagesmessung \ch{O3}}
     \end{figure}
+
 	\begin{align}
 		S_{ref}= (0.97 \cdot 10^{19}\pm 0.17 \cdot 10^{19}) \si{\frac{Moleküle}{cm^2}}
 	\end{align}
 \end{frame}
 
 \begin{frame}
-    \frametitle{Vertical Column Density \ch{O3}}
+    \frametitle{Vertikale Säulendichte \ch{O3}}
     \begin{align}
-    	\text{Vertical Column Density (VCA) ist:}\	\text{VCD} = \text{SCD}_\text{ges} \cos (\theta)
+    	\text{Vertikale Säulendichte (VCA) ist:}\	\text{VCD} = \text{SCD}_\text{ges} \cos (\theta)
     \end{align}
+    
     \vspace{-1cm}
+    
     \begin{figure}
     	\includegraphics[width=.7\linewidth]{fig/VCD_O3_over_day.pdf}
-		\caption{vertical column density Tagesmessung \ch{O3}}    
+		\caption{vertikale Säulendichte Tagesmessung \ch{O3}}    
 	\end{figure}
 \end{frame}
 
 \begin{frame}
-	 \frametitle{Vertical Column Density \ch{O3} von NASA Messungen}
-	 \begin{figure}	
-    	\includegraphics[width=0.7\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
-    \end{figure}
-    \begin{figure}
-    	\includegraphics[width=0.7\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
-    \end{figure}
-	
+	\frametitle{Vertikale Säulendichte \ch{O3} von NASA Messungen}
+	\vspace{-0.35cm}
+	\begin{columns}
+      \column{0.9\linewidth}	
+		\begin{figure}	
+    		\includegraphics[width=0.65\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus.png}
+    	\end{figure}
+    	\vspace{-1cm}
+    	\begin{figure}
+    		\includegraphics[width=0.65\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
+    		\caption{\ch{O3} Satellitenmessungen des 23.04.2019 \cite{giovanni_nasa}}
+    	\end{figure}		
+	  \column{0.1\linewidth}
+      	\begin{figure}	
+      		\includegraphics[width=1\linewidth]{fig/DOAS_VCD_Ozone_legende.png}
+      	\end{figure}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
@@ -392,7 +412,7 @@
     Jetzt $\alpha$: Winkel zwischen Horizont und Richtung der Kamera
     \begin{figure}
         \includegraphics[width=.6\linewidth]{fig/photo/max_doas.png}
-        \caption{schematischer Lichtweg bei Multi Axis DOAS Messungen}
+        \caption{schematischer Lichtweg bei Multi Axis DOAS Messungen \cite{atm_script}}
     \end{figure}
 \end{frame}
 
@@ -406,57 +426,63 @@
 \end{frame}
 
 \begin{frame}
-    \frametitle{MAX-DOAS \ch{O3}}
-    \begin{figure}
-    	\includegraphics[width=0.9\linewidth]{fig/max_DOAS_O3.pdf}
-    \end{figure}
+    \frametitle{MAX-DOAS Messung}
+    \begin{columns}
+      \column{0.5\linewidth}
+    	\begin{figure}
+    		\includegraphics[width=1.2\linewidth]{fig/max_DOAS_O3.pdf}
+    		\caption{Messung \ch{O3}}
+    	\end{figure}
+	  \column{0.5\linewidth}
+	  	\begin{figure}
+	  			\includegraphics[width=1.2\linewidth]{fig/max_DOAS_NO2.pdf}
+	  			\caption{Messung \ch{NO2}}
+	  	\end{figure}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
-    \frametitle{MAX-DOAS \ch{NO2}}
-    \begin{figure}
-    	\includegraphics[width=0.9\linewidth]{fig/max_DOAS_NO2.pdf}
-    \end{figure}
-\end{frame}
-
-
-\begin{frame}
-\begin{columns}
-  \column{0.5\linewidth}    
-    \frametitle{MAX-DOAS \ch{O4}}
-    \vspace{-1cm}
-    \begin{figure}
-    	\includegraphics[width=1.2\linewidth]{fig/max_DOAS_O4.pdf}
-    \end{figure}
-  \column{0.5\linewidth}
-	\begin{center}
-		\frametitle{MAX-DOAS Messung}
-		\begin{tabular*}{\linewidth}{c c}
-			\toprule
-			Molekül & Verhältnis $\Delta \text{SCD}$ \\
-			\midrule
-			\ch{O3} & $1.0 \pm 0.4$ \\
-			\ch{NO2} & $1.4 \pm 1.1$ \\
-			\ch{O4} & $1.7 \pm 0.7$\\
-			\bottomrule
-		\end{tabular*}
-		\captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
-		\label{fig:ratio_dscd}
-	\end{center}
-\end{columns}
+	\frametitle{MAX-DOAS Messung}
+	\begin{columns}
+  	  \column{0.5\linewidth}    
+    	\vspace{-1cm}
+    	\begin{figure}
+    		\includegraphics[width=1.2\linewidth]{fig/max_DOAS_O4.pdf}
+    	\end{figure}
+  	  \column{0.5\linewidth}
+		\begin{center}
+			\begin{tabular*}{\linewidth}{c c}
+		  		\toprule
+				Molekül & Verhältnis $\Delta \text{SCD}$ \\
+				\midrule
+				\ch{O3} & $1.0 \pm 0.4$ \\
+				\ch{NO2} & $1.4 \pm 1.1$ \\
+				\ch{O4} & $1.7 \pm 0.7$\\
+				\bottomrule
+			\end{tabular*}
+			\captionof{table}{Verhältnis der $\Delta$SCD von \ch{O3}, \ch{NO2} und \ch{O4}}
+			\label{fig:ratio_dscd}
+		\end{center}
+	\end{columns}
 \end{frame}
 
 \begin{frame}
 	\frametitle{Fazit}
-		\begin{itemize}
-			\item[-] konnten die Erwartungen in unseren Messungen wiederfinden  
-			 \pause
-			\item[-] aufgrund Näherungen werden Fehler unterschätzt
-			 \pause
-			\item[-] Wetterverhältnisse beeinflussen stark die Messergebnisse
-			 \pause
-			\item[-] gibt guten Einblick in die Arbeit mit dem DOAS Verfahren
-		\end{itemize}
+	\begin{itemize}
+		\item[-] Konnten die Erwartungen in unseren Messungen wiederfinden  
+		\pause
+		\item[-] Aufgrund Näherungen werden Fehler unterschätzt
+		\pause
+		\item[-] Wetterverhältnisse beeinflussen die Messergebnisse
+		\pause
+		\item[-] Gibt guten Einblick in die Arbeit mit dem DOAS Verfahren
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\frametitle{Bildquellen}
+	\linespread{0.9}
+	\printbibliography
 \end{frame}
 
 \end{document}

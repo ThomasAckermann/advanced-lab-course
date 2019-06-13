@@ -3,12 +3,14 @@
 
 \usefonttheme{professionalfonts} % using non standard fonts for beamer
 \usefonttheme{serif} % default family is serif
-
 % language
 \usepackage{polyglossia}
 \setmainlanguage{german}
 \setotherlanguages{english}
 \usepackage{microtype}
+
+\usepackage[style=numeric,
+backend=biber, sorting=none]{biblatex}		%Bibliographie
 
 %math and theorems
 \usepackage{amsmath}
@@ -57,4 +59,11 @@
 
 \usepackage{setspace}
 \onehalfspace
+
+\addbibresource{bibliography.bib}
+
+
 \setbeamertemplate{caption}[numbered]
+\setbeamertemplate{bibliography item}{-}
+
+\renewcommand*{\bibfont}{\small}

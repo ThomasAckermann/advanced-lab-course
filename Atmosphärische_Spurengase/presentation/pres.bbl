@@ -1,0 +1,172 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.0 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{amt_zones}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Erdatmosphäre}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/Erdatmosphäre#/media/Datei:Atmosphäre_Stufen.svg
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Erdatmosph%C3%A4re#/media/Datei:Atmosph%C3%A4re_Stufen.svg
+      \endverb
+    \endentry
+    \entry{atm_script}{article}{}
+      \name{author}{1}{}{%
+        {{hash=cb10d3e580dacf8bda6d5d7c3539f69d}{%
+           family={Kern},
+           familyi={K\bibinitperiod},
+           given={Christoph},
+           giveni={C\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Environmental Physics}%
+      }
+      \strng{namehash}{cb10d3e580dacf8bda6d5d7c3539f69d}
+      \strng{fullhash}{cb10d3e580dacf8bda6d5d7c3539f69d}
+      \strng{bibnamehash}{cb10d3e580dacf8bda6d5d7c3539f69d}
+      \strng{authorbibnamehash}{cb10d3e580dacf8bda6d5d7c3539f69d}
+      \strng{authornamehash}{cb10d3e580dacf8bda6d5d7c3539f69d}
+      \strng{authorfullhash}{cb10d3e580dacf8bda6d5d7c3539f69d}
+      \field{sortinit}{3}
+      \field{sortinithash}{a4b52e5432884761f50fb9571273b93e}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{12}
+      \field{title}{FP Skript: Atmospheric Trace Gases}
+      \field{year}{2018}
+      \verb{urlraw}
+      \verb https://www.physi.uni-heidelberg.de/Einrichtungen/FP/anleitungen/F18.pdf
+      \endverb
+      \verb{url}
+      \verb https://www.physi.uni-heidelberg.de/Einrichtungen/FP/anleitungen/F18.pdf
+      \endverb
+    \endentry
+    \entry{fraunhofer}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Fraunhofer lines}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Fraunhofer_lines#/media/File:Spectrum_of_blue_sky.svg
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Fraunhofer_lines#/media/File:Spectrum_of_blue_sky.svg
+      \endverb
+    \endentry
+    \entry{platt10}{article}{}
+      \name{author}{1}{}{%
+        {{hash=2d08e45836af2489432561d3a1969181}{%
+           family={Platt},
+           familyi={P\bibinitperiod},
+           given={Ulrich},
+           giveni={U\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {Institute of Environmental Physics}%
+      }
+      \strng{namehash}{2d08e45836af2489432561d3a1969181}
+      \strng{fullhash}{2d08e45836af2489432561d3a1969181}
+      \strng{bibnamehash}{2d08e45836af2489432561d3a1969181}
+      \strng{authorbibnamehash}{2d08e45836af2489432561d3a1969181}
+      \strng{authornamehash}{2d08e45836af2489432561d3a1969181}
+      \strng{authorfullhash}{2d08e45836af2489432561d3a1969181}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Multitalent für Spurengase}
+      \field{year}{2010}
+      \verb{urlraw}
+      \verb https://www.pro-physik.de/restricted-files/100246
+      \endverb
+      \verb{url}
+      \verb https://www.pro-physik.de/restricted-files/100246
+      \endverb
+    \endentry
+    \entry{giovanni_nasa}{article}{}
+      \name{author}{1}{}{%
+        {{hash=207d8f7f9bd0572f4e0eff364cd6974d}{%
+           family={DISC},
+           familyi={D\bibinitperiod},
+           given={NASA\bibnamedelima GES},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {NASA}%
+      }
+      \strng{namehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{fullhash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{bibnamehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{authorbibnamehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{authornamehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{authorfullhash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \field{sortinit}{1}
+      \field{sortinithash}{2174f786c6195e7fe2ee1c229b416e29}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Analyses and visualizations used in this presentation were produced with the Giovanni online data system, developed and maintained by the NASA GES DISC.}
+      \field{title}{Goddard Earth Sciences Data and Information, Services Center (GES DISC)}
+      \field{year}{2019}
+      \verb{urlraw}
+      \verb https://giovanni.gsfc.nasa.gov
+      \endverb
+      \verb{url}
+      \verb https://giovanni.gsfc.nasa.gov
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+
