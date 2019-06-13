@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams
-rcParams['font.size'] = 15
+rcParams['font.size'] = 14
 rcParams['text.usetex'] = True
 
 angle = np.array([7, 12])
@@ -69,8 +69,8 @@ plt.errorbar(angle, O3_1, yerr=O3_1_error, fmt='.', markersize=11,label='Messung
 plt.errorbar(angle, O3_2, yerr=O3_2_error, fmt='.', markersize=11, label='Messung 2')
 plt.errorbar(angle, O3_3, yerr=O3_3_error, fmt='.', markersize=11, label='Messung 3')
 plt.errorbar(angle, O3_4, yerr=O3_4_error, fmt='.', markersize=11, label='Messung 4')
-plt.xlabel('Winkel')
-plt.ylabel('$\Delta$SCD von O$_3$')
+plt.xlabel('Winkel [°]')
+plt.ylabel('$\Delta$SCD von O$_3$ in Moleküle/cm$^2$')
 plt.legend()
 f = plt.gcf()
 # f.set_size_inches(11.69, 8.27)
@@ -82,8 +82,8 @@ plt.errorbar(angle, NO2_1, yerr=NO2_1_error, fmt='.', markersize=11, label='Mess
 plt.errorbar(angle, NO2_2, yerr=NO2_2_error, fmt='.', markersize=11, label='Messung 2')
 plt.errorbar(angle, NO2_3, yerr=NO2_3_error, fmt='.', markersize=11, label='Messung 3')
 plt.errorbar(angle, NO2_4, yerr=NO2_4_error, fmt='.', markersize=11, label='Messung 4')
-plt.xlabel('Winkel')
-plt.ylabel('$\Delta$SCD von NO$_2$')
+plt.xlabel('Winkel [°]')
+plt.ylabel('$\Delta$SCD von NO$_2$ in Moleküle/cm$^2$')
 plt.legend()
 f = plt.gcf()
 # f.set_size_inches(11.69, 8.27)
@@ -95,8 +95,8 @@ plt.errorbar(angle, O4_1, yerr=O4_1_error, fmt='.', markersize=11, label='Messun
 plt.errorbar(angle, O4_2, yerr=O4_2_error, fmt='.', markersize=11, label='Messung 2')
 plt.errorbar(angle, O4_3, yerr=O4_3_error, fmt='.', markersize=11, label='Messung 3')
 plt.errorbar(angle, O4_4, yerr=O4_4_error, fmt='.', markersize=11, label='Messung 4')
-plt.xlabel('Winkel')
-plt.ylabel('$\Delta$SCD von O4')
+plt.xlabel('Winkel [°]')
+plt.ylabel('$\Delta$SCD von O4 in Moleküle/cm$^2$')
 plt.legend()
 f = plt.gcf()
 # f.set_size_inches(11.69, 8.27)

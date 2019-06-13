@@ -5,7 +5,7 @@ from scipy.optimize import curve_fit
 from datetime import datetime
 from matplotlib import rcParams
 import datetime
-rcParams['font.size'] = 17
+rcParams['font.size'] = 25
 rcParams['text.usetex'] = True
 # rcParams['text.latex.preamble'] = '\usepackage{libertine}'
 
@@ -57,13 +57,13 @@ k = np.linspace(0,3.5,500)
 plot = plt.errorbar(StartZeit, VCD, yerr=VCD_error, label='Messdaten für O3',fmt='ks', markersize=4)
 # plot = plt.errorbar(StartZeit, VCD, label='Messdaten für O3', fmt='.', markersize=3)
 axes = plt.gca()
-plt.ylabel("VCD für O3")
+plt.ylabel("VCD für O3 in Moleküle/cm$^2$")
 plt.xlabel("Uhrzeit UCT")
 
 # nötig falls gegen Uhrzeit geplottet wird
 a = []
 for i in range(len(axes.get_xticks())):
-    if (i%45 == 0):
+    if (i%65 == 0):
         a.append(i)
 
 ticks = []

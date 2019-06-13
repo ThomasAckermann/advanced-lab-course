@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 from scipy.optimize import curve_fit
 from datetime import datetime
 from matplotlib import rcParams
-rcParams['font.size'] = 23
+rcParams['font.size'] = 26
 rcParams['text.usetex'] = True
 # rcParams['text.latex.preamble'] = '\usepackage{libertine}'
 
@@ -69,7 +69,7 @@ plt.plot(k ,linear(k , *popt_2), 'r-', label='Fit 2', color='black')
 
 plt.legend()
 axes = plt.gca()
-plt.ylabel("$\Delta$SCD für O$_3$")
+plt.ylabel("$\Delta$SCD für O$_3$ in Moleküle/cm$^2$")
 plt.xlabel("AMF")
 
 f_gcf = plt.gcf()
