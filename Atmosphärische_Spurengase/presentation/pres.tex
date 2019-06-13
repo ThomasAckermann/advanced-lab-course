@@ -158,6 +158,19 @@
 \end{frame}
 
 \begin{frame}
+    \frametitle{Fit in DOASIS}
+    \vspace{-1cm}
+    \begin{align}
+        \chi^2 = \left( \log\frac{I_0 + I_\text{Ofs}}{I} - R - \sum_i \sigma_i S_i - \sum_k b_k \lambda^k \right)^2
+    \end{align}
+    \vspace{-1cm}
+		\begin{figure}
+        	\includegraphics[width=.8\textwidth]{fig/fit_O3.png}
+            \caption{Fit mit DOASIS durchgeführt}
+    	\end{figure}
+\end{frame}
+
+\begin{frame}
     \section{Auflösung des Spektrometers}
     \frametitle{Messung mit Quecksilberdampflampe}
     \begin{columns}
@@ -205,11 +218,10 @@
 
 \begin{frame} 
     \frametitle{Halogenlampenmessung}
-    
+    \vspace{-2cm}
 	\begin{itemize}
     	\item Labormessung: atmosphärische Einflüsse vernachlässigbar
 	\end{itemize}
-
 	\begin{align}
 	 	\to \tau = \sigma_{\ch{NO2}}(\lambda) \cdot \rho_{\ch{NO2}} \cdot L
 	\end{align}
@@ -220,14 +232,14 @@
 
 	\begin{figure}[h]
 		\includegraphics[width=0.5\textwidth]{fig/range_search_test.png}
-		\caption{Vergleich der optischen Dichten von Literatur- und Versuchsspektrum}
+        \caption{Anpassung des Fitbereichs}
 	\end{figure}
-
-\begin{minipage}
-    \textcolor{red}{\\
-Channels
+    \vspace{-4.5cm}
+    \hspace{8.5cm}
+    \begin{minipage}[t]{\linewidth}
+        \textcolor{red}{- Literatur}\\
+        \textcolor{blue}{- Messung}
 \end{minipage}
-
 \end{frame} 
 
 
