@@ -30,13 +30,19 @@
 \section*{Abstract}
 
 This experiment was conducted in the scope of the advanced lab course in physics at the University of Heidelberg. \\
-The main goal was to find the concentration of \ch{NO2} and \ch{O3} in the atmosphere by using the DOAS method. \\
+The main goal was to find the column density (CD) of \ch{NO2} and \ch{O3} in the atmosphere by using the \textit{Differential Optical Absorption Spectroscopy} (DOAS) method. \\
 Measurements were taken in the week of the $29^\text{th}$ april, 2019.
-Due to a lack of clear sky conditions during this week, the analyzed data was from the $23^\text{th}$ april, 2019. 
-One calculated a vertical column density of $\sim 300 \si{DU}$ for \ch{O3}, which is an underestimation when compared with the data NASA provided (measured $\sim 350 \si{DU}$).\\ 
+Due to bad weather conditions during this week, data from the $23^\text{rd}$ april, 2019 was used. 
+One arrived at a vertical column density of $\sim 300 \si{DU}$ for \ch{O3}, which is an underestimation when compared with data recorded by NASA (measured $\sim 350 \si{DU}$).\\ 
+By varying the elevation angle of the telescope and comparing the results 
+one can analyze the tropospheric and stratospheric profile of \ch{O3}, \ch{O4} and \ch{NO2}.
+Measurements were taken at $7^\circ$ and $12^\circ$
+The sensitivity of the differential slant column densities (dSCDs) of the trace gases to the changing tropospheric light path was then analyzed by calculating the ratio $r = dSCD_{7^\circ}/dSCD_{12^\circ}$. 
 The measurements of the tropospheric concentrations was not very descriptively because heavy and thick clouds interfered with the measurements. 
 Regardless of this setback one found at least a trend for the three trace gases \ch{O3}, \ch{No2} and \ch{O4}. 
-The ratio between the measurments at $7^{\circ}$ and $12^{\circ}$ yields that \ch{O3} is mainly found in the staratosphere where the other two are present in the troposhere aswell.
+The ratio between the measurments at $7^{\circ}$ and $12^{\circ}$ yields that \ch{O3} is mainly found in the stratosphere where the other two are also present in the troposhere.
+In good agreement with its exponentially decreasing atmospheric profile, O4 showed the strongest dependency of the tropospheric light path (r=1.7).
+
 
 \newpage
 
@@ -46,8 +52,8 @@ The ratio between the measurments at $7^{\circ}$ and $12^{\circ}$ yields that \c
 \begin{multicols}{2}
 
 \section{Theoretische Grundlagen}\label{sec:Intro}
-Die genaue Bestimmung der Konzentration verschiedener Spurengase ist eine wichtige Aufgabe in der Umweltphysik.
-    Eine Möglichkeit zur Bestimmung ist das Prinzip der \textit{Differential Optical Absorption Spectrocopy } (DOAS), welche zahlreiche Anwendungen findet.
+Die genaue Bestimmung der Vorkommen verschiedener Spurengase ist eine wichtige Aufgabe in der Umweltphysik.
+    Eine Möglichkeit zur Bestimmung ist das Prinzip der \textit{Differentiellen Optischen Absorptions Spektroskopie (DOAS)}, welche zahlreiche Anwendungen findet.
 Einige Grundlagen zur Atmosphäre und die Funktionsweise von DOAS sollen im Folgenden erklärt werden.
 
 \subsection{Zusammensetzung der Atmosphäre}\label{ssec:Comp_Atmo}
@@ -59,7 +65,7 @@ Tabelle \ref{fig:atm_comp} zeigt eine Liste der Hauptkomponenten.
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}  c c c}
 	\toprule
-	Gas & Symbol & Rel. Anteil \\
+	Gas & Symbol & Mischungsverhältnis \\
 	\midrule
 	Stickstoff & \ch{N2} & $78.084 \%$ \\
     Sauerstoff & \ch{O2} & $20.942\%$ \\
@@ -94,15 +100,17 @@ In diesem Versuch werden allerdings nur die Tropo- und Stratosphäre untersucht.
 
 Die Konzentration eines Spurengases ist die Zahl der Moleküle pro Volumeneinheit und hat daher die Dimension $\si{[Moleküle/cm^3]}$.\\
 Eine andere wichtige Größe ist das Mischverhältnis.
-Sie gibt den relative Anteil eines Spurengases im Vergleich zur Luftmenge an und wird mit \si{[ppm]} oder \si{[ppt]} angegeben. 
-    Bei diesem Versuch ist ebenfalls die \textit{column density}
+Sie gibt den relative Anteil eines Spurengases im Vergleich zur Luftmenge an. 
+    Bei diesem Versuch ist ebenfalls die \textit{Säulendichte}
     \begin{align}
         \text{CD} = \int \rho(s) \dd s,
     \end{align}
     von großer Bedeutung, welche die Einheit $\si{[Moleküle / cm^2]}$ besitzt.
+    Hierbei ist $\rho$ die Dichte des Spurengases und $s$ der Integrationsweg .
+
 \subsection{DOAS}\label{ssec:DOAS}
 
-\textit{Differential Optical Absorption Spectroscopy} (DOAS) wird verwendet um die Konzentration eines bestimmten Spurengases in der Atmosphäre zu bestimmen - was das Ziel dieses Experimentes ist.
+\textit{Differential Optical Absorption Spectroscopy} (DOAS) wird verwendet um die Säulendichte eines bestimmten Spurengases in der Atmosphäre zu bestimmen.
 Das Hauptprinzip ist das Folgende: 
     Man nimmt zwei Spektren auf, eines welches auf der Erde aufgenommen wurde (also mit Absorption des Sonnenlichtes durch die Atmosphäre) und eines bei dem die Atmosphäre nicht präsent ist (von Satelliten aus aufgenommen).
 Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
@@ -113,19 +121,19 @@ Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
     \label{fig:gas_spectra}
 \end{center}
 
-Wenn nun zwei Spektren, wie beschrieben, aufgenommen werden, 
-kann das charakteristische Verhalten der Gase daran erkannt werden, dass die Intensitäten an manchen stellen kleiner sind.
+Wenn nun zwei Spektren wie beschrieben aufgenommen werden, 
+kann die charakteristische Absorption der Gase daran erkannt werden, dass die Intensitäten an manchen stellen kleiner sind.
 
-Wenn man nun weiß welche Charakteristika zu welchen Gasen gehören kann die Dichte des Gases in der Atmosphäre bestimmt werden.\\
+Wenn man nun weiß welche schmalbandigen Absorptionsstrukturen zu welchen Gasen gehören kann die Säulendichte des Gases in der Atmosphäre bestimmt werden.\\
 In diesem Versuchsaufbau steht allerdings kein Satellit zur Verfügung, so dass sich die Frage stellt wie man an ein Sonnenspektrum ohne atmosphärische Einwirkung erhält.
 
 Die Lösung hier besteht daraus das Spektrum bei verschiedenen Sonnenzenitwinkeln oder Telesekopwinkeln aufzunehmen und dann zu vergleichen.
 Die mittlere Weglänge die das Licht zurücklegt ist statistisch viel kürzer, wenn genau im Zenit gemessen wird als bei anderen Winkeln.
-Daher ist hier die Absorption durch Spurengase viel geringer sodass man einen ähnlichen Unterschied wie bei einem Satelliten erhält.
+Daher ist hier die Absorption durch Spurengase viel geringer, sodass man eine ähnliche Differenz wie bei einer Messung mit Satellit erhält.
 
 \subsubsection{Lambert-Beer Gesetz}\label{sssec:Lamb-Beer_law}
 
-Die Intensität eines Lichtstrahls (einer Elektromagnetischen Welle) nimmt durch Streuung und Absorption ab, wenn es durch Materie propagiert (siehe Abbildung \ref{fig:lambert-beer}).
+Die Intensität eines Lichtstrahls (einer elektromagnetischen Welle) nimmt durch Streuung und Absorption ab, wenn er durch Materie propagiert (siehe Abbildung \ref{fig:lambert-beer}).
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/lambert_beer.png}
@@ -143,13 +151,13 @@ Sei $I_0 (\lambda)$ die Startintensität des Lichtstrahls, dann ist die Intensit
 wobei $\sigma (\lambda)$ der Absorptionswirkungsquerschnitt und $\rho$ die Konzentration des Spurengases ist.
 Der Absorptionswirkungsquerschnitt gibt eine Wahrscheinlichkeit für eine Absorption bei einer bestimmten Wellenlänge $\lambda$ an.
 
-\subsection{Kurzband Komponenten}\label{ssec:Kurzband}
+\subsection{Kurzbandkomponenten}\label{ssec:Kurzband}
 
 \subsubsection{Fraunhofer Referenzspektrum}\label{sssec:fraunhofer_reference}
 
 Das Fraunhoferspektrum \ref{fig:fraunhofer_spectrum} zeigt das unbeeinflusste Spektrum des Sonnenlichtes. 
-Dieses zeigt viele Strukturen, die in DOAS berücksichtigt werden müssen. 
-Daher wird ein Fraunhofer Referenzspektrum verwendet.
+Wie man sehen kann, hat es von sich aus schon viele Kurzbandstrukturen.
+
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/fraunhofer_linien.png}
@@ -160,9 +168,9 @@ Daher wird ein Fraunhofer Referenzspektrum verwendet.
 
 
 
-\subsubsection{Spurengas Absorption}\label{sssec:trace_gas_absorption}
+\subsubsection{Spurengasabsorption}\label{sssec:trace_gas_absorption}
 
-Die Hauptmessgröße des DOAS ist die \textit{slant column density} (SCD oder $S$),
+Die Hauptmessgröße des DOAS ist die \textit{schräge Säulendichte} (SCD oder $S$),
 welche als die integrierte Dichte eines Spurengases $i$ entlang eines Lichtpfades der Länge $L$ definiert ist.
     
 \begin{align}
@@ -177,17 +185,19 @@ Der Grund dafür ist inelastische Raman-Streuung, welche dazu führt, dass die W
 Durch Änderung der Wellenlängen werden die Absorptionslinien aufgefüllt,
 dies bezeichnet man als \textit{Ring-Effekt}.
 
-\subsection{Breitband Komponenten}
+\subsection{Breitbandkomponenten}
 
 Das Sonnenlicht wird von Aerosolen und Wassertröpfchen in den Wolken gestreut und absorbiert (\textit{Mie Streuung}),sowie von Luftmolekülen gestreut (\textit{Rayleigh Streuung}).
 Die Summe aus Streuungs- und Absorptionseffekten wird als Extinktion ($\epsilon_M$ und $\epsilon_R$ in diesem Fall) bezeichnet.
 Beide Prozesse sind elastisch, was bedeutet, dass sich die Wellenlängen nicht verändern.
 Die Wahrscheinlichkeit für Rayleigh Streuung skaliert mit $\lambda^{-4}$ und ist somit besonders bei kurzen Wellenlängen vorhanden.
-Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.
+Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.\\
+
+Den Einfluss von Kurz- und Breitband Effekten auf ein unbeeinflusstes Spektrum $I_0$ kann man in Abbildung \ref{fig:rayleigh_mie} beobachten.
 
 \begin{center}
     \includegraphics[width=0.8\linewidth]{fig/rayleigh_mie.png}
-    \captionof{figure}{Darstellung Rayleigh- und Mie-Extinktion \cite{platt10}}	
+    \captionof{figure}{Darstellung von Kurz- und Breitbandeffekten\cite{platt10}}	
     \label{fig:rayleigh_mie}
 \end{center}
 
@@ -195,7 +205,7 @@ Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.
 
 \subsection{Modifiziertes Lambert-Beer Gesetz}\label{ssec:mod_lamb-beer_law}
 
-Wenn man nun diese Effekte mit einbezieht, so erhält man ein modifiziertes Lambert-Beer Gesetz.
+Wenn man nun diese Effekte miteinbezieht, so erhält man ein modifiziertes Lambert-Beer Gesetz.
 
 \begin{align*}
     I(\lambda, L) = & I_0 (\lambda) \exp \left( -R - \sum_i \sigma_i
@@ -212,14 +222,16 @@ Wenn man das modifizierte Lambert-Beer Gesetz nun nach $\log \frac{I}{I_0}$ umfo
 
 Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitbandeffekte und $R(\lambda)$ ist das Ring-Spektrum.\\
 Bei DOAS werden nun alle besprochenen Effekte miteinbezogen und ein Modell für die optische Dichte erstellt. 
-Das Modell wird dann mit der gemessenen optischen Dichte verglichen und ein Fit erzeugt, welcher entsteht indem die Parameter so variiert werden, dass 
+Das Modell wird dann mit der gemessenen optischen Dichte verglichen und ein Fit erzeugt, welcher entsteht, indem die Parameter so variiert werden, dass 
 
 \begin{align*}
     \chi^2 = ( \log \frac{I_0 + I_\text{ofs}}{I} - R & - \sum_i \sigma_i S_i \\ 
     & - \sum_k b_k \lambda^k )^2 ,
 \end{align*}
 
-minimiert wird. Durch $I_{ofs}$ kann das, falls es zu ungewollten Streuungen im Spektrometer kommt, \textit{Streulicht} berücksichtigt werden. Dies ist vor allem dann anzuwenden, falls die Streulichtintensität über das Spektrum variiert und somit die optische Dichte beeinflussen kann.  
+minimiert wird. 
+Durch hinzufügen von $I_\text{ref}$ kann ungewollte Strahlung im Spektrometer, welche man als Streulch bezeichnet, berücksichtigt werden.
+Dies sollte vor allem dann verwendet werden, wenn die Streulichtsintensität pber das Spektrum variiert und somit die optische Dichte beeinflusst.
 
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
@@ -227,13 +239,6 @@ minimiert wird. Durch $I_{ofs}$ kann das, falls es zu ungewollten Streuungen im 
 
 Während des Versuches wurde das Programm \verb*+DOASIS+ verwendet um die Spektren aufzunehmen und später die Fits durchzuführen.\\
 Zu Beginn wurde durch variieren der Messzeit (\textit{exposure time}) und der Anzahl der Scans (\textit{exposures}) ein erster Überblick über das Programm \verb*+DOASIS+ verschafft.
-
-\begin{center}
-	\includegraphics[width=\linewidth]{fig/test_spektrum.pdf}
-    \captionof{figure}{Testspektrum einer Halogenlampe}
-	\label{fig:test_spectrum}
-
-\end{center}
 
 \subsection{Charakterisierung der Messinstrumente}\label{ssec:characteristic_of_the_instruments}
 
@@ -291,9 +296,9 @@ Eine weitere Untersuchung der Halogenlampenspektren ermöglicht einen Einblick i
     \label{fig:hal_log}
 \end{center}
 
-Man erwartet, dass der Mittelwert bei Null liegt, da zwischen der Aufnahme der Spektren so wenig wie möglich Zeit vergangen ist. Allerdings kann bei kleinerer Channelzahl höhere Schwankungen ausgemacht werden und insgesamt ist ein kurven artiger Verlauf zu erkennen.
-Das größere Schwanken lässt sich darauf zurückführen, dass bei kleiner Channelzahl die \textit{Counts} geringer ausfallen als bei höherer Channelzahl.
-Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobachtete Krümmung, welche bei höherer Scanzahl größer wird. Die Schwankungen verlieren bei höheren \textit{Counts} an Bedeutung.
+Man erwartet, dass der Mittelwert bei Null liegt, da zwischen der Aufnahme der Spektren so wenig Zeit wie möglich vergangen ist. Allerdings kann bei kleinerer Channelzahl höhere Schwankungen ausgemacht werden und insgesamt ist ein kurven artiger Verlauf zu erkennen.
+Das größere Schwanken lässt sich darauf zurückführen, dass bei kleiner Channelzahl die Counts geringer ausfallen als bei höherer Channelzahl.
+Durch Schwankungen der Halogenlampenintensität ensteht in den Daten die beobachtete Krümmung, welche bei höherer Scanzahl größer wird. Die Schwankungen verlieren bei höheren Counts an Bedeutung.
 
 \subsubsection{Kalibrierung des Spektrometers}\label{sssec:calibrating_the_spectrometer}
 
@@ -338,14 +343,17 @@ Für die Kalibrierung wird ein Polynom zweiter Ordnung genutzt mit folgenden Par
 	\label{fig:optical_resolution}
 \end{center}
 
-Bei der Analyse der FWHM stellt sich heraus, dass die optische Auflösung des Spektrometers bei höherer Channelzahl besser wird, deshalb wird versucht in den folgenden Messungen die Analyse, wenn möglich, im hohen Channelbereich durchzuführen.
+
+Bei der Analyse der FWHM stellte sich heraus, dass alle Maxima außer das Maximum bei $\sim 313 \si{nm}$ ungefähr die gleichen Werte besitzen.
+Das erhöhte FWHM bei dem Maximum bei $\sim 313 \si{nm}$ lässt sich wie zuvor besprochen dadurch erklären, dass hier eigentlich drei Maxima auf einer Stelle sind.
 
 \subsection{Labormessungen}\label{ssec:Labormessungen}
 
 \subsubsection{Anpassung von Referenzspektren}\label{sssec:convolution_of_reference}
 
-Mithilfe eines Literaturspektrums kann ein Vergleichsspektrum generiert werden. 
-Die verwendeten Literaturspektren haben allerdings unterschiedliche Auflösungen und daher muss man diese entsprechend skalieren.
+
+Für den DOAS Fit werden die Absorptionswirkungsquerschnitte der zu untersuchenden Gase benötigt.
+Diese waren gegeben allerdings hatten diese eine andere Auflösung als das hier berwendete Spektrometer und mussten daher umgerechnet werden.
 Dies kann mithilfe einer Faltung erledigt werden.
 Die Faltung einer Funktion $f$ mit einer Funktion $g$ ist definiert als
 
@@ -355,10 +363,10 @@ Die Faltung einer Funktion $f$ mit einer Funktion $g$ ist definiert als
 
 % Die Faltung sorgt zusätzlich dafür, dass das Spektrum geglättet wird.
 Wellenlängen die außerhalb des Bereiches der Messgeräte liegen werden durch die Faltung abgeschnitten.\\
-Es wurden Spektren von  \ch{CO2}, \ch{H2O}, \ch{O3} und \ch{O4} angepasst.
-Das Referenzspektrum von \ch{H2O} wurde, im Gegensatz zu den anderen Spektren, vergrößert. 
+Es wurden Absorptionswirkungsquerschnitte von  \ch{NO2}, \ch{H2O}, \ch{O3} und \ch{O4} angepasst.
+Das Wirkungsquerschnitt von \ch{H2O} wurde, im Gegensatz zu den anderen Spektren, vergrößert. 
 Hierfür wurden Nullwerte an den Rändern angefügt.\\
-Die Faltung hat zusätzlich noch den Effekt, die Spektren zu glätten.
+Die Faltung hat zusätzlich noch den Effekt, die Wirkungsquerschnitte zu glätten.
 
 \subsubsection{\ch{NO2} Spektrum einer gefüllten Glasküvette}\label{sssec:lab_no2_spectra}
 
@@ -380,6 +388,7 @@ Es wurden folgende Abstände eingestellt:
     \label{fig:distances}
 \end{center}
 
+
 \begin{center}
     %\includegraphics[width=0.7\linewidth]{fig/photo/glas.png}
     \includegraphics[width=\linewidth]{fig/photo/aufbau_1.png}
@@ -387,6 +396,8 @@ Es wurden folgende Abstände eingestellt:
     \label{fig:aufbau_hal}
 \end{center}
 
+Die Versuchsanordnung ist nicht ganz korrekt, da die Linse hinter die Küvette gehört hätte.
+Allerdings lieferte diese Anordnung ebenfalls gute Ergebnisse.
 
 Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte innerhalb der Gasküvette die Konzentration bestimmen (vgl. Gleichung \eqref{eq:lambert_beer_law} und \eqref{eq:optical_density})
 
@@ -408,7 +419,7 @@ $I_{0, \text{F}}$ und $I_{0, i}$ sind gleich.
 Über einen \textit{least-square-fit} wird nun die SCD so variiert, dass das $\chi^2$ minimiert wird. 
 In \ref{fig:different_fit_ranges} wurden die Fitparameter bei verschiedenen Fitbereichen betrachtet. 
 Dabei wurde immer ein Polynom 5. Grades ohne Offset gefittet.
-Den optimalen Fitbereich lässt sich über eine Überlagerung (siehe Abbildung \ref{fig:range_search}) des aufgenommenen Spektrums mit dem \ch{NO2} Referenzspektrum finden.
+Der optimale Fitbereich lässt sich über eine Überlagerung (siehe Abbildung \ref{fig:range_search}) des aufgenommenen Spektrums mit dem \ch{NO2} Wirkungsquerschnitt finden.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/range_search_test.png}
@@ -417,7 +428,7 @@ Den optimalen Fitbereich lässt sich über eine Überlagerung (siehe Abbildung \
 \end{center}
 
 Die Überlagerung zeigt im Channelbereich $1000-1700$ die gleichen Strukturen. Der Fit wird in diesem Bereich durchgeführt.
-Für die genau Bestimmung der \ch{NO2} Konzentration wurde ein Channelbereich von $1026-1663$ ausgewählt, was einem Wellenlängenbereich von $413.46 - 477.25$ \si{nm} entspricht.
+Für die genau Bestimmung der \ch{NO2} Konzentration wurde ein Wellenlängenbereich von $413.46 - 477.25$ \si{nm} ausgewählt.
 Dabei wurde darauf geachtet, dass die Intensität bei einer Wellenlänge von $470$\si{nm} ca. $80$\% betrug.
 Damit konnten beim Fit die Parameter
 
@@ -429,7 +440,7 @@ Damit konnten beim Fit die Parameter
 \end{align}
 
 erreicht werden.
-Mit der nun bestimmten \textit{slant column density} kann nun die \ch{NO2} Konzentration in der Küvette berechnet werden.
+Mit der nun bestimmten Säulendichte kann nun die \ch{NO2} Konzentration in der Küvette berechnet werden.
 Die Länge wurde von Hand auf $2.0 \pm 0.1$\si{cm} bestimmt, sodass sich mit der Gaußschen Fehlerfortpflanzung eine Konzentration von
 
 \begin{align}
@@ -456,21 +467,22 @@ Mit $N_A = 6.022 \cdot 10^{23} \frac{1}{\si{mol}}$ und $V_M = 22.4 \frac{\ell}{\
 \subsection{Atmosphärische Messungen}\label{ssec:atmospheric_measurements}
 
 Nachdem man sich nun mit dem Messverfahren und der Analyse der Daten vertraut gemacht hat, werden nun atmosphärische Spurengase untersucht. In diesem Praktikumsversuch beschränkt man sich auf \ch{O3} und \ch{NO2}.
-Für die Analyse wurde ein Tag ausgesucht bei dem gutes Wetter herrschte, sodass Wolken nicht die Messung beeinträchtigen können; über einen langen Zeitraum aufgenommen wurde; sowie nicht zu weit in der Vergangenheit lag, da man einer möglichen Abweichung von Dunkelstrom und Offset minimieren wollte.
+Für die Analyse wurde ein Tag ausgesucht bei dem gutes Wetter herrschte, sodass Wolken die Messung nicht beeinträchtigen können und bei dem über einen langen Zeitraum aufgenommen wurde, sowie nicht zu weit in der Vergangenheit lag, da man einer möglichen Abweichung von Dunkelstrom und Offset minimieren wollte.
 Die Wahl fiel auf den 23.04.2019, wo über einen Zeitraum von $9:13 - 23:56$ UTC aufgenommen wurde.
 
 \subsubsection{Optimierung des Fitalgorithmus}\label{sssec:configure_fit}
 
 Die für die \verb*+DOASIS+ nötige Referenzmessung, die Fraunhoferreferenz, wurde die Tagesmessung mit dem niedrigsten
-\textit{solar zenith angle} (SZA) ausgewählt. 
+\textit{Sonnenzenitwinkel} (SZA) ausgewählt. 
 Da der statistische Lichtweg hier am kürzesten ist und somit am wenigsten von möglichen Spurengasen absorbiert wurde.
+Außerdem sind gestreuute Photonen für optisch dünne Absorber wie die Atmosphäre so vernachlässigbar.
 Um nun die Parameter des Fits optimal anpassen zu können, wird ein Spektrum bei $80$ SZA ausgewählt um die größtmögliche Differenz zwischen den beiden Spektren zu erzeugen. 
 Dies gewährleistet, dass die zu untersuchenden Strukturen am prägnantesten hervortreten. \\
 Um dem Ringeffekt (vgl.\ref{ssec:Kurzband}) zu berücksichtigen, wird ein \textit{Ringspektrum} $R(\lambda)$ aus dem Fraunhoferspektrum berechnet.
 Aus einer Berechnung der optischen Dichte und dem Vergleich mit den Referenzen der Spurengase (vgl. Abschnitt \ref{sssec:lab_no2_spectra}) werden wieder die jeweiligen Fitbereiche ermittelt. 
 Die Fitbereiche sind in Tabelle \ref{fig:fit_of_atmospheric_data} aufgelistet.\\
-Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fit Referenz, dem Ringspektrum und den Referenzwirkungsquerschnitten der Spurengase zurück. 
-Der Referenzwirkungsquerschnitt von \ch{H2O} kann bei \ch{O3} nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
+Der Fitalgorithmus greift nun auf das Fraunhoferreferenzspektrum als erste Fitreferenz, dem Ringspektrum und den Wirkungsquerschnitten der Spurengase zurück. 
+Das Wirkungsquerschnitt von \ch{H2O} kann bei \ch{O3} nicht verwendet werden, da es in diesen Bereichen Singularitäten aufweist.
 
 \subsubsection{Untersuchung der Tagesmessung}\label{sssec:tagesmessung}
 
@@ -491,8 +503,8 @@ Hierbei standen $436$ Aufnahmen zur Verfügung.
 \end{center}       
 
 In Abbildung \ref{fig:delta_SCD_time_NO2} ist zu erkennen, dass $\Delta$SCD von \ch{NO2} zunächst niedrig ist, zum Abend hin jedoch stark zunimmt.\\
-Grund dafür sind chemische Prozesse die Unterschiedlich stark bei verschiedener Sonneneinstrahlungen stattfinden.
-Am Morgen (was hier nicht abgebildet ist) nimmt die Sonneneinstrahlung zu wodurch die Reaktion
+Grund dafür sind chemische Prozesse welche unterschiedlich stark bei verschiedener Sonneneinstrahlungen stattfinden.
+Am Morgen (was hier nicht abgebildet ist) nimmt die Sonneneinstrahlung zu, wodurch die Reaktion
 \begin{align}
     \ch{NO2} + h \nu \to \ch{NO} + \ch{O} (^3\text{P}). \label{eq:creation_no}
 \end{align}
@@ -519,7 +531,7 @@ Aus der Reaktion (\ref{eq:creation_no}) geht hervor, dass sich über den Tag die
 Der Grund hierfür ist, dass die Reaktion (\ref{eq:creation_no}) über den Tag verstärkt vorkommt.
 Es ist kein Einfluss durch den Feierabendverkehr wie in Abbildung \ref{fig:delta_SCD_time_NO2} zu erkennen, da \ch{O3} viel stärker in der Stratosphäre als in der Troposphäre vorkommt, sodass kleine \ch{O3} Änderungen nur im Fehlerbereich liegen.
 \\
-Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rückschlüsse über eine Konzentrationsänderung über den Tag zu.
+Eine Untersuchung der SCD gegen den \textit{Luftmassenfaktor}(AMF), lässt Rückschlüsse über eine Säulendichtenänderung über den Tag zu.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/Langley_Plot_NO2_cut.pdf}
@@ -534,9 +546,9 @@ Eine Untersuchung der SCD gegen den \textit{Air Mass Factor}(AMF), lässt Rücks
 \end{center}
 
 Ein linearer Zusammenhang entspricht einer konstanten Konzentration über den Tag. 
-Unsere Messdaten zeigen bei \ch{O3} als auch bei \ch{NO2} eine konstante Konzentration über den Tag.
+Unsere Messdaten zeigen bei \ch{O3} als auch bei \ch{NO2} eine konstante schräge Säulendichte über den Tag.
 Allerdings muss beachtet werden, dass Messungen vom Morgen nicht vorhanden sind.
-Die Konzentration von \ch{NO2} ist, wie in Abschnitt \ref{sssec:tagesmessung} besprochen, am Morgen geringer als am Abend.
+Die schräge Säulendichte von \ch{NO2} ist, wie in Abschnitt \ref{sssec:tagesmessung} besprochen, am Morgen geringer als am Abend.
 Wenn nun die Messungen vom Morgen im Langley-Plot vorhanden wären, könnte keine Gerade mehr eindeutig festgemacht werden, bei \ch{O3} lägen die Morgengerade und die Mittagsgerade übereinander.
 
 \begin{center}
@@ -551,7 +563,7 @@ Wenn nun die Messungen vom Morgen im Langley-Plot vorhanden wären, könnte kein
 	\text{SCD}_\text{ref}= (0.97 \cdot 10^{19}\pm 0.17 \cdot 10^{19}) \si{\frac{Moleküle}{cm^2}}.
 \end{align}	
 
-Der horizontale Verlauf der \textit{vertical column density} (VCD) bestätigt die Aussage, dass die \ch{O3} Konzentration konstant über den Tag ist.
+Der horizontale Verlauf der \textit{vertikalen Säulendichte} (VCD) bestätigt die Aussage, dass die \ch{O3} Säulendichte konstant über den Tag ist.
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/VCD_O3_over_day.pdf}
@@ -578,12 +590,12 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
     \footnotetext{\url{https://disc.gsfc.nasa.gov/datasets/TOMSEPL3_V008/summary}}
 	\label{fig:TOMS_satelit}
 \end{center} 
-Die beiden Satellitenbilder in Abbildung \ref{fig:DOAS_satelit} und \ref{fig:TOMS_satelit} zeigen die VCD Werte von Ozon über Baden-Württemberg am 23.04.2019.
+Die beiden Satellitenbilder in Abbildung \ref{fig:DOAS_satelit} und \ref{fig:TOMS_satelit} zeigen die VCD von Ozon über Baden-Württemberg am 23.04.2019.
 DOAS zeigt bei den Koordinaten von Heidelberg einen Wert im Bereich von $363.8 - 367.5 \si{DU}$ an und TOMS einen Wert zwischen $352.5 \si{DU}$ und $358.3 \si{DU}$ an.
 Die mit dem Satelliten aufgenommenen Werte sind also beide höher als die hier berechneten Werte.
 Allerdings ist auch zu sehen, dass die Werte die beiden Messmethoden untereinander ebenfalls nicht übereinstimmen.
-Abweichungen zu unseren Messwerten können dadurch entstehen, dass wir nur die Ozonkonzentration der Stratosphäre berechnet haben und die Troposphäre vernachlässigt wird, jedoch bei den Satellitenaufnahmen die gesamte Konzentration bestimmt wird.
-
+Abweichungen zu den Messwerten können dadurch entstehen, dass hier viele Näherungen verwendet wurden.
+Vor allem die Näherung Luftmassenfaktors hat einen sehr großen Einfluss auf die Genauigkeit der Ergebnisse
 
 \subsection{Multi Axis DOAS}\label{ssec:multi_axis_DOAS}
 
@@ -598,7 +610,7 @@ Die Messung wurde bei starker Bewölkung von 14:41 bis 15:01 MEZ durchgeführt (
 	\label{fig:weather}
 \end{center} 
 
-Der Fit von \ch{O4} wurde im Channelbereich von $1500-1800$ ($461.76 - 489.80$\si{nm}) durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
+Der Fit von \ch{O4} wurde im Wellenlängenbereich von $461.76 - 489.80$\si{nm} durchgeführt, wobei dieser Bereich bei einigen Messungen angepasst werden musste. 
 Bei den Messungen 1, 4, 5 wurde ein Bereich von $466.58 - 485.26$ \si{nm} und bei Messung 2 ein Bereich von $466.58 - 482.52$ \si{nm} eingestellt.
 Die Fitergebnisse sind in Tabelle \ref{fig:fit_multi_axis_DOAS} aufgetragen.
 Eine $\Delta \text{SCD}$ Analyse der Daten erlaubt uns nun die oben erwähnte vertikale Verteilung der Gase zu untersuchen.
@@ -638,7 +650,7 @@ Dann ist
 Über ein Vergleich der $\text{VCD}_{strat}$ (berechnet in Abschnitt \ref{sssec:tagesmessung})
 und der hier bestimmbaren $\text{VCD}_{trop}$  von \ch{O3} kann darauf geschlossen werden, dass \ch{O3} hauptsächlich in der Stratosphäre gefunden werden kann.
 Zur Berechnung von $\text{VCD}_{trop}$ müssen zunächst ein paar Vorüberlegungen angestrengt werden.
-Zunächst gilt für den troposphärischen \textit{air mass factor}
+Zunächst gilt für den troposphärischen Luftmassenfaktor.
 
 \begin{align}
 AMF_{trop}(\alpha) = \frac{SCD_{trop}(\alpha)}{VCD_{trop}},
@@ -651,7 +663,7 @@ was sich nun mit Gleichung \ref{eq:SCD_trop} zu
 \end{align} 
 
 ergibt.
-In unserem Fall ist es möglich den \textit{air mass factor} mit
+In unserem Fall ist es möglich den Luftmassenfaktor mit
 
 \begin{align}
 AMF_{trop} \approx \frac{1}{sin(\alpha)}
@@ -707,7 +719,7 @@ Im Gegensatz dazu hatte \ch{O4} die stärkste Veränderung. \\
 	\label{fig:ratio_dscd}
 \end{center}
 
-Am Tag der Messung war es sehr bewölkt, so dass man davon ausgehen kann dass $\Delta$VCD von \ch{O4} sehr stark von der Bewölkung abhängt.
+Am Tag der Messung war es sehr bewölkt, so dass man davon ausgehen kann dass $\Delta$SCD von \ch{O4} sehr stark von der Bewölkung abhängt.
 Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterverhältnisse nicht zu, da eine dichte Wolkendecke die Messergebnisse stark beeinflusste, die Messdaten legen nur die Vermutung nahe, dass \ch{O4} und \ch{NO2} auch vermehrt in der Troposhäre zu finden sind.
 
 \newpage
@@ -718,7 +730,7 @@ Der Versuch behandelt verschiedene Einsatzmöglichkeiten der DOAS Methode zur Be
 Zu Beginn wurde die Messapparatur kennengelernt und auf mögliche systematische Fehler wie der Offset und Dunkelstrom untersucht, die beide jeweils einen linearen Zusammenhang mit der Anzahl der Scans aufwiesen. 
 Im verwendeten Analyseprogramm \verb*+DOASIS+ wurden die Werte der beiden Einflüsse hinterlegt, um im Verlauf des Versuches die aufgenommenen Spektren korrigieren zu können. 
 Des weiteren wurde auf Rauschen untersucht, dass im Verlauf des Versuchs über eine große Anzahl an Scans pro Spektrum jedoch minimiert wurde.
-Eine Kalibrierung der Software \verb*+DOASIS+ wurde ebenfalls durchgeführt um in nachfolgenden Versuchsteilen sinnvolle Vergleichswerte für die Fitbereiche zu erhalten.\\
+Eine Kalibrierung der aufgenommenen Spektren wurde ebenfalls durchgeführt um in nachfolgenden Versuchsteilen sinnvolle Vergleichswerte für die Fitbereiche zu erhalten.\\
 
 Eine erste Anwendung von DOAS wurde dann mit einer Labormessung der Konzentration von \ch{NO2} in einer Glasküvette kennengelernt. 
 Dabei handelt es sich um eine \textit{aktive} DOAS Messung, da das Spektrometer direkt auf die Lichtquelle gerichtet wird. 
@@ -727,14 +739,14 @@ Um diese Werte zu erhalten wurde die Fitroutine von \verb*+DOASIS+ verwendet, we
 
 Eine andere Einsatzmethode wurde im dritten Versuchsteil vorgestellt, wo vor allem die stratosphärische Konzentration von \ch{O3} und \ch{NO2} untersucht wurde.
 Zunächst wurden die Messungen vom 23.04.2019 untersucht.
-Das Teleskop wurde senkrecht in Himmel ausgerichtet, was dafür sorgt, dass hauptsächlich die stratosphärischen Konzentrationen aufgenommen wurden.
-Hierbei wurde die SCD über den Tag bestimmt.
+Das Teleskop wurde senkrecht in den Himmel ausgerichtet, was dafür sorgt, dass Streuung minimiert wird.
+Hierbei wurde die dSCD über den Tag bestimmt.
 Interessant war hier, dass im \ch{NO2} Bild der Einfluss des Feierabendverkehrs beobachtet werden konnte.\\
 Anschließend wurden Langley-Plots erstellt, mithilfe derer man die VCD bestimmen kann, falls die Langley-Plots linear sind.
 Dies war für \ch{O3} der Fall.
 Es zeigte sich, dass das VCA von \ch{O3} bei ca. 300\si{DU} lag.
 Der Wert wurde mit Satellitenbildern verglichen, wobei sich zeigte, dass die Werte der Satelliten beide um ca 50 \si{DU} höher lagen.
-Grund hierfür war, dass in der unsrigen Messung die troposphärische Konzentration nicht berücksichtigt wurde.\\
+Grund hierfür war, dass in der Messung die troposphärische Konzentration nicht berücksichtigt wurde.\\
 
 Im letzten Versuchsteil wurden jeweils vier Messungen bei $7^\circ$ und $12^\circ$ zwischen Kamera und Boden durchgeführt.
 Dies gibt Ausschluss darüber welche Spurengase eher in der Troposphäre und welche eher in der Stratosphäre auftreten.
