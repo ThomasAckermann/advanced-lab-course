@@ -10,8 +10,7 @@
 \usepackage{microtype}
 
 \usepackage[style=numeric,
-natbib=true,
-backend=biber]{biblatex}		%Bibliographie
+backend=biber, sorting=none]{biblatex}		%Bibliographie
 
 %math and theorems
 \usepackage{amsmath}
@@ -65,3 +64,6 @@ backend=biber]{biblatex}		%Bibliographie
 
 
 \setbeamertemplate{caption}[numbered]
+\setbeamertemplate{bibliography item}{-}
+
+\renewcommand*{\bibfont}{\small}
