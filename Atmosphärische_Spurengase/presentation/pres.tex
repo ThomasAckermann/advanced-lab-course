@@ -54,7 +54,6 @@
     	\begin{itemize}
         	\item[-] Verwendung: Vorkommen von Spurengasen in Tropo- und Stratosphäre
         	\item[-] Benutze charakteristische Absorptionsstrukturen von Molekülen
-        	\item[-] Vergleich von optischen Dichten
     	\end{itemize}
 	\end{columns}
 \end{frame}
@@ -173,18 +172,31 @@
 \begin{frame}
     \section{Auflösung des Spektrometers}
     \frametitle{Messung mit Quecksilberdampflampe}
-    \begin{columns}
-      \column{0.4\linewidth}
+        \begin{columns}
+    	\column{0.4\linewidth}
     	\begin{figure}
-        	\includegraphics[width=\textwidth]{fig/photo/hg_lampe.png}
-        	\caption{Verwendete Lichtquelle}
+    		\includegraphics[width=\textwidth]{fig/photo/hg_lampe.png}
+    		\caption{Verwendete Lichtquelle}
     	\end{figure}
-      \column{0.6\linewidth}
-		\begin{figure}
-        	\includegraphics[width=\textwidth]{fig/hg_spectrum.pdf}
-        	\caption{Spektrum der Quecksilberdampflampe}
+    	\column{0.6\linewidth}
+    	\begin{figure}
+    		\begin{overpic}[scale=0.25]{fig/hg_Spectrum.pdf}			
+    		\end{overpic}
+    		\caption{Spektrum der Quecksilberdampflampe}
     	\end{figure}
     \end{columns}
+\pause
+   \hspace*{4.65cm}\begin{minipage}{0.6\linewidth}
+   \vspace{-7.8cm}
+    	\begin{figure}
+    		\begin{overpic}[scale=0.25]{fig/hg_Spectrum.pdf}
+    			\put(17,25){\vector(1,-1){5}}
+				\put(33,30){\vector(1,-1){5}}
+                \put(45,33){\vector(1,-1){5}}
+                \put(55,45){\vector(1,-1){5}}			
+    		\end{overpic}
+    	\end{figure}
+    \end{minipage}
 \end{frame}
 
 \begin{frame}
@@ -292,21 +304,43 @@
 \end{frame}
 
 \begin{frame}
+	\frametitle{Atmosphärische Messung}
+	\begin{figure}
+		\includegraphics[width=\linewidth]{fig/fit_NO2.png}
+		\caption{Fitanpassung \ch{NO2}-Messung}
+	\end{figure}
+	
+\end{frame}
+
+\begin{frame}
     \frametitle{Tagesmessung \ch{NO2} und \ch{O3}}
+    MESZ = UTC +2
 	\begin{columns}
 	  \column{0.5\textwidth}
 	  	\begin{figure}
-	  		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_NO2.pdf}
+	  		\hspace*{-0.17cm}\begin{overpic}[scale=0.22]{fig/SCD_Time_Plot_NO2.pdf}
+	  		\end{overpic}
     		\caption{$\Delta \text{SCD}$ von \ch{NO2} über den Tag des 23.04.2019}
-    		\label{fig:delta_SCD_time_NO2}
         \end{figure}
       \column{0.5\textwidth}
     	\begin{figure}
     		\includegraphics[width=1.2\linewidth]{fig/SCD_Time_Plot_O3.pdf}
     		\caption{$\Delta \text{SCD}$ von \ch{O3} über den Tag des 23.04.2019}
-    		\label{fig:delta_SCD_time_O3}
     	\end{figure}  		
     \end{columns}
+\pause
+	\hspace*{-0.51cm}\begin{minipage}{0.5\textwidth}
+	\vspace{-7.17cm}
+		\begin{figure}
+			\begin{overpic}[scale=0.22]{fig/SCD_Time_Plot_NO2.pdf}
+				\color{blue}	
+				\put(70,20){\line(0,-1){10}}
+				\put(80,20){\line(0,-1){10}}
+				\put(70,10){\line(1,0){10}}			
+				\put(70,20){\line(1,0){10}}
+			\end{overpic}
+		\end{figure}
+	\end{minipage}
 \end{frame}
 
 \begin{frame}
