@@ -65,7 +65,7 @@ Tabelle \ref{fig:atm_comp} zeigt eine Liste der Hauptkomponenten.
 
 \begin{tabular*}{\linewidth}{@{\extracolsep{\fill}}  c c c}
 	\toprule
-	Gas & Symbol & Mischungsverhältnis \\
+	Gas & Symbol & Mischverhältnis \\
 	\midrule
 	Stickstoff & \ch{N2} & $78.084 \%$ \\
     Sauerstoff & \ch{O2} & $20.942\%$ \\
@@ -84,33 +84,34 @@ Tabelle \ref{fig:atm_comp} zeigt eine Liste der Hauptkomponenten.
 \end{center}
 
 Ozon ist ein sehr effizienter Absorber von UV Strahlung und bietet daher einen Schutz vor schädlicher Strahlung für den Menschen.\\
-    Die Atmosphäre lässt sich in verschiedene Zonen unterscheiden (siehe Abbildung \ref{fig:atmosphere}).
-In diesem Versuch werden allerdings nur die Tropo- und Stratosphäre untersucht.
+    Die Atmosphäre besteht aus mehreren Schichten (siehe Abbildung \ref{fig:atmosphere}), welche sich in ihren physikalischen und chemischen Eigenschaften unterscheiden.
+Über den vertikalen Temperaturverlauf lässt sich die Atmosphäre in verschiedene Schichten aufteilen.
+
+In diesem Versuch werden nur die Tropo- und Stratosphäre untersucht.
 
 
 \begin{center}
     \includegraphics[width=.8\linewidth]{fig/erdatmosphäre.png}
     \label{fig:atmosphere}
    
-    \captionof{figure}{Atmosphärische Schichten \footnotemark}
-    \footnotetext{\url{https://de.wikipedia.org/wiki/Erdatmosphäre#/media/Datei:Atmosphäre_Stufen.svg}}
+    \captionof{figure}{Atmosphärische Schichten \cite{amt_zones}}
 \end{center}
 
 \subsection{Messgrößen}\label{ssec:Messgröße}
 
-Die Konzentration eines Spurengases ist die Zahl der Moleküle pro Volumeneinheit und hat daher die Dimension $\si{[Moleküle/cm^3]}$.\\
-Eine andere wichtige Größe ist das Mischverhältnis.
-Sie gibt den relative Anteil eines Spurengases im Vergleich zur Luftmenge an. 
+Die Konzentration eines Spurengases ist die Zahl der Moleküle pro Volumeneinheit.\\
+Ebenso ist das Mischverhätnis eine wichtige Größe.
+Sie gibt den relative Anteil eines Spurengases im Vergleich zur Luftmenge an.\\ 
     Bei diesem Versuch ist ebenfalls die \textit{Säulendichte}
     \begin{align}
         \text{CD} = \int \rho(s) \dd s,
     \end{align}
-    von großer Bedeutung, welche die Einheit $\si{[Moleküle / cm^2]}$ besitzt.
-    Hierbei ist $\rho$ die Dichte des Spurengases und $s$ der Integrationsweg .
+    von großer Bedeutung, welche hier in  $\si{[Moleküle / cm^2]}$ angegeben wird.
+    Hierbei ist $\rho$ die Dichte des Spurengases und $s$ der Integrationsweg.
 
 \subsection{DOAS}\label{ssec:DOAS}
 
-\textit{Differential Optical Absorption Spectroscopy} (DOAS) wird verwendet um die Säulendichte eines bestimmten Spurengases in der Atmosphäre zu bestimmen.
+DOAS wird verwendet um die Säulendichte eines bestimmten Spurengases in der Atmosphäre zu bestimmen.
 Das Hauptprinzip ist das Folgende: 
     Man nimmt zwei Spektren auf, eines welches auf der Erde aufgenommen wurde (also mit Absorption des Sonnenlichtes durch die Atmosphäre) und eines bei dem die Atmosphäre nicht präsent ist (von Satelliten aus aufgenommen).
 Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
@@ -121,15 +122,13 @@ Jedes Gas absorbiert bestimmte Wellenlängen des Sonnenlichts.
     \label{fig:gas_spectra}
 \end{center}
 
-Wenn nun zwei Spektren wie beschrieben aufgenommen werden, 
-kann die charakteristische Absorption der Gase daran erkannt werden, dass die Intensitäten an manchen stellen kleiner sind.
-
-Wenn man nun weiß welche schmalbandigen Absorptionsstrukturen zu welchen Gasen gehören kann die Säulendichte des Gases in der Atmosphäre bestimmt werden.\\
-In diesem Versuchsaufbau steht allerdings kein Satellit zur Verfügung, so dass sich die Frage stellt wie man an ein Sonnenspektrum ohne atmosphärische Einwirkung erhält.
+Werden zwei Spektren wie beschrieben aufgenommen, kann die charakteristische Absorption der Gase daran erkannt werden, dass sich die Intensitäten in diesen Wellenlängenbereichen verringern.
+Wenn nun bekannt ist, welche schmalbandigen Absorptionsstrukturen zu welchen Gasen gehören kann die Säulendichte des Gases in der Atmosphäre bestimmt werden.\\
+In diesem Versuchsaufbau steht allerdings kein Satellit zur Verfügung, sodass sich die Frage stellt wie man an ein Sonnenspektrum ohne atmosphärische Einwirkung erhält.
 
 Die Lösung hier besteht daraus das Spektrum bei verschiedenen Sonnenzenitwinkeln oder Telesekopwinkeln aufzunehmen und dann zu vergleichen.
 Die mittlere Weglänge die das Licht zurücklegt ist statistisch viel kürzer, wenn genau im Zenit gemessen wird als bei anderen Winkeln.
-Daher ist hier die Absorption durch Spurengase viel geringer, sodass man eine ähnliche Differenz wie bei einer Messung mit Satellit erhält.
+Daher werden atmosphärische Einflüsse (Streuung und Absorption) auf das Spektrum minimiert, sodass die kleinste Differenz zu Messungen außerhalb der Atmosphäre erreicht wird. 
 
 \subsubsection{Lambert-Beer Gesetz}\label{sssec:Lamb-Beer_law}
 
@@ -157,12 +156,11 @@ Der Absorptionswirkungsquerschnitt gibt eine Wahrscheinlichkeit für eine Absorp
 
 Das Fraunhoferspektrum \ref{fig:fraunhofer_spectrum} zeigt das unbeeinflusste Spektrum des Sonnenlichtes. 
 Wie man sehen kann, hat es von sich aus schon viele Kurzbandstrukturen.
-
+Um diese charakteristischen Absorptionen des Sonnenlichtes zu berücksichtigen wird als Fraunhofereferenzspektrum ein Spektrum mit möglichst wenigen atmosphärischen Einflüssen verwendet.
 
 \begin{center}
     \includegraphics[width=\linewidth]{fig/fraunhofer_linien.png}
-    \captionof{figure}{Fraunhofer Spektrum \footnotemark}	
-    \footnotetext{\url{https://en.wikipedia.org/wiki/Fraunhofer_lines#/media/File:Spectrum_of_blue_sky.svg}}
+    \captionof{figure}{Fraunhoferspektrum \cite{fraunhofer}}	
     \label{fig:fraunhofer_spectrum}
 \end{center}
 
@@ -193,7 +191,7 @@ Beide Prozesse sind elastisch, was bedeutet, dass sich die Wellenlängen nicht v
 Die Wahrscheinlichkeit für Rayleigh Streuung skaliert mit $\lambda^{-4}$ und ist somit besonders bei kurzen Wellenlängen vorhanden.
 Mie Streuung hängt im Gegensatz dazu nicht so stark von der Wellenlänge ab.\\
 
-Den Einfluss von Kurz- und Breitband Effekten auf ein unbeeinflusstes Spektrum $I_0$ kann man in Abbildung \ref{fig:rayleigh_mie} beobachten.
+Den Einfluss von Kurz- und Breitbandeffekten auf ein unbeeinflusstes Spektrum $I_0$ kann man in Abbildung \ref{fig:rayleigh_mie} einsehen.
 
 \begin{center}
     \includegraphics[width=0.8\linewidth]{fig/rayleigh_mie.png}
@@ -230,8 +228,34 @@ Das Modell wird dann mit der gemessenen optischen Dichte verglichen und ein Fit 
 \end{align*}
 
 minimiert wird. 
-Durch hinzufügen von $I_\text{ref}$ kann ungewollte Strahlung im Spektrometer, welche man als Streulch bezeichnet, berücksichtigt werden.
-Dies sollte vor allem dann verwendet werden, wenn die Streulichtsintensität pber das Spektrum variiert und somit die optische Dichte beeinflusst.
+Durch hinzufügen von $I_\text{ref}$ kann ungewollte Streuung im Spektrometer, welche man als Streulicht bezeichnet, berücksichtigt werden.
+Dies sollte vor allem dann verwendet werden, wenn die Streulichtsintensität über das Spektrum variiert und somit die optische Dichte beeinflusst.
+
+\subsection{Chemische Prozesse in der Atmosphäre}\label{ssec:chemie_atmosphäre}
+
+Bei \ch{NO2} handelt es sich um ein Spurengas, das nicht konstant über den Tag vorhanden ist.
+Am Morgen nimmt die Sonneneinstrahlung zu, wodurch die Photolyse von \ch{NO2}
+\begin{align}
+    \ch{NO2} + h \nu \to \ch{NO} + \ch{O} (^3\text{P}), \label{eq:creation_no}
+\end{align}
+vermehrt stattfindet.
+Dadurch sinkt die Mischrate von \ch{NO2} zunächst.
+Gleichzeitig kommt es zur Dissoziation 
+\begin{align}
+    \ch{N2O5} + h\nu \to \ch{NO2} + \ch{NO3},
+\end{align}
+wobei \ch{NO3} wieder weiter reagieren kann
+\begin{align}
+    \ch{NO3} + h\nu \to \ch{NO} + \ch{O2}, \\
+    \ch{NO3} + h\nu \to \ch{NO2} + \ch{O}.
+\end{align}
+Diese Reaktionen treten vermehrt über den Tag auf, wodurch das \ch{NO2} Vorkommen wieder steigt. 
+Des Weiteren ist das \ch{O3} Vorkommen über die Gleichgewichtsreaktion
+\begin{align}
+    \ch{O3} + \ch{NO} \rightleftharpoons \ch{NO2} + \ch{O2}
+\end{align}
+mit dem \ch{NO2} Vorkommen verknüpft.
+Aus der Reaktion (\ref{eq:creation_no}) geht hervor, dass sich über den Tag die \ch{O3} Konzentration verringert, da mehr \ch{NO} entsteht.
 
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
@@ -244,25 +268,25 @@ Zu Beginn wurde durch variieren der Messzeit (\textit{exposure time}) und der An
 
 \subsubsection{Offset und Dunkelstrom}\label{sssec:O&D}
 
-Es gibt zwei Haupteffekte die Ungenauigkeiten bei der Messung verursachen können.
+Es gibt zwei Haupteffekte, die Ungenauigkeiten bei der Messung verursachen können.
 Durch Brownsche Bewegung in den Kabeln wird ein kleiner elektrischer Strom erzeugt, den man auch als Dunkelstrom bezeichnet.
-Um die Größenordnung des Dunkelstromes einzuschätzen werden einminütige Messungen durchgeführt, bei denen die Kamera abgedeckt ist.\\
+Um die Größenordnung des Dunkelstromes einzuschätzen, werden einminütige Messungen durchgeführt, bei denen die Kamera abgedeckt ist.\\
 Die CCD-Kameras haben außerdem ein Offset, welcher durch viele kurze Messungen bestimmt werden kann.\\
 Dunkelstrom und Offset müssen bei jedem folgenden Spektrum abgezogen werden.
-Die Messung des Offsets wurde als erstes Durchgeführt. 
+Die Messung des Offsets wurde als erstes durchgeführt. 
 Hierbei wurden $20000$ Messungen mit jeweils $3$ \si{ms} Messzeit durchgeführt.
 Anschließend wurde der Dunkelstrom bei verschiedenen Messzeiten gemessen (siehe Abbildung \ref{fig:dark_current}).
     
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/dark_current_exposure_time_plot.pdf}
-    \captionof{figure}{Abhängigkeit des Dunkelstromes von der Messzeit}
+    \captionof{figure}{Abhängigkeit des Dunkelstromes von der Messdauer}
 	\label{fig:dark_current}
 \end{center}
 
-\subsubsection{Instrumenten- und totales Rauschen}\label{sssec:instrumental_total_noise}
+\subsubsection{Instrument- und totales Rauschen}\label{sssec:instrumental_total_noise}
 
-Wie im oberen Abschnitt \ref{sssec:O&D} gesehen, entstehen Messfehler, die zeitlich nicht konstant sind. Zunächst widmet man sich dem instrumentenbedingten Rauschen.
-Dazu werden zwei Offsets mit identischen Einstellungen kurz hintereinander aufgenommen, über die entstandene Differenz ($\sigma_D$) lässt sich dann das Instrumentenrauschen bestimmen 
+Wie im oberen Abschnitt \ref{sssec:O&D} gesehen entstehen Messfehler, die zeitlich nicht konstant sind. Zunächst widmet man sich dem instrumentbedingten Rauschen.
+Dazu werden zwei Offsets mit identischen Einstellungen kurz hintereinander aufgenommen, über die entstandene Differenz ($\sigma_D$) lässt sich dann das Instrumentrauschen bestimmen 
 
 \begin{align}
 \sigma_{I} = \frac{\sigma_D}{\sqrt{2}}.\label{eq:instrumental_noise}
@@ -503,34 +527,13 @@ Hierbei standen $436$ Aufnahmen zur Verfügung.
 \end{center}       
 
 In Abbildung \ref{fig:delta_SCD_time_NO2} ist zu erkennen, dass $\Delta$SCD von \ch{NO2} zunächst niedrig ist, zum Abend hin jedoch stark zunimmt.\\
-Grund dafür sind chemische Prozesse welche unterschiedlich stark bei verschiedener Sonneneinstrahlungen stattfinden.
-Am Morgen (was hier nicht abgebildet ist) nimmt die Sonneneinstrahlung zu, wodurch die Reaktion
-\begin{align}
-    \ch{NO2} + h \nu \to \ch{NO} + \ch{O} (^3\text{P}). \label{eq:creation_no}
-\end{align}
-vermehrt stattfindet.
-Dadurch sinkt die Mischrate von \ch{NO2} zunächst.
-Gleichzeitig kommt es zur Dissoziation 
-\begin{align}
-    \ch{N2O5} + h\nu \to \ch{NO2} + \ch{NO3},
-\end{align}
-wobei \ch{NO3} wieder weiter reagieren kann
-\begin{align}
-    \ch{NO3} + h\nu \to \ch{NO} + \ch{O2}, \\
-    \ch{NO3} + h\nu \to \ch{NO2} + \ch{O}.
-\end{align}
-Diese Reaktionen treten vermehrt über den Tag auf, wodurch $\Delta$SCD wieder steigt. 
-Bei den Messungen hier wurde erst am späten Vormittag begonnen, weswegen man nicht sehen kann, dass $\Delta$SCD morgens ebenfalls sehr hoch ist.
+Grund dafür sind die aus Abschnitt \ref{ssec:chemie_atmosphäre} bereits bekannten chemische Prozesse welche unterschiedlich stark bei verschiedener Sonneneinstrahlungen stattfinden.
+
 Ab 16:00 Uhr kann man einen starken Anstieg feststellen, welcher auf den Feierabend zurückzuführen ist.\\
-Bei $\Delta$SCD von \ch{O3} in Abbildung \ref{fig:delta_SCD_time_O3} ist ein ähnliches verhalten zu beobachten.
-In der Atmosphäre findet folgende Gleichgewichtsreaktion statt:
-\begin{align}
-    \ch{O3} + \ch{NO} \rightleftharpoons \ch{NO2} + \ch{O2}
-\end{align}
-Aus der Reaktion (\ref{eq:creation_no}) geht hervor, dass sich über den Tag die \ch{O3} Konzentration verringert, da mehr \ch{NO} entsteht.
-Der Grund hierfür ist, dass die Reaktion (\ref{eq:creation_no}) über den Tag verstärkt vorkommt.
-Es ist kein Einfluss durch den Feierabendverkehr wie in Abbildung \ref{fig:delta_SCD_time_NO2} zu erkennen, da \ch{O3} viel stärker in der Stratosphäre als in der Troposphäre vorkommt, sodass kleine \ch{O3} Änderungen nur im Fehlerbereich liegen.
-\\
+
+Bei \ch{O3} ist kein Einfluss durch den Feierabendverkehr wie in Abbildung \ref{fig:delta_SCD_time_NO2} zu erkennen, da \ch{O3} viel stärker in der Stratosphäre als in der Troposphäre vorkommt, sodass kleine \ch{O3} Änderungen nur im Fehlerbereich liegen.
+
+
 Eine Untersuchung der SCD gegen den \textit{Luftmassenfaktor}(AMF), lässt Rückschlüsse über eine Säulendichtenänderung über den Tag zu.
 
 \begin{center}
@@ -579,15 +582,13 @@ Die VCD berechnet sich dabei leicht über geometrische Zusammenhänge:
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/DOAS_VCD_Ozone_ohne_Maus}
-    \captionof{figure}{DOAS VCD Messung mit Satelit aufgenommen\footnotemark}
-    \footnotetext{\url{https://disc.gsfc.nasa.gov/datasets/OMDOAO3G_V003/summary}}
+    \captionof{figure}{DOAS VCD Messung mit Satelit aufgenommen \cite{giovanni_nasa}}
 	\label{fig:DOAS_satelit}
 \end{center} 
 
 \begin{center}
 	\includegraphics[width=\linewidth]{fig/TOMS_VCD_Ozone_ohne_Maus.png}
-    \captionof{figure}{TOMS VCD Messung mit Satelit aufgenommen\footnotemark}
-    \footnotetext{\url{https://disc.gsfc.nasa.gov/datasets/TOMSEPL3_V008/summary}}
+    \captionof{figure}{TOMS VCD Messung mit Satelit aufgenommen \cite{giovanni_nasa}}
 	\label{fig:TOMS_satelit}
 \end{center} 
 Die beiden Satellitenbilder in Abbildung \ref{fig:DOAS_satelit} und \ref{fig:TOMS_satelit} zeigen die VCD von Ozon über Baden-Württemberg am 23.04.2019.
@@ -719,7 +720,7 @@ Im Gegensatz dazu hatte \ch{O4} die stärkste Veränderung. \\
 	\label{fig:ratio_dscd}
 \end{center}
 
-Am Tag der Messung war es sehr bewölkt, so dass man davon ausgehen kann dass $\Delta$SCD von \ch{O4} sehr stark von der Bewölkung abhängt.
+Am Tag der Messung war es sehr bewölkt, sodass man davon ausgehen kann dass $\Delta$SCD von \ch{O4} sehr stark von der Bewölkung abhängt.
 Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterverhältnisse nicht zu, da eine dichte Wolkendecke die Messergebnisse stark beeinflusste, die Messdaten legen nur die Vermutung nahe, dass \ch{O4} und \ch{NO2} auch vermehrt in der Troposhäre zu finden sind.
 
 \newpage

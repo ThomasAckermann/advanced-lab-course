@@ -19,6 +19,39 @@
 
 \refsection{0}
   \datalist[entry]{nty/global//global/global}
+    \entry{giovanni_nasa}{article}{}
+      \name{author}{1}{}{%
+        {{hash=207d8f7f9bd0572f4e0eff364cd6974d}{%
+           family={DISC},
+           familyi={D\bibinitperiod},
+           given={NASA\bibnamedelima GES},
+           giveni={N\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \list{institution}{1}{%
+        {NASA}%
+      }
+      \strng{namehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{fullhash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{bibnamehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{authorbibnamehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{authornamehash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \strng{authorfullhash}{207d8f7f9bd0572f4e0eff364cd6974d}
+      \field{sortinit}{D}
+      \field{sortinithash}{2ef1bd9a78cc71eb74d7231c635177b8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{note}{Analyses and visualizations used in this presentation were produced with the Giovanni online data system, developed and maintained by the NASA GES DISC.}
+      \field{title}{Goddard Earth Sciences Data and Information, Services Center (GES DISC)}
+      \field{year}{2019}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://giovanni.gsfc.nasa.gov
+      \endverb
+      \verb{url}
+      \verb https://giovanni.gsfc.nasa.gov
+      \endverb
+    \endentry
     \entry{atm_script}{article}{}
       \name{author}{1}{}{%
         {{hash=cb10d3e580dacf8bda6d5d7c3539f69d}{%
@@ -153,6 +186,62 @@
       \field{title}{Cloud detection and classification based on MAX-DOAS observations}
       \field{year}{2014}
       \true{nocite}
+    \endentry
+    \entry{amt_zones}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{1}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Erdatmosphäre}
+      \field{year}{2019}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://de.wikipedia.org/wiki/Erdatmosphäre#/media/Datei:Atmosphäre_Stufen.svg
+      \endverb
+      \verb{url}
+      \verb https://de.wikipedia.org/wiki/Erdatmosph%C3%A4re#/media/Datei:Atmosph%C3%A4re_Stufen.svg
+      \endverb
+    \endentry
+    \entry{fraunhofer}{article}{}
+      \name{author}{1}{}{%
+        {{hash=9c677286866aad38f8e9b660f5411814}{%
+           family={Wikipedia},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{fullhash}{9c677286866aad38f8e9b660f5411814}
+      \strng{bibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorbibnamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authornamehash}{9c677286866aad38f8e9b660f5411814}
+      \strng{authorfullhash}{9c677286866aad38f8e9b660f5411814}
+      \field{extraname}{2}
+      \field{sortinit}{W}
+      \field{sortinithash}{ecb89ff85896a47dc313960773ac311d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{month}{6}
+      \field{title}{Fraunhofer lines}
+      \field{year}{2019}
+      \true{nocite}
+      \verb{urlraw}
+      \verb https://en.wikipedia.org/wiki/Fraunhofer_lines#/media/File:Spectrum_of_blue_sky.svg
+      \endverb
+      \verb{url}
+      \verb https://en.wikipedia.org/wiki/Fraunhofer_lines#/media/File:Spectrum_of_blue_sky.svg
+      \endverb
     \endentry
   \enddatalist
 \endrefsection
