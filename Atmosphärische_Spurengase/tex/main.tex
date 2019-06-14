@@ -222,10 +222,11 @@ Hierbei berücksichtigt das Polynom $\sum b_k \lambda^k$ Breitbandeffekte und $R
 Bei DOAS werden nun alle besprochenen Effekte miteinbezogen und ein Modell für die optische Dichte erstellt. 
 Das Modell wird dann mit der gemessenen optischen Dichte verglichen und ein Fit erzeugt, welcher entsteht, indem die Parameter so variiert werden, dass 
 
-\begin{align*}
+\begin{align}
     \chi^2 = ( \log \frac{I_0 + I_\text{ofs}}{I} - R & - \sum_i \sigma_i S_i \\ 
     & - \sum_k b_k \lambda^k )^2 ,
-\end{align*}
+    \label{eq:chi_squared}
+\end{align}
 
 minimiert wird. 
 Durch hinzufügen von $I_\text{ref}$ kann ungewollte Streuung im Spektrometer, welche man als Streulicht bezeichnet, berücksichtigt werden.
@@ -256,6 +257,25 @@ Des Weiteren ist das \ch{O3} Vorkommen über die Gleichgewichtsreaktion
 \end{align}
 mit dem \ch{NO2} Vorkommen verknüpft.
 Aus der Reaktion (\ref{eq:creation_no}) geht hervor, dass sich über den Tag die \ch{O3} Konzentration verringert, da mehr \ch{NO} entsteht.
+
+\subsection{Verteilung von \ch{NO2}, \ch{O3} und \ch{O4}}
+
+Abbildung \ref{fig:o3_distribution} zeigt den Verlauf der Verteilung von \ch{O3} in Tropo- und Stratosphäre.
+Es ist zu erkennen, dass das Ozon mit Abstand am meisten in der Stratosphäre vorkommt.
+
+\begin{center}
+    \includegraphics[width=\linewidth]{fig/o3_distribution.png}
+    \captionof{figure}{Verteilung von \ch{O3} in der Atmosphäre \cite{atm_script}}
+    \label{fig:o3_distribution}
+\end{center}
+
+\ch{NO2} zeigt ein sehr ähnliches Verhalten.
+Jedoch ist die Verteilung in der Troposphäre stark von anthropogenen Einflüssen abhängig.
+
+\ch{O4} entsteht bei der Kollision von \ch{O2}.
+Da die Dichte mit zunehmender Höhe exponentiell abnimmt, nimmt auch die Menge des \ch{O4} exponentiell ab.
+
+
 
 \section{Versuchsdurchführung}\label{sec:versuchsdurchführung}
 
@@ -432,15 +452,8 @@ Mithilfe des Lambert-Beer Gesetztes lässt sich nun über die optische Dichte in
 
 Bei der Aufnahme der Spektren ist zu beachten, dass kein Teilbereich in Sättigung ist.
 Sollte eine Anpassung der Anzahl der Scans oder der Sättigung nötig sein, ist dies ohne weiteres möglich. 
-Dies liegt daran, dass Änderung der Parameter sich auf die Intensitäten als Faktor niederschlägt. 
-Aus dem Lambert-Beer Gesetz folgt
-\begin{align}
-    \log \left( \frac{m}{n} \frac{I_\text{F} I_{0, i}}{I_i I_{0, \text{F}}} \right) = \log \left(\frac{m}{n} \text{e}^{(\sigma \rho \Delta L)}\right) ,
-\end{align}
-wobei $m$ und $n$ hier für die verschiedenen Scananzahlen und Sättigungen stehen. 
-$I_\text{F}$ bezeichnet das Fraunhoferspektrum und $I_i$ ein beliebiges aufgenommenes Spektrum.
-$I_{0, \text{F}}$ und $I_{0, i}$ sind gleich.
-\\
+Änderung dieser Parameter sorgen für eine zusätzliche Breitbandstruktur, die durch das Polynom $\sum_k b_k |lambda^k$ in Gleichung \ref{eq:chi_squared} berücksichtigt wird.\\
+
 Über einen \textit{least-square-fit} wird nun die SCD so variiert, dass das $\chi^2$ minimiert wird. 
 In \ref{fig:different_fit_ranges} wurden die Fitparameter bei verschiedenen Fitbereichen betrachtet. 
 Dabei wurde immer ein Polynom 5. Grades ohne Offset gefittet.
@@ -724,7 +737,7 @@ Im Gegensatz dazu hatte \ch{O4} die stärkste Veränderung. \\
 Am Tag der Messung war es sehr bewölkt, sodass man davon ausgehen kann dass $\Delta$SCD von \ch{O4} sehr stark von der Bewölkung abhängt.
 Eine abschließende und genau Beurteilung der Messergebnisse ließen die Wetterverhältnisse nicht zu, da eine dichte Wolkendecke die Messergebnisse stark beeinflusste, die Messdaten legen nur die Vermutung nahe, dass \ch{O4} und \ch{NO2} auch vermehrt in der Troposhäre zu finden sind.
 
-\newpage
+% \newpage
 \section{Diskussion}\label{sec:discussion}
 
 Der Versuch behandelt verschiedene Einsatzmöglichkeiten der DOAS Methode zur Bestimmung der atmosphärischen Spurengase.\\
