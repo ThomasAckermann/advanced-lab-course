@@ -37,6 +37,7 @@ result_of_convolution_O4_error  = np.genfromtxt(dateiname, skip_header=1,usecols
 plot = plt.errorbar(StartZeit, result_of_convolution_NO2, yerr=result_of_convolution_NO2_error, label='Messdaten für NO2',fmt = 'ks', markersize=3)
 axes = plt.gca()
 plt.ylabel("$\Delta$SCD für NO2 Molkeüle/cm$^2$")
+plt.yscale("log")
 plt.xlabel("Messzeit in UTC")
 
 #nötig falls gegen Uhrzeit geplottet wird
